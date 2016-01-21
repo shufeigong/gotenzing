@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+
+<div class="entry-content">
+
+	
+	<div class="main-menu">
+		<ul>
+		    {% for page in pageList %}
+		       <li>
+		           {% if page.pageName == 'whoswho'%}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">whos<span class="grey">who<span></a>
+		           {% elseif page.pageName == 'humanchanneling' %}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">human<span class="grey">channel</span>ing</a>
+		           {% else %}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">{{page.pageName}}</a>
+		           {% endif %}
+		           
+		           {% if page.pageUrl == name%}
+		           <div class="page-content show">
+		           {% include page.pageTemplateUrl ignore missing %}
+		           </div>
+		           {% else %}
+		           <div class="page-content hidden">
+		           {% include page.pageTemplateUrl ignore missing %}
+		           </div>
+		           {% endif %}
+		       </li>
+		    {% endfor %}
+		</ul>
+	</div>
+	
+	{% for page in pageList %}
+	   {{page.pageName}} {{page.pageUrl}} {{page.pageTemplateUrl}}<br/>
+	{% endfor %}
+	
+</div>
+ </div>
+</div>
+
+</body>
+</html>

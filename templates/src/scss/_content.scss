@@ -1,0 +1,31 @@
+
+.entry-content{
+border:solid 1px #333;
+   .main-menu{
+       border:solid 1px red;
+       width:95%;
+       margin:0 auto;
+       ul{
+           border:solid 1px blue;
+           list-style:none;
+           padding:0px;
+           li{ 
+                a{
+                  font-size:87px;
+                  font-family:$font-site-bold;
+                  color:#77777a;
+                  text-transform:uppercase;
+                  line-height:0.85;
+                  .grey{color:#b9b8ba;}
+                  &:hover,&:focus{text-decoration:none;color:#f7a800;.grey{color:#f7a800;}}
+                  }
+                  #engaging, #integrating, #spending{color:#b9b8ba;&:hover,&:focus{text-decoration:none;color:#f7a800;}}
+                .page-content{
+                              
+                             }
+             }
+              
+         }
+   }  
+
+}
