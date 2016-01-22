@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	
 	$("#page01").click(function(){
 		window.history.pushState(null, null, "/Slim/content01");
 	    $("h1").html("Hello, My template content01");
@@ -11,17 +10,13 @@ $(document).ready(function () {
 	});
 	
 	/////main page extend menu///////
-	
 	$(".menuicon").click(function(){
 		$(".arrow-down, .extension-header").slideToggle();
 		$(".shadow-main").toggle();
 		//$("#Layer_4 .st0").toggleClass('orange');
 		$(this).parent("li").toggleClass('orange');
 	});
-	
-	
-	
-	
+
 	/////mobile swip menu/////
 	 $('.ham-icon').on('click',function(e){
    		e.preventDefault();
