@@ -27,7 +27,7 @@ namespace :deploy do
   end
 end
 
-namespace :deplay do
+namespace :deploy do
   desc 'Install composer packages'
   task :install_composer_packages
     on roles(:web), in: :sequence, wait: 5 do
