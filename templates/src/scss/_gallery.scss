@@ -1,0 +1,12 @@
+.gallery-container {
+    .loading-icon {
+        position: absolute;
+        left: calc(50% - 110px);
+        top: calc(50% - 70px);
+
+    }
+    .gallery-item {
+        display: inline-block;
+        margin : 3px;
+    }
+}
