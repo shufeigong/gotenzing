@@ -26,9 +26,7 @@ $serving = new Page("serving", "serving", "pages/serving.html");
 $spending = new Page("spending", "spending", "pages/spending.html");
 
 $listItems = array();
-
 array_push($listItems, $surprising, $whoswho, $branding,$engaging, $orienteering, $integrating, $positioning,$humanchanneling, $serving, $spending);
-
 $pageList = new pageHandle($listItems);
 
 $app->get('/', function() use ($app, $pageList) {
@@ -38,28 +36,26 @@ $app->get('/', function() use ($app, $pageList) {
 })->setName('templates');
 
 $app->get('/:name', function ($name) use ($app, $pageList) {
-    $app->render('templates.html',[
-        'name' => $name,
-        'pageList' => $pageList
-    ]);
+    switch($name) {
+        case "gallery-legacy":
+            $app->render('/pages/gallery-legacy.html');
+            break;
+        case "services-skills":
+            $app->render('/pages/services-skills.html');
+            break;
+        case "personalities-bios":
+            $app->render('/pages/personalities-bios.html');
+            break;
+
+        default:
+            $app->render('templates.html',[
+                'name' => $name,
+                'pageList' => $pageList
+            ]);
+    }
 
 })->setName('subtemplates');
 
-//$app->get('/', function ($request, $response, $args) use ($pageList){
-//    return $this->view->render($response,'templates.html', [
-//    		'pageList' => $pageList
-//    ]);
-//
-//})->setName('templates');
-//
-//
-//$app->get('/{name}', function ($request, $response, $args) use ($pageList) {
-//
-//	return $this->view->render($response,'templates.html',[
-//			'name' => $args['name'],
-//			'pageList' => $pageList
-//	]);
-//
-//})->setName('subtemplates');
+
 
 $app->run();
