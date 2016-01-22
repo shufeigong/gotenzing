@@ -1,0 +1,9 @@
+.modal.and.carousel {
+    position: fixed; // Needed because the carousel overrides the position property
+}
+
+.modal-vertical-centered {
+    transform: translate(0, 15%) !important;
+    -ms-transform: translate(0, 15%) !important; /* IE 9 */
+    -webkit-transform: translate(0, 15%) !important; /* Safari and Chrome */
+}

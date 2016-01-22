@@ -1,3 +1,26 @@
 body {
     font-family : $font-site-default;
+    @include font-size(1.8);
+    color : #77777a;
+}
+
+h1 {
+    @include font-size(8.7);
+    font-family: $font-site-bold;
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+h5 {
+
 }
