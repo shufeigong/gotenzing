@@ -4,13 +4,13 @@
 	<div class="main-menu">
 		<ul>
 		    {% for page in pageList %}
-		       <li>
+		       <li class="item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">whos<span class="grey">who<span></a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">whos<span class="grey">who<span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">human<span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">human<span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="item">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">{{page.pageName}}</a>
 		           {% endif %}
 		           
 		           {% if page.pageUrl == name%}

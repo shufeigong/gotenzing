@@ -4,7 +4,7 @@
     .main-menu {
         border : solid 1px red;
         width  : 95%;
-        margin : 0 auto;
+        margin : 70px auto 0 auto;
         ul {
             border     : solid 1px blue;
             list-style : none;
@@ -18,6 +18,9 @@
                     line-height    : 0.85;
                     .grey {
                         color : #b9b8ba;
+                    }
+                    .orange{
+                       color : #f7a800;
                     }
                     &:hover, &:focus {
                         text-decoration : none;
