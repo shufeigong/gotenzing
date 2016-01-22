@@ -29,9 +29,9 @@ end
 
 namespace :deploy do
   desc 'Install composer packages'
-  task :install_composer_packages
+  task :install_composer_packages do
     on roles(:web), in: :sequence, wait: 5 do
-      execute "cd '#{release_path}'; composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader"
+      execute("cd '#{release_path}'; composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader")
     end
   end
 end
