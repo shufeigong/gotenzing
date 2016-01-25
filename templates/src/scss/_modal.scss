@@ -1,9 +1,77 @@
 .modal.and.carousel {
-    position: fixed; // Needed because the carousel overrides the position property
+    position : fixed; // Needed because the carousel overrides the position property
+    .modal-body {
+        padding : 0;
+    }
 }
 
 .modal-vertical-centered {
-    transform: translate(0, 15%) !important;
-    -ms-transform: translate(0, 15%) !important; /* IE 9 */
-    -webkit-transform: translate(0, 15%) !important; /* Safari and Chrome */
+    transform         : translate(0, 15%) !important;
+    -ms-transform     : translate(0, 15%) !important; /* IE 9 */
+    -webkit-transform : translate(0, 15%) !important; /* Safari and Chrome */
+}
+
+/* .modal-fullscreen */
+
+.modal-fullscreen {
+    background : transparent;
+    margin-top : 100px;
+
+    .modal-header {
+        border-bottom : none;
+    }
+
+    .modal-body {
+        .entry-content {
+            margin-top : 0;
+        }
+    }
+}
+
+.modal-fullscreen .modal-content {
+    background         : transparent;
+    border             : 0;
+    -webkit-box-shadow : none;
+    box-shadow         : none;
+}
+
+.modal-backdrop.modal-backdrop-fullscreen {
+    background : #ffffff;
+    margin-top : 100px;
+}
+
+.modal-backdrop.modal-backdrop-fullscreen.in {
+    opacity : .99;
+    filter  : alpha(opacity=99);
+}
+
+/* .modal-fullscreen size: we use Bootstrap media query breakpoints */
+
+.modal-fullscreen .modal-dialog {
+    margin       : 0;
+    margin-right : auto;
+    margin-left  : auto;
+    width        : 100%;
+}
+
+@media (min-width : 768px) {
+    .modal-fullscreen .modal-dialog {
+        width : 750px;
+    }
+}
+
+@media (min-width : 992px) {
+    .modal-fullscreen .modal-dialog {
+        width : 970px;
+    }
+}
+
+@media (min-width : 1200px) {
+    .modal-fullscreen .modal-dialog {
+        width : 1170px;
+    }
+}
+
+.modal-body {
+    overflow : hidden;
 }

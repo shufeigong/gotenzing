@@ -13,7 +13,10 @@
 		           {% else %}
 		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">{{page.pageName}}</a>
 		           {% endif %}
-		           
+
+
+
+
 		           <div class="page-content">
 		                <a href="#" class="sub-close-icon"></a>
 		           {% include page.pageTemplateUrl ignore missing %}
@@ -23,10 +26,15 @@
 		    {% endfor %}
 		</ul>
 	</div>
-	
+
 	{% for page in pageList %}
 	   {{page.pageName}} {{page.pageUrl}} {{page.pageTemplateUrl}}<br/>
 	{% endfor %}
-	
+
+    <!-- Display utility pages -->
+	{% for page in utilityPageList %}
+		{% include page.pageTemplateUrl ignore missing %}
+	{% endfor %}
+
 </div>
 {% include 'footer.html' %}
