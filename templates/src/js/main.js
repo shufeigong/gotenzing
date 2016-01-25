@@ -4,8 +4,9 @@ $(document).ready(function () {
     var timeLine = new TimelineLite();
 
     var link = location.pathname.split('/').pop();
+    var isUtilityPage = link.search('utility');
 
-    if (link !== "") {
+    if (link !== "" && isUtilityPage == -1) {
         var thisItem = $("[href=" + link + "]");
         thisItem.addClass('orange');
 
@@ -55,7 +56,7 @@ $(document).ready(function () {
 
     $(".item a").click(function () {
 
-        window.history.pushState(null, null, $(this).attr("href"));
+        window.history.pushState(null, null, "/" + $(this).attr("href"));
 
         if (isFirstClick == true) {
             $(this).addClass('orange');
@@ -105,8 +106,10 @@ $(document).ready(function () {
 
     });
 
+
+    // Set push state for utility menu
     $('.div-exlist a').on('click', function() {
-        window.history.pushState(null, null, $(this).attr("href").replace('#', ''));
+        window.history.pushState(null, null, $(this).attr("href").replace('#', '/utility/'));
     });
 
 });

@@ -1,5 +1,7 @@
 (function($){
     $(".modal-fullscreen").on('show.bs.modal', function (event) {
+        // Close open modal box
+        $(".modal-fullscreen.fade.in").modal('hide');
         var zIndex = 1040 + (10 * $('.modal:visible').length);
         $(this).css('z-index', zIndex);
 
