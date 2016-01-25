@@ -11,8 +11,8 @@
             padding    : 0px;
             li {
                 a {
-                    display: block;
-                    font-size      : 87px;
+                    display: inline-block;
+                    @include font-size(6.7);
                     font-family    : $font-site-bold;
                     color          : #77777a;
                     text-transform : uppercase;
@@ -43,6 +43,8 @@
                     position:relative;
                     overflow:hidden;
                     height:0;
+                    
+                    //&.border-class{border-top: solid 1px #b9b8ba;border-bottom: solid 1px #b9b8ba;margin-top:10px;margin-bottom:10px;}
                     .sub-close-icon{
                                       background : url(../../dist/img/sub-close-icon.svg) no-repeat;
                                       width      : 15px;
@@ -52,6 +54,14 @@
                                       right: 8px;
                                       top:8px;
                                    }
+                    
+                    .sub-container{
+                          margin-top:1px; margin-bottom:10px;border:solid 1px red;border-top: solid 1px #b9b8ba;border-bottom: solid 1px #b9b8ba;
+                          .text-div{display:inline-block; width:441px; margin-top:10px; margin-bottom:10px;@include font-size(1.4);color:#77777a;}
+                          .imgShow-div{width:554px; height:100%;border:solid 1px #333;float:right;}                
+                    
+                    }                      
+                                   
                 }
             }
 
