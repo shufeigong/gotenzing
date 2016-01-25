@@ -25,37 +25,33 @@ $humanchanneling = new Page("humanchanneling", "humanchanneling", "pages/humanch
 $serving = new Page("serving", "serving", "pages/serving.html");
 $spending = new Page("spending", "spending", "pages/spending.html");
 
+// Utility Menu
+$personalitiesBios = new Page("personalitiesBios", "personalities-bios", "pages/personalities-bios.html");
+$galleryLegacy = new Page("galleryLegacy", "gallery-legacy", "pages/gallery-legacy.html");
+$servicesSkills = new Page("servicesSkills", "services-skills", "pages/services-skills.html");
+
 $listItems = array();
 array_push($listItems, $surprising, $whoswho, $branding,$engaging, $orienteering, $integrating, $positioning,$humanchanneling, $serving, $spending);
 $pageList = new pageHandle($listItems);
 
-$app->get('/', function() use ($app, $pageList) {
+$utilityPages = [];
+array_push($utilityPages,$personalitiesBios, $galleryLegacy, $servicesSkills);
+$utilityPageList = new PageHandle($utilityPages);
+
+$app->get('/', function() use ($app, $pageList,$utilityPageList) {
     $app->render('templates.html', [
-        'pageList' => $pageList
+        'pageList' => $pageList,
+        'utilityPageList' => $utilityPageList
     ]);
 })->setName('templates');
 
-$app->get('/:name', function ($name) use ($app, $pageList) {
-    switch($name) {
-        case "gallery-legacy":
-            $app->render('/pages/gallery-legacy.html');
-            break;
-        case "services-skills":
-            $app->render('/pages/services-skills.html');
-            break;
-        case "personalities-bios":
-            $app->render('/pages/personalities-bios.html');
-            break;
-
-        default:
+$app->get('/:name', function ($name) use ($app, $pageList, $utilityPageList) {
             $app->render('templates.html',[
                 'name' => $name,
-                'pageList' => $pageList
+                'pageList' => $pageList,
+                'utilityPageList' => $utilityPageList
             ]);
-    }
 
 })->setName('subtemplates');
-
-
 
 $app->run();
