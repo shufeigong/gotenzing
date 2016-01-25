@@ -1,242 +1,267 @@
 @media screen and (min-width : 641px) {
-	.header {
-	        //width:90%;
-	        //margin:0 auto;
-	        //border: solid 1px #333;
-	        box-shadow: 0 3px 0px 0px #b9b8ba;
-	        -moz-box-shadow: 0 3px 3px 3px #b9b8ba;
-	        z-index:1;
-	        float:none;
-	        padding:0;
-	        .div-logo{
-	           //border:solid 2px green;
-	           width:95%;
-	           margin:0 auto;
-	           position:relative;
-	              .arrow-down{
-			        position:absolute;
-			        right:3px;
-			        width:0; 
-			        height:0; 
-			        border-left:15px solid transparent;
-			        border-right:15px solid transparent;
-			        border-top:15px solid #fff;
-			        z-index:1;
-			        display:none;
-	               }
-		          .site-logo {
-		            background  : url(../../dist/img/tenzing-logo.svg) no-repeat;
-		            display     : inline-block;
-		            margin-top  : 30px;
-		            width       : 345px;
-		            height      : 26px;
-		            //border: solid 1px red;
-		           }
-	               .div-iconlist{
-	                 //border:solid 1px #333;
-	                 float:right;
-	                 margin-top:30px;
-	                 ul{
-	                      list-style:none;
-	                      margin:0;
-	                      padding:0;
-	                      li{
-	                          display:inline;
-	                          margin-right:10px;
-	                          &.orange{.st0{fill:#f7a800;}}
-	                        } 
-	                   } 
-	               }
-	           
-	        }
-	        
-	        
-	
-	    }
-	    
-	.div-mobile{display:none;}    
-	    
-	.extension-header{
-	    display:none;
-	    //border:solid 1px red;
-	    background-color:#f7a800;
-	    height:27px;
-	    .div-exlist{
-	       //border:solid 1px #333;
-	       display:inline-block;
-	       margin:5px 30px 5px 0;
-	       padding:0;
-	       float:right;
-	         ul{
-	             list-style:none;
-	             margin:0;
-	             padding:0;
-	             li{
-	                 display:inline;
-	                 border-right: 1px solid #fff;
-	                 padding-right:10px;
-	                 padding-left:10px;
-	                 a{color:#fff; font-size:12px; font-family:$font-site-bold;&:hover{text-decoration:none;}}
-	               }
-	              li:last-child{border:none;} 
-	         }    
-	    }
-	    
-	}
+    .header {
+        -moz-box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        -webkit-box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        z-index         : 1;
+        float           : none;
+        padding         : 0;
+        .div-logo {
+            width    : 95%;
+            margin   : 0 auto;
+            position : relative;
+            .arrow-down {
+                position     : absolute;
+                right        : 3px;
+                width        : 0;
+                height       : 0;
+                border-left  : 15px solid transparent;
+                border-right : 15px solid transparent;
+                border-top   : 15px solid #fff;
+                z-index      : 1;
+                display      : none;
+            }
+            .site-logo {
+                background : url(../../dist/img/tenzing-logo.svg) no-repeat;
+                display    : inline-block;
+                margin-top : 30px;
+                width      : 345px;
+                height     : 26px;
+            }
+            .div-iconlist {
+                float      : right;
+                margin-top : 30px;
+                ul {
+                    list-style : none;
+                    margin     : 0;
+                    padding    : 0;
+                    li {
+                        display      : inline;
+                        margin-right : 10px;
+                        &.orange {
+                            .st0 {
+                                fill : #f7a800;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-}    
+    .div-mobile {
+        display : none;
+    }
 
-@media screen and (max-width : 640px) {
-   .header {
-	        //width:90%;
-	        //margin:0 auto;
-	        width:100%;
-	        height:67px;
-	        position:fixed;
-	        z-index:2;
-	        background:#ffffff;
-	        //border: solid 1px #333;
-	        box-shadow: 0px 5px 3px #b9b8ba;
-	        -moz-box-shadow: 0px 5px 3px #b9b8ba;
-	        .div-logo{
-	           //border:solid 2px green;
-	           width:98%;
-	           margin:0 auto;
-	           position:relative;
-	              .arrow-down{
-	                display:none;
-	               }
-		          .site-logo {
-		            background  : url(../../dist/img/mobile-logo.svg) no-repeat;
-		            display     : inline-block;
-		            margin-top  : 20px;
-		            margin-bottom: 10px;
-		            width       : 26px;
-		            height      : 26px;
-		            border: solid 1px red;
-		           }
-		           
-		           .ham-icon {
-		            background  : url(../../dist/img/hamicon.svg) no-repeat;
-		            display     : inline-block;
-		            margin-top  : 20px;
-		            margin-bottom: 10px;
-		            width       : 20px;
-		            height      : 20px;
-		            float:       right;
-		            border: solid 1px red;
-		           }
-		           
-		           .close-icon {
-		            background  : url(../../dist/img/closeicon.svg) no-repeat;
-		            display     : inline-block;
-		            margin-top  : 20px;
-		            margin-bottom: 10px;
-		            width       : 20px;
-		            height      : 20px;
-		            float:       right;
-		            border: solid 1px red;
-		           }
-		           
-	               .div-iconlist{display:none;}
-	           
-	        }
-	        
-	
-	    }
-       
-       
-		 .extension-header{display:none;
-		    box-shadow: 0px 5px 3px #b9b8ba inset;
-	        -moz-box-shadow: 0px 5px 3px #b9b8ba inset;
-		 }
-		
-		.div-mobile {
-		  background:#f7a800;
-		  display: block;
-		  height: 100%;
-		  overflow: auto;
-		  position: fixed;
-		  right: -100%;
-		  font-size: 15px;
-		  top: 0;
-		  width: 100%;
-		  z-index: 1;
-		  //padding-top:67px;
-		  padding-top:67px;
-		  transition: right 0.3s ease-in-out 0s;
-		  -webkit-transition: right 0.3s ease-in-out 0s;
-		  -moz-transition: right 0.3s ease-in-out 0s;
-		  -o-transition: right 0.3s ease-in-out 0s;
-		
-		}
-		.nav-expanded .div-mobile {
-		  right: 0;
-		}
-		
-		body.nav-expanded {
-		  margin-left: 0em;
-		  transition: right 0.4s ease-in-out 0s;
-		  -webkit-transition: right 0.4s ease-in-out 0s;
-		  -moz-transition: right 0.4s ease-in-out 0s;
-		  -o-transition: right 0.4s ease-in-out 0s;
-		}
-		
-		#nav-close {
-		  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-		  font-weight: 300;
-		  font-size: 24px;
-		  padding-right: 10px;
-		}
-
-        .div-mobile{
-             .main-mobile-list{
-                 //border:solid 1px #333;
-                 border-bottom: 1px solid #ffffff;
-                 margin:60px auto 0 auto;
-                 width:75%;
-                 ul{
-                     list-style:none;
-                     padding:0;
-                     li{
-                        a{font-size:16px;font-family:$font-site-bold;color:#ffffff;&:hover{text-decoration:none;color:#77777a}}
-                        margin-bottom:38px;
-                       }
-                   }
-             }
-             
-             .utility-mobile-list{
-                    //border:solid 1px red;
-                    border-bottom:1px solid #ffffff;
-                    width: 75%;
-                    margin: 30px auto 0 auto;
-                ul{
-                    list-style:none;
-                    padding: 0;
-                    li{
-                       a{font-size:16px;font-family:$font-site-bold;color:#ffffff;&:hover{text-decoration:none;color:#77777a}}
-                       margin-bottom:38px;
-                      }
-                  }
-             }
-             
-             .social-mobile-list{
-                    //border:solid 1px green;
-                    //border-bottom:1px solid #ffffff;
-                    width: 75%;
-                    margin: 30px auto 0 auto;
-                ul{
-                    list-style:none;
-                    padding:0;
-                    li{
-                       img{margin-right:15px;}
-                       a{font-size:16px;font-family:$font-site-bold;color:#ffffff;&:hover{text-decoration:none;color:#77777a}}
-                       margin-bottom:38px;
-                      }
-                  }
-             }
+    .extension-header {
+        display          : none;
+        background-color : #f7a800;
+        height           : 31px;
+        .div-exlist {
+            display : inline-block;
+            margin  : 2px 42px 5px 0;
+            padding : 0;
+            float   : right;
+            ul {
+                list-style : none;
+                margin     : 0;
+                padding    : 0;
+                li {
+                    display       : inline;
+                    border-right  : 1px solid #fff;
+                    padding-right : 10px;
+                    padding-left  : 10px;
+                    a {
+                        color       : #fff;
+                        @include font-size(1.4);
+                        font-family : $font-site-bold;
+                        &:hover {
+                            text-decoration : underline;
+                        }
+                    }
+                }
+                li:last-child {
+                    border : none;
+                }
+            }
         }
 
+    }
+
+}
+
+@media screen and (max-width : 640px) {
+    .header {
+        width           : 100%;
+        height          : 67px;
+        position        : fixed;
+        z-index         : 2;
+        background      : #ffffff;
+        -moz-box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        -webkit-box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        box-shadow: 0 9px 6px -5px rgba(0,0,0,.4);
+        .div-logo {
+            width    : 98%;
+            margin   : 0 auto;
+            position : relative;
+            .arrow-down {
+                display : none;
+            }
+            .site-logo {
+                background    : url(../../dist/img/mobile-logo.svg) no-repeat;
+                display       : inline-block;
+                margin-top    : 20px;
+                margin-bottom : 10px;
+                width         : 26px;
+                height        : 26px;
+                border        : solid 1px red;
+            }
+
+            .ham-icon {
+                background    : url(../../dist/img/hamicon.svg) no-repeat;
+                display       : inline-block;
+                margin-top    : 20px;
+                margin-bottom : 10px;
+                width         : 20px;
+                height        : 20px;
+                float         : right;
+                border        : solid 1px red;
+            }
+
+            .close-icon {
+                background    : url(../../dist/img/closeicon.svg) no-repeat;
+                display       : inline-block;
+                margin-top    : 20px;
+                margin-bottom : 10px;
+                width         : 20px;
+                height        : 20px;
+                float         : right;
+                border        : solid 1px red;
+            }
+
+            .div-iconlist {
+                display : none;
+            }
+
+        }
+
+    }
+
+    .extension-header {
+        display         : none;
+        box-shadow      : 0px 5px 3px #b9b8ba inset;
+        -moz-box-shadow : 0px 5px 3px #b9b8ba inset;
+    }
+
+    .div-mobile {
+        background         : #f7a800;
+        display            : block;
+        height             : 100%;
+        overflow           : auto;
+        position           : fixed;
+        right              : -100%;
+        font-size          : 15px;
+        top                : 0;
+        width              : 100%;
+        z-index            : 1;
+        //padding-top:67px;
+        padding-top        : 67px;
+        transition         : right 0.3s ease-in-out 0s;
+        -webkit-transition : right 0.3s ease-in-out 0s;
+        -moz-transition    : right 0.3s ease-in-out 0s;
+        -o-transition      : right 0.3s ease-in-out 0s;
+
+    }
+    .nav-expanded .div-mobile {
+        right : 0;
+    }
+
+    body.nav-expanded {
+        margin-left        : 0em;
+        transition         : right 0.4s ease-in-out 0s;
+        -webkit-transition : right 0.4s ease-in-out 0s;
+        -moz-transition    : right 0.4s ease-in-out 0s;
+        -o-transition      : right 0.4s ease-in-out 0s;
+    }
+
+    #nav-close {
+        font-family   : "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight   : 300;
+        font-size     : 24px;
+        padding-right : 10px;
+    }
+
+    .div-mobile {
+        .main-mobile-list {
+            //border:solid 1px #333;
+            border-bottom : 1px solid #ffffff;
+            margin        : 60px auto 0 auto;
+            width         : 75%;
+            ul {
+                list-style : none;
+                padding    : 0;
+                li {
+                    a {
+                        font-size   : 16px;
+                        font-family : $font-site-bold;
+                        color       : #ffffff;
+                        &:hover {
+                            text-decoration : none;
+                            color           : #77777a
+                        }
+                    }
+                    margin-bottom : 38px;
+                }
+            }
+        }
+
+        .utility-mobile-list {
+            //border:solid 1px red;
+            border-bottom : 1px solid #ffffff;
+            width         : 75%;
+            margin        : 30px auto 0 auto;
+            ul {
+                list-style : none;
+                padding    : 0;
+                li {
+                    a {
+                        font-size   : 16px;
+                        font-family : $font-site-bold;
+                        color       : #ffffff;
+                        &:hover {
+                            text-decoration : none;
+                            color           : #77777a
+                        }
+                    }
+                    margin-bottom : 38px;
+                }
+            }
+        }
+
+        .social-mobile-list {
+            width  : 75%;
+            margin : 30px auto 0 auto;
+            ul {
+                list-style : none;
+                padding    : 0;
+                li {
+                    img {
+                        margin-right : 15px;
+                    }
+                    a {
+                        font-size   : 16px;
+                        font-family : $font-site-bold;
+                        color       : #ffffff;
+                        &:hover {
+                            text-decoration : none;
+                            color           : #77777a
+                        }
+                    }
+                    margin-bottom : 38px;
+                }
+            }
+        }
+    }
 
 }
    
