@@ -54,4 +54,13 @@ $app->get('/:name', function ($name) use ($app, $pageList, $utilityPageList) {
 
 })->setName('subtemplates');
 
+$app->get('/utility/:name', function ($name) use ($app, $pageList, $utilityPageList) {
+    $app->render('templates.html',[
+        'name' => $name,
+        'pageList' => $pageList,
+        'utilityPageList' => $utilityPageList
+    ]);
+
+})->setName('subtemplates');
+
 $app->run();
