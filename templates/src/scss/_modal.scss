@@ -1,8 +1,13 @@
 .modal.and.carousel {
     position : fixed; // Needed because the carousel overrides the position property
+    z-index: 2000;
     .modal-body {
         padding : 0;
     }
+}
+
+.modal-backdrop-gallery {
+    z-index: 1060;
 }
 
 .modal-vertical-centered {

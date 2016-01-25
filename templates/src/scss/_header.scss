@@ -75,8 +75,17 @@
                         color       : #fff;
                         @include font-size(1.4);
                         font-family : $font-site-bold;
-                        &:hover {
+                        &:hover, &.selected {
                             text-decoration : underline;
+                        }
+                        
+
+                    }
+
+                    .disabled {
+                        color : #989799;
+                        &:hover {
+                            text-decoration: none;
                         }
                     }
                 }
