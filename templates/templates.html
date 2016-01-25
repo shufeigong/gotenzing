@@ -2,6 +2,7 @@
 
 <div class="entry-content">
 	<div class="main-menu">
+	
 		<ul>
 		    {% for page in pageList %}
 		       <li class="item">
@@ -13,15 +14,14 @@
 		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">{{page.pageName}}</a>
 		           {% endif %}
 
-		           {% if page.pageUrl == name%}
+
+
+
 		           <div class="page-content">
+		                <a href="#" class="sub-close-icon"></a>
 		           {% include page.pageTemplateUrl ignore missing %}
 		           </div>
-		           {% else %}
-		           <div class="page-content">
-		           {% include page.pageTemplateUrl ignore missing %}
-		           </div>
-		           {% endif %}
+		           
 		       </li>
 		    {% endfor %}
 		</ul>
