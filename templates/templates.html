@@ -16,11 +16,11 @@
 		           {% endif %}
 		           
 		           {% if page.pageUrl == name%}
-		           <div class="page-content show">
+		           <div class="page-content">
 		           {% include page.pageTemplateUrl ignore missing %}
 		           </div>
 		           {% else %}
-		           <div class="page-content hidden">
+		           <div class="page-content">
 		           {% include page.pageTemplateUrl ignore missing %}
 		           </div>
 		           {% endif %}

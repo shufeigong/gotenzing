@@ -18,26 +18,27 @@
                     .grey {
                         color : #b9b8ba;
                     }
-                    .orange{
-                       color : #f7a800;
-                    }
+                    &.orange{color : #f7a800; .grey {color : #f7a800;}}
+                    
                     &:hover, &:focus {
                         text-decoration : none;
                         color           : #f7a800;
-                        .grey {
-                            color : #f7a800;
-                        }
+                        .grey {color : #f7a800;}
                     }
                 }
                 #engaging, #integrating, #spending {
                     color : #b9b8ba;
+                    &.orange{color : #f7a800;.grey {color : #f7a800;}}
                     &:hover, &:focus {
                         text-decoration : none;
                         color           : #f7a800;
                     }
                 }
                 .page-content {
-
+                    border:solid 1px red;
+                    position:relative;
+                    overflow:hidden;
+                    height:0;
                 }
             }
 

@@ -1,13 +1,32 @@
+
 $(document).ready(function () {
-	//$("#page01").click(function(){
-	//	window.history.pushState(null, null, "/Slim/content01");
-	//    $("h1").html("Hello, My template content01");
-	//});
+	var isFirstClick=true;
+	var itemArr = new Array();
+	var timeLine = new TimelineLite();
 	
-	//$("#page02").click(function(){
-	//	window.history.pushState(null, null, "/Slim/content02");
-	//	$("h1").html("Hello, My template content02");
-	//});
+	var link = location.pathname.split('/').pop();
+	
+	if(link!==""){
+		var thisItem = $("[href="+link+"]");
+		thisItem.addClass('orange');
+			
+			thisItem.parent().siblings().each(function(){
+	  			itemArr.push($(this).children("a")); //push all brothers into itemArr
+	  		});
+			itemArr.push(thisItem);    //push itself into the last element in itemArr
+			
+	  		for(var i=0; i<itemArr.length-1; i++){
+	  			if(i==0){
+	  				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}));
+	  			}else{
+	  				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
+	  			}
+	  		}
+	  		
+	  		timeLine.add(TweenLite.set(thisItem.next(),{height:"auto"}));
+	  		timeLine.add(TweenLite.from(thisItem.next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "-=0.35");
+	  		isFirstClick=false;
+	}
 	
 	/////main page extend menu///////
 	$(".menuicon").click(function(){
@@ -35,19 +54,20 @@ $(document).ready(function () {
    	
    	//////main menu animation////
    	
-   	var isFirstClick=true;
-   	var itemArr = new Array();
-	var timeLine = new TimelineLite();
-	
-   	$(".item").click(function(){
    	
+   	
+	
+   	$(".item a").click(function(){
+   		
+   		window.history.pushState(null, null, $(this).attr("href"));
+   		   		
    		if(isFirstClick==true){
-   			$(this).children("a").addClass('orange');
+   			$(this).addClass('orange');
    			
-   			$(this).siblings().each(function(){
+   			$(this).parent().siblings().each(function(){
    	   			itemArr.push($(this).children("a")); //push all brothers into itemArr
    	   		});
-   			itemArr.push($(this).children("a"));    //push itself into the last element in itemArr
+   			itemArr.push($(this));    //push itself into the last element in itemArr
    			
    	   		for(var i=0; i<itemArr.length-1; i++){
    	   			if(i==0){
@@ -56,17 +76,29 @@ $(document).ready(function () {
    	   				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
    	   			}
    	   		}
+   	   		
+   	   		timeLine.add(TweenLite.set($(this).next(),{height:"auto"}));
+   	   		timeLine.add(TweenLite.from($(this).next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "-=0.35");
    	   		isFirstClick=false;
    		}else{
-   			$(this).children("a").addClass('orange');
-   			$(this).siblings().children("a").removeClass("orange");
    			
-   		    for(var i=0; i<itemArr.length; i++){
-   		    	if(itemArr[i].css("font-size")=="87px"){
-   		    		TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut})
-   		    	}
-   		    }
-   		    TweenLite.to($(this).children("a"), 0.5, {"fontSize":"87px", ease: Power2.easeInOut})
+   			timeLine.clear();
+   			
+   			$(this).parent().siblings().each(function(){
+   				if($(this).children("a").hasClass("orange")){
+   					
+   					timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}),"feature");    
+   			        timeLine.add(TweenLite.to($(this).children("a").next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "feature+=0.25");
+   			        
+   			        $(this).children("a").removeClass("orange");
+   				}
+   			});
+   			
+   			timeLine.add(TweenLite.to($(this), 0.5, {"fontSize":"87px", ease: Power2.easeInOut}), "feature");
+   			timeLine.add(TweenLite.set($(this).next(),{height:"auto"}));
+   			timeLine.add(TweenLite.from($(this).next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "feature+=0.25");
+   			
+   			$(this).addClass('orange');
    		    
    		    
    		}
