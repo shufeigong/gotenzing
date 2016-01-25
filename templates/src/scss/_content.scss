@@ -3,20 +3,23 @@
     margin-top : 30px;
     .main-menu {
         border : solid 1px red;
-        width  : 95%;
+        //width  : 95%;
         margin : 70px auto 0 auto;
         ul {
+            //padding-left:10px;
+            //padding-right:10px;
             border     : solid 1px blue;
             list-style : none;
             padding    : 0px;
-            li {
+            li {line-height    : 0.90;
                 a {
                     display: inline-block;
+                    margin-left:25px;
                     @include font-size(6.7);
                     font-family    : $font-site-bold;
                     color          : #77777a;
                     text-transform : uppercase;
-                    line-height    : 0.85;
+                    //line-height    : 0.65;
                     .grey {
                         color : #b9b8ba;
                     }
@@ -57,7 +60,7 @@
                     
                     .sub-container{
                           margin-top:1px; margin-bottom:10px;border:solid 1px red;border-top: solid 1px #b9b8ba;border-bottom: solid 1px #b9b8ba;
-                          .text-div{display:inline-block; width:441px; margin-top:10px; margin-bottom:10px;@include font-size(1.4);color:#77777a;}
+                          .text-div{display:inline-block; width:441px; margin-top:10px; margin-bottom:10px;margin-left:25px;@include font-size(1.4);line-height:1.5;color:#77777a;}
                           .imgShow-div{width:554px; height:100%;border:solid 1px #333;float:right;}                
                     
                     }                      
