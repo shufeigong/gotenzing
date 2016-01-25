@@ -1,27 +1,26 @@
 
 $(document).ready(function () {
 	var isFirstClick=true;
-	var itemArr = new Array();
+	
 	var timeLine = new TimelineLite();
 	
+	
 	var link = location.pathname.split('/').pop();
+	
+	window.addEventListener('popstate', function (e) {location.reload();});
+	
 	
 	if(link!==""){
 		var thisItem = $("[href="+link+"]");
 		thisItem.addClass('orange');
-			
+			   var i=0;
 			thisItem.parent().siblings().each(function(){
-	  			itemArr.push($(this).children("a")); //push all brothers into itemArr
-	  		});
-			itemArr.push(thisItem);    //push itself into the last element in itemArr
-			
-	  		for(var i=0; i<itemArr.length-1; i++){
 	  			if(i==0){
-	  				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}));
+	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut})); i++;
 	  			}else{
-	  				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
+	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
 	  			}
-	  		}
+	  		});
 	  		
 	  		timeLine.add(TweenLite.set(thisItem.next(),{height:"auto"}));
 	  		timeLine.add(TweenLite.from(thisItem.next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "-=0.35");
@@ -57,25 +56,21 @@ $(document).ready(function () {
    	
    	
 	
-   	$(".item a").click(function(){
+   	$(".item").children("a").click(function(){
    		
    		window.history.pushState(null, null, $(this).attr("href"));
    		   		
    		if(isFirstClick==true){
+   			timeLine.clear();
    			$(this).addClass('orange');
-   			
+   			var i=0;
    			$(this).parent().siblings().each(function(){
-   	   			itemArr.push($(this).children("a")); //push all brothers into itemArr
-   	   		});
-   			itemArr.push($(this));    //push itself into the last element in itemArr
-   			
-   	   		for(var i=0; i<itemArr.length-1; i++){
-   	   			if(i==0){
-   	   				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}));
+   				if(i==0){
+   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut})); i++;
    	   			}else{
-   	   				timeLine.add(TweenLite.to(itemArr[i], 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
+   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
    	   			}
-   	   		}
+   	   		});
    	   		
    	   		timeLine.add(TweenLite.set($(this).next(),{height:"auto"}));
    	   		timeLine.add(TweenLite.from($(this).next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "-=0.35");
@@ -106,7 +101,28 @@ $(document).ready(function () {
    		
    	});
    	
-   	
+   	$(".sub-close-icon").click(function(e){
+   		e.preventDefault();
+   		window.history.pushState(null, null, "/"); //change url to be homepage
+   		
+   		timeLine.clear();
+   		
+   		timeLine.add(TweenLite.to($(this).parent(".page-content"), 0.5, {"height":"0", ease: Power2.easeInOut}) );
+   		$(this).parent(".page-content").prev("a").removeClass("orange");
+   		
+   		var i=0;
+   		$(this).parents(".item").siblings().each(function(){
+   			    if(i==0){
+   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"87px", ease: Power2.easeInOut})); i++; 
+   			    }else{
+   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"87px", ease: Power2.easeInOut}), "-=0.45");    
+   			    }
+   			    
+			});
+   		
+   		isFirstClick=true;
+   		
+   	});
    	
    	
 	

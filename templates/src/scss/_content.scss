@@ -36,10 +36,21 @@
                     }
                 }
                 .page-content {
-                    border:solid 1px red;
+                    //border:solid 1px red;
+                    //border-top: solid 1px #b9b8ba;
+                    //border-bottom: solid 1px #b9b8ba;
                     position:relative;
                     overflow:hidden;
                     height:0;
+                    .sub-close-icon{
+                                      background : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                                      width      : 15px;
+                                      height     : 15px;
+                                      display: inline-block;
+                                      position: absolute;
+                                      right: 8px;
+                                      top:8px;
+                                   }
                 }
             }
 
