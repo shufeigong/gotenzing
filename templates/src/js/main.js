@@ -4,7 +4,7 @@ $(document).ready(function () {
     var timeLine = new TimelineLite();
 
     var link = location.pathname.split('/').pop();
-    var isUtilityPage = link.search('utility');
+    var isUtilityPage = location.pathname.search('/utility/');
 
     if (link !== "" && isUtilityPage == -1) {
         var thisItem = $("[href=" + link + "]");
@@ -26,6 +26,13 @@ $(document).ready(function () {
         timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
         timeLine.add(TweenLite.from(thisItem.next(), 0.5, {"height": "0", ease: Power2.easeInOut}), "-=0.35");
         isFirstClick = false;
+    } else if(link !== "" && isUtilityPage != -1) {
+        // If the page is utility page with the orange menu down
+        $(".arrow-down, .extension-header").slideDown();
+        $(".shadow-main").show();
+        $(".menuicon").parent("li").addClass('orange');
+
+        $("#" + link).modal('show');
     }
 
     /////main page extend menu///////
@@ -113,4 +120,5 @@ $(document).ready(function () {
     });
 
 });
+
 
