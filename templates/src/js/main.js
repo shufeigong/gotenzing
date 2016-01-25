@@ -16,9 +16,9 @@ $(document).ready(function () {
 			   var i=0;
 			thisItem.parent().siblings().each(function(){
 	  			if(i==0){
-	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut})); i++;
+	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"20px", ease: Power2.easeInOut})); i++;
 	  			}else{
-	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
+	  				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"20px", ease: Power2.easeInOut}), "-=0.45");
 	  			}
 	  		});
 	  		
@@ -62,16 +62,16 @@ $(document).ready(function () {
    		   		
    		if(isFirstClick==true){
    			timeLine.clear();
-   			$(this).addClass('orange');
+   			$(this).addClass("orange");
    			var i=0;
    			$(this).parent().siblings().each(function(){
    				if(i==0){
-   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut})); i++;
+   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"20px", ease: Power2.easeInOut})); i++;
    	   			}else{
-   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}), "-=0.45");
+   	   				timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"20px", ease: Power2.easeInOut}), "-=0.45");
    	   			}
    	   		});
-   	   		
+   			
    	   		timeLine.add(TweenLite.set($(this).next(),{height:"auto"}));
    	   		timeLine.add(TweenLite.from($(this).next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "-=0.35");
    	   		isFirstClick=false;
@@ -82,14 +82,16 @@ $(document).ready(function () {
    			$(this).parent().siblings().each(function(){
    				if($(this).children("a").hasClass("orange")){
    					
-   					timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"26px", ease: Power2.easeInOut}),"feature");    
+   					timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"20px", ease: Power2.easeInOut}),"feature");    
    			        timeLine.add(TweenLite.to($(this).children("a").next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "feature+=0.25");
    			        
    			        $(this).children("a").removeClass("orange");
+   			        
    				}
    			});
    			
-   			timeLine.add(TweenLite.to($(this), 0.5, {"fontSize":"87px", ease: Power2.easeInOut}), "feature");
+   			timeLine.add(TweenLite.to($(this), 0.5, {"fontSize":"67px", ease: Power2.easeInOut}), "feature");
+   			
    			timeLine.add(TweenLite.set($(this).next(),{height:"auto"}));
    			timeLine.add(TweenLite.from($(this).next(), 0.5, {"height":"0", ease: Power2.easeInOut}), "feature+=0.25");
    			
@@ -113,9 +115,9 @@ $(document).ready(function () {
    		var i=0;
    		$(this).parents(".item").siblings().each(function(){
    			    if(i==0){
-   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"87px", ease: Power2.easeInOut})); i++; 
+   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"67px", ease: Power2.easeInOut})); i++; 
    			    }else{
-   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"87px", ease: Power2.easeInOut}), "-=0.45");    
+   			    	timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize":"67px", ease: Power2.easeInOut}), "-=0.45");    
    			    }
    			    
 			});
