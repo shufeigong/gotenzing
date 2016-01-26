@@ -22,11 +22,11 @@
             var i = 0;
             thisItem.parent().siblings().each(function () {
                 if (i == 0) {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "26px", ease: Power2.easeInOut}));
+                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "20px", ease: Power2.easeInOut}));
                     i++;
                 } else {
                     timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                        "fontSize": "26px",
+                        "fontSize": "20px",
                         ease: Power2.easeInOut
                     }), "-=0.45");
                 }
@@ -84,13 +84,13 @@
                 $(this).parent().siblings().each(function () {
                     if (i == 0) {
                         timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "26px",
+                            "fontSize": "20px",
                             ease: easeValue
                         }));
                         i++;
                     } else {
                         timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "26px",
+                            "fontSize": "20px",
                             ease: easeValue
                         }), "-=0.45");
                     }
@@ -107,7 +107,7 @@
                     if ($(this).children("a").hasClass("orange")) {
 
                         timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "26px",
+                            "fontSize": "20px",
                             ease: easeValue
                         }), "feature");
                         timeLine.add(TweenLite.to($(this).children("a").next(), 0.5, {
@@ -119,7 +119,7 @@
                     }
                 });
 
-                timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "87px", ease: easeValue}), "feature");
+                timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}), "feature");
                 timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
                 timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
 
@@ -140,11 +140,11 @@
             var i = 0;
             $(this).parents(".item").siblings().each(function () {
                 if (i == 0) {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "87px", ease: easeValue}));
+                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "67px", ease: easeValue}));
                     i++;
                 } else {
                     timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                        "fontSize": "87px",
+                        "fontSize": "67px",
                         ease: easeValue
                     }), "-=0.45");
                 }
