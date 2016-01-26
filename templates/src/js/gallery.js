@@ -27,12 +27,12 @@ $(function () {
                 .attr('data-slide-to', i)
                 .appendTo(linksContainer);
 
-            $('.carousel-indicators')
+            $('.carousel-indicators.gallerypage')
                 .append($('<li/>').attr({'data-target': '#lightbox', 'data-slide-to': i}));
 
             // Set images
             if(i == 0) {
-                $('.carousel-inner')
+                $('.carousel-inner.gallerypage')
                     .append(
                     $('<div/>').addClass('item active').append(
                         $('<img>').prop('src', 'http://placehold.it/938x538')
@@ -41,7 +41,7 @@ $(function () {
                     )
                 );
             } else {
-                $('.carousel-inner')
+                $('.carousel-inner.gallerypage')
                     .append($('<div/>').addClass('item').append(
                         $('<img>').prop('src', 'http://placehold.it/938x538')
                     ).append(
