@@ -37,7 +37,7 @@ $(function () {
                     $('<div/>').addClass('item active').append(
                         $('<img>').prop('src', 'http://placehold.it/938x538')
                     ).append(
-                        $('<div/>').addClass('carousel-caption').append('')
+                        $('<div/>').addClass('carousel-caption').append('(75 words) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh tellus, gravida eu porttitor sed, dictum ac urna. Fusce ex massa, congue id massa vel, dapibus aliquet nulla. Curabitur condimentum nisi at quam vestibulum, sed tempus lacus tempor. Mauris fringilla nec purus at semper. Maecenas vel nibh vitae risus imperdiet varius. Ut porta nisl sit amet ex consequat ultrices. Sed venenatis enim eu eros blandit blandit. Nunc gravida blandit lorem in congue. Pellentesque nec commodo.')
                     )
                 );
             } else {
@@ -45,7 +45,7 @@ $(function () {
                     .append($('<div/>').addClass('item').append(
                         $('<img>').prop('src', 'http://placehold.it/938x538')
                     ).append(
-                        $('<div/>').addClass('carousel-caption').append('')
+                        $('<div/>').addClass('carousel-caption').append('(75 words) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh tellus, gravida eu porttitor sed, dictum ac urna. Fusce ex massa, congue id massa vel, dapibus aliquet nulla. Curabitur condimentum nisi at quam vestibulum, sed tempus lacus tempor. Mauris fringilla nec purus at semper. Maecenas vel nibh vitae risus imperdiet varius. Ut porta nisl sit amet ex consequat ultrices. Sed venenatis enim eu eros blandit blandit. Nunc gravida blandit lorem in congue. Pellentesque nec commodo.')
                     )
                 );
             }

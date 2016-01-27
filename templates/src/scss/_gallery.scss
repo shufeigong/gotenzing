@@ -19,156 +19,518 @@
     background-image:none;
 }
 
+/////1000px~////////////////////////////////
+@media screen and (min-width : 1000px) {
 
-.imgShow-div{
-  .subpage{
-        
-        .left-arrow{box-sizing: border-box;
-					color: rgb(255, 255, 255);
-					cursor: pointer;
-					display: block;
-					font-family:'Glyphicons Halflings';
-					font-size:30px;
-					font-style:normal;
-					font-weight:normal;
-					height:75px;
-					width:29px;
-					//border:solid 1px #333;
-					left:41.5469px;
-					line-height:30px;
-					list-style-image:none;
-					list-style-position:outside;
-					list-style-type:none;
-					margin-left:-10px;
-					margin-top:-10px;
-					position:absolute;
-					text-align:center;
-					text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
-					top:82px;
-					z-index:5;
-					-webkit-font-smoothing:antialiased;
-                    background : url(../../dist/img/left-arrow.svg) no-repeat;
-        
-                    }
-        .right-arrow{
-					box-sizing:border-box;
-					color:rgb(255, 255, 255);
-					cursor:pointer;
-					display:block;
-					font-family:'Glyphicons Halflings';
-					font-size:30px;
-					font-style:normal;
-					font-weight:normal;
-					height:75px;
-					width:29px;
-					line-height:30px;
-					list-style-image:none;
-					list-style-position:outside;
-					list-style-type:none;
-					margin-right:-10px;
-					margin-top:-10px;
-					position:absolute;
-					right:41.5469px;
-					text-align:center;
-					text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
-					top:82px;
-					z-index:5;
-					-webkit-font-smoothing:antialiased;
-                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
-                    }
-        
-		.carousel-indicators{
-		    bottom: -12px;
-		    li{border: 1px solid #77777a;}
-		   .active{background-color:#b9b8ba;}
-		
+	.imgShow-div{
+	  .subpage{
+	        
+	        .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:75px;
+						width:29px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:82px;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:75px;
+						width:29px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:82px;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	        
+			.carousel-indicators{
+			    bottom: -12px;
+			    li{border: 1px solid #77777a;}
+			   .active{background-color:#b9b8ba;}
+			
+			}
 		}
+		
+		.popup{
+		        .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:45%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:45%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	                    
+	        .pop-close-icon{
+		                    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+	                        width      : 15px;
+		                    height     : 15px;
+		                    display: inline-block;
+		                    position: absolute;
+		                    right: 15px;
+		                    top:15px;
+		                    //z-index:6;
+		                    opacity:1;
+		                   }
+	                    
+		   .modal-dialog{
+	                     width:67%;
+	                     max-width:938px;
+	                     margin:58px auto 0 auto;
+	                     height:95%;
+	                     
+	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
+	                     .modal-body{height:100%;}
+	                     .carousel-inner{height:100%;}
+	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
+	                          
+	                     .carousel-indicators{
+			                                  li{border:none;background-color:#fff;}
+			                                  .active{background-color:#55565a;}
+			                                  }
+	                
+	              }
+		}
+		
 	}
 	
-	.popup{
-	        .left-arrow{box-sizing: border-box;
-					color: rgb(255, 255, 255);
-					cursor: pointer;
-					display: block;
-					font-family:'Glyphicons Halflings';
-					font-size:30px;
-					font-style:normal;
-					font-weight:normal;
-					height:97px;
-					width:37px;
-					//border:solid 1px #333;
-					left:41.5469px;
-					line-height:30px;
-					list-style-image:none;
-					list-style-position:outside;
-					list-style-type:none;
-					margin-left:-10px;
-					margin-top:-10px;
-					position:absolute;
-					text-align:center;
-					text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
-					top:45%;
-					z-index:5;
-					-webkit-font-smoothing:antialiased;
-                    background : url(../../dist/img/left-arrow.svg) no-repeat;
-        
-                    }
-        .right-arrow{
-					box-sizing:border-box;
-					color:rgb(255, 255, 255);
-					cursor:pointer;
-					display:block;
-					font-family:'Glyphicons Halflings';
-					font-size:30px;
-					font-style:normal;
-					font-weight:normal;
-					height:97px;
-					width:37px;
-					line-height:30px;
-					list-style-image:none;
-					list-style-position:outside;
-					list-style-type:none;
-					margin-right:-10px;
-					margin-top:-10px;
-					position:absolute;
-					right:41.5469px;
-					text-align:center;
-					text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
-					top:45%;
-					z-index:5;
-					-webkit-font-smoothing:antialiased;
-                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
-                    }
-                    
-        .pop-close-icon{
-	                    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-                        width      : 15px;
-	                    height     : 15px;
-	                    display: inline-block;
-	                    position: absolute;
-	                    right: 15px;
-	                    top:15px;
-	                    //z-index:6;
-	                    opacity:1;
-	                   }
-                    
-	   .modal-dialog{
-                     width:67%;
-                     max-width:938px;
-                     margin:58px auto 0 auto;
-                     height:95%;
-                     
-                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
-                     .modal-body{height:100%;}
-                     .carousel-inner{height:100%;}
-                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
-                          
-
-                
-              }
+	.gallery-page{
+	              .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:45%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:45%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	                    
+	        .pop-close-icon{
+		                    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+	                        width      : 15px;
+		                    height     : 15px;
+		                    display: inline-block;
+		                    position: absolute;
+		                    right: 15px;
+		                    top:15px;
+		                    //z-index:6;
+		                    opacity:1;
+		                   }
+	                    
+		   .modal-dialog{
+	                     width:67%;
+	                     max-width:938px;
+	                     margin:58px auto 0 auto;
+	                     height:95%;
+	                     
+	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
+	                     .modal-body{height:100%;}
+	                     .carousel-inner{height:100%;}
+	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
+	                          
+	                     .carousel-indicators{
+			                                  li{border:none;background-color:#fff;}
+			                                  .active{background-color:#55565a;}
+			                                  }
+	                
+	              }
+	              
+	
+	
+	
+	
 	}
+	
+	
 	
 }
+
+////640~999px///////////////////////////////////////////////////
+@media screen and (min-width : 641px) and (max-width : 999px) {
+
+        .imgShow-div{
+	  .subpage{
+	        
+	        .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:75px;
+						width:29px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:82px;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:75px;
+						width:29px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:82px;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	        
+			.carousel-indicators{
+			    bottom: -12px;
+			    li{border: 1px solid #77777a;}
+			   .active{background-color:#b9b8ba;}
+			
+			}
+		}
+		
+		.popup{
+		        .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:28%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:28%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	                    
+	        .pop-close-icon{
+		                    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+	                        width      : 15px;
+		                    height     : 15px;
+		                    display: inline-block;
+		                    position: absolute;
+		                    right: 15px;
+		                    top:15px;
+		                    //z-index:6;
+		                    opacity:1;
+		                   }
+	                    
+		   .modal-dialog{
+	                     width:67%;
+	                     max-width:938px;
+	                     margin:58px auto 0 auto;
+	                     height:80%;
+	                     
+	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
+	                     .modal-body{height:100%;}
+	                     .carousel-inner{height:100%;}
+	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
+	                          
+	                     .carousel-indicators{
+			                                  li{border:none;background-color:#fff;}
+			                                  .active{background-color:#55565a;}
+			                                  }
+	                
+	              }
+		}
+		
+	}
+
+
+	.gallery-page{
+	              .left-arrow{box-sizing: border-box;
+						color: rgb(255, 255, 255);
+						cursor: pointer;
+						display: block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						//border:solid 1px #333;
+						left:41.5469px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-left:-10px;
+						margin-top:-10px;
+						position:absolute;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:28%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/left-arrow.svg) no-repeat;
+	        
+	                    }
+	        .right-arrow{
+						box-sizing:border-box;
+						color:rgb(255, 255, 255);
+						cursor:pointer;
+						display:block;
+						font-family:'Glyphicons Halflings';
+						font-size:30px;
+						font-style:normal;
+						font-weight:normal;
+						height:97px;
+						width:37px;
+						line-height:30px;
+						list-style-image:none;
+						list-style-position:outside;
+						list-style-type:none;
+						margin-right:-10px;
+						margin-top:-10px;
+						position:absolute;
+						right:41.5469px;
+						text-align:center;
+						text-shadow:rgba(0, 0, 0, 0.6) 0px 1px 2px;
+						top:28%;
+						z-index:5;
+						-webkit-font-smoothing:antialiased;
+	                    background : url(../../dist/img/right-arrow.svg) no-repeat; 
+	                    }
+	                    
+	        .pop-close-icon{
+		                    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+	                        width      : 15px;
+		                    height     : 15px;
+		                    display: inline-block;
+		                    position: absolute;
+		                    right: 15px;
+		                    top:15px;
+		                    //z-index:6;
+		                    opacity:1;
+		                   }
+	                    
+		   .modal-dialog{
+	                     width:67%;
+	                     max-width:938px;
+	                     margin:58px auto 0 auto;
+	                     height:95%;
+	                     
+	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
+	                     .modal-body{height:100%;}
+	                     .carousel-inner{height:100%;}
+	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
+	                          
+	                     .carousel-indicators{
+			                                  li{border:none;background-color:#fff;}
+			                                  .active{background-color:#55565a;}
+			                                  }
+	                
+	              }
+	              
+	
+	
+	
+	
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
 
 
 
