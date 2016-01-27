@@ -6,73 +6,101 @@
 	 </div>
 	 
   <div class="imgShow-div">
-	 <div id="bradingpage" class="carousel slide" data-ride="carousel">
+  
+  <!-- brading subpage slideshow -->
+  <div id="bradingpage" class="carousel slide subpage" data-ride="carousel">
   <!-- Indicators -->
-	 <ol class="carousel-indicators">
-	   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+	 <ol class="carousel-indicators brandingpage">
+	   <li data-target="#bradingpage" data-slide-to="0" class="active"></li>
+	   <li data-target="#bradingpage" data-slide-to="1"></li>
+	   <li data-target="#bradingpage" data-slide-to="2"></li>
 	 </ol>
 
   <!-- Wrapper for slides -->
-	  <div class="carousel-inner bradingpage" role="listbox">
+	  <div class="carousel-inner bradingpage" role="listbox" style="width:265px; margin:0 auto;">
 	    <div class="item active">
-	      <a href="#lightbox-bandingpage" data-toggle="modal" data-slide-to="0"><img src="http://placehold.it/554x237" /></a>
+	      <div data-target="#lightbox-bandingpage" data-toggle="modal" data-slide-to="0" style="cursor:pointer;"><img src="http://placehold.it/265x233" /></div>
 	    </div>
 	    <div class="item">
-	      <a href="#lightbox-bandingpage" data-toggle="modal" data-slide-to="1"><img src="http://placehold.it/554x237" /></a>
+	      <div data-target="#lightbox-bandingpage" data-toggle="modal" data-slide-to="1" style="cursor:pointer;"><img src="http://placehold.it/265x233" /></div>
 	    </div>
 	    <div class="item">
-	      <a href="#lightbox-bandingpage" data-toggle="modal" data-slide-to="2"><img src="http://placehold.it/554x237" /></a>
+	      <div data-target="#lightbox-bandingpage" data-toggle="modal" data-slide-to="2" style="cursor:pointer;"><img src="http://placehold.it/265x233" /></div>
 	    </div>
 	  </div>
 
   <!-- Controls -->
 	  <a class="left carousel-control" href="#bradingpage" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
+	    <div class="left-arrow"></div>  
+	    <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>-->
 	  </a>
 	  <a class="right carousel-control" href="#bradingpage" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
+	    <div class="right-arrow"></div> 
+	    <!--  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span> -->
 	  </a>
    </div>
 	 
-<div class="modal fade and carousel slide" id="lightbox-bandingpage" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-vertical-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                 <!-- Indicators -->
-				 <ol class="carousel-indicators">
-				   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				 </ol>
-			
-			  <!-- Wrapper for slides -->
-				  <div class="carousel-inner bradingpage" role="listbox">
-				    <div class="item active">
-				      <img src="http://placehold.it/938x538" />
-				    </div>
-				    <div class="item">
-				      <img src="http://placehold.it/938x538" />
-				    </div>
-				    <div class="item">
-				      <img src="http://placehold.it/938x538" />
-				    </div>
-				  </div>
-			
-			  <!-- Controls -->
+	 <!-- brading subpage popup window slideshow -->
+<div class="modal fade and carousel slide popup" id="lightbox-bandingpage" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Controls -->
 				  <a class="left carousel-control" href="#lightbox-bandingpage" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-				    <span class="sr-only">Previous</span>
+				    <div class="left-arrow"></div>
+				    <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>-->
 				  </a>
 				  <a class="right carousel-control" href="#lightbox-bandingpage" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-				    <span class="sr-only">Next</span>
+				    <div class="right-arrow"></div> 
+				    <!--  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span> -->
 				  </a>
+    <!-- Close -->
+                 <a class="close pop-close-icon" data-dismiss="modal" aria-label="Close"></a>  
+                 
+    <div class="modal-dialog">
+        <div class="modal-content">
+        
+            <div class="modal-body">
+                
+			<!-- Indicators -->
+		 <ol class="carousel-indicators brandingpage" style="height:30px;border:solid 1px red;">
+		   <li data-target="#lightbox-bandingpage" data-slide-to="0" class="active"></li>
+		   <li data-target="#lightbox-bandingpage" data-slide-to="1"></li>
+		   <li data-target="#lightbox-bandingpage" data-slide-to="2"></li>
+		 </ol>
+			  <!-- Wrapper for slides -->
+				  <div class="carousel-inner bradingpage" role="listbox" style="border:solid 1px green;">
+				    <div class="item active">
+				      <img src="http://placehold.it/938x583" />
+				      <div class="carousel-caption">
+                       (75 words) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh tellus, gravida eu porttitor sed, dictum ac urna. Fusce ex massa, congue id massa vel, dapibus aliquet nulla. Curabitur condimentum nisi at quam vestibulum, sed tempus lacus tempor. Mauris fringilla nec purus at semper. Maecenas vel nibh vitae risus imperdiet varius. Ut porta nisl sit amet ex consequat ultrices. Sed venenatis enim eu eros blandit blandit. Nunc gravida blandit lorem in congue. Pellentesque nec commodo.
+                      </div>
+                      
+				    </div>
+				    <div class="item">
+				      <img src="http://placehold.it/938x583" />
+				      <div class="carousel-caption">
+                       (75 words) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh tellus, gravida eu porttitor sed, dictum ac urna. Fusce ex massa, congue id massa vel, dapibus aliquet nulla. Curabitur condimentum nisi at quam vestibulum, sed tempus lacus tempor. Mauris fringilla nec purus at semper. Maecenas vel nibh vitae risus imperdiet varius. Ut porta nisl sit amet ex consequat ultrices. Sed venenatis enim eu eros blandit blandit. Nunc gravida blandit lorem in congue. Pellentesque nec commodo.
+                      </div>
+				    </div>
+				    <div class="item">
+				      <img src="http://placehold.it/938x583" />
+				      <div class="carousel-caption">
+                       (75 words) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh tellus, gravida eu porttitor sed, dictum ac urna. Fusce ex massa, congue id massa vel, dapibus aliquet nulla. Curabitur condimentum nisi at quam vestibulum, sed tempus lacus tempor. Mauris fringilla nec purus at semper. Maecenas vel nibh vitae risus imperdiet varius. Ut porta nisl sit amet ex consequat ultrices. Sed venenatis enim eu eros blandit blandit. Nunc gravida blandit lorem in congue. Pellentesque nec commodo.
+                      </div>
+				    </div>
+				    
+				    
+				  </div>
+			        
+			    
             </div>
             <!-- /.modal-body -->
+               
+            
+            
+		 
         </div>
         <!-- /.modal-content -->
     </div>
