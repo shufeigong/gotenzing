@@ -16,7 +16,7 @@ $(function () {
         // Hide loading icon
         $('.loading-icon').hide();
 
-        var linksContainer = $('#gallery-container');
+        var linksContainer = $('.gallery-container.gallerypage');
 
         for(var i = 0; i < 30; i++) {
             $('<a/>')
