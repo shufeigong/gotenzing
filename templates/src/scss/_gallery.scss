@@ -31,6 +31,16 @@
 		                    opacity:1;
 }
 
+
+.carousel-indicators.subpageindi{
+  //border:solid 1px #333;
+  li{width:10px; height:10px;margin:0;background-color:#fff;}
+  .active{width:10px; height:10px;}
+
+}
+
+
+
 /////1000px~////////////////////////////////
 @media screen and (min-width : 1000px) {
 
@@ -92,7 +102,7 @@
 	                    }
 	        
 			.carousel-indicators{
-			    bottom: -22px;
+			    bottom: -21.5px;
 			    li{border: 1px solid #77777a;}
 			   .active{background-color:#b9b8ba;}
 			
@@ -343,7 +353,7 @@
 	                    }
 	        
 			.carousel-indicators{
-			    bottom: -22px;
+			    bottom: -21.5px;
 			    li{border: 1px solid #77777a;}
 			   .active{background-color:#b9b8ba;}
 			
