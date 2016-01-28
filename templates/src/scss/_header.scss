@@ -38,6 +38,9 @@
                     li {
                         display      : inline;
                         margin-right : 10px;
+                        a{
+                           &:hover, &:focus{text-decoration:none;.stt0{fill : #f7a800;}.stt1{stroke: #f7a800;}}
+                         }
                         &.orange {
                             .stt0 {
                                 fill : #f7a800;
