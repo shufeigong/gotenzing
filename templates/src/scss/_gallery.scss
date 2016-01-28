@@ -184,7 +184,16 @@
 	                     
 	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
 	                     .modal-body{height:100%;}
-	                     .carousel-inner{height:100%;}
+	                     .carousel-inner{height:100%;
+	                        .pop-img-container{
+	                                             height:75%;
+	                     
+                                                  img {
+                                                        MAX-WIDTH: 100%!important;HEIGHT: auto!important;width:expression(this.width > 200 ? "200px" :     this.width)!important;
+                                                      }
+	                                          }
+	                     
+	                     }
 	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
 	                          
 	                     .carousel-indicators{
@@ -435,7 +444,17 @@
 	                     
 	                     .modal-content{height:100%;box-shadow:none;border:none;background-color:transparent;}
 	                     .modal-body{height:100%;}
-	                     .carousel-inner{height:100%;}
+	                     .carousel-inner{height:100%;
+	                        .pop-img-container{
+	                                             height:75%;
+	                     
+                                                  img {
+                                                        MAX-WIDTH: 100%!important;HEIGHT: auto!important;width:expression(this.width > 200 ? "200px" :     this.width)!important;
+                                                      }
+	                                          }
+	                     
+	                     
+	                     }
 	                     .carousel-caption{@include font-size(1.2); margin: 0 auto; padding: 0; left: 20px; right: auto; top:104%; height:50px;}
 	                          
 	                     .carousel-indicators{

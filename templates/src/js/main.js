@@ -165,6 +165,10 @@
             $.cookie("previousUrl", window.location.href, {path:"/"});
             window.history.pushState(null, null, $(this).attr("href").replace('#', '/utility/'));
         });
+        
+        $(".sub-img-container").imagefill();  
+        $(".slide-container").imagefill();
+        //$(".pop-img-container").imagefill();
 
     });
 })(jQuery);
