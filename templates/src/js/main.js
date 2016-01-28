@@ -1,6 +1,7 @@
 (function($) {
     // Reset cookie
     $.removeCookie('previousUrl', {'path': '/'});
+    $.removeCookie("utilityMenuOpen");
 
     $(document).ready(function () {
         var isFirstClick = true;
@@ -41,7 +42,7 @@
             $(".shadow-main").show();
             $(".menuicon").parent("li").addClass('orange');
 
-            $('.div-exlist a[href="#' + link+ '"]').addClass('selected');
+            $('.div-exlist').find('#utility-' + link).addClass('selected');
 
             $("#" + link).modal('show');
         }
@@ -155,20 +156,21 @@
 
         // Set push state for utility menu
         $('.div-exlist a').on('click', function () {
-            if($('.modal-backdrop-fullscreen').length) {
-                return false;
-            }
-
             $('.div-exlist a.selected').removeClass('selected');
             $(this).addClass('selected');
 
-            $.cookie("previousUrl", window.location.href, {path:"/"});
-            window.history.pushState(null, null, $(this).attr("href").replace('#', '/utility/'));
+            if($.cookie('utilityMenuOpen') == null) {
+                $.cookie("previousUrl", window.location.href, {path:"/"});
+                $.cookie("utilityMenuOpen", true);
+            }
+            window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
         });
+
         
         $(".sub-img-container").imagefill();  
         $(".slide-container").imagefill();
         //$(".pop-img-container").imagefill();
+
 
     });
 })(jQuery);
