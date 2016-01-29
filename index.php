@@ -29,13 +29,15 @@ $spending = new Page("spending", "spending", "pages/spending.html");
 $personalitiesBios = new Page("personalitiesBios", "personalities-bios", "pages/personalities-bios.html");
 $galleryLegacy = new Page("galleryLegacy", "gallery-legacy", "pages/gallery-legacy.html");
 $servicesSkills = new Page("servicesSkills", "services-skills", "pages/services-skills.html");
+$privacy = new Page("privacy", "privacy", "pages/privacy.html");
+$contact = new Page("contact", "contact", "pages/contact.html");
 
 $listItems = array();
 array_push($listItems, $surprising, $whoswho, $branding,$engaging, $orienteering, $integrating, $positioning,$humanchanneling, $serving, $spending);
 $pageList = new pageHandle($listItems);
 
 $utilityPages = [];
-array_push($utilityPages,$personalitiesBios, $galleryLegacy, $servicesSkills);
+array_push($utilityPages,$personalitiesBios, $galleryLegacy, $servicesSkills, $privacy, $contact);
 $utilityPageList = new PageHandle($utilityPages);
 
 $app->get('/', function() use ($app, $pageList,$utilityPageList) {
