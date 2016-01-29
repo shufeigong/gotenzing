@@ -167,6 +167,21 @@
         });
 
         
+        // Set push state for utility social icon menu
+        $(".div-iconlist a").on('click', function(){
+    
+        	if($.cookie('utilityMenuOpen') == null) {
+                $.cookie("previousUrl", window.location.href, {path:"/"});
+                $.cookie("utilityMenuOpen", true);
+            }
+            window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
+        	
+        	
+        });
+        
+        
+        
+        
         $(".sub-img-container").imagefill();  
         $(".slide-container").imagefill();
         //$(".pop-img-container").imagefill();
