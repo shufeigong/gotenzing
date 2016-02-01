@@ -187,7 +187,7 @@
         //$(".pop-img-container").imagefill();
 
         
-        /////////mobile scroll event////////
+//////////////////mobile scroll event//////////////
         //$(".mobile-main-ul li:first").css("opacity", "1").children("a").css("font-size", "41px").parent().next().css("opacity","0.8").next().css("opacity","0.6").next().css("opacity","0.4").next().css("opacity","0.2");
         
         $(".mobile-item").each(function(){
@@ -216,8 +216,18 @@
     		});
         
         $(".mobile-main-menu").scrollTop(1);
+ 
+////////mobile click event//////////////        
+        $(".mobile-item").click(function(e){
+        	e.preventDefault();
+        	$($(this).children("a").attr("data-target")).addClass("in").css("display","block");
+        });
         
         
+        $(".mobile-close").click(function(e){
+        	e.preventDefault();
+        	$($(this).attr("close-target")).removeClass("in").css("display","none");
+        });
         
 
     });

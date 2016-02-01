@@ -34,11 +34,11 @@
              {% for page in pageList %}
               <li class="mobile-item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">whos<span class="grey">who<span></a>
+		           <a href="#" id="{{page.pageName}}-mobile" data-target="#whoswho-mobile-page">whos<span class="grey">who<span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">human<span class="grey">channel</span>ing</a>
+		           <a href="#" id="{{page.pageName}}-mobile" data-target="#humanchanneling-mobile-page">human<span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">{{page.pageName}}</a>
+		           <a href="#" id="{{page.pageName}}-mobile" data-target="#{{page.pageName}}-mobile-page">{{page.pageName}}</a>
 		           {% endif %}
 		       </li>
              {% endfor%}
@@ -52,6 +52,13 @@
              {% endfor%}
          </ol>
       </div>
+  
+  	{% for page in mobilePageList %}
+		{% include page.pageTemplateUrl ignore missing %}
+	{% endfor %}
+     
       
 </div>
+ <!-- Display moble pages -->
+
 {% include 'footer.html' %}

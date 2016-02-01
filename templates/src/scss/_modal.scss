@@ -80,3 +80,30 @@
 .modal-body {
     overflow : hidden;
 }
+
+///////mobile modal page//////////
+@media screen and (max-width : 640px) {
+   .mobile-modal{
+       border:solid 1px red;       
+       margin-top:73px;
+	   margin-left:15px;
+	   margin-right:15px;
+	   overflow-x:hidden;
+	   background-color:#fff;
+       z-index:2;
+    
+	   .mobile-close{
+	                width:25px;
+	                height:25px;
+	                position:absolute;
+	                right:25px;
+	                top:17px;
+	                border:solid 1px green;
+	                background : url(../../dist/img/mobile-close.svg) no-repeat;
+	                display: inline-block;
+	              }
+                      
+       
+       
+   }
+}
