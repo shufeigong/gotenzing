@@ -186,6 +186,39 @@
         $(".slide-container").imagefill();
         //$(".pop-img-container").imagefill();
 
+        
+        /////////mobile scroll event////////
+        //$(".mobile-main-ul li:first").css("opacity", "1").children("a").css("font-size", "41px").parent().next().css("opacity","0.8").next().css("opacity","0.6").next().css("opacity","0.4").next().css("opacity","0.2");
+        
+        $(".mobile-item").each(function(){
+              $(this).attr('topv',$(this).position().top);
+        });
+        
+        $(".mobile-main-menu").scroll(function(){
+    		
+        	var scroH = parseInt($(this).scrollTop());
+        	
+    	    	$(".mobile-main-ul li").each(function(){
+    	    		if(scroH+75>=parseInt($(this).attr("topv"))){ 
+    	    			$(".mobile-main-ul li").css("opacity","0");
+    	    			
+    	    			$(this).css("opacity","1").children("a").css("font-size", "41px").parent().siblings().children("a").css('font-size','26px');
+    	    			
+    	    			$(this).prev().css("opacity","0.6").prev().css("opacity", "0.3");
+    	    			$(this).next().css("opacity","0.8").next().css("opacity","0.6").next().css("opacity","0.4").next().css("opacity","0.2");
+    	    			
+    	    			$(".mobile-indicator-item").removeClass("active-indicator");
+    	    			
+    	    			$("[indicator-target="+$(this).children("a").attr("id")+"]").addClass("active-indicator");
+    	    		}
+    	    	});
+    			
+    		});
+        
+        $(".mobile-main-menu").scrollTop(1);
+        
+        
+        
 
     });
 })(jQuery);

@@ -88,6 +88,8 @@
 	    }
 	
 	}
+	
+	.mobile-content{display:none;}
 }
 
 ////640~999px///////////////////////////////////////////////////
@@ -170,7 +172,105 @@
 	    }
 	
 	}
-
+  .mobile-content{display:none;}
 
 }
+
+////////////////~640px////////////////////////
+@media screen and (max-width : 640px) {
+	.entry-content{display:none;}
+	
+	.mobile-content{
+		 //border:solid 1px #333;
+		 margin-top:73px;
+		 margin-left:15px;
+		 margin-right:15px;
+		 overflow-x:hidden;
+		 
+	     .mobile-main-menu{
+	         //border:solid 1px red;
+	         height: 480px;
+             //min-height: 400px;
+              position: relative;
+              overflow-y: scroll;
+              overflow-x: hidden;
+              margin-right:-15px;
+              //margin-top: 5px;
+	         ul{                   
+	             list-style:none;
+	             padding    : 0px;
+	             margin     : 75px 0 0 0;
+	             //border     : solid 1px blue;
+	             height:630px;
+	             li{
+	                  line-height    : 0.97;
+	                  opacity        : 0;
+	                 a{
+	                    @include font-size(2.6);
+	                    font-family    : $font-site-bold;
+	                    color          : #77777a;
+	                    text-transform : uppercase;
+	                    .grey {
+	                        color : #b9b8ba;
+	                    }
+	                    &.orange{color : #f7a800; .grey {color : #ffe0ae;}}
+	                    
+	                    &:hover, &:focus {
+	                        text-decoration : none;
+	                        color           : #f7a800;
+	                        .grey {color : #ffe0ae;}
+	                    }
+	                    
+	                  }//end of a
+	                  #engaging, #integrating, #spending {
+	                    color : #b9b8ba;
+	                    &.orange{color : #f7a800;.grey {color : #f7a800;}}
+	                    &:hover, &:focus {
+	                        text-decoration : none;
+	                        color           : #f7a800;
+	                    }
+	                  }
+	                  
+	                             
+	                }//end of li        
+	            }//end of ul             
+	     }//end of .mobile-main-menu
+	 
+	 
+		 .mobile-main-indicator{
+		     //border:solid 1px #333;
+		     width:10px;
+		     right: 20px;
+             top: 200px;
+             position:fixed;
+		     ol.mobile-indicator-ol{
+		        list-style:none;
+		        text-align:center;
+		        margin:0;
+		        padding:0;
+		        li{
+		            border-radius: 10px;
+		            border: 1px solid #77777a;
+		            width: 7px;
+                    height: 7px;
+                    margin-bottom: 10px;
+                    background-color: #fff;
+                    &.active-indicator{background-color:#b9b8ba;}
+		          }
+		          
+		       }
+		 
+		 }//end of .mobile-main-indicator
+	 
+	 }//end of .mobile-content
+	
+
+}
+
+
+
+
+
+
+
 

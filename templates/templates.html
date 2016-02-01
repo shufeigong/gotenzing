@@ -27,4 +27,31 @@
 		{% include page.pageTemplateUrl ignore missing %}
 	{% endfor %}
 </div>
+
+<div class="mobile-content">
+      <div class="mobile-main-menu">
+         <ul class="mobile-main-ul">
+             {% for page in pageList %}
+              <li class="mobile-item">
+		           {% if page.pageName == 'whoswho'%}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">whos<span class="grey">who<span></a>
+		           {% elseif page.pageName == 'humanchanneling' %}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">human<span class="grey">channel</span>ing</a>
+		           {% else %}
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}-mobile">{{page.pageName}}</a>
+		           {% endif %}
+		       </li>
+             {% endfor%}
+         </ul>
+      </div>
+      
+      <div class="mobile-main-indicator">
+         <ol class="mobile-indicator-ol">
+             {% for page in pageList %}
+              <li class="mobile-indicator-item" indicator-target="{{page.pageName}}-mobile"></li>
+             {% endfor%}
+         </ol>
+      </div>
+      
+</div>
 {% include 'footer.html' %}
