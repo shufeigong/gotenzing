@@ -6,7 +6,7 @@
             .panel-heading {
                 padding : 5px 0;
                 background : none;
-                border-bottom: 1px solid #77777a;
+                border-bottom: 1px solid #989799;
                 .panel-title {
                     .accordion-sign {
                         margin-right: 5px;
@@ -34,15 +34,16 @@
                     .additional-info {
                         @include font-size(1.2);
                         font-family: $font_site-default;
-                        color : #77777a;
-
+                        color : #989799;
+                        display: block;
+                        margin-top : 3px;
                     }
                 }
             }
             .panel-body {
                 padding-left: 0;
                 border-top: none;
-                border-bottom: 1px solid #77777a;
+                border-bottom: 1px solid #989799;
                 padding-bottom: 0;
             }
         }
