@@ -1,0 +1,1 @@
+!function(o){o(document).ready(function(){function n(n){o(n.target).prev(".panel-heading").find(".accoridon-sign").toggleClass("accordion-close accordion-open")}o("#accordion").on("hidden.bs.collapse",n),o("#accordion").on("shown.bs.collapse",n)})}(jQuery);

@@ -1,0 +1,50 @@
+.bio-container {
+    .panel-group {
+        .panel-default {
+            border: none;
+            margin-top: 0;
+            .panel-heading {
+                padding : 5px 0;
+                background : none;
+                border-bottom: 1px solid #77777a;
+                .panel-title {
+                    .accordion-sign {
+                        margin-right: 5px;
+                    }
+                    a {
+                        @include font-size(1.4);
+                        color: #f7a800;
+                    }
+                    .accordion-open {
+                        &:after{
+                            display: inline-block;
+                            content: "[-]";
+                            color: #f7a800;
+                            font-size: 18px;
+                        }
+                    }
+
+                    .accordion-close {
+                        &:after{
+                            display: inline-block;
+                            content: "[+]";
+                            color: #f7a800;
+                        }
+                    }
+                    .additional-info {
+                        @include font-size(1.2);
+                        font-family: $font_site-default;
+                        color : #77777a;
+
+                    }
+                }
+            }
+            .panel-body {
+                padding-left: 0;
+                border-top: none;
+                border-bottom: 1px solid #77777a;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
