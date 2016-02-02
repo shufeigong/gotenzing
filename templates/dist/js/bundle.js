@@ -20395,7 +20395,7 @@
 	                            'Best Work Day:'
 	                        ),
 	                        ' ',
-	                        this.props.data.best_word_day
+	                        this.props.data.best_work_day
 	                    ),
 	                    _react2.default.createElement(
 	                        'p',

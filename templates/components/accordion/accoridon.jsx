@@ -21,7 +21,7 @@ class AccordionBody extends React.Component {
                         <span className="bold">Best Day Imaginable:</span> {this.props.data.best_day_imaginable}
                     </p>
                     <p>
-                        <span className="bold">Best Work Day:</span> {this.props.data.best_word_day}
+                        <span className="bold">Best Work Day:</span> {this.props.data.best_work_day}
 
                     </p>
                     <p>
