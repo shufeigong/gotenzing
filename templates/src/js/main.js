@@ -16,37 +16,40 @@
         window.addEventListener('popstate', function () {
             location.reload();
         });
-
-        if (link !== "" && isUtilityPage == -1) {
-            var thisItem = $("[href=" + link + "]");
-            thisItem.addClass('orange');
-            var i = 0;
-            thisItem.parent().siblings().each(function () {
-                if (i == 0) {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "20px", ease: Power2.easeInOut}));
-                    i++;
-                } else {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                        "fontSize": "20px",
-                        ease: Power2.easeInOut
-                    }), "-=0.45");
-                }
-            });
-
-            timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
-            timeLine.add(TweenLite.from(thisItem.next(), 0.5, {"height": "0", ease: Power2.easeInOut}), "-=0.35");
-            isFirstClick = false;
-        } else if (link !== "" && isUtilityPage != -1) {
-            // If the page is utility page with the orange menu down
-            $(".arrow-down, .extension-header").slideDown();
-            $(".shadow-main").show();
-            $(".menuicon").parent("li").addClass('orange');
-
-            $('.div-exlist').find('#utility-' + link).addClass('selected');
-
-            $("#" + link).modal('show');
+        if($(window).width()>640){//normal version relaod page
+	        if (link !== "" && isUtilityPage == -1) {
+	            var thisItem = $("[href=" + link + "]");
+	            thisItem.addClass('orange');
+	            var i = 0;
+	            thisItem.parent().siblings().each(function () {
+	                if (i == 0) {
+	                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "20px", ease: Power2.easeInOut}));
+	                    i++;
+	                } else {
+	                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+	                        "fontSize": "20px",
+	                        ease: Power2.easeInOut
+	                    }), "-=0.45");
+	                }
+	            });
+	
+	            timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
+	            timeLine.add(TweenLite.from(thisItem.next(), 0.5, {"height": "0", ease: Power2.easeInOut}), "-=0.35");
+	            isFirstClick = false;
+	        } else if (link !== "" && isUtilityPage != -1) {
+	            // If the page is utility page with the orange menu down
+	            $(".arrow-down, .extension-header").slideDown();
+	            $(".shadow-main").show();
+	            $(".menuicon").parent("li").addClass('orange');
+	
+	            $('.div-exlist').find('#utility-' + link).addClass('selected');
+	
+	            $("#" + link).modal('show');
+	        }
+        }else{//mobile version reload page
+        	
+        	$("#"+link+"-mobile-page").addClass("in").css("display","block");	
         }
-
         /////main page extend menu///////
         $(".menuicon").click(function () {
             $(".arrow-down, .extension-header").slideToggle();
@@ -76,7 +79,7 @@
 
         $(".item").children("a").click(function () {
             $.cookie("previousUrl", window.location.href, {path:"/"});
-            window.history.pushState(null, null, "/" + $(this).attr("href"));
+            window.history.pushState(null, null, "/" + $(this).attr("href"));//change url to be current subpage
 
             if (isFirstClick == true) {
                 timeLine.clear();
@@ -217,17 +220,41 @@
         
         $(".mobile-main-menu").scrollTop(1);
  
-////////mobile click event//////////////        
+////////mobile click event//////////////
+        
+        //mobile main menu///////////
         $(".mobile-item").click(function(e){
         	e.preventDefault();
+        	//$.cookie("previousUrl", window.location.href, {path:"/"});
+            window.history.pushState(null, null, "/" + $(this).children("a").attr("href"));//change url to be current subpage
+            
         	$($(this).children("a").attr("data-target")).addClass("in").css("display","block");
         });
         
         
         $(".mobile-close").click(function(e){
         	e.preventDefault();
+        	//$.cookie("previousUrl", window.location.href, {path:"/"});
+            window.history.pushState(null, null, "/"); //change url to be homepage
+            
         	$($(this).attr("close-target")).removeClass("in").css("display","none");
         });
+        
+        //mobile site menu///////////
+        $(".mobile-item-side").click(function(e){
+        	e.preventDefault();
+            window.history.pushState(null, null, "/" + $(this).children("a").attr("href"));//change url to be current subpage
+            
+            $(".mobile-modal").removeClass("in").css("display","none");//make other mobile modal hidden
+        	$($(this).children("a").attr("data-target")).addClass("in").css("display","block");//popup this page modal
+            $('.close-icon').addClass('hidden');// change page icon and open page
+            $('.ham-icon').removeClass('hidden');
+            $('body').removeClass('nav-expanded');
+            
+            
+        });
+        
+        
         
 
     });

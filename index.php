@@ -30,6 +30,7 @@ $spending = new Page("spending", "spending", "pages/spending.html");
 $personalitiesBios = new Page("personalitiesBios", "personalities-bios", "pages/personalities-bios.html");
 $galleryLegacy = new Page("galleryLegacy", "gallery-legacy", "pages/gallery-legacy.html");
 $servicesSkills = new Page("servicesSkills", "services-skills", "pages/services-skills.html");
+
 $privacy = new Page("privacy", "privacy", "pages/privacy.html");
 $contact = new Page("contact", "contact", "pages/contact.html");
 
@@ -58,31 +59,43 @@ $mobilePages = array();
 array_push($mobilePages, $surprising_mobile,$whoswho_mobile, $branding_mobile, $engaging_mobile, $orienteering_mobile, $integrating_mobile, $positioning_mobile, $humanchanneling_mobile, $serving_mobile, $spending_mobile);
 $mobilePageList = new PageHandle($mobilePages);
 
+//create mobile utility pages
+$personalities_bios_mobile = new Page("personalities-bios-mobile", "personalities-bios-mobile", "mobile-pages/personalities-bios-mobile.html");
+$gallery_legacy_mobile = new Page("gallery-legacy-mobile", "gallery-legacy-mobile", "mobile-pages/gallery-legacy-mobile.html");
+$services_skills_mobile = new Page("services-skills-mobile", "services-skills-mobile", "mobile-pages/services-skills-mobile.html");
 
-$app->get('/', function() use ($app, $pageList,$utilityPageList,$mobilePageList) {
+$mobileUtilityPages = array();
+array_push($mobileUtilityPages, $personalities_bios_mobile, $gallery_legacy_mobile, $services_skills_mobile);
+$mobileUtilityPageList = new PageHandle($mobileUtilityPages);
+
+
+$app->get('/', function() use ($app, $pageList,$utilityPageList,$mobilePageList,$mobileUtilityPageList) {
     $app->render('templates.html', [
         'pageList' => $pageList,
         'utilityPageList' => $utilityPageList,
-    	'mobilePageList'  => $mobilePageList	
+    	'mobilePageList'  => $mobilePageList,
+    	'mobileUtilityPageList' => $mobileUtilityPageList
     ]);
 })->setName('templates');
 
-$app->get('/:name', function ($name) use ($app, $pageList, $utilityPageList, $mobilePageList) {
+$app->get('/:name', function ($name) use ($app, $pageList, $utilityPageList, $mobilePageList, $mobileUtilityPageList) {
             $app->render('templates.html',[
                 'name' => $name,
                 'pageList' => $pageList,
                 'utilityPageList' => $utilityPageList,
-            	'mobilePageList' => $mobilePageList	
+            	'mobilePageList' => $mobilePageList,
+            	'mobileUtilityPageList' => $mobileUtilityPageList
             ]);
 
 })->setName('subtemplates');
 
-$app->get('/utility/:name', function ($name) use ($app, $pageList, $utilityPageList, $mobilePageList) {
+$app->get('/utility/:name', function ($name) use ($app, $pageList, $utilityPageList, $mobilePageList, $mobileUtilityPageList) {
     $app->render('templates.html',[
         'name' => $name,
         'pageList' => $pageList,
         'utilityPageList' => $utilityPageList,
-    	'mobilePageList' => $mobilePageList
+    	'mobilePageList' => $mobilePageList,
+    	'mobileUtilityPageList' => $mobileUtilityPageList
     ]);
 
 })->setName('subtemplates');

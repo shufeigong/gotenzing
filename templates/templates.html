@@ -34,11 +34,11 @@
              {% for page in pageList %}
               <li class="mobile-item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="#" id="{{page.pageName}}-mobile" data-target="#whoswho-mobile-page">whos<span class="grey">who<span></a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target="#whoswho-mobile-page">whos<span class="grey">who<span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="#" id="{{page.pageName}}-mobile" data-target="#humanchanneling-mobile-page">human<br/><span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target="#humanchanneling-mobile-page">human<br/><span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="#" id="{{page.pageName}}-mobile" data-target="#{{page.pageName}}-mobile-page">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target="#{{page.pageName}}-mobile-page">{{page.pageName}}</a>
 		           {% endif %}
 		       </li>
              {% endfor%}
@@ -56,6 +56,10 @@
   	{% for page in mobilePageList %}
 		{% include page.pageTemplateUrl ignore missing %}
 	{% endfor %}
+     
+    {% for page in mobileUtilityPageList %}
+		{% include page.pageTemplateUrl ignore missing %}
+	{% endfor %} 
      
       
 </div>

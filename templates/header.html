@@ -95,8 +95,11 @@
         <div class="div-mobile visible-xs">
             <div class="main-mobile-list">
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">SURPRISING</a></li>
+                    <li><a href="/">HOME</a></li>
+                    {% for page in pageList %}
+                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" data-target="#{{page.pageName}}-mobile-page" class="text-uppercase">{{page.pageName}}</a></li>
+                    {% endfor %}
+                    <!--  <li><a href="#" data-target="#{{page.pageName}}-mobile-page">SURPRISING</a></li>
                     <li><a href="#">WHOSWHO</a></li>
                     <li><a href="#">BRANDING</a></li>
                     <li><a href="#">ENGAGING</a></li>
@@ -105,15 +108,15 @@
                     <li><a href="#">POSITIONING</a></li>
                     <li><a href="#">HUMANCHANNELING</a></li>
                     <li><a href="#">SERVING</a></li>
-                    <li><a href="#">SPENDING</a></li>
+                    <li><a href="#">SPENDING</a></li>-->
                 </ul>
             </div>
 
             <div class="utility-mobile-list">
                 <ul>
-                    <li><a href="#">Personalities + bios</a></li>
-                    <li><a href="#">Gallery + Legacy</a></li>
-                    <li><a href="#">Services + Skills</a></li>
+                    <li class="mobile-item-side"><a href="utility/personalities-bios" data-target="#personalities-bios-mobile-page">Personalities + bios</a></li>
+                    <li class="mobile-item-side"><a href="utility/gallery-legacy" data-target="#gallery-legacy-mobile-page">Gallery + Legacy</a></li>
+                    <li class="mobile-item-side"><a href="utility/services-skills" data-target="#services-skills-mobile-page">Services + Skills</a></li>
                 </ul>
             </div>
 
