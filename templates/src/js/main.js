@@ -221,7 +221,13 @@
         $(".mobile-main-menu").scrollTop(1);
  
 ////////mobile click event//////////////
-        
+        $("#brading-mobile-img-show").swiperight(function() {  
+            $("#brading-mobile-img-show").carousel('prev');  
+          });  
+         $("#brading-mobile-img-showl").swipeleft(function() {  
+            $("#brading-mobile-img-show").carousel('next');  
+         });  
+         
         //mobile main menu///////////
         $(".mobile-item").click(function(e){
         	e.preventDefault();
