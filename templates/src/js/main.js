@@ -200,6 +200,8 @@
         //timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "67px"}));
         
         
+        //var mobileScroll = new TimelineLite();
+        
         $(".mobile-main-menu").scroll(function(){
     		
         	var scroH = parseInt($(this).scrollTop());
@@ -209,8 +211,10 @@
     	    			$(".mobile-main-ul li").css("opacity","0");
     	    			
     	    			//$(this).css("opacity","1").children("a").css("font-size", "41px").parent().siblings().children("a").css('font-size','26px');
-    	    			TweenLite.to($(this).children("a"), 0.3, {"fontSize": "41px"});
-    	    			TweenLite.to($(this).siblings().children("a"), 0.3, {"fontSize":"26px"});
+    	    			//mobileScroll.clear();
+    	    			
+    	    			TweenLite.to($(this).children("a"), 0.2, {"fontSize": "41px"});
+    	    			TweenLite.to($(this).siblings().children("a"), 0.2, {"fontSize":"26px"});
     	    			
     	    			$(this).css("opacity","1").prev().css("opacity","0.6").prev().css("opacity", "0.3");
     	    			$(this).next().css("opacity","0.8").next().css("opacity","0.6").next().css("opacity","0.4").next().css("opacity","0.2");
