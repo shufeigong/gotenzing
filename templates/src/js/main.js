@@ -221,6 +221,13 @@
         $(".mobile-main-menu").scrollTop(1);
  
 ////////mobile click event//////////////
+        jQuery("#brading-mobile-img-show").touchwipe({
+        	wipeLeft:function(){jQuery("").carousel("next");},
+        	wipeRight:function(){jQuery().carousel("prev")},
+        	min_move_x:20,
+        	preventDefaultEvents: false
+        });
+        
         
         //mobile main menu///////////
         $(".mobile-item").click(function(e){
