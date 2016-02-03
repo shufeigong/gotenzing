@@ -222,8 +222,8 @@
  
 ////////mobile click event//////////////
         jQuery("#brading-mobile-img-show").touchwipe({
-        	wipeLeft:function(){jQuery("").carousel("next");},
-        	wipeRight:function(){jQuery().carousel("prev")},
+        	wipeLeft:function(){jQuery("#brading-mobile-img-show").carousel("next");},
+        	wipeRight:function(){jQuery("#brading-mobile-img-show").carousel("prev")},
         	min_move_x:20,
         	preventDefaultEvents: false
         });
