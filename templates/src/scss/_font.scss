@@ -1,6 +1,8 @@
 @each $font-face in
     "TradeGot",
-    "TradeGotBolTwo" {
+    "TradeGotObl",
+    "TradeGotBolTwo",
+    "TradeGotBolTwoObl" {
     @font-face {
         font-family: $font-face;
         font-style: normal; font-weight: normal;
