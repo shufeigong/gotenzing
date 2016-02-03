@@ -197,6 +197,9 @@
               $(this).attr('topv',$(this).position().top);
         });
         
+        //timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "67px"}));
+        
+        
         $(".mobile-main-menu").scroll(function(){
     		
         	var scroH = parseInt($(this).scrollTop());
@@ -205,9 +208,11 @@
     	    		if(scroH+75>=parseInt($(this).attr("topv"))){ 
     	    			$(".mobile-main-ul li").css("opacity","0");
     	    			
-    	    			$(this).css("opacity","1").children("a").css("font-size", "41px").parent().siblings().children("a").css('font-size','26px');
+    	    			//$(this).css("opacity","1").children("a").css("font-size", "41px").parent().siblings().children("a").css('font-size','26px');
+    	    			TweenLite.to($(this).children("a"), 0.3, {"fontSize": "41px"});
+    	    			TweenLite.to($(this).siblings().children("a"), 0.3, {"fontSize":"26px"});
     	    			
-    	    			$(this).prev().css("opacity","0.6").prev().css("opacity", "0.3");
+    	    			$(this).css("opacity","1").prev().css("opacity","0.6").prev().css("opacity", "0.3");
     	    			$(this).next().css("opacity","0.8").next().css("opacity","0.6").next().css("opacity","0.4").next().css("opacity","0.2");
     	    			
     	    			$(".mobile-indicator-item").removeClass("active-indicator");
@@ -221,12 +226,6 @@
         $(".mobile-main-menu").scrollTop(1);
  
 ////////mobile click event//////////////
-        jQuery("#brading-mobile-img-show").touchwipe({
-        	wipeLeft:function(){jQuery("#brading-mobile-img-show").carousel("next");},
-        	wipeRight:function(){jQuery("#brading-mobile-img-show").carousel("prev")},
-        	min_move_x:20,
-        	preventDefaultEvents: false
-        });
         
         
         //mobile main menu///////////
@@ -273,7 +272,16 @@
         	$($(this).attr("close-target")).css("display", "none");
         });
         
-
+  
+   /////////////jquery touch swipe/////////      
+        jQuery("#brading-mobile-img-show").touchwipe({
+        	wipeLeft:function(){jQuery("#brading-mobile-img-show").carousel("next");},
+        	wipeRight:function(){jQuery("#brading-mobile-img-show").carousel("prev")},
+        	min_move_x:20,
+        	preventDefaultEvents: false
+        });
+        
+        
     });
 })(jQuery);
 
