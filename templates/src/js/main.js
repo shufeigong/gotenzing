@@ -228,6 +228,7 @@
         	//$.cookie("previousUrl", window.location.href, {path:"/"});
             window.history.pushState(null, null, "/" + $(this).children("a").attr("href"));//change url to be current subpage
             
+            $("body").css("overflow-y","hidden");
         	$($(this).children("a").attr("data-target")).addClass("in").css("display","block");
         });
         
@@ -237,6 +238,7 @@
         	//$.cookie("previousUrl", window.location.href, {path:"/"});
             window.history.pushState(null, null, "/"); //change url to be homepage
             
+            //$("body").css("overflow-y","");
         	$($(this).attr("close-target")).removeClass("in").css("display","none");
         });
         

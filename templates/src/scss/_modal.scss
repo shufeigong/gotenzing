@@ -87,7 +87,7 @@
        border:solid 1px red;       
        margin-top:73px;
 	   margin-left:15px;
-	   margin-right:15px;
+	   //margin-right:15px;
 	   overflow-x:hidden;
 	   overflow-y:scroll;
 	   background-color:#fff;
@@ -162,6 +162,7 @@
                            border:solid 1px blue;
                            margin-top:80px;
                            height:90%;
+                           min-height:600px;
                            .carousel-inner{height:100%; .mobile-pop-img{height:100%;.carousel-caption{top:300px;@include font-size(1.4);}}}
                            img{margin:0 auto;}
                            
