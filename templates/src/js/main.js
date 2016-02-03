@@ -254,7 +254,15 @@
             
         });
         
+        ////mobile pop photo modal////
+        $(".mobile-pop").click(function(){
+        	$($(this).attr("data-target")).css("display", "block");
+        });
         
+        $(".mobile-pop-close").click(function(e){
+        	e.preventDefault();
+        	$($(this).attr("close-target")).css("display", "none");
+        });
         
 
     });
