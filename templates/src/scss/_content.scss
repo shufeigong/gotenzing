@@ -112,6 +112,10 @@
                                 width  : 45%;
                                 height : 100%;
                                 float  : right;
+                                ul{
+                                   list-style:disc;
+                                   li{@include font-size(1.2);font-family:$font_site-default;color:#77777a;margin-bottom:5px;width:190px;.client-name{font-family:$font-site-bold;}}
+                                  }
                                 .sub-img-container {
                                     height : 100%;
                                 }
