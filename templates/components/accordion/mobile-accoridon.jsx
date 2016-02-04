@@ -56,9 +56,12 @@ class AccordionHeader extends React.Component {
                     <a data-toggle="collapse" data-parent="#mobile-accordion" href={href} className="name">
                         {this.props.data.name}
                     </a>
-                    <span className="additional-info pull-right">| <span className="obl">{this.props.data.title}</span> | <span className="obl">{this.props.data.what_you_do}</span> | <span className="bold-obl">{this.props.data.spirtual_role}</span>
-                    </span>
                 </h4>
+                
+              <div className="panel-title title-info"> 
+                <div className="additional-info"> <span className="obl">{this.props.data.title}</span>  <span className="obl">{this.props.data.what_you_do}</span>  <span className="bold-obl">{this.props.data.spirtual_role}</span>
+                </div>
+               </div>
             </div>
         );
     }

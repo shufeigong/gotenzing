@@ -20182,23 +20182,27 @@
 	                        'a',
 	                        { 'data-toggle': 'collapse', 'data-parent': '#mobile-accordion', href: href, className: 'name' },
 	                        this.props.data.name
-	                    ),
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'panel-title title-info' },
 	                    _react2.default.createElement(
-	                        'span',
-	                        { className: 'additional-info pull-right' },
-	                        '| ',
+	                        'div',
+	                        { className: 'additional-info' },
+	                        ' ',
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'obl' },
 	                            this.props.data.title
 	                        ),
-	                        ' | ',
+	                        '  ',
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'obl' },
 	                            this.props.data.what_you_do
 	                        ),
-	                        ' | ',
+	                        '  ',
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'bold-obl' },
