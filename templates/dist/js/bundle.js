@@ -56,7 +56,13 @@
 
 	var _accoridon2 = _interopRequireDefault(_accoridon);
 
+	var _mobileAccoridon = __webpack_require__(160);
+
+	var _mobileAccoridon2 = _interopRequireDefault(_mobileAccoridon);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//import Gallery from './gallery/gallery.jsx';
 
 	var data = [{
 	    id: 1,
@@ -187,9 +193,8 @@
 	}];
 
 	//render(<Gallery />, document.getElementById('gallery-container'));
-
-	//import Gallery from './gallery/gallery.jsx';
 	(0, _reactDom.render)(_react2.default.createElement(_accoridon2.default, { data: data }), document.getElementById('accordion-container'));
+	(0, _reactDom.render)(_react2.default.createElement(_mobileAccoridon2.default, { data: data }), document.getElementById('mobile-accordion-container'));
 
 /***/ },
 /* 1 */
@@ -20052,6 +20057,214 @@
 	}(_react2.default.Component);
 
 	exports.default = Accordion;
+
+/***/ },
+/* 160 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AccordionBody = function (_React$Component) {
+	    _inherits(AccordionBody, _React$Component);
+
+	    function AccordionBody(props) {
+	        _classCallCheck(this, AccordionBody);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(AccordionBody).call(this, props));
+	    }
+
+	    _createClass(AccordionBody, [{
+	        key: 'render',
+	        value: function render() {
+	            var accordionClassName = '';
+	            if (this.props.data.id == 1) {
+	                accordionClassName = 'panel-collapse collapse in';
+	            } else {
+	                accordionClassName = 'panel-collapse collapse';
+	            }
+
+	            var id = 'mobile-collapse' + this.props.data.id;
+	            return _react2.default.createElement(
+	                'div',
+	                { id: id, className: accordionClassName },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'panel-body' },
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'bold' },
+	                            'Best Day Imaginable:'
+	                        ),
+	                        ' ',
+	                        this.props.data.best_day_imaginable
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'bold' },
+	                            'Best Work Day:'
+	                        ),
+	                        ' ',
+	                        this.props.data.best_work_day
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'bold' },
+	                            'Best Work:'
+	                        ),
+	                        ' ',
+	                        this.props.data.best_work
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return AccordionBody;
+	}(_react2.default.Component);
+
+	var AccordionHeader = function (_React$Component2) {
+	    _inherits(AccordionHeader, _React$Component2);
+
+	    function AccordionHeader(props) {
+	        _classCallCheck(this, AccordionHeader);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(AccordionHeader).call(this, props));
+	    }
+
+	    _createClass(AccordionHeader, [{
+	        key: 'render',
+	        value: function render() {
+	            var accordionClassName = '';
+	            if (this.props.data.id == 1) {
+	                accordionClassName = 'accordion-sign accordion-open';
+	            } else {
+	                accordionClassName = 'accordion-sign accordion-close';
+	            }
+
+	            var id = 'mobile-collapse' + this.props.data.id;
+	            var href = '#mobile-collapse' + this.props.data.id;
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'panel-heading' },
+	                _react2.default.createElement(
+	                    'h4',
+	                    { className: 'panel-title' },
+	                    _react2.default.createElement('span', { className: accordionClassName }),
+	                    _react2.default.createElement(
+	                        'a',
+	                        { 'data-toggle': 'collapse', 'data-parent': '#mobile-accordion', href: href, className: 'name' },
+	                        this.props.data.name
+	                    ),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'additional-info pull-right' },
+	                        '| ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'obl' },
+	                            this.props.data.title
+	                        ),
+	                        ' | ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'obl' },
+	                            this.props.data.what_you_do
+	                        ),
+	                        ' | ',
+	                        _react2.default.createElement(
+	                            'span',
+	                            { className: 'bold-obl' },
+	                            this.props.data.spirtual_role
+	                        )
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+
+	    return AccordionHeader;
+	}(_react2.default.Component);
+
+	var AccordionItem = function (_React$Component3) {
+	    _inherits(AccordionItem, _React$Component3);
+
+	    function AccordionItem(props) {
+	        _classCallCheck(this, AccordionItem);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(AccordionItem).call(this, props));
+	    }
+
+	    _createClass(AccordionItem, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'panel panel-default' },
+	                _react2.default.createElement(AccordionHeader, { data: this.props.data }),
+	                _react2.default.createElement(AccordionBody, { data: this.props.data })
+	            );
+	        }
+	    }]);
+
+	    return AccordionItem;
+	}(_react2.default.Component);
+
+	var Accordion_mobile = function (_React$Component4) {
+	    _inherits(Accordion_mobile, _React$Component4);
+
+	    function Accordion_mobile(props) {
+	        _classCallCheck(this, Accordion_mobile);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Accordion_mobile).call(this, props));
+	    }
+
+	    _createClass(Accordion_mobile, [{
+	        key: 'render',
+	        value: function render() {
+	            var AccordionNodes = this.props.data.map(function (accordion) {
+	                return _react2.default.createElement(AccordionItem, { data: accordion, key: accordion.id });
+	            });
+
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'panel-group', id: 'mobile-accordion' },
+	                AccordionNodes
+	            );
+	        }
+	    }]);
+
+	    return Accordion_mobile;
+	}(_react2.default.Component);
+
+	exports.default = Accordion_mobile;
 
 /***/ }
 /******/ ]);

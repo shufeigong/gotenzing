@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 //import Gallery from './gallery/gallery.jsx';
 import Accordion from './accordion/accoridon.jsx';
+import Accordion_mobile from './accordion/mobile-accoridon.jsx';
 
 var data = [
     {
@@ -149,5 +150,5 @@ var data = [
 
 //render(<Gallery />, document.getElementById('gallery-container'));
 render(<Accordion data={data} />, document.getElementById('accordion-container'));
-
+render(<Accordion_mobile data={data}/>, document.getElementById('mobile-accordion-container'));
 
