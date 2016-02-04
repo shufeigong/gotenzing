@@ -20,9 +20,9 @@ var data = [
         title: "Vice-Presidente",
         what_you_do: "Creative Director",
         spirtual_role: "Cultural Ambassador",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "24 hours of cycling, motorbiking,driving and hiking my way through villages around Mt.Fuji and sitting in a hot spring at the end of the journey.",
+        best_work_day: "When you realize you’ve doing some good in this world with your creative imagination.",
+        best_work: "13 years of advertising work for Sylvania,launching BiteTV and Ontario Brain Institute, Canada’s Credit Unions, Carrier, Ernst & Young, mental health cause for CMHA, University of Toronto. Plus improving the brand and value of dozens of small companies. And past favs – Clio Award for Project: Warmth, CTV branding (the flags still wave) and branded content for HGTV."
     },
     {
         id: 3,
@@ -30,9 +30,9 @@ var data = [
         title: "Director Digital",
         what_you_do: "Electronic Communications",
         spirtual_role: "Practical Philosopher",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Understanding that it’s not about me – and being genuinely OK with that. And discovering what it is.",
+        best_work_day: "Inventing a practical solution to a big human problem/opportunity and having colleagues, investors and clients get behind it to help make it real.",
+        best_work: "Web and other online experiences for Ernst & Young LLP, Canadian Institute of Chartered Business Valuators, Libro Credit Union, Conservation Council of Ontario, University of Toronto’s Institute of Medical Science, Arowhon Pines, City of Mississauga, and St. Joseph's Healthcare Hamilton."
     },
     {
         id: 4,
@@ -40,9 +40,9 @@ var data = [
         title: "Sr. Art Director",
         what_you_do: "Multi-channel Creative + Design",
         spirtual_role: "Gym Bunny",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Bench pressing humans while shopping for clothing and furniture on my iPhone.",
+        best_work_day: "Making clients cry… literally.",
+        best_work: "Integrated web, design and video for Doctors Without Borders, The Commonwell Mutual Insurance Group, Ernst & Young, OSRAM Sylvania, Jaguar, Evian, Mercis, Kids Help Phone, Toronto Tourism, Railway City, Soapstones, Runnymede Healthcare Centre, Russell Investments, Lafarge, Meridian Credit Union."
     },
     {
         id: 5,
@@ -50,9 +50,9 @@ var data = [
         title: "Sr. Art Director",
         what_you_do: "Multi-channel Creative + Design",
         spirtual_role: "Musical Nomand",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Watching the light change, ocean-side, at the foot of mountains, with camera in hand, and sand between the toes. And in between, staying curious while exploring some place both new and ancient, sharing laughter over a meal that’s spicy and sustainable, be transported by music and art. Count my lucky stars as the moon rises.",
+        best_work_day: "Starts with a good cup of tea and ends knowing that my craft and creative thinking is contributing positive change in the world.",
+        best_work: "Toronto Reel Asian Film Festival, Canadian Mental Health Association, City of Mississauga, Arowhon Pines, St. Joseph’s Healthcare Hamilton, Hamilton Health Sciences, Canada's Credit Unions, Town of Brighton Ontario, Huntsville Hospital Foundation."
     },
     {
         id: 6,
@@ -60,9 +60,9 @@ var data = [
         title: "Project Manager, Media Specialist",
         what_you_do: "Planning everything + building it on time",
         spirtual_role: "Birthday Treat Maker",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "A morning of puttering in my garden followed by an afternoon of snoozing with a good book in my backyard hammock (with a really good turkey sandwich in between).",
+        best_work_day: "Presenting a media plan with a gem that elicits a client \"Who a - I never thought of\"",
+        best_work: "Libro Credit Union, Bruce County, OSRAM Sylvania, Lafarge Canada, Huntsville Hospital Foundation, Ernst & Young LLP, CICBV, The Commonwell Mutual Insurance Group, Siskinds LLP, Russell Investments, St. Joe's Hamilton."
     },
     {
         id: 7,
@@ -70,9 +70,9 @@ var data = [
         title: "Project Manager",
         what_you_do: "Kepper of Details + Quality Assurance",
         spirtual_role: "Timbit Provider",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Snowboarding down a mountain above 3,000m on a blue bird day with a touch of wind and a dusting of powder.",
+        best_work_day: "Every day Dan teaches me new tricks in WordPress or HTML.",
+        best_work: "Lindt & Sprüngli, Greyhound Canada, Pfizer Animal Health, Siskinds, TSSA, Canadian Credit Union Business Owner Strategy, Libro Credit Union, Purina Pet Care, Wrigley, Gay Lea Foods, DOW AgroSciences."
     },
     {
         id: 8,
@@ -80,9 +80,9 @@ var data = [
         title: "Account Planner",
         what_you_do: "Strategy + Project Management",
         spirtual_role: "Relationship Amplifier",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Waking up early to the smell of coffee brewing and the sounds of a five-star chef making breakfast for me. After pulling open the blinds reality sets in, I’m onboard a private motor yacht traveling in calm seas on rout to Greenland.",
+        best_work_day: "Morning meetings booked with some of the world’s most influential people in business, followed by deep conversations on how their new project ideas will have substantial positive impact on the world. Working with my team to make these ideas reality, and being selected as the company who gets to make things happen.",
+        best_work: "Account management for: Molly Maid Canada & UK, Oaken Financial, Crown Realty Partners, City of Kawartha Lakes, 2001 Audio Video, Ecologics, Community Living Ontario, Blount Small Ship Adventures, Brookfield Properties, Real Estate Council of Ontario, Ontario Association of Cardiologists, Baker and McKenzie,"
     },
     {
         id: 9,
@@ -90,9 +90,9 @@ var data = [
         title: "Senior Designer",
         what_you_do: "Visual Communicator",
         spirtual_role: "Reliable Doorman",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Flying due south in a Cessna over the Andes Mountains and landing on an undiscovered island occupied by uber friendly coffee-serving penguins with French accents.",
+        best_work_day: "Hearing a client say: \"The brand you produced for us punched through the chaos, left our competitors in the dust, attracted their best customers and it’s all Tenzing's fault.\"",
+        best_work: "London Health Sciences – Dream Lottery, Siskinds LLP, Libro Credit Union, Bruce County, Niagara Credit Union, St/ Joseph's healthcare London, OTC Group, Aercoustics Engineering, Northern Credit Union, Canadian Business Owner Strategy (CUCC)."
     },
     {
         id: 10,
@@ -100,9 +100,9 @@ var data = [
         title: "Web Developer ",
         what_you_do: "Development + Coding",
         spirtual_role: "Lunch Lover",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Living in Maldives or Bahamas, Working for a company remotely. The fastest Internet speed is required.",
+        best_work_day: "Wake up early in the morning, No traffic during the commuting, Drinking fresh coffee, Listening HIP-HOP or EDM music for coding.",
+        best_work: "Arowhon Pines, Huntsville Hospital Foundation, Runnymede, EY Drive, Hamilton Health Sciences, Institute of Medical Science, City of Mississauga, The Commonwell mutual insurance group, CRIHC, Ontario Brain Institute."
     },
     {
         id: 11,
@@ -110,9 +110,9 @@ var data = [
         title: "Web Developer",
         what_you_do: "Developement + Coding",
         spirtual_role: "Digital Translator",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Family Day, however you define it, morning until night.",
+        best_work_day: "When I finish a web project and all the techie things I had to make work really, really worked well. Otherwise, bug-free days are all good days.",
+        best_work: "Community Living Ontario site development"
     },
     {
         id: 12,
@@ -120,9 +120,9 @@ var data = [
         title: "Media Director",
         what_you_do: "Structuring paid advertising campaigns",
         spirtual_role: "Company Baker",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "The entire house is sparkling clean, everyone gets to school/work early, and a delicious and nutritious dinner awaits the whole family at the end of the day.",
+        best_work_day: "When our client(s) are (1) ecstatic about their campaign results after being surprised at how far I stretched their media budget.",
+        best_work: "The Stratford Festival, Libro Credit Union, Sylvania Silver Star Headlights, Carrier Canada, DuPont, ConnexOntario, National Research Council Canada, The Grand Theatre, Ernst and Young LLP."
     },
     {
         id: 13,
@@ -130,9 +130,9 @@ var data = [
         title: "Financial Manager",
         what_you_do: "Bookkeeping",
         spirtual_role: "Mathematical Sherpa",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "Enjoying a cappuccino on the Amalfi coast overlooking the Mediterranean Sea on a beautiful sunny day.",
+        best_work_day: "When everything balances!",
+        best_work: "Successfully transferring Tenzing from one accounting program to another while simultaneously balancing the books on my head."
     },
     {
         id: 14,
@@ -140,9 +140,9 @@ var data = [
         title: "Project Manager",
         what_you_do: "Project Management + Copywriting",
         spirtual_role: "Kiwidian",
-        best_day_imaginable: "Canoeing an interior lake in Algonquin one morning and waking up 24 hours later in the market square of an old European city. Unlikely to happen, but there you have it.",
-        best_work_day: "When you can prove collaboration and capitalism aren't mutually exclusive. Or when the urge to jump for creative joy gets fulfilled without causing knee damage. And turning on the lights in the morning.",
-        best_work: "Strategy and creative for Libro, Perrier, Canada's Credit Unions, Nature Clean, City of Mississauga, Cadillac Fairview, Mitel Corporation, Bruce County, Ernst & Young LLP, Siskinds, St. Joseph's Health Care Hamilton, Symantec (Egghead Software), Conservation Council of Ontario, Russell Investments and Evergreen."
+        best_day_imaginable: "If time had no bounds and money really wasn't an object at all, a morning spent with my husband and baby girl traipsing round Hampton Court; lunch in Prague and back home to New Zealand in time for a beach side barbeque with the family.",
+        best_work_day: "A productive meeting that both client and Sherpas feel good about at the end. Presenting meaningful creative that communicates a strong message and triggers a belly laugh. A really, really satisfying 3pm latte.",
+        best_work: "Brand development for The Commonwell Mutual Insurance Company, project management for MSF (Doctors Without Borders), CICBV, Community Living Ontario, The Canadian Centre for Refugee and Immigrant Health Care, the Municipality of Brighton and International School Leadership."
     }
 ];
 
