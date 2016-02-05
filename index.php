@@ -64,8 +64,11 @@ $personalities_bios_mobile = new Page("personalities-bios-mobile", "personalitie
 $gallery_legacy_mobile = new Page("gallery-legacy-mobile", "gallery-legacy-mobile", "mobile-pages/gallery-legacy-mobile.html");
 $services_skills_mobile = new Page("services-skills-mobile", "services-skills-mobile", "mobile-pages/services-skills-mobile.html");
 
+$privacy_mobile = new Page("privacy-mobile", "privacy-mobile", "mobile-pages/privacy-mobile.html");
+$contact_mobile = new Page("contact-mobile", "contact-mobile", "mobile-pages/contact-mobile.html");
+
 $mobileUtilityPages = array();
-array_push($mobileUtilityPages, $personalities_bios_mobile, $gallery_legacy_mobile, $services_skills_mobile);
+array_push($mobileUtilityPages, $personalities_bios_mobile, $gallery_legacy_mobile, $services_skills_mobile, $privacy_mobile, $contact_mobile);
 $mobileUtilityPageList = new PageHandle($mobileUtilityPages);
 
 
