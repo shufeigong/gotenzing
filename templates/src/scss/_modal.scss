@@ -84,7 +84,7 @@
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
    .mobile-modal{
-       border:solid 1px red;       
+       //border:solid 1px red;       
        margin-top:73px;
 	   margin-left:15px;
 	   //margin-right:15px;
@@ -100,13 +100,13 @@
 	                position:absolute;
 	                right:25px;
 	                top:17px;
-	                border:solid 1px green;
+	                //border:solid 1px green;
 	                background : url(../../dist/img/mobile-close.svg) no-repeat;
 	                display: inline-block;
 	              }//end of .mobile-close
       
         .mobile-page-content{
-                   border:solid 1px blue;
+                   //border:solid 1px blue;
                    .mobile-title{
                       margin-top:50px;
                       margin-bottom:25px;
@@ -120,11 +120,11 @@
                      }//end of .mobile-text-div
                     
                     .mobile-img-show{ 
-                         border:solid 1px red;
+                         //border:solid 1px red;
                          margin-top:30px;
                          .mobile-pop{cursor:pointer;}
                          .carousel-indicators{
-                            border:solid 1px green;
+                            //border:solid 1px green;
                             bottom:-70px;
                             z-index:1;
                             li{background-color:#b9b8ba;border:solid 1px #77777a;margin:0; &.active{background-color:#ffffff;border:solid 1px #77777a;width:10px;height:10px;}}
@@ -138,8 +138,8 @@
    }//end of .mobile-modal
    
    .mobile-pop-modal{
-                           border:solid 1px red;       
-					       margin-top:73px;
+                           //border:solid 1px red;       
+					       margin-top:70px;
 						   //margin-left:15px;
 						   //margin-right:15px;
 						   overflow-x:hidden;
@@ -160,7 +160,7 @@
                          }
                          
                          .mobile-pop-slide{
-                           border:solid 1px blue;
+                           //border:solid 1px blue;
                            margin-top:80px;
                            height:90%;
                            min-height:600px;
