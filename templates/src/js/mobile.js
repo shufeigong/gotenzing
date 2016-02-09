@@ -48,6 +48,13 @@
 
             $("body").css("overflow-y", "hidden");
             $($(this).children("a").attr("data-target")).addClass("in").css("display", "block");
+
+            var target = $(this).find('a').attr('href');
+
+            // Open desktop menu content
+            if(!$('.main-menu').find('#' + target).hasClass('orange')) {
+                $('.main-menu').find('#' + target).click();
+            }
         });
 
         $(".mobile-close").click(function (e) {
@@ -57,6 +64,11 @@
 
             //$("body").css("overflow-y","");
             $($(this).attr("close-target")).removeClass("in").css("display", "none");
+
+            // Close desktop menu content
+            var target = $(this).attr('data-id');
+            $('.main-menu').find('#' + target).parent().find('.sub-close-icon').click();
+
         });
 
         //mobile site menu///////////
@@ -80,6 +92,7 @@
         $(".mobile-pop-close").click(function (e) {
             e.preventDefault();
             $($(this).attr("close-target")).css("display", "none");
+
         });
 
         /////////////jquery touch swipe/////////

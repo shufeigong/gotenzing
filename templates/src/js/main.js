@@ -65,7 +65,7 @@
         // Execute code each time window size changes
         $(window).resize(
             viewport.changed(function() {
-                console.log('Current breakpoint: ', viewport.current());
+                //console.log('Current breakpoint: ', viewport.current());
             }, 150)
         );
 
@@ -147,6 +147,12 @@
 
                 $(this).addClass('orange');
             }
+
+            // Open mobile content
+            var target = $(this).attr('id');
+            if(!$('#' + target + '-mobile-page').hasClass('in')) {
+                $('#' + target + '-mobile').parent().click();
+            }
         });
 
         $(".sub-close-icon").click(function (e) {
@@ -154,10 +160,14 @@
             $.cookie("previousUrl", window.location.href, {path: "/"});
             window.history.pushState(null, null, "/"); //change url to be homepage
 
+            // Clear the timeline
             timeLine.clear();
             timeLine.add(TweenLite.to($(this).parent(".page-content"), 0.5, {"height": "0", ease: easeValue}));
+
+            // De-select the menu item
             $(this).parent(".page-content").prev("a").removeClass("orange");
 
+            // Return animation
             var i = 0;
             $(this).parents(".item").siblings().each(function () {
                 if (i == 0) {
@@ -172,7 +182,9 @@
 
             });
 
-
+            // Close mobile content as well
+            var target = $(this).closest('li.item').find('a').attr('id');
+            $('#' + target + '-mobile-page').css("display", "none");
 
             isFirstClick = true;
         });
