@@ -9,8 +9,7 @@
                 .find(".accordion-sign")
                 .toggleClass('accordion-close accordion-open');
         }
-        
-        
+
         $('#accordion, #mobile-accordion').on('hide.bs.collapse', toggleSign);
         $('#accordion, #mobile-accordion').on('show.bs.collapse', toggleSign);
     });
