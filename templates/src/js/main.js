@@ -223,8 +223,8 @@
             $('#' + target + '-mobile-page').modal('show');
         });
 
-        $(".sub-img-container").imagefill();
-        $(".slide-container").imagefill();
+        //$(".sub-img-container").imagefill();
+        //$(".slide-container").imagefill();
         //$(".pop-img-container").imagefill();
 
     });

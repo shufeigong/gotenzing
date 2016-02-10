@@ -27,7 +27,7 @@
                         font-family    : $font-site-bold;
                         color          : #77777a;
                         text-transform : uppercase;
-                        overflow: hidden;
+                        overflow       : hidden;
                         .grey {
                             color : #b9b8ba;
                         }
@@ -81,12 +81,14 @@
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
                             min-height    : 240px;
+                            overflow      : auto;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
                                 margin-left   : 25px;
+                                padding : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
                                 color         : #77777a;
@@ -100,8 +102,9 @@
                             .imgShow-div {
                                 margin : auto;
                                 width  : 45%;
-                                height : 100%;
-                                float  : right;
+                                height : 238px;
+                                //float  : right;
+                                padding: 0;
                                 ul {
                                     list-style : disc;
                                     li {
@@ -208,6 +211,7 @@
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
                             min-height    : 240px;
+                            overflow      : auto;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -227,8 +231,8 @@
                             .imgShow-div {
                                 margin : auto;
                                 width  : 45%;
-                                height : 100%;
-                                float  : right;
+                                height : 238px;
+                                //float  : right;
                                 .sub-img-container {
                                     height : 100%;
                                 }
