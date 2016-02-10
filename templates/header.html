@@ -39,7 +39,8 @@
 
                 <div class="div-iconlist">
                     <ul>
-                        <li><a href="https://www.facebook.com/" target="_blank">
+                        <li>
+                            <a href="https://www.facebook.com/Tenzing.co/" target="_blank">
                             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"
                                  style="width:17px;height:17px;">
                                 <style>.stt0 {
@@ -50,8 +51,10 @@
                                 <path class="stt0"
                                       d="M14.8 2.2v12.6H2.2V2.2h12.6m.5-2.2H1.7C.8 0 0 .8 0 1.7v13.6c0 .9.8 1.7 1.7 1.7h13.6c.9 0 1.7-.8 1.7-1.7V1.7c0-.9-.8-1.7-1.7-1.7z" />
                             </svg>
-                        </a></li>
-                        <li><a href="#" id="utility-privacy" data-toggle="modal" data-target=".modal#privacy">
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#" id="utility-privacy" data-toggle="modal" data-target=".modal#privacy" data-id="privacy">
                             <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 22"
                                  style="width:17px;height:22px;">
                                 <style>.stt0 {
@@ -69,8 +72,10 @@
                                 <ellipse class="stt0" cx="8.5" cy="14.1" rx="2" ry="1.9" />
                                 <path class="stt1" d="M13.5 7.9V5.6c0-2.6-2.2-4.6-5-4.6s-5 2.1-5 4.6v2.3" />
                             </svg>
-                        </a></li>
-                        <li><a href="#" id="utility-contact" data-toggle="modal" data-target=".modal#contact">
+                        </a>
+                        </li>
+                        <li>
+                            <a href="#" id="utility-contact" data-toggle="modal" data-target=".modal#contact" data-id="contact">
                             <svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17"
                                  style="width:18px;height:17px;">
                                 <style>.stt0 {
@@ -97,12 +102,12 @@
             </div>
         </div>
 
-        <div class="extension-header col-md-12">
+        <div class="extension-header col-md-12 hidden-xs">
             <div class="div-exlist">
                 <ul>
-                    <li><a href="#" id="utility-personalities-bios" data-toggle="modal" data-target=".modal#personalities-bios">PERSONALITIES + BIOS</a></li>
-                    <li><a href="#" id="utility-gallery-legacy" data-toggle="modal" data-target=".modal#gallery-legacy">GALLERY + LEGACY</a></li>
-                    <li><a href="#" id="utility-services-skills" data-toggle="modal" data-target=".modal#services-skills">SERVICES + SKILLS</a></li>
+                    <li><a href="#" id="utility-personalities-bios" data-toggle="modal" data-target=".modal#personalities-bios" data-id="personalities-bios">PERSONALITIES + BIOS</a></li>
+                    <li><a href="#" id="utility-gallery-legacy" data-toggle="modal" data-target=".modal#gallery-legacy" data-id="gallery-legacy">GALLERY + LEGACY</a></li>
+                    <li><a href="#" id="utility-services-skills" data-toggle="modal" data-target=".modal#services-skills" data-id="services-skills">SERVICES + SKILLS</a></li>
                 </ul>
             </div>
         </div>
@@ -112,16 +117,22 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     {% for page in pageList %}
-                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" data-target="#{{page.pageName}}-mobile-page" class="text-uppercase">{{page.pageName}}</a></li>
+                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" data-target=".modal#{{page.pageName}}-mobile-page" data-toggle="modal" class="text-uppercase">{{page.pageName}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
 
             <div class="utility-mobile-list">
                 <ul>
-                    <li class="mobile-item-side"><a href="utility/personalities-bios" data-target="#personalities-bios-mobile-page">Personalities + bios</a></li>
-                    <li class="mobile-item-side"><a href="utility/gallery-legacy" data-target="#gallery-legacy-mobile-page">Gallery + Legacy</a></li>
-                    <li class="mobile-item-side"><a href="utility/services-skills" data-target="#services-skills-mobile-page">Services + Skills</a></li>
+                    <li class="mobile-item-side utility">
+                        <a href="utility/personalities-bios" data-target=".modal#personalities-bios-mobile-page" id="personalities-bios-mobile-side" data-toggle="modal">Personalities + bios</a>
+                    </li>
+                    <li class="mobile-item-side utility">
+                        <a href="utility/gallery-legacy" data-target=".modal#gallery-legacy-mobile-page" id="gallery-legacy-mobile-side" data-toggle="modal">Gallery + Legacy</a>
+                    </li>
+                    <li class="mobile-item-side utility">
+                        <a href="utility/services-skills" data-target=".modal#services-skills-mobile-page" id="services-skills-mobile-side" data-toggle="modal">Services + Skills</a>
+                    </li>
                 </ul>
             </div>
 
@@ -131,13 +142,13 @@
                         <img src="/templates/dist/img/facebookiconmobile.svg" width="23px" height="23px" />
                         <a href="https://www.facebook.com/" target="_blank">Facebook</a>
                     </li>
-                    <li class="mobile-item-side">
+                    <li class="mobile-item-side utility">
                         <img src="/templates/dist/img/lockiconmobile.svg" width="20px" height="38px" />
-                        <a href="utility/privacy" data-target="#privacy-mobile-page">Privacy</a>
+                        <a href="utility/privacy" data-target=".modal#privacy-mobile-page" data-toggle="modal" data-id="privacy">Privacy</a>
                     </li>
-                    <li class="mobile-item-side">
+                    <li class="mobile-item-side utility">
                         <img src="/templates/dist/img/bookiconmobile.svg" width="25px" height="23px" />
-                        <a href="utility/privacy" data-target="#contact-mobile-page">Contact</a>
+                        <a href="utility/privacy" data-target=".modal#contact-mobile-page" data-toggle="modal" data-id="contact">Contact</a>
                     </li>
                 </ul>
             </div>
