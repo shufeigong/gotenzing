@@ -12,16 +12,10 @@
 /////1000px~////////////////////////////////
 @media screen and (min-width : 1000px) {
     .entry-content {
-        //border : solid 1px #333;
         margin-top : 30px;
         .main-menu {
-            //border : solid 1px red;
-            //width  : 95%;
             margin : 70px auto 0 auto;
             ul {
-                //padding-left:10px;
-                //padding-right:10px;
-                //border     : solid 1px blue;
                 list-style : none;
                 padding    : 0px;
                 > li {
@@ -33,7 +27,7 @@
                         font-family    : $font-site-bold;
                         color          : #77777a;
                         text-transform : uppercase;
-                        //line-height    : 0.65;
+                        overflow: hidden;
                         .grey {
                             color : #b9b8ba;
                         }
@@ -66,14 +60,10 @@
                         }
                     }
                     .page-content {
-                        //border:solid 1px red;
-                        //border-top: solid 1px #b9b8ba;
-                        //border-bottom: solid 1px #b9b8ba;
                         position : relative;
                         overflow : hidden;
                         height   : 0;
 
-                        //&.border-class{border-top: solid 1px #b9b8ba;border-bottom: solid 1px #b9b8ba;margin-top:10px;margin-bottom:10px;}
                         .sub-close-icon {
                             background : url(../../dist/img/sub-close-icon.svg) no-repeat;
                             width      : 15px;
@@ -90,7 +80,7 @@
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
-                            height        : 239px;
+                            min-height    : 240px;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -112,10 +102,19 @@
                                 width  : 45%;
                                 height : 100%;
                                 float  : right;
-                                ul{
-                                   list-style:disc;
-                                   li{@include font-size(1.2);font-family:$font_site-default;color:#77777a;margin-bottom:5px;width:190px;.client-name{font-family:$font-site-bold;}}
-                                  }
+                                ul {
+                                    list-style : disc;
+                                    li {
+                                        @include font-size(1.2);
+                                        font-family   : $font_site-default;
+                                        color         : #77777a;
+                                        margin-bottom : 5px;
+                                        width         : 190px;
+                                        .client-name {
+                                            font-family : $font-site-bold;
+                                        }
+                                    }
+                                }
                                 .sub-img-container {
                                     height : 100%;
                                 }
@@ -141,16 +140,10 @@
 ////640~999px///////////////////////////////////////////////////
 @media screen and (min-width : 641px) and (max-width : 999px) {
     .entry-content {
-        //border : solid 1px #333;
         margin-top : 30px;
         .main-menu {
-            //border : solid 1px red;
-            //width  : 95%;
             margin : 70px auto 0 auto;
             ul {
-                //padding-left:10px;
-                //padding-right:10px;
-                //border     : solid 1px blue;
                 list-style : none;
                 padding    : 0px;
                 > li {
@@ -162,7 +155,6 @@
                         font-family    : $font-site-bold;
                         color          : #77777a;
                         text-transform : uppercase;
-                        //line-height    : 0.65;
                         .grey {
                             color : #b9b8ba;
                         }
@@ -195,14 +187,10 @@
                         }
                     }
                     .page-content {
-                        //border:solid 1px red;
-                        //border-top: solid 1px #b9b8ba;
-                        //border-bottom: solid 1px #b9b8ba;
                         position : relative;
                         overflow : hidden;
                         height   : 0;
 
-                        //&.border-class{border-top: solid 1px #b9b8ba;border-bottom: solid 1px #b9b8ba;margin-top:10px;margin-bottom:10px;}
                         .sub-close-icon {
                             background : url(../../dist/img/sub-close-icon.svg) no-repeat;
                             width      : 15px;
@@ -219,7 +207,7 @@
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
-                            height        : 239px;
+                            min-height    : 240px;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -270,26 +258,21 @@
     }
 
     .mobile-content {
-        //border:solid 1px #333;
         margin-top   : 73px;
         margin-left  : 15px;
         margin-right : 15px;
         overflow-x   : hidden;
 
         .mobile-main-menu {
-            //border:solid 1px red;
             height       : 480px;
-            //min-height: 400px;
             position     : relative;
             overflow-y   : scroll;
             overflow-x   : hidden;
             margin-right : -15px;
-            //margin-top: 5px;
             ul {
                 list-style : none;
                 padding    : 0px;
                 margin     : 75px 0 0 0;
-                //border     : solid 1px blue;
                 height     : 655px;
                 li {
                     line-height : 0.97;
@@ -341,7 +324,6 @@
         //end of .mobile-main-menu
 
         .mobile-main-indicator {
-            //border:solid 1px #333;
             width    : 10px;
             right    : 20px;
             top      : 200px;
@@ -372,11 +354,3 @@
     //end of .mobile-content
 
 }
-
-
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 @media screen and (min-width : 641px) {
-
 	.bio-container {
 	    .panel-group {
 	        .panel-default {
@@ -47,6 +46,8 @@
 	                border-top: none;
 	                border-bottom: 1px solid #989799;
 	                padding-bottom: 0;
+
+
 	            }
 	        }
 	    }
@@ -105,13 +106,17 @@
 	            }//end of .panel-heading
 	            
 	          .panel-collapse{
-	                width:100%;
+	                width:90%;
 	                margin-left:22px;
 		            .panel-body {
 		                padding-left: 0;
 		                border-top: none;
 		                //border-bottom: 1px solid #989799;
 		                padding-bottom: 0;
+
+						p {
+							line-height: 1.6;
+						}
 		                
 		            }//end of .panel-body
 	            }//end of .panel-collapse

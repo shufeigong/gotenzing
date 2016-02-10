@@ -355,7 +355,6 @@
 
 ////640~999px///////////////////////////////////////////////////
 @media screen and (min-width : 641px) and (max-width : 999px) {
-
     .imgShow-div {
         .subpage {
 
@@ -657,6 +656,17 @@
 
     }
 
+}
+
+
+@media screen and (max-width : 640px) {
+    .gallery-container {
+        .gallery-item {
+            img {
+                max-width: 90px;
+            }
+        }
+    }
 }
 
 

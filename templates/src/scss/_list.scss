@@ -18,3 +18,45 @@
         }
     }
 }
+
+@media screen and (max-width : 640px) {
+    .skills-list.no-border {
+        .col-1 {
+            padding-left: 0;
+        }
+        ul {
+            padding: 0;
+
+            li {
+                @include font-size(1.6);
+                border-top: none;
+                &:before {
+                    content: "– ";
+                    text-indent: -5px;
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .skills-list.with-border {
+        .col-1 {
+            padding-left: 0;
+        }
+        ul {
+            padding: 0;
+
+            li {
+                @include font-size(1.6);
+                border-top: 1px solid #b9b8ba;
+
+                &:last-child {
+                    border-bottom: 1px solid #b9b8ba;
+                }
+            }
+        }
+    }
+}

@@ -20190,19 +20190,19 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'additional-info' },
-	                        ' ',
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'obl' },
-	                            this.props.data.title
+	                            this.props.data.title,
+	                            ', '
 	                        ),
-	                        '  ',
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'obl' },
-	                            this.props.data.what_you_do
+	                            this.props.data.what_you_do,
+	                            ', '
 	                        ),
-	                        '  ',
+	                        _react2.default.createElement('br', null),
 	                        _react2.default.createElement(
 	                            'span',
 	                            { className: 'bold-obl' },

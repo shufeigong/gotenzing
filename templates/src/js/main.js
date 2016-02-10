@@ -18,7 +18,14 @@
             location.reload();
         });
 
-        if ($(window).width() > 640) {
+        $(window).resize(
+            viewport.changed(function () {
+                if (viewport.is('xs')) {
+                }
+            }, 150)
+        );
+
+        //if ($(window).width() > 640) {
             //normal version relaod page
             if (link !== "" && isUtilityPage == -1) {
                 var thisItem = $("[href=" + link + "]");
@@ -55,11 +62,11 @@
 
                 $("#" + link).modal('show');
             }
-        } else {
+        //} else {
             //mobile version reload page
             //$("#" + link + "-mobile-page").addClass("in").css("display", "block");
             $("#" + link + "-mobile-page").modal('show');
-        }
+        //}
 
         /////main page extend menu///////
         $(".menuicon").click(function () {
