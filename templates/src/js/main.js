@@ -6,6 +6,7 @@
     $(document).ready(function () {
         var isFirstClick = true;
         var timeLine = new TimelineMax();
+        var easeValue = Power2.easeInOut;
 
         // Use polyfill for history
         var location = window.history.location || window.location;
@@ -17,57 +18,48 @@
             location.reload();
         });
 
-        function reloadPage() {
-            if ($(window).width() > 640) {
-                //normal version relaod page
-                if (link !== "" && isUtilityPage == -1) {
-                    var thisItem = $("[href=" + link + "]");
-                    thisItem.addClass('orange');
-                    var i = 0;
-                    thisItem.parent().siblings().each(function () {
-                        if (i == 0) {
-                            timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                                "fontSize": "20px",
-                                ease: Power2.easeInOut
-                            }));
-                            i++;
-                        } else {
-                            timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                                "fontSize": "20px",
-                                ease: Power2.easeInOut
-                            }), "-=0.45");
-                        }
-                    });
+        if ($(window).width() > 640) {
+            //normal version relaod page
+            if (link !== "" && isUtilityPage == -1) {
+                var thisItem = $("[href=" + link + "]");
+                thisItem.addClass('orange');
+                var i = 0;
+                thisItem.parent().siblings().each(function () {
+                    if (i == 0) {
+                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                            "fontSize": "20px",
+                            ease: Power2.easeInOut
+                        }));
+                        i++;
+                    } else {
+                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                            "fontSize": "20px",
+                            ease: Power2.easeInOut
+                        }), "-=0.45");
+                    }
+                });
 
-                    timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
-                    timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
-                        "height": "0",
-                        ease: Power2.easeInOut
-                    }), "-=0.35");
-                    isFirstClick = false;
-                } else if (link !== "" && isUtilityPage != -1) {
-                    // If the page is utility page with the orange menu down
-                    $(".arrow-down, .extension-header").slideDown();
-                    $(".shadow-main").show();
-                    $(".menuicon").parent("li").addClass('orange');
+                timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
+                timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
+                    "height": "0",
+                    ease: Power2.easeInOut
+                }), "-=0.35");
+                isFirstClick = false;
+            } else if (link !== "" && isUtilityPage != -1) {
+                // If the page is utility page with the orange menu down
+                $(".arrow-down, .extension-header").slideDown();
+                $(".shadow-main").show();
+                $(".menuicon").parent("li").addClass('orange');
 
-                    $('.div-exlist').find('#utility-' + link).addClass('selected');
+                $('.div-exlist').find('#utility-' + link).addClass('selected');
 
-                    $("#" + link).modal('show');
-                }
-            } else {//mobile version reload page
-                $("#" + link + "-mobile-page").addClass("in").css("display", "block");
+                $("#" + link).modal('show');
             }
+        } else {
+            //mobile version reload page
+            //$("#" + link + "-mobile-page").addClass("in").css("display", "block");
+            $("#" + link + "-mobile-page").modal('show');
         }
-
-        reloadPage();
-
-        // Execute code each time window size changes
-        $(window).resize(
-            viewport.changed(function() {
-                //console.log('Current breakpoint: ', viewport.current());
-            }, 150)
-        );
 
         /////main page extend menu///////
         $(".menuicon").click(function () {
@@ -93,8 +85,9 @@
             $('.ham-icon').removeClass('hidden');
         });
 
-        //////main menu animation////
-        var easeValue = Power2.easeInOut;
+        /*
+         *  Main menu animation
+         */
 
         $(".item").children("a").click(function () {
             $.cookie("previousUrl", window.location.href, {path: "/"});
@@ -150,9 +143,7 @@
 
             // Open mobile content
             var target = $(this).attr('id');
-            if(!$('#' + target + '-mobile-page').hasClass('in')) {
-                $('#' + target + '-mobile').parent().click();
-            }
+            $('#' + target + '-mobile-page').modal('show');
         });
 
         $(".sub-close-icon").click(function (e) {
@@ -184,7 +175,7 @@
 
             // Close mobile content as well
             var target = $(this).closest('li.item').find('a').attr('id');
-            $('#' + target + '-mobile-page').css("display", "none");
+            $('#' + target + '-mobile-page').modal('hide');
 
             isFirstClick = true;
         });
@@ -198,17 +189,31 @@
                 $.cookie("previousUrl", window.location.href, {path: "/"});
                 $.cookie("utilityMenuOpen", true);
             }
+
             window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
+
+            // Open Mobile utility menu content
+            var target = $(this).attr("data-id");
+            $('#' + target + '-mobile-page').modal('show');
+        });
+
+        // Close utility menu content
+        $('.utility-close-icon').on('click', function () {
+            var target = $(this).closest('.modal-fullscreen').attr('id');
+            $('#' + target + '-mobile-page').modal('hide');
         });
 
         // Set push state for utility social icon menu
-        $(".div-iconlist a").on('click', function () {
+        $(".div-iconlist ul li a").not('.menuicon').on('click', function () {
 
             if ($.cookie('utilityMenuOpen') == null) {
                 $.cookie("previousUrl", window.location.href, {path: "/"});
                 $.cookie("utilityMenuOpen", true);
             }
             window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
+
+            var target = $(this).attr('data-id');
+            $('#' + target + '-mobile-page').modal('show');
         });
 
         $(".sub-img-container").imagefill();
