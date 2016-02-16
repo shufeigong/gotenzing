@@ -17,9 +17,10 @@
             margin : 70px auto 0 auto;
             ul {
                 list-style : none;
-                padding    : 0px;
+                padding    : 0;
                 > li {
                     line-height : 0.90;
+
                     > a {
                         display        : inline-block;
                         margin-left    : 25px;
@@ -31,6 +32,7 @@
                         .grey {
                             color : #b9b8ba;
                         }
+
                         &.orange {
                             color : #f7a800;
                             .grey {
@@ -40,12 +42,13 @@
 
                         &:hover, &:focus {
                             text-decoration : none;
-                            color           : #f7a800;
-                            .grey {
-                                color : #ffe0ae;
-                            }
+                            //color           : #f7a800;
+                            //.grey {
+                            //    color : #ffe0ae;
+                            //}
                         }
                     }
+
                     #engaging, #integrating, #spending {
                         color : #b9b8ba;
                         &.orange {
@@ -56,7 +59,7 @@
                         }
                         &:hover, &:focus {
                             text-decoration : none;
-                            color           : #f7a800;
+                            //color           : #f7a800;
                         }
                     }
                     .page-content {
@@ -76,6 +79,7 @@
                         }
 
                         .sub-container {
+                            display: inline-block;
                             margin-top    : 1px;
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
@@ -87,7 +91,7 @@
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
                                 margin-left   : 25px;
-                                padding : 0;
+                                padding       : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
                                 color         : #77777a;
@@ -99,11 +103,11 @@
                                 }
                             }
                             .imgShow-div {
-                                margin : auto;
-                                width  : 45%;
-                                height : 238px;
+                                margin  : auto;
+                                width   : 45%;
+                                height  : auto;
                                 //float  : right;
-                                padding: 0;
+                                padding : 0;
                                 ul {
                                     list-style : disc;
                                     li {
@@ -120,7 +124,7 @@
                                 .sub-img-container {
                                     height : 100%;
                                     img {
-                                        float: right;
+                                        float : right;
                                     }
                                 }
                                 .slide-container {
@@ -150,9 +154,10 @@
             margin : 70px auto 0 auto;
             ul {
                 list-style : none;
-                padding    : 0px;
+                padding    : 0;
                 > li {
                     line-height : 0.90;
+
                     > a {
                         display        : inline-block;
                         margin-left    : 25px;
@@ -172,11 +177,12 @@
 
                         &:hover, &:focus {
                             text-decoration : none;
-                            color           : #f7a800;
+                            //color           : #f7a800;
                             .grey {
-                                color : #ffe0ae;
+                                //color : #ffe0ae;
                             }
                         }
+
                     }
                     #engaging, #integrating, #spending {
                         color : #b9b8ba;
@@ -208,18 +214,20 @@
                         }
 
                         .sub-container {
+                            display: inline-block;
                             margin-top    : 1px;
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
                             min-height    : 239px;
+
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
                                 margin-left   : 25px;
-                                padding: 0;
+                                padding       : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
                                 color         : #77777a;
@@ -231,14 +239,14 @@
                                 }
                             }
                             .imgShow-div {
-                                margin : auto;
-                                width  : 45%;
-                                height : 238px;
-                                padding: 0;
+                                margin  : auto;
+                                width   : 45%;
+                                height  : auto;
+                                padding : 0;
                                 .sub-img-container {
                                     height : 100%;
                                     img {
-                                        float: right;
+                                        float : right;
                                     }
                                 }
                                 .slide-container {

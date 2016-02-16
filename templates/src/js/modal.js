@@ -7,7 +7,7 @@
 
         modalCarousel.on('show.bs.modal', function (event) {
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-gallery");
+                $(".modal-backdrop").addClass("modal-backdrop-gallery hidden-xs");
             }, 0);
         });
 

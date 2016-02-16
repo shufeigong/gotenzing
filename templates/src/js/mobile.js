@@ -61,6 +61,8 @@
             var mainMenuItem = $('.main-menu').find('#' + target);
             timeLine.clear();
             mainMenuItem.addClass('orange');
+            mainMenuItem.attr('style', '');
+
 
             var i = 0;
             mainMenuItem.parent().siblings().each(function () {
