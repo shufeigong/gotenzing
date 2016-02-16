@@ -140,18 +140,30 @@
 
             var menu = $(this);
 
+            var isLightGrey = $(menu).attr('id') == 'engaging' || $(menu).attr('id') == 'integrating' || $(menu).attr('id') == 'spending';
+
             var colorGrey = "#77777a";
             var colorLightGrey = "#b9b8ba";
 
             var duration = 0.5;
 
-            TweenLite.to(menu, duration, {
-                "css": {
-                    "color": colorGrey,
-                    "fontSize": oriFontSize + "px"
-                },
-                ease: easeValue
-            });
+            if(isLightGrey) {
+                TweenLite.to(menu, duration, {
+                    "css": {
+                        "color": colorLightGrey,
+                        "fontSize": oriFontSize + "px"
+                    },
+                    ease: easeValue
+                });
+            } else {
+                TweenLite.to(menu, duration, {
+                    "css": {
+                        "color": colorGrey,
+                        "fontSize": oriFontSize + "px"
+                    },
+                    ease: easeValue
+                });
+            }
 
             TweenLite.to($(menu).find('.grey'), duration, {
                 "css": {"color": colorLightGrey},
