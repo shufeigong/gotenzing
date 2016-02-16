@@ -59,6 +59,10 @@
     width        : 100%;
 }
 
+.modal-open {
+    overflow: auto;
+}
+
 @media (min-width : 768px) {
     .modal-fullscreen .modal-dialog {
         width : 750px;
@@ -83,6 +87,10 @@
 
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
+    .modal-open {
+        overflow: hidden;
+    }
+
     .mobile-modal {
         margin-top       : 50px;
         margin-left      : 15px;
@@ -105,6 +113,7 @@
 
         .mobile-page-content {
             margin-top: 60px;
+            padding-bottom: 50px;
             .mobile-title {
                 margin-top    : 50px;
                 margin-bottom : 25px;

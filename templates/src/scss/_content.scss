@@ -80,7 +80,7 @@
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
-                            min-height    : 240px;
+                            min-height    : 239px;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -119,6 +119,9 @@
                                 }
                                 .sub-img-container {
                                     height : 100%;
+                                    img {
+                                        float: right;
+                                    }
                                 }
                                 .slide-container {
                                     cursor : pointer;
@@ -209,13 +212,14 @@
                             margin-bottom : 10px;
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
-                            min-height    : 240px;
+                            min-height    : 239px;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
                                 margin-left   : 25px;
+                                padding: 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
                                 color         : #77777a;
@@ -230,9 +234,12 @@
                                 margin : auto;
                                 width  : 45%;
                                 height : 238px;
-                                //float  : right;
+                                padding: 0;
                                 .sub-img-container {
                                     height : 100%;
+                                    img {
+                                        float: right;
+                                    }
                                 }
                                 .slide-container {
                                     cursor : pointer;

@@ -26,7 +26,7 @@
         );
 
         //if ($(window).width() > 640) {
-            //normal version relaod page
+            //normal version reload page
             if (link !== "" && isUtilityPage == -1) {
                 var thisItem = $("[href=" + link + "]");
                 thisItem.addClass('orange');
@@ -51,7 +51,9 @@
                     "height": "0",
                     ease: Power2.easeInOut
                 }), "-=0.35");
+
                 isFirstClick = false;
+
             } else if (link !== "" && isUtilityPage != -1) {
                 // If the page is utility page with the orange menu down
                 $(".arrow-down, .extension-header").slideDown();
@@ -68,7 +70,7 @@
             $("#" + link + "-mobile-page").modal('show');
         //}
 
-        /////main page extend menu///////
+        // Main page extend menu
         $(".menuicon").click(function () {
             $(".arrow-down, .extension-header").slideToggle();
             $(".shadow-main").toggle();
@@ -97,6 +99,9 @@
          */
 
         $(".item").children("a").click(function () {
+            //$(this).closest('ul').find('open').removeClass('open');
+            $('.mobile-content').find('.mobile-modal.in').modal('hide');
+
             $.cookie("previousUrl", window.location.href, {path: "/"});
             window.history.pushState(null, null, "/" + $(this).attr("href"));
             //change url to be current subpage
@@ -122,6 +127,10 @@
 
                 timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
                 timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
+                //timeLine.add(TweenLite.to($(this).parent().find('.sub-container'), 0.5, {"css": {"border-top-width":"1px"}, ease: easeValue}));
+
+                //timeLine.add(TweenLite.to($(this).parent(), 0.5, {"css": {"border-bottom-width":"1px"}, ease: easeValue}), "-=0.5");
+
                 isFirstClick = false;
             } else {
                 timeLine.clear();
@@ -144,6 +153,10 @@
                 timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}), "feature");
                 timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
                 timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
+
+                //timeLine.add(TweenLite.to($(this).parent().find('.sub-container'), 0.5, {"css": {"border-top-width":"1px"}, ease: easeValue}));
+
+                //timeLine.add(TweenLite.to($(this).parent(), 0.5, {"css": {"border-bottom-width":"1px"}, ease: easeValue}), "-=0.5");
 
                 $(this).addClass('orange');
             }
