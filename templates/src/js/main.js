@@ -4,6 +4,9 @@
     $.removeCookie("utilityMenuOpen");
 
     $(document).ready(function () {
+        initFirstClickMenuAnimation();
+        initNoFirstClickMenuAnimation();
+
         var isFirstClick = true;
         var timeLine = new TimelineMax({
             onComplete: function () {
@@ -110,27 +113,13 @@
                 return false;
             }
 
-            var menu = $(this);
-            var currentFontSize = parseFloat($(menu).css('font-size'));
-            oriFontSize = currentFontSize;
-            var colorOrange = '#f7a800';
-            var colorLightOrange = '#ffe0ae';
+            var elem = $(this).parent()[0];
 
-            var fontSizeAdjustment = 3;
-            var duration = 0.5;
-
-            TweenLite.to(menu, duration, {
-                "css": {
-                    "color": colorOrange,
-                    "fontSize": (currentFontSize + fontSizeAdjustment) + "px"
-                },
-                ease: easeValue
-            });
-
-            TweenLite.to($(menu).find('.grey'), duration, {
-                "css": {"color": colorLightOrange},
-                ease: easeValue
-            });
+            if(isFirstClick) {
+                elem.firstClickAnimation.play();
+            } else {
+                elem.noFirstClickAnimation.play();
+            }
 
         }, function () {
             // Prevent to open the same mobile modal
@@ -138,37 +127,13 @@
                 return false;
             }
 
-            var menu = $(this);
+            var elem = $(this).parent()[0];
 
-            var isLightGrey = $(menu).attr('id') == 'engaging' || $(menu).attr('id') == 'integrating' || $(menu).attr('id') == 'spending';
-
-            var colorGrey = "#77777a";
-            var colorLightGrey = "#b9b8ba";
-
-            var duration = 0.5;
-
-            if(isLightGrey) {
-                TweenLite.to(menu, duration, {
-                    "css": {
-                        "color": colorLightGrey,
-                        "fontSize": oriFontSize + "px"
-                    },
-                    ease: easeValue
-                });
+            if(isFirstClick) {
+                elem.firstClickAnimation.reverse();
             } else {
-                TweenLite.to(menu, duration, {
-                    "css": {
-                        "color": colorGrey,
-                        "fontSize": oriFontSize + "px"
-                    },
-                    ease: easeValue
-                });
+                elem.noFirstClickAnimation.reverse();
             }
-
-            TweenLite.to($(menu).find('.grey'), duration, {
-                "css": {"color": colorLightGrey},
-                ease: easeValue
-            });
         });
 
         $(".item").children("a").click(function () {
@@ -366,18 +331,16 @@
         //$(".pop-img-container").imagefill();
     });
 
-    function initMenuAnimation() {
+    function initFirstClickMenuAnimation() {
         $('.main-menu ul > li.item').each(function (index, element) {
             var colorOrange = '#f7a800';
             var colorLightOrange = '#ffe0ae';
-            var colorGrey = "#77777a";
-            var colorLightGrey = "#b9b8ba";
 
             var menu = $(element).find('> a');
             var hasGreyClass = $(menu).find('.grey');
 
             var tl = new TimelineMax({paused: true});
-            var currentFontSize = parseFloat($(menu).css('font-size'));
+            var currentFontSize = 67;
             var fontSizeAdjustment = 3;
             var duration = 0.5;
             var easeValue = Power2.easeInOut;
@@ -398,43 +361,42 @@
                     ease: easeValue
                 });
             }
-            element.animation = tl;
+            element.firstClickAnimation = tl;
         });
     }
 
-    function resetMenuAnimation() {
+    function initNoFirstClickMenuAnimation() {
         $('.main-menu ul > li.item').each(function (index, element) {
-            element.animation.clear();
-
             var colorOrange = '#f7a800';
             var colorLightOrange = '#ffe0ae';
-            var colorGrey = "#77777a";
-            var colorLightGrey = "#b9b8ba";
 
             var menu = $(element).find('> a');
             var hasGreyClass = $(menu).find('.grey');
 
-            var currentFontSize = parseFloat($(menu).css('font-size'));
+            var tl = new TimelineMax({paused: true});
+            var currentFontSize = 20;
             var fontSizeAdjustment = 3;
             var duration = 0.5;
             var easeValue = Power2.easeInOut;
-            console.log(currentFontSize);
+
             if (hasGreyClass.length > 0) {
-                element.animation.to(menu, duration, {
+                tl.to(menu, duration, {
                     "css": {"color": colorOrange, "fontSize": (currentFontSize + fontSizeAdjustment) + "px"},
                     ease: easeValue
                 });
 
-                element.animation.to($(menu).find('.grey'), duration, {
+                tl.to($(menu).find('.grey'), duration, {
                     "css": {"color": colorLightOrange},
                     ease: easeValue
                 }, "-=" + duration);
             } else {
-                element.animation.to(menu, duration, {
+                tl.to(menu, duration, {
                     "css": {"color": colorOrange, "fontSize": (currentFontSize + fontSizeAdjustment) + "px"},
                     ease: easeValue
                 });
             }
+
+            element.noFirstClickAnimation = tl;
         });
     }
 
