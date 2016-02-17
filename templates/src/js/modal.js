@@ -14,7 +14,7 @@
         modalFullscreen.on('show.bs.modal', function (event) {
             console.log('full show');
             // Close open modal box
-            $(".modal-fullscreen.fade.in").modal('hide');
+            $(".modal-fullscreen.fade.in, .mobile-modal.fade.in").modal('hide');
 
             var zIndex = 1040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
@@ -28,7 +28,7 @@
         mobileModal.on('show.bs.modal', function (event) {
             console.log('mobile show');
 
-            $(".modal-mobile.fade.in").modal('hide');
+            $(".modal-mobile.fade.in, .modal-fullscreen.fade.in").modal('hide');
 
             var zIndex = 1040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
