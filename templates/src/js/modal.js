@@ -104,6 +104,10 @@
         mobileModal.on('hidden.bs.modal', function (event) {
             $('body').css('overflow', 'auto');
         });
+
+        modalPopup.on('hidden.bs.modal', function (event) {
+            $('body').css('overflow', 'auto');
+        });
     });
 
 })(jQuery);

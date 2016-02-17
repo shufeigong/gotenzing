@@ -63,7 +63,6 @@
             mainMenuItem.addClass('orange');
             mainMenuItem.attr('style', '');
 
-
             var i = 0;
             mainMenuItem.parent().siblings().each(function () {
                 if (i == 0) {
@@ -186,13 +185,12 @@
 
         ////mobile pop photo modal////
         $(".mobile-pop").click(function () {
-            $($(this).attr("data-target")).css("display", "block");
+            $($(this).attr("data-target")).show();
         });
 
         $(".mobile-pop-close").click(function (e) {
             e.preventDefault();
-            $($(this).attr("close-target")).css("display", "none");
-
+            $($(this).attr("close-target")).hide();
         });
 
         /////////////jquery touch swipe/////////
@@ -202,6 +200,20 @@
             },
             wipeRight: function () {
                 jQuery("#brading-mobile-img-show").carousel("prev")
+            },
+            min_move_x: 20,
+            preventDefaultEvents: false
+        });
+
+        jQuery('#lightbox-mobile-pop-gallery-page').touchwipe({
+            wipeLeft: function () {
+                alert('left');
+                jQuery('#lightbox-mobile-pop-gallery-page').carousel("next");
+            },
+            wipeRight: function () {
+                alert('right');
+
+                jQuery('#lightbox-mobile-pop-gallery-page').carousel("prev")
             },
             min_move_x: 20,
             preventDefaultEvents: false
