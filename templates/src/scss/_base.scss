@@ -74,3 +74,10 @@ ul, ol {
 img {
     max-width: 100%;
 }
+
+a {
+    color:#f7a800;
+    &:hover {
+        color : #77777a;
+    }
+}

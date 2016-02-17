@@ -115,11 +115,11 @@ $(function () {
             thumbnail_image: "CWL_2014spring_Website_119x119.jpg",
             caption: ""
         },
-        //{
-        //    original_image: "CWL_2015spring_Ad_1407x875.jpg",
-        //    thumbnail_image: "CWL_2015spring_Ad_119x119.jpg",
-        //    caption: ""
-        //},
+        {
+            original_image: "CWL_2015spring_Ad_1407x875.jpg",
+            thumbnail_image: "CWL_2015spring_Ad_119x119.jpg",
+            caption: ""
+        },
         {
             original_image: "Evergreen_PrintAds_1407x875.jpg",
             thumbnail_image: "Evergreen_PrintAds_119x119.jpg",
@@ -145,11 +145,11 @@ $(function () {
             thumbnail_image: "Huntsville_Billboard_Antiques_119x119.jpg",
             caption: ""
         },
-        //{
-        //    original_image: "Huntsville_Billboard_Toque_1407x875.jpg",
-        //    thumbnail_image: "Huntsville_Billboard_Toque_119x119.jpg",
-        //    caption: ""
-        //},
+        {
+            original_image: "Huntsville_Billboard_Toque_1407x875.jpg",
+            thumbnail_image: "Huntsville_Billboard_Toque_119x119.jpg",
+            caption: ""
+        },
         {
             original_image: "LFP_ChangeisGood_MorrisAd_1407x875.jpg",
             thumbnail_image: "LFP_ChangeisGood_MorrisAd_119x119.jpg",
@@ -161,8 +161,8 @@ $(function () {
             caption: ""
         },
         {
-            original_image: "Libro_2013_BeYou_Ad_1407x875.jpg",
-            thumbnail_image: "Libro_2013_BeYou_Ad_119X119.jpg",
+            original_image: "Libro_2013_BeYou_Ads_1407x875.jpg",
+            thumbnail_image: "Libro_2013_BeYou_Ads_119X119.jpg",
             caption: ""
         },
         {
@@ -210,11 +210,11 @@ $(function () {
             thumbnail_image: "NClean_Pregnant_PrintAd_119x119.jpg",
             caption: ""
         },
-        //{
-        //    original_image: "NCU_PS_Postcard_1407x875.jpg",
-        //    thumbnail_image: "NCU_PS_Postcard_119x119.jpg",
-        //    caption: ""
-        //},
+        {
+            original_image: "NCU_PS_Postcard_1407x875.jpg",
+            thumbnail_image: "NCU_PS_Postcard_119x119.jpg",
+            caption: ""
+        },
         {
             original_image: "NCU_PS_WebsiteNing_1407x875.jpg",
             thumbnail_image: "NCU_PS_WebsiteNing_119x119.jpg",
@@ -241,8 +241,8 @@ $(function () {
             caption: ""
         },
         {
-            original_image: "RCB_2010_IronSpke_Can_1407x875.jpg",
-            thumbnail_image: "RCB_2010_IronSpke_Can_119x119.jpg",
+            original_image: "RCB_2010_DE_IronSpke_Cans_1407x875.jpg",
+            thumbnail_image: "RCB_2010_DE_IronSpke_Cans_119x119.jpg",
             caption: ""
         },
         {

@@ -19,6 +19,12 @@
     }
 }
 
+.contact-list {
+    li {
+        margin-bottom: 10px;
+    }
+}
+
 @media screen and (max-width : 640px) {
     .skills-list.no-border {
         .col-1 {

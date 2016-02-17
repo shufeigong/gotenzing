@@ -214,15 +214,27 @@
 
                 // Close the content box first
                 timeLine.add(TweenLite.to($('.item .orange').next(), 0.5, {"height": "0", ease: easeValue}), "cleanup");
-                timeLine.add(TweenLite.to($('.item .orange'), 0.5, {
-                    "color": colorGrey,
-                    ease: easeValue
-                }), "cleanup+=0.25");
 
-                timeLine.add(TweenLite.to($('.item .orange').find('.grey'), 0.5, {
-                    "color": colorLightGrey,
-                    ease: easeValue
-                }), "cleanup+=0.25");
+                var orangeClassElement = $('.item .orange');
+                var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
+
+
+                if(isLightGrey) {
+                    timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                        "color": colorLightGrey,
+                        ease: easeValue
+                    }), "cleanup+=0.25");
+                } else {
+                    timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                        "color": colorGrey,
+                        ease: easeValue
+                    }), "cleanup+=0.25");
+
+                    timeLine.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+                        "color": colorLightGrey,
+                        ease: easeValue
+                    }), "cleanup+=0.25");
+                }
 
                 $(this).parent().siblings().each(function () {
                     if ($(this).children("a").hasClass("orange")) {
@@ -268,15 +280,25 @@
             timeLine.clear();
             timeLine.add(TweenLite.to($(this).parent(".page-content"), 0.5, {"height": "0", ease: easeValue}), "cleanup");
 
-            timeLine.add(TweenLite.to($('.item .orange'), 0.5, {
-                "color": colorGrey,
-                ease: easeValue
-            }), "cleanup+=0.25");
+            var orangeClassElement = $('.item .orange');
+            var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
 
-            timeLine.add(TweenLite.to($('.item .orange').find('.grey'), 0.5, {
-                "color": colorLightGrey,
-                ease: easeValue
-            }), "cleanup+=0.25");
+            if(isLightGrey) {
+                timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                    "color": colorLightGrey,
+                    ease: easeValue
+                }), "cleanup+=0.25");
+            } else {
+                timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                    "color": colorGrey,
+                    ease: easeValue
+                }), "cleanup+=0.25");
+
+                timeLine.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+                    "color": colorLightGrey,
+                    ease: easeValue
+                }), "cleanup+=0.25");
+            }
 
             // De-select the menu item
             $(this).parent(".page-content").prev("a").removeClass("orange");
