@@ -207,12 +207,9 @@
 
         jQuery('#lightbox-mobile-pop-gallery-page').touchwipe({
             wipeLeft: function () {
-                alert('left');
                 jQuery('#lightbox-mobile-pop-gallery-page').carousel("next");
             },
             wipeRight: function () {
-                alert('right');
-
                 jQuery('#lightbox-mobile-pop-gallery-page').carousel("prev")
             },
             min_move_x: 20,

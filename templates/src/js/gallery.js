@@ -231,11 +231,6 @@ $(function () {
             caption: ""
         },
         {
-            original_image: "RCB_2010_DE_Can1407x875.jpg",
-            thumbnail_image: "RCB_2010_DE_Can119X119.jpg",
-            caption: ""
-        },
-        {
             original_image: "RCB_2010_DE_Poster_1407x875.jpg",
             thumbnail_image: "RCB_2010_DE_Poster_119X119.jpg",
             caption: ""
