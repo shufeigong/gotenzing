@@ -14,26 +14,25 @@
         modalFullscreen.on('show.bs.modal', function (event) {
             console.log('full show');
             // Close open modal box
-            $(".modal-fullscreen.fade.in, .mobile-modal.fade.in").modal('hide');
+            //$(".modal-fullscreen.fade.in, .mobile-modal.fade.in").modal('hide');
 
             var zIndex = 1040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
-
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-fullscreen hidden-xs");
-                $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+                //$(".modal-backdrop").addClass("modal-backdrop-fullscreen hidden-xs");
+                //$('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
             }, 0);
         });
 
         mobileModal.on('show.bs.modal', function (event) {
             console.log('mobile show');
 
-            $(".modal-mobile.fade.in, .modal-fullscreen.fade.in").modal('hide');
+            //$(".modal-mobile.fade.in, .modal-fullscreen.fade.in").modal('hide');
 
             var zIndex = 1040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
+                //$(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
             }, 0);
         });
 

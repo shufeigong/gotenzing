@@ -8,13 +8,7 @@
         initNoFirstClickMenuAnimation();
 
         var isFirstClick = true;
-        var timeLine = new TimelineMax({
-            onComplete: function () {
-            }
-        });
-        var hoverTimeLine = new TimelineMax({
-            paused: "true"
-        });
+        var timeLine = new TimelineMax();
 
         var easeValue = Power2.easeInOut;
 
@@ -22,7 +16,7 @@
         var location = window.history.location || window.location;
 
         var link = location.pathname.split('/').pop();
-        var isUtilityPage = location.pathname.search('/utility/');
+        var isUtilityPage = location.pathname.search('/utility/') !== -1;
 
         window.addEventListener('popstate', function () {
             location.reload();
@@ -37,21 +31,22 @@
 
         //if ($(window).width() > 640) {
         //normal version reload page
-        if (link !== "" && isUtilityPage == -1) {
+        if (link !== "" && !isUtilityPage) {
             var thisItem = $("[href=" + link + "]");
             thisItem.addClass('orange');
             var i = 0;
+
             thisItem.parent().siblings().each(function () {
                 if (i == 0) {
                     timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
                         "fontSize": "20px",
-                        ease: Power2.easeInOut
+                        ease: easeValue
                     }));
                     i++;
                 } else {
                     timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
                         "fontSize": "20px",
-                        ease: Power2.easeInOut
+                        ease: easeValue
                     }), "-=0.45");
                 }
             });
@@ -59,24 +54,27 @@
             timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
             timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
                 "height": "0",
-                ease: Power2.easeInOut
+                ease: easeValue
             }), "-=0.35");
 
             isFirstClick = false;
 
-        } else if (link !== "" && isUtilityPage != -1) {
+        } else if (link !== "" && isUtilityPage) {
             // If the page is utility page with the orange menu down
             $(".arrow-down, .extension-header").slideDown();
             $(".shadow-main").show();
             $(".menuicon").parent("li").addClass('orange');
 
             $('.div-exlist').find('#utility-' + link).addClass('selected');
-
-            $("#" + link).modal('show');
+            $(".modal#" + link).modal('show');
+        } else {
+            // If it's home
+            //TweenMax.staggerFrom(".item", 0.5, {scale:0, opacity: 0, ease: easeValue}, 0.2);
         }
+
         //} else {
         //mobile version reload page
-        $("#" + link + "-mobile-page").modal('show');
+        $(".modal#" + link + "-mobile-page").modal('show');
         //}
 
         // Main page extend menu
@@ -106,7 +104,6 @@
          *  Main menu animation
          */
 
-        var oriFontSize = '';
         $(".item").children("a").hover(function () {
             // Prevent to open the same mobile modal
             if ($(this).hasClass('orange')) {
@@ -141,6 +138,8 @@
             if ($(this).hasClass('orange')) {
                 return false;
             }
+
+            var elem = $(this).parent()[0];
 
             var colorGrey = "#77777a";
             var colorLightGrey = "#b9b8ba";
@@ -292,6 +291,11 @@
 
         // Set push state for utility menu
         $('.div-exlist a').on('click', function () {
+            // Return false if the menu is already selected
+            if($(this).hasClass('selected')) {
+                return false;
+            }
+
             $('.div-exlist a.selected').removeClass('selected');
             $(this).addClass('selected');
 
@@ -342,7 +346,7 @@
             var tl = new TimelineMax({paused: true});
             var currentFontSize = 67;
             var fontSizeAdjustment = 3;
-            var duration = 0.5;
+            var duration = 0.2;
             var easeValue = Power2.easeInOut;
 
             if (hasGreyClass.length > 0) {
@@ -362,6 +366,38 @@
                 });
             }
             element.firstClickAnimation = tl;
+
+            // Menu font animation
+            var fontTl = new TimelineMax({paused: true});
+            var bigFontSize = '67px';
+            var smallFontSize = '20px';
+            var i = 0;
+
+            $(element).siblings().each(function (index, elem) {
+                var sibling = $(elem).find('> a');
+                if (i == 0) {
+                    fontTl.to(sibling, 0.5, {
+                        "css": {
+                            "fontSize": smallFontSize
+                        },
+                        ease: easeValue
+                    });
+                    i++;
+                } else {
+                    fontTl.to(sibling, 0.5, {
+                        "css": {
+                            "fontSize": smallFontSize
+                        },
+                        ease: easeValue
+
+                    }, "-=0.45");
+                }
+            });
+
+            fontTl.add(TweenLite.set($(menu).next(), {height: "auto"}));
+            fontTl.add(TweenLite.from($(menu).next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
+
+            element.firstClickFontAnimation = fontTl;
         });
     }
 
@@ -376,7 +412,7 @@
             var tl = new TimelineMax({paused: true});
             var currentFontSize = 20;
             var fontSizeAdjustment = 3;
-            var duration = 0.5;
+            var duration = 0.2;
             var easeValue = Power2.easeInOut;
 
             if (hasGreyClass.length > 0) {
@@ -397,9 +433,65 @@
             }
 
             element.noFirstClickAnimation = tl;
+
+            // Menu font animation
+            var fontTl = new TimelineMax({paused: true});
+            var bigFontSize = '67px';
+            var smallFontSize = '20px';
+            var colorGrey = "#77777a";
+            var colorLightGrey = "#b9b8ba";
+            var i = 0;
+
+            // Close the content box first
+            //fontTl.add(TweenLite.to($('.item .orange').next(), 0.5, {"height": "0", ease: easeValue}), "cleanup");
+
+            //var orangeClassElement = $('.item .orange');
+            //var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
+            //
+            //
+            //if(isLightGrey) {
+            //    fontTl.add(TweenLite.to(orangeClassElement, 0.5, {
+            //        "color": colorLightGrey,
+            //        ease: easeValue
+            //    }), "cleanup+=0.25");
+            //} else {
+            //    fontTl.add(TweenLite.to(orangeClassElement, 0.5, {
+            //        "color": colorGrey,
+            //        ease: easeValue
+            //    }), "cleanup+=0.25");
+            //
+            //    fontTl.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+            //        "color": colorLightGrey,
+            //        ease: easeValue
+            //    }), "cleanup+=0.25");
+            //}
+
+            //$(element).siblings().each(function (index, elem) {
+            //    var sibling = $(elem).find('> a');
+            //
+            //    if ($(sibling).hasClass("orange")) {
+            //
+            //        fontTl.add(TweenLite.to(sibling, 0.5, {
+            //            "fontSize": "20px",
+            //            ease: easeValue
+            //        }), "feature");
+            //
+            //        fontTl.add(TweenLite.to($(sibling).next(), 0.5, {
+            //            "height": "0",
+            //            ease: easeValue
+            //        }), "feature+=0.25");
+            //
+            //        $(sibling).removeClass("orange");
+            //    }
+            //});
+            //
+            //fontTl.add(TweenLite.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}), "feature");
+            //fontTl.add(TweenLite.set($(this).next(), {height: "auto"}));
+            //fontTl.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
+
+            element.noFirstClickFontAnimation = fontTl;
         });
     }
 
 })(jQuery, ResponsiveBootstrapToolkit);
-
 
