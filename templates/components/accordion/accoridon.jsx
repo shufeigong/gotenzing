@@ -82,10 +82,30 @@ class AccordionItem extends React.Component {
 export default class Accordion extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            data: []
+        };
+    }
+
+    componentDidMount() {
+        this.loadBiosFromServer();
+    }
+
+    loadBiosFromServer() {
+        $.getJSON(this.props.url, function(data) {
+            // Hide loading icon
+            $('.loading-icon').hide();
+
+            this.setState({data: data});
+        }.bind(this))
+            .fail(function(data) {
+                var text = data.responseText;
+                console.error(text);
+            }.bind(this));
     }
 
     render() {
-        var AccordionNodes = this.props.data.map(function(accordion) {
+        var AccordionNodes = this.state.data.map(function(accordion) {
            return (
                <AccordionItem data={accordion} key={accordion.id}/>
            )
