@@ -293,8 +293,6 @@
             isFirstClick = true;
         });
 
-
-
         //$(".sub-img-container").imagefill();
         //$(".slide-container").imagefill();
         //$(".pop-img-container").imagefill();

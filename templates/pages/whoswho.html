@@ -1,10 +1,15 @@
 <div class="sub-container">
     <div class="text-div col-md-6 col-sm-6 pull-left">
-        We do important work for hospitals, financial institutions, municipalities, business-to-business companies,
-        retailers, tech companies, not-for-profits, consumer products, b2b services and the good of humankind as often
-        as we can.
-        <br /><br />
-        <a href="#" style="position:relative;display:inline;" class="sub-link">
+        <p>
+            We do important work for hospitals, financial institutions, municipalities, business-to-business companies,
+            retailers, tech companies, not-for-profits, consumer products, b2b services and the good of humankind as
+            often
+            as we can.
+        </p>
+        <br />
+
+        <a href="#" style="position:relative;display:inline-block;margin-bottom: 13px;" class="sub-link"
+           data-target=".modal#current-client" data-toggle="modal">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 30 27" style="enable-background:new 0 0 30 27; width:30px; height:27px; position:absolute; top:-5px;" xml:space="preserve">
 <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
@@ -32,10 +37,12 @@
 		c0-0.8,0.5-1.5,1.3-1.5c0.8,0,1.4,0.6,1.4,1.4c0,2.1,0,4.3,0,6.4C13.6,13.2,13.6,13.3,13.6,13.4z"/>
 </g>
 </svg>
-            <div style="display:inline; margin-left:40px;">Current Clients</div>
-        </a><br /><br />
+            <div style="display:inline-block; margin-left:40px;">WHO Currently</div>
+        </a>
 
-        <a href="#" style="position:relative;display:inline;" class="sub-link">
+        <br /><br />
+
+        <a href="#" style="position:relative;display:inline;" class="sub-link" data-target=".modal#legacy-client" data-toggle="modal">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 30 27" style="enable-background:new 0 0 30 27;width:30px; height:27px; position:absolute; top:-5px;" xml:space="preserve">
 <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
@@ -63,7 +70,7 @@
 		c0-0.9,0.5-1.5,1.3-1.5c0.8,0,1.4,0.6,1.4,1.4c0,2.2,0,4.3,0,6.5C16.4,13.3,16.4,13.4,16.4,13.5z"/>
 </g>
 </svg>
-            <div style="display:inline; margin-left:40px;">Recent Clients</div>
+            <div style="display:inline; margin-left:40px;">WHO Legacy</div>
         </a>
     </div>
 
@@ -71,89 +78,160 @@
         <div class="sub-img-container">
             <img src="/templates/dist/img/554x237/TZ_WhosWho_554x237.jpg" />
         </div>
-        <div style="float:left;" class="hidden">
-            <ul>
-                <li>
-                    <div class="client-name">EY (Ernst & Young LLP)</div>
-                    <div>Web/Digital Advertising</div>
-                </li>
-                <li>
-                    <div class="client-name">Bruce County</div>
-                    <div>Brand/Economic Development</div>
-                </li>
-                <li>
-                    <div class="client-name">Canada's Credit Unions (SME)</div>
-                    <div>Advertising/Webinars/Publishing</div>
-                </li>
-                <li>
-                    <div class="client-name">Baker and Mckenzie</div>
-                    <div>Brand Development</div>
-                </li>
-                <li>
-                    <div class="client-name">The Commonwell Mutual Insurance Group</div>
-                    <div>Brand/Advertising</div>
-                </li>
-                <li>
-                    <div class="client-name">(CBV) Canadian Institute of Chartered BusinessValuators</div>
-                    <div>Brand/PR/Advertising/Publishing</div>
-                </li>
-                <li>
-                    <div class="client-name">Community Living Ontario</div>
-                    <div>Web Development</div>
-                </li>
-                <li>
-                    <div class="client-name">Conservation Council of Ontario</div>
-                    <div>Brand/Web Development</div>
-                </li>
-                <li>
-                    <div class="client-name">Echologics</div>
-                    <div>Brand/Sales Support</div>
-                </li>
+
+    </div>
+
+    <div class="modal fade modal-content-box" id="current-client" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">WHO Currently:</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="float:left;">
+                        <ul>
+                            <li>
+                                <div class="client-name">EY (Ernst & Young LLP)</div>
+                                <div>Web/Digital Advertising</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Bruce County</div>
+                                <div>Brand/Economic Development</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Canada's Credit Unions (SME)</div>
+                                <div>Advertising/Webinars/Publishing</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Baker and Mckenzie</div>
+                                <div>Brand Development</div>
+                            </li>
+                            <li>
+                                <div class="client-name">The Commonwell Mutual Insurance Group</div>
+                                <div>Brand/Advertising</div>
+                            </li>
+                            <li>
+                                <div class="client-name">(CBV) Canadian Institute of Chartered BusinessValuators</div>
+                                <div>Brand/PR/Advertising/Publishing</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Community Living Ontario</div>
+                                <div>Web Development</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Conservation Council of Ontario</div>
+                                <div>Brand/Web Development</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Echologics</div>
+                                <div>Brand/Sales Support</div>
+                            </li>
 
 
-            </ul>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block;">
+                        <ul>
+                            <li>
+                                <div class="client-name">GFL Environmental</div>
+                                <div>Design</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Huntsville Hospital Foundation</div>
+                                <div>Strategy/Direct Mail/Advertising</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Libro Credit Union</div>
+                                <div>Strategy/Brand/Advertising/Web</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Lafarge</div>
+                                <div>Sales Support</div>
+                            </li>
+                            <li>
+                                <div class="client-name">(MSF) Doctors Without Borders</div>
+                                <div>Publishing</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Reddin Global Inc.</div>
+                                <div>Brand/Web & App Development/Content</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Runnymede Healthcare</div>
+                                <div>Brand/Annual Report/Web</div>
+                            </li>
+                            <li>
+                                <div class="client-name">Siskinds</div>
+                                <div>Brand/Advertising/Development</div>
+                            </li>
+                            <li>
+                                <div class="client-name">UofT Institute of Medical Sciences</div>
+                                <div>Web/Digital</div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
-        <div style="display:inline-block;" class="hidden">
-            <ul>
-                <li>
-                    <div class="client-name">GFL Environmental</div>
-                    <div>Design</div>
-                </li>
-                <li>
-                    <div class="client-name">Huntsville Hospital Foundation</div>
-                    <div>Strategy/Direct Mail/Advertising</div>
-                </li>
-                <li>
-                    <div class="client-name">Libro Credit Union</div>
-                    <div>Strategy/Brand/Advertising/Web</div>
-                </li>
-                <li>
-                    <div class="client-name">Lafarge</div>
-                    <div>Sales Support</div>
-                </li>
-                <li>
-                    <div class="client-name">(MSF) Doctors Without Borders</div>
-                    <div>Publishing</div>
-                </li>
-                <li>
-                    <div class="client-name">Reddin Global Inc.</div>
-                    <div>Brand/Web & App Development/Content</div>
-                </li>
-                <li>
-                    <div class="client-name">Runnymede Healthcare</div>
-                    <div>Brand/Annual Report/Web</div>
-                </li>
-                <li>
-                    <div class="client-name">Siskinds</div>
-                    <div>Brand/Advertising/Development</div>
-                </li>
-                <li>
-                    <div class="client-name">UofT Institute of Medical Sciences</div>
-                    <div>Web/Digital</div>
-                </li>
+    </div>
 
-
-            </ul>
+    <div class="modal fade modal-content-box" id="legacy-client" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">WHO Legacy:</h4>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>OSRAM Sylvania</li>
+                        <li>Russell Investments</li>
+                        <li>Carrier HVAC</li>
+                        <li>City of Mississauga</li>
+                        <li>Town of Brighton</li>
+                        <li>St. Joseph's Healthcare Hamilton</li>
+                        <li>Hamilton Health Sciences</li>
+                        <li>Western Fair</li>
+                        <li>Nature Clean</li>
+                        <li>City of St. Thomas</li>
+                        <li>Northern Credit Union</li>
+                        <li>Meridian Credit Union</li>
+                        <li>Perrier / Lindt</li>
+                        <li>Petro Canada</li>
+                        <li>CGA Canada</li>
+                        <li>Sifton Developments</li>
+                        <li>Cadillac Fairview</li>
+                        <li>Garden Gallery (Nurseries)</li>
+                        <li>3M Canada</li>
+                        <li>Best Foods</li>
+                        <li>London Health Sciences (Foundation)</li>
+                        <li>SAP</li>
+                        <li>Evergreen</li>
+                        <li>IBM</li>
+                        <li>Symantec</li>
+                        <li>Mitel Corporation</li>
+                        <li>Canadian Language & Literacy Network</li>
+                        <li>Bite TV</li>
+                        <li>McGinnis Landing Restaurants</li>
+                        <li>Wedgwood</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

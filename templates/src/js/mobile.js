@@ -133,14 +133,13 @@
 
             var isUtility = $(this).hasClass('utility');
 
-            //change url to be current subpage
-            window.history.pushState(null, null, "/" + $(this).children("a").attr("href"));
-
-            //make other mobile modal hidden
-            //$(".mobile-modal").removeClass("in").css("display", "none");
-
-            //popup this page modal
-            //$($(this).find("a").attr("data-target")).addClass("in").css("display", "block");
+            if(isUtility) {
+                //change url to be current subpage
+                window.history.pushState(null, null, "/utility/" + $(this).find("a").attr("href"));
+            } else {
+                //change url to be current subpage
+                window.history.pushState(null, null, "/" + $(this).find("a").attr("href"));
+            }
 
             // change page icon and open page
             $('.close-icon').addClass('hidden');
@@ -179,7 +178,7 @@
                 timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
 
             } else {
-                $('.modal#'+target).modal('show');
+                //$('.modal#'+target).modal('show');
             }
         });
 
@@ -194,27 +193,27 @@
         });
 
         /////////////jquery touch swipe/////////
-        jQuery("#brading-mobile-img-show").touchwipe({
-            wipeLeft: function () {
-                jQuery("#brading-mobile-img-show").carousel("next");
-            },
-            wipeRight: function () {
-                jQuery("#brading-mobile-img-show").carousel("prev")
-            },
-            min_move_x: 20,
-            preventDefaultEvents: false
-        });
-
-        $('#lightbox-mobile-pop-gallery-page').touchwipe({
-            wipeLeft: function () {
-                jQuery('#lightbox-mobile-pop-gallery-page').carousel("next");
-            },
-            wipeRight: function () {
-                jQuery('#lightbox-mobile-pop-gallery-page').carousel("prev")
-            },
-            min_move_x: 20,
-            preventDefaultEvents: false
-        });
+        //jQuery("#brading-mobile-img-show").touchwipe({
+        //    wipeLeft: function () {
+        //        jQuery("#brading-mobile-img-show").carousel("next");
+        //    },
+        //    wipeRight: function () {
+        //        jQuery("#brading-mobile-img-show").carousel("prev")
+        //    },
+        //    min_move_x: 20,
+        //    preventDefaultEvents: false
+        //});
+        //
+        //$('#lightbox-mobile-pop-gallery-page').touchwipe({
+        //    wipeLeft: function () {
+        //        jQuery('#lightbox-mobile-pop-gallery-page').carousel("next");
+        //    },
+        //    wipeRight: function () {
+        //        jQuery('#lightbox-mobile-pop-gallery-page').carousel("prev")
+        //    },
+        //    min_move_x: 20,
+        //    preventDefaultEvents: false
+        //});
 
         $(".carousel-inner.gallerypage").swipe( {
             //Generic swipe handler for all directions

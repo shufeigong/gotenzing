@@ -202,8 +202,9 @@
     }
 
     .div-mobile {
+        z-index: 3500;
+
         .main-mobile-list {
-            //border:solid 1px #333;
             border-bottom : 1px solid #ffffff;
             margin        : 60px auto 0 auto;
             width         : 75%;

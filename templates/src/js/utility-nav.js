@@ -30,8 +30,27 @@
 
         // Close utility menu content
         $('.utility-close-icon').on('click', function () {
-            //var target = $(this).closest('.modal-fullscreen').attr('id');
-            //$('#' + target + '-mobile-page').modal('hide');
+
+            var hasPreviousUrl = $.cookie('previousUrl') != null;
+            if (hasPreviousUrl) {
+                var previousUrl = $.cookie("previousUrl");
+                var isSameDomain = previousUrl.search(document.domain) != -1;
+                var path = previousUrl.split('/').pop();
+
+                if (isSameDomain) {
+                    window.history.pushState(null, null, "/" + path);
+                } else {
+                    // if the previous is not the same domain,
+                    window.history.pushState(null, null, "/");
+                    location.reload();
+                }
+            } else {
+                window.history.pushState(null, null, "/");
+            }
+
+            $('.div-exlist a.selected').removeClass('selected');
+            $.removeCookie("utilityMenuOpen");
+
         });
 
         // Set push state for utility social icon menu
@@ -42,9 +61,6 @@
                 $.cookie("utilityMenuOpen", true);
             }
             window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
-
-            var target = $(this).attr('data-id');
-            //$('#' + target + '-mobile-page').modal('show');
         });
 
     });

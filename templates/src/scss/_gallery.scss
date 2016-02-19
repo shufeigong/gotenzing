@@ -30,6 +30,17 @@
     opacity    : 1;
 }
 
+.pop-close-icon {
+    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+    width      : 15px;
+    height     : 15px;
+    display    : inline-block;
+    position   : absolute;
+    right      : 15px;
+    top        : 15px;
+    opacity    : 1;
+}
+
 .carousel-indicators.subpageindi {
     li {
         width            : 10px;
@@ -663,6 +674,17 @@
 
     .modal.carousel.slide {
         margin-top: 60px;
+        .pop-close-icon {
+            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+            width      : 15px;
+            height     : 15px;
+            display    : inline-block;
+            position   : absolute;
+            right      : 15px;
+            top        : 15px;
+            opacity    : 1;
+        }
+
         .modal-dialog {
             width     : 90%;
             max-width : 938px;
@@ -677,16 +699,6 @@
                 .modal-body {
                     height: 100%;
 
-                    .pop-close-icon {
-                        background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-                        width      : 15px;
-                        height     : 15px;
-                        display    : inline-block;
-                        position   : absolute;
-                        right      : 15px;
-                        top        : 15px;
-                        opacity    : 1;
-                    }
 
                     .carousel-indicators {
                         li {

@@ -93,13 +93,15 @@
                                 margin-left   : 25px;
                                 padding       : 0;
                                 @include font-size(1.4);
-                                line-height   : 1.5;
-                                color         : #77777a;
                                 a {
                                     color : #77777a;
                                     &:hover, &:focus {
                                         text-decoration : none;
                                     }
+                                }
+                                p {
+                                    line-height: 1.5;
+                                    color: #77777a;
                                 }
                             }
                             .imgShow-div {
@@ -236,6 +238,10 @@
                                     &:hover, &:focus {
                                         text-decoration : none;
                                     }
+                                }
+                                p {
+                                    line-height   : 1.5;
+                                    color         : #77777a;
                                 }
                             }
                             .imgShow-div {
