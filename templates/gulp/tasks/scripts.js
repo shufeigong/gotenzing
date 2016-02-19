@@ -9,3 +9,4 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('./dist/js')) //the destination folder
         
 });
+
