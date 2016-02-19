@@ -6,6 +6,8 @@
         var modalPopup = $('.modal.mobile-pop-modal');
 
         modalCarousel.on('show.bs.modal', function (event) {
+            var zIndex = 3040 + (10 * $('.modal:visible').length);
+            $(this).css('z-index', zIndex);
             setTimeout(function () {
                 $(".modal-backdrop").addClass("modal-backdrop-gallery hidden-xs");
             }, 0);
