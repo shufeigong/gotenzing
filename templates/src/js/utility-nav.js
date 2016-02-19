@@ -22,7 +22,7 @@
             // Open Mobile utility menu content
             var target = $(this).attr("data-id");
 
-            $('#' + target + '-mobile-page').modal('show');
+            //$('#' + target + '-mobile-page').modal('show');
             if(target == 'gallery-legacy') {
                 showGallery();
             }
@@ -30,8 +30,8 @@
 
         // Close utility menu content
         $('.utility-close-icon').on('click', function () {
-            var target = $(this).closest('.modal-fullscreen').attr('id');
-            $('#' + target + '-mobile-page').modal('hide');
+            //var target = $(this).closest('.modal-fullscreen').attr('id');
+            //$('#' + target + '-mobile-page').modal('hide');
         });
 
         // Set push state for utility social icon menu
