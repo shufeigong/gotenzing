@@ -111,14 +111,14 @@ $privacy_mobile = new Page("privacy-mobile", "privacy-mobile", "mobile-pages/pri
 $contact_mobile = new Page("contact-mobile", "contact-mobile", "mobile-pages/contact-mobile.html");
 
 $mobileUtilityPages = array();
-array_push(
-    $mobileUtilityPages,
-    $personalities_bios_mobile,
-    $gallery_legacy_mobile,
-    $services_skills_mobile,
-    $privacy_mobile,
-    $contact_mobile
-);
+//array_push(
+//    $mobileUtilityPages,
+//    $personalities_bios_mobile,
+//    $gallery_legacy_mobile,
+//    $services_skills_mobile
+//    $privacy_mobile
+//    $contact_mobile
+//);
 $mobileUtilityPageList = new PageHandle($mobileUtilityPages);
 
 $app->get(

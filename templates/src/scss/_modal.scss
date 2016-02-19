@@ -17,7 +17,6 @@
 }
 
 /* .modal-fullscreen */
-
 .modal-fullscreen {
     background : #ffffff;
     margin-top : 100px;
@@ -25,10 +24,26 @@
     .modal-header {
         border-bottom : none;
     }
-
     .modal-body {
+        .close-button {
+            width      : 25px;
+            height     : 25px;
+            position   : absolute;
+            right      : 25px;
+            top        : 17px;
+            background : url(../../dist/img/mobile-close.svg) no-repeat;
+            display    : inline-block;
+
+            &:hover {
+                opacity: 0.2;
+            }
+        }
         .entry-content {
             margin-top : 0;
+
+            .title {
+                text-transform: uppercase;
+            }
         }
     }
 }
@@ -40,18 +55,7 @@
     box-shadow         : none;
 }
 
-.modal-backdrop.modal-backdrop-fullscreen {
-    background : #ffffff;
-    margin-top : 100px;
-}
-
-.modal-backdrop.modal-backdrop-fullscreen.in {
-    opacity : .99;
-    filter  : alpha(opacity=99);
-}
-
 /* .modal-fullscreen size: we use Bootstrap media query breakpoints */
-
 .modal-fullscreen .modal-dialog {
     margin       : 0;
     margin-right : auto;
@@ -87,6 +91,33 @@
 
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
+    .modal-fullscreen {
+        margin-top: 60px;
+        .modal-body {
+            padding: 0;
+            .close-button {
+                right      : 0;
+            }
+
+            .entry-content {
+                padding: 0;
+                margin-top: 60px;
+                .title {
+                    @include font-size(4.1);
+                    text-transform: capitalize;
+                }
+
+                .sub-title {
+                    @include font-size(2.4);
+                }
+
+                .sub-content {
+                    @include font-size(1.6);
+                }
+            }
+        }
+    }
+
     .modal-open {
         overflow: hidden;
     }

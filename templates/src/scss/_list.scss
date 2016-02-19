@@ -30,9 +30,14 @@
         .col-1 {
             padding-left: 0;
         }
+
+        .column {
+            padding: 0;
+        }
+
         ul {
             padding: 0;
-
+            margin-bottom: 0;
             li {
                 @include font-size(1.6);
                 border-top: none;
@@ -48,21 +53,25 @@
         }
     }
 
-    .skills-list.with-border {
-        .col-1 {
-            padding-left: 0;
-        }
-        ul {
+    .skills-list-default.with-border {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #b9b8ba;
+        .column {
             padding: 0;
-
-            li {
-                @include font-size(1.6);
-                border-top: 1px solid #b9b8ba;
-
-                &:last-child {
-                    border-bottom: 1px solid #b9b8ba;
+            ul {
+                padding: 0;
+                margin-bottom: 0;
+                list-style: none;
+                li {
+                    @include font-size(1.6);
+                    border-top: 1px solid #b9b8ba;
+                    padding : 3.5px 0;
+                    &:last-child {
+                        //border-bottom: 1px solid #b9b8ba;
+                    }
                 }
             }
         }
+
     }
 }
