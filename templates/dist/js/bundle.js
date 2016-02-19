@@ -20320,10 +20320,10 @@
 	                _react2.default.createElement(
 	                    'h4',
 	                    { className: 'panel-title hidden-xs' },
-	                    _react2.default.createElement('span', { className: accordionClassName }),
 	                    _react2.default.createElement(
 	                        'a',
 	                        { 'data-toggle': 'collapse', 'data-parent': '#accordion', href: href, className: 'name' },
+	                        _react2.default.createElement('span', { className: accordionClassName }),
 	                        this.props.data.name
 	                    ),
 	                    _react2.default.createElement(
@@ -20352,10 +20352,10 @@
 	                _react2.default.createElement(
 	                    'h4',
 	                    { className: 'panel-title visible-xs' },
-	                    _react2.default.createElement('span', { className: accordionClassName }),
 	                    _react2.default.createElement(
 	                        'a',
 	                        { 'data-toggle': 'collapse', 'data-parent': '#mobile-accordion', href: href, className: 'name' },
+	                        _react2.default.createElement('span', { className: accordionClassName }),
 	                        this.props.data.name
 	                    )
 	                ),

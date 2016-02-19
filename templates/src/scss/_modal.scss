@@ -23,8 +23,7 @@
 
     .modal-header {
         border-bottom : none;
-    }
-    .modal-body {
+        padding : 0;
         .close-button {
             width      : 25px;
             height     : 25px;
@@ -34,6 +33,27 @@
             background : url(../../dist/img/mobile-close.svg) no-repeat;
             display    : inline-block;
             cursor: pointer;
+            z-index: 10;
+            &:hover {
+                opacity: 0.2;
+            }
+        }
+
+    }
+    .modal-body {
+        max-height: calc(100vh - 150px);
+        overflow-y: auto;
+        .close-button {
+            width      : 25px;
+            height     : 25px;
+            position   : absolute;
+            right      : 25px;
+            top        : 17px;
+            background : url(../../dist/img/mobile-close.svg) no-repeat;
+            display    : inline-block;
+            cursor: pointer;
+            z-index: 10;
+
             &:hover {
                 opacity: 0.2;
             }
@@ -78,19 +98,19 @@
 
 @media (min-width : 768px) {
     .modal-fullscreen .modal-dialog {
-        width : 750px;
+        width : 95%;
     }
 }
 
 @media (min-width : 992px) {
     .modal-fullscreen .modal-dialog {
-        width : 970px;
+        width : 90%;
     }
 }
 
 @media (min-width : 1200px) {
     .modal-fullscreen .modal-dialog {
-        width : 1170px;
+        width : 90%;
     }
 }
 
@@ -104,7 +124,7 @@
     .modal-fullscreen {
         margin-top: 60px;
         .modal-body {
-            padding: 0;
+            padding: 0 20px;
             .close-button {
                 right      : 0;
             }

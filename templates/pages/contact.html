@@ -1,8 +1,10 @@
 <div class="modal modal-fullscreen fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contact" aria-hidden="true" data-backdrop="false">
-    <div class="modal-dialog" style="width:90%;">
+    <div class="modal-dialog">
         <div class="modal-content">
+            <div class="modal-header">
+                <a class="close-button utility-close-icon" data-dismiss="modal"></a>
+            </div>
             <div class="modal-body">
-                <a href="#" class="close-button utility" data-id="contact" data-dismiss="modal"></a>
                 <div class="entry-content col-md-9">
                     <h1 class="title">Contact</h1>
                     <h4 class="sub-title">Business Development Questions:</h4>
@@ -15,16 +17,32 @@
                     <ul class="contact-list">
                         <li>
                             Toronto <br />
-                            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.1950217042095!2d-79.39741628450257!3d43.644110679121546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34dbdc353b9d%3A0xa8ce567c2a5e5d04!2sTenzing+Communications+Inc.!5e0!3m2!1sen!2sca!4v1455828790106" frameborder="0" style="border:0" allowfullscreen></iframe>-->
-                            <div id="map-toronto"></div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.1950217042095!2d-79.39741628450257!3d43.644110679121546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34dbdc353b9d%3A0xa8ce567c2a5e5d04!2sTenzing+Communications+Inc.!5e0!3m2!1sen!2sca!4v1455828790106" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <!--<div id="map-toronto" style="width: 500px; height: 400px;"></div>-->
 
                         </li>
                         <li>
                             London <br />
-                            <!--<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11675.34783612192!2d-81.247743!3d42.981708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa82c3dbd151f8403!2sTenzing+Communications+Inc!5e0!3m2!1sen!2sca!4v1455828818858" frameborder="0" style="border:0" allowfullscreen></iframe><br />-->
-                            <div id="map-london"></div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11675.34783612192!2d-81.247743!3d42.981708!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa82c3dbd151f8403!2sTenzing+Communications+Inc!5e0!3m2!1sen!2sca!4v1455828818858" frameborder="0" style="border:0" allowfullscreen></iframe><br />
+                            <!--<div id="map-london" style="width: 500px; height: 400px;"></div>-->
                         </li>
                     </ul>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+                    <script>
+                        function initMap() {
+                            var torontoMap = $('#map-toronto');
+                            var toronto = new google.maps.Map(torontoMap, {
+                                center: {lat: 42.981708, lng: -81.247743},
+                                zoom: 8
+                            });
+
+                            var londonMap = $('#map-london');
+                            var london = new google.maps.Map(londonMap, {
+                                center: {lat: 44.540, lng: -78.546},
+                                zoom: 8
+                            });
+                        }
+                    </script>
                 </div>
             </div>
         </div>

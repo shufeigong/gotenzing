@@ -52,8 +52,8 @@ class AccordionHeader extends React.Component {
         return (
             <div className="panel-heading">
                 <h4 className="panel-title hidden-xs">
-                    <span className={accordionClassName}></span>
                     <a data-toggle="collapse" data-parent="#accordion" href={href} className="name">
+                        <span className={accordionClassName}></span>
                         {this.props.data.name}
                     </a>
                     <span className="additional-info pull-right">| <span className="obl">{this.props.data.title}</span> | <span className="obl">{this.props.data.what_you_do}</span> | <span className="bold-obl">{this.props.data.spirtual_role}</span>
@@ -61,8 +61,8 @@ class AccordionHeader extends React.Component {
                 </h4>
 
                 <h4 className="panel-title visible-xs">
-                    <span className={accordionClassName}></span>
                     <a data-toggle="collapse" data-parent="#mobile-accordion" href={href} className="name">
+                        <span className={accordionClassName}></span>
                         {this.props.data.name}
                     </a>
                 </h4>
