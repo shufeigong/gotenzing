@@ -1,4 +1,4 @@
-.modal.and.carousel {
+.modal.carousel {
     position : fixed; // Needed because the carousel overrides the position property
     z-index  : 2000;
     .modal-body {
@@ -91,6 +91,7 @@
 
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
+
     .modal-fullscreen {
         margin-top: 60px;
         .modal-body {

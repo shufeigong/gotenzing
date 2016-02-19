@@ -9,7 +9,7 @@
             var zIndex = 3040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-gallery hidden-xs");
+                $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 2045);
             }, 0);
         });
 
