@@ -1,7 +1,5 @@
-$(function () {
-    'use strict';
-
-    $.getJSON('/templates/json/gallery.json', function(data) {
+var showGallery = function () {
+    $.getJSON('/templates/json/gallery.json', function (data) {
         $('.loading-icon').hide();
         var galleryImages = data;
         var linksContainer = $('.gallery-container.gallerypage');
@@ -30,9 +28,11 @@ $(function () {
                 $('.carousel-indicators.gallerypage')
                     .append($('<li/>').attr({'data-target': '#lightbox', 'data-slide-to': i}).addClass('active'));
 
-
                 $('.carousel-indicators.gallerypage-mobile')
-                    .append($('<li/>').attr({'data-target': '#lightbox-mobile-pop-gallery-page', 'data-slide-to': i}).addClass('active'));
+                    .append($('<li/>').attr({
+                        'data-target': '#lightbox-mobile-pop-gallery-page',
+                        'data-slide-to': i
+                    }).addClass('active'));
 
                 $('.carousel-inner.gallerypage, .carousel-inner.gallerypage-mobile')
                     .append(
@@ -45,7 +45,6 @@ $(function () {
             } else {
                 $('.carousel-indicators.gallerypage')
                     .append($('<li/>').attr({'data-target': '#lightbox', 'data-slide-to': i}));
-
 
                 $('.carousel-indicators.gallerypage-mobile')
                     .append($('<li/>').attr({'data-target': '#lightbox-mobile-pop-gallery-page', 'data-slide-to': i}));
@@ -60,11 +59,8 @@ $(function () {
             }
         }
 
-
     })
-    .fail(function() {
+        .fail(function () {
             alert('error');
         });
-
-
-});
+};
