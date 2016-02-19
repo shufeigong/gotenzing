@@ -44,7 +44,7 @@
     {
         "id": 7,
         "original_image": "Bruce_2015_MasterToolKit_1407x875.jpg",
-        "thumbnail_image": "Bruce_2015_MasterToolKit_119X119.jpg",
+        "thumbnail_image": "Bruce_2015_MasterToolKit_119x119.jpg",
         "caption": ""
     },
     {
@@ -164,19 +164,19 @@
     {
         "id": 27,
         "original_image": "Libro_2012_Website_1407x875.jpg",
-        "thumbnail_image": "Libro_2012_Website_119X119.jpg",
+        "thumbnail_image": "Libro_2012_Website_119x119.jpg",
         "caption": ""
     },
     {
         "id": 28,
         "original_image": "Libro_2013_BeYou_Ads_1407x875.jpg",
-        "thumbnail_image": "Libro_2013_BeYou_Ads_119X119.jpg",
+        "thumbnail_image": "Libro_2013_BeYou_Ads_119x119.jpg",
         "caption": ""
     },
     {
         "id": 29,
         "original_image": "Libro_2015_TV_1407x875.jpg",
-        "thumbnail_image": "Libro_2015_TV_119X119.jpg",
+        "thumbnail_image": "Libro_2015_TV_119x119.jpg",
         "caption": ""
     },
     {
@@ -194,7 +194,7 @@
     {
         "id": 32,
         "original_image": "Millionnaire_Sardines_Poster_1407x875.jpg",
-        "thumbnail_image": "Millionnaire_Sardines_Poster_119X119.jpg",
+        "thumbnail_image": "Millionnaire_Sardines_Poster_119x119.jpg",
         "caption": ""
     },
     {
@@ -254,7 +254,7 @@
     {
         "id": 42,
         "original_image": "RCB_2010_DE_Poster_1407x875.jpg",
-        "thumbnail_image": "RCB_2010_DE_Poster_119X119.jpg",
+        "thumbnail_image": "RCB_2010_DE_Poster_119x119.jpg",
         "caption": ""
     },
     {
@@ -320,7 +320,7 @@
     {
         "id": 53,
         "original_image": "WF_Transit_1407x875.jpg",
-        "thumbnail_image": "WF_Transit_119X119.jpg",
+        "thumbnail_image": "WF_Transit_119x119.jpg",
         "caption": ""
     }
 ]
