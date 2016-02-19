@@ -8,7 +8,7 @@
         initNoFirstClickMenuAnimation();
 
         var isFirstClick = true;
-        var timeLine = new TimelineMax();
+        var timeLine = new TimelineMax({});
 
         var easeValue = Power2.easeInOut;
 
@@ -56,6 +56,7 @@
                 "height": "0",
                 ease: easeValue
             }), "-=0.35");
+
 
             isFirstClick = false;
 

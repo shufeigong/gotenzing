@@ -19,7 +19,8 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height : 0.90;
+                    line-height: 0.9;
+                    position: relative;
 
                     > a {
                         display        : inline-block;
@@ -29,6 +30,8 @@
                         color          : #77777a;
                         text-transform : uppercase;
                         overflow       : hidden;
+                        vertical-align: middle;
+
                         .grey {
                             color : #b9b8ba;
                         }
@@ -76,6 +79,9 @@
                             right      : 8px;
                             top        : 8px;
                             z-index    : 6;
+                            &:hover, &:active {
+                                opacity: 0.5;
+                            }
                         }
 
                         .sub-container {
@@ -158,7 +164,7 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height : 0.90;
+                    line-height: 0.9;
 
                     > a {
                         display        : inline-block;
@@ -167,6 +173,7 @@
                         font-family    : $font-site-bold;
                         color          : #77777a;
                         text-transform : uppercase;
+                        vertical-align: middle;
                         .grey {
                             color : #b9b8ba;
                         }
@@ -213,6 +220,9 @@
                             right      : 8px;
                             top        : 8px;
                             z-index    : 6;
+                            &:hover, &:active {
+                                opacity: 0.5;
+                            }
                         }
 
                         .sub-container {
