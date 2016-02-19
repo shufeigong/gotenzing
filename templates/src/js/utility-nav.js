@@ -49,13 +49,16 @@
             }
 
             $('.div-exlist a.selected').removeClass('selected');
+            $(".div-iconlist ul li.orange").removeClass('orange');
+
             $.removeCookie("utilityMenuOpen");
 
         });
 
         // Set push state for utility social icon menu
         $(".div-iconlist ul li a").not('.menuicon').on('click', function () {
-
+            $(".div-iconlist ul li.orange").removeClass('orange');
+            $(this).parent().addClass('orange');
             if ($.cookie('utilityMenuOpen') == null) {
                 $.cookie("previousUrl", window.location.href, {path: "/"});
                 $.cookie("utilityMenuOpen", true);
