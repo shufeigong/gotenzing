@@ -67,6 +67,7 @@
             $(".menuicon").parent("li").addClass('orange');
 
             $('.div-exlist').find('#utility-' + link).addClass('selected');
+            $('.div-iconlist').find('#utility-' + link).parent().addClass('orange');
             $(".modal#" + link).modal('show');
 
             if(link == 'gallery-legacy') {
