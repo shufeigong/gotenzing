@@ -204,6 +204,10 @@
             top        : 17px;
             background : url(../../dist/img/mobile-close.svg) no-repeat;
             display    : inline-block;
+            &:hover, &:active, &:focus {
+                background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
+
+            }
         }
         //end of .mobile-close
 
