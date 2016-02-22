@@ -9,7 +9,7 @@
             var zIndex = 3040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 2045);
+                $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
             }, 0);
         });
 
@@ -18,7 +18,7 @@
             // Close open modal box
             $(".modal-fullscreen.fade.in").modal('hide');
 
-            var zIndex = 2040 + (10 * $('.modal:visible').length);
+            var zIndex = 1040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
             setTimeout(function () {
                 //$(".modal-backdrop").addClass("modal-backdrop-fullscreen hidden-xs");
@@ -52,7 +52,7 @@
 
         modalFullscreen.on('shown.bs.modal', function (event) {
             $('body').css('overflow', 'hidden');
-            $(this).css('overflow', 'auto');
+            $(this).css('overflow', 'hidden');
 
             $(".modal-fullscreen.fade.in").find('a.close').click(function(e) {
                 e.preventDefault();

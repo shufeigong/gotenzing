@@ -62,7 +62,6 @@
                         }
                         &:hover, &:focus {
                             text-decoration : none;
-                            //color           : #f7a800;
                         }
                     }
                     .page-content {
@@ -80,7 +79,7 @@
                             top        : 8px;
                             z-index    : 6;
                             &:hover, &:active {
-                                opacity: 0.5;
+                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
                             }
                         }
 
@@ -155,7 +154,7 @@
 }
 
 ////640~999px///////////////////////////////////////////////////
-@media screen and (min-width : 641px) and (max-width : 999px) {
+@media screen and (min-width : 0) and (max-width : 999px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -174,6 +173,7 @@
                         color          : #77777a;
                         text-transform : uppercase;
                         vertical-align: middle;
+                        overflow : hidden;
                         .grey {
                             color : #b9b8ba;
                         }
@@ -186,7 +186,6 @@
 
                         &:hover, &:focus {
                             text-decoration : none;
-                            //color           : #f7a800;
                             .grey {
                                 //color : #ffe0ae;
                             }
@@ -203,7 +202,6 @@
                         }
                         &:hover, &:focus {
                             text-decoration : none;
-                            color           : #f7a800;
                         }
                     }
                     .page-content {
@@ -221,7 +219,7 @@
                             top        : 8px;
                             z-index    : 6;
                             &:hover, &:active {
-                                opacity: 0.5;
+                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
                             }
                         }
 
@@ -287,7 +285,7 @@
 ////////////////~640px////////////////////////
 @media screen and (max-width : 640px) {
     .entry-content {
-        //display : none;
+
     }
 
     .mobile-content {
