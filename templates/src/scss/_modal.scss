@@ -17,7 +17,7 @@
 }
 
 /* .modal-fullscreen */
-.modal-fullscreen {
+.modal-fullscreen, .modal-content-box {
     background : #ffffff;
 
     .modal-dialog {
@@ -62,11 +62,23 @@
             .title {
                 text-transform : uppercase;
             }
+
+            .we-do-list.skills-list.no-border {
+                ul {
+                    li {
+                        line-height: 1.2;
+                    }
+                }
+            }
+
+            .line-height-1-5 {
+                line-height: 1.5;
+            }
         }
     }
 }
 
-.modal-fullscreen .modal-content {
+.modal-fullscreen .modal-content, .modal-content-box .modal-content {
     background         : transparent;
     border             : 0;
     -webkit-box-shadow : none;
@@ -74,7 +86,7 @@
 }
 
 /* .modal-fullscreen size: we use Bootstrap media query breakpoints */
-.modal-fullscreen .modal-dialog {
+.modal-fullscreen .modal-dialog, .modal-content-box .modal-dialog {
     //margin       : 0;
     margin-right : auto;
     margin-left  : auto;
