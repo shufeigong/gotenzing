@@ -7,6 +7,9 @@
         initFirstClickMenuAnimation();
         initNoFirstClickMenuAnimation();
 
+        // Set tabindex to -1 for all the link
+        $('.main-menu .page-content').find('a').attr('tabindex', "-1");
+
         var isFirstClick = true;
         var timeLine = new TimelineMax({
             onComplete: function () {
@@ -46,6 +49,7 @@
         //normal version reload page
         if (link !== "" && !isUtilityPage) {
             var thisItem = $("[href=" + link + "]");
+            thisItem.next().find('a').attr('tabindex', "0");
             thisItem.addClass('orange');
             var i = 0;
 
@@ -112,7 +116,7 @@
             $('body').toggleClass('nav-expanded');
 
             $('.close-icon').removeClass('hidden');
-            $('.ham-icon').addClass('hidden');
+            $('.ham-icon').removeClass('visible-xs').addClass('hidden');
         });
         $('.close-icon').on('click', function (e) {
             e.preventDefault();
@@ -210,7 +214,6 @@
                 timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
                 timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
                 //elem.firstClickFontAnimation.play();
-
                 $(this).addClass('orange');
 
                 isFirstClick = false;
@@ -246,6 +249,8 @@
                     ease: easeValue
                 }), "feature");
 
+                $('.item .orange').next().find('a').attr('tabindex', "-1");
+
                 $(this).parent().siblings().each(function () {
                     if ($(this).children("a").hasClass("orange")) {
 
@@ -275,6 +280,8 @@
                 $(this).addClass('orange');
                 //elem.noFirstClickFontAnimation.play();
             }
+
+            $(_this).next().find('a').attr('tabindex', "0");
 
             // Open mobile content
             if(!mobileButtonClicked) {
@@ -343,6 +350,8 @@
                 }
 
             });
+
+            $(this).parent(".page-content").find('a').attr('tabindex', "-1");
 
             // Close mobile content as well
             var target = $(this).closest('li.item').find('a').attr('id');
@@ -413,34 +422,39 @@
 
             var target = $(this).find('a').attr('href').replace('utility/', '');
 
+            mobileButtonClicked = true;
+            $('.main-menu').find('#' + target).click();
+
             if(!isUtility) {
                 // Open desktop menu content
-                if (!$('.main-menu').find('#' + target).hasClass('orange')) {
-                    //$('.main-menu').find('#' + target).click();
-                }
+                //if (!$('.main-menu').find('#' + target).hasClass('orange')) {
+                //    //$('.main-menu').find('#' + target).click();
+                //}
+                //
+                //var mainMenuItem = $('.main-menu').find('#' + target);
+                //timeLine.clear();
+                //mainMenuItem.addClass('orange');
+                //
+                //var i = 0;
+                //mainMenuItem.parent().siblings().each(function () {
+                //    if (i == 0) {
+                //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                //            "fontSize": "20px",
+                //            ease: easeValue
+                //        }));
+                //        i++;
+                //    } else {
+                //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                //            "fontSize": "20px",
+                //            ease: easeValue
+                //        }), "-=0.45");
+                //    }
+                //});
+                //
+                //timeLine.add(TweenLite.set(mainMenuItem.next(), {height: "auto"}));
+                //timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
 
-                var mainMenuItem = $('.main-menu').find('#' + target);
-                timeLine.clear();
-                mainMenuItem.addClass('orange');
 
-                var i = 0;
-                mainMenuItem.parent().siblings().each(function () {
-                    if (i == 0) {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "20px",
-                            ease: easeValue
-                        }));
-                        i++;
-                    } else {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "20px",
-                            ease: easeValue
-                        }), "-=0.45");
-                    }
-                });
-
-                timeLine.add(TweenLite.set(mainMenuItem.next(), {height: "auto"}));
-                timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
 
             } else {
                 //$('.modal#'+target).modal('show');

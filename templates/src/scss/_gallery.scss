@@ -129,7 +129,7 @@
             }
 
             .carousel-control.left {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .left-arrow {
                         background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -137,7 +137,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .right-arrow {
                         background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -202,7 +202,7 @@
             }
 
             .carousel-control.left {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .left-arrow {
                         background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -210,7 +210,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .right-arrow {
                         background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -344,7 +344,7 @@
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 .left-arrow {
                     background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -352,7 +352,7 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 .right-arrow {
                     background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
@@ -370,7 +370,7 @@
             //z-index:6;
             opacity    : 1;
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
             }
         }
@@ -490,7 +490,7 @@
             }
 
             .carousel-control.left {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .left-arrow {
                         background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -498,7 +498,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .right-arrow {
                         background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -563,7 +563,7 @@
             }
 
             .carousel-control.left {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .left-arrow {
                         background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -571,7 +571,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     .right-arrow {
                         background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -589,7 +589,7 @@
                 //z-index:6;
                 opacity    : 1;
 
-                &:hover, &:active {
+                &:hover, &:active, &:focus {
                     background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
                 }
             }
@@ -704,7 +704,7 @@
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 .left-arrow {
                     background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -712,7 +712,7 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 .right-arrow {
                     background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
@@ -730,7 +730,7 @@
             //z-index:6;
             opacity    : 1;
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
             }
         }
@@ -800,7 +800,7 @@
             top        : 15px;
             opacity    : 1;
 
-            &:hover, &:active {
+            &:hover, &:active, &:focus {
                 background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
             }
         }
