@@ -19,50 +19,48 @@
 /* .modal-fullscreen */
 .modal-fullscreen {
     background : #ffffff;
-    margin-top : 100px;
+
+    .modal-dialog {
+        margin : 0;
+        height : 100%;
+    }
+
+    .modal-content {
+        background : #ffffff;
+        height     : 100%;
+        margin     : 0;
+    }
 
     .modal-header {
         border-bottom : none;
-        padding : 0;
+        padding       : 0;
         .close-button {
             width      : 25px;
             height     : 25px;
             position   : absolute;
-            right      : 25px;
-            top        : 17px;
+            right      : 100px;
+            top        : 110px;
             background : url(../../dist/img/mobile-close.svg) no-repeat;
             display    : inline-block;
-            cursor: pointer;
-            z-index: 10;
+            cursor     : pointer;
+            z-index    : 10;
             &:hover {
-                opacity: 0.2;
+                //opacity : 0.2;
+                background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
+
             }
         }
 
     }
     .modal-body {
-        max-height: calc(100vh - 150px);
-        overflow-y: auto;
-        .close-button {
-            width      : 25px;
-            height     : 25px;
-            position   : absolute;
-            right      : 25px;
-            top        : 17px;
-            background : url(../../dist/img/mobile-close.svg) no-repeat;
-            display    : inline-block;
-            cursor: pointer;
-            z-index: 10;
+        max-height : 100vh;
+        overflow-y : auto;
 
-            &:hover {
-                opacity: 0.2;
-            }
-        }
         .entry-content {
-            margin-top : 0;
-
+            margin-top : 100px;
+            padding    : 0 5%;
             .title {
-                text-transform: uppercase;
+                text-transform : uppercase;
             }
         }
     }
@@ -77,14 +75,14 @@
 
 /* .modal-fullscreen size: we use Bootstrap media query breakpoints */
 .modal-fullscreen .modal-dialog {
-    margin       : 0;
+    //margin       : 0;
     margin-right : auto;
     margin-left  : auto;
     width        : 100%;
 }
 
 .modal-open {
-    overflow: auto;
+    overflow : auto;
 }
 
 .modal-content-box {
@@ -95,22 +93,32 @@
     }
 }
 
-
 @media (min-width : 768px) {
     .modal-fullscreen .modal-dialog {
-        width : 95%;
+        .modal-content {
+            //width : 95%;
+            //margin : 0 auto;
+
+        }
     }
 }
 
 @media (min-width : 992px) {
     .modal-fullscreen .modal-dialog {
-        width : 90%;
+        .modal-content {
+            //width : 90%;
+            //margin : 0 auto;
+
+        }
     }
 }
 
 @media (min-width : 1200px) {
     .modal-fullscreen .modal-dialog {
-        width : 90%;
+        .modal-content {
+            //width : 90%;
+            //margin : 0 auto;
+        }
     }
 }
 
@@ -118,23 +126,38 @@
     overflow : hidden;
 }
 
+@media screen and (min-width : 640px) and (max-width : 999px) {
+    .modal-fullscreen {
+        .modal-header {
+            .close-button {
+                right : 30px;
+                top        : 110px;
+            }
+        }
+    }
+}
+
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
-
     .modal-fullscreen {
-        margin-top: 60px;
-        .modal-body {
-            padding: 0 20px;
+        margin-top : 60px;
+        .modal-dialog {
+            margin-top : 0;
+        }
+        .modal-header {
             .close-button {
-                right      : 0;
+                right : 40px;
+                top   : 17px;
             }
-
+        }
+        .modal-body {
+            padding : 0 20px;
             .entry-content {
-                padding: 0;
-                margin-top: 60px;
+                padding    : 0;
+                margin-top : 60px;
                 .title {
                     @include font-size(4.1);
-                    text-transform: capitalize;
+                    text-transform : capitalize;
                 }
 
                 .sub-title {
@@ -149,7 +172,7 @@
     }
 
     .modal-open {
-        overflow: hidden;
+        overflow : hidden;
     }
 
     .mobile-modal {
@@ -173,8 +196,8 @@
         //end of .mobile-close
 
         .mobile-page-content {
-            margin-top: 60px;
-            padding-bottom: 50px;
+            margin-top     : 60px;
+            padding-bottom : 50px;
             .mobile-title {
                 margin-top    : 50px;
                 margin-bottom : 25px;
@@ -184,7 +207,7 @@
 
             .sub-content {
                 @include font-size(1.6);
-                margin-bottom: 43px;
+                margin-bottom : 43px;
             }
 
             //end of .mobile-title
@@ -269,8 +292,8 @@
     }
     //end of .mobile-pop-modal
 
-    .modal-backdrop.modal-backdrop-fullscreen.in{
-        z-index: -1 !important;
+    .modal-backdrop.modal-backdrop-fullscreen.in {
+        z-index : -1 !important;
     }
 
     .modal-backdrop.modal-backdrop-mobile {
@@ -281,11 +304,11 @@
     .modal-backdrop.modal-backdrop-mobile.in {
         opacity : .99;
         filter  : alpha(opacity=99);
-        z-index: 1 !important;
+        z-index : 1 !important;
     }
 
     .modal.mobile-pop-modal {
-        z-index: 2000;
+        z-index : 2000;
     }
 
 }

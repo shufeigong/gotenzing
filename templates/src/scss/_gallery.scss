@@ -39,6 +39,10 @@
     right      : 15px;
     top        : 15px;
     opacity    : 1;
+
+    &:hover, &:active {
+        background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+    }
 }
 
 .carousel-indicators.subpageindi {
@@ -123,6 +127,22 @@
                 }
 
             }
+
+            .carousel-control.left {
+                &:hover, &:active {
+                    .left-arrow {
+                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
+            .carousel-control.right {
+                &:hover, &:active {
+                    .right-arrow {
+                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
         }
 
         .popup {
@@ -181,6 +201,22 @@
                 background             : url(../../dist/img/right-arrow.svg) no-repeat;
             }
 
+            .carousel-control.left {
+                &:hover, &:active {
+                    .left-arrow {
+                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
+            .carousel-control.right {
+                &:hover, &:active {
+                    .right-arrow {
+                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
             .pop-close-icon {
                 background : url(../../dist/img/pop-close-icon.svg) no-repeat;
                 width      : 15px;
@@ -191,6 +227,10 @@
                 top        : 15px;
                 //z-index:6;
                 opacity    : 1;
+
+                &:hover, &:active {
+                    background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+                }
             }
 
             .modal-dialog {
@@ -303,6 +343,22 @@
             background             : url(../../dist/img/right-arrow.svg) no-repeat;
         }
 
+        .carousel-control.left {
+            &:hover, &:active {
+                .left-arrow {
+                    background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
+        .carousel-control.right {
+            &:hover, &:active {
+                .right-arrow {
+                    background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
         .pop-close-icon {
             background : url(../../dist/img/pop-close-icon.svg) no-repeat;
             width      : 15px;
@@ -313,6 +369,10 @@
             top        : 15px;
             //z-index:6;
             opacity    : 1;
+
+            &:hover, &:active {
+                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+            }
         }
 
         .modal-dialog {
@@ -428,6 +488,22 @@
                 }
 
             }
+
+            .carousel-control.left {
+                &:hover, &:active {
+                    .left-arrow {
+                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
+            .carousel-control.right {
+                &:hover, &:active {
+                    .right-arrow {
+                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
         }
 
         .popup {
@@ -486,6 +562,22 @@
                 background             : url(../../dist/img/right-arrow.svg) no-repeat;
             }
 
+            .carousel-control.left {
+                &:hover, &:active {
+                    .left-arrow {
+                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
+            .carousel-control.right {
+                &:hover, &:active {
+                    .right-arrow {
+                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    }
+                }
+            }
+
             .pop-close-icon {
                 background : url(../../dist/img/pop-close-icon.svg) no-repeat;
                 width      : 15px;
@@ -496,6 +588,10 @@
                 top        : 15px;
                 //z-index:6;
                 opacity    : 1;
+
+                &:hover, &:active {
+                    background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+                }
             }
 
             .modal-dialog {
@@ -607,6 +703,22 @@
             background             : url(../../dist/img/right-arrow.svg) no-repeat;
         }
 
+        .carousel-control.left {
+            &:hover, &:active {
+                .left-arrow {
+                    background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
+        .carousel-control.right {
+            &:hover, &:active {
+                .right-arrow {
+                    background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
         .pop-close-icon {
             background : url(../../dist/img/pop-close-icon.svg) no-repeat;
             width      : 15px;
@@ -617,6 +729,10 @@
             top        : 15px;
             //z-index:6;
             opacity    : 1;
+
+            &:hover, &:active {
+                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+            }
         }
 
         .modal-dialog {
@@ -683,6 +799,10 @@
             right      : 15px;
             top        : 15px;
             opacity    : 1;
+
+            &:hover, &:active {
+                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+            }
         }
 
         .modal-dialog {
