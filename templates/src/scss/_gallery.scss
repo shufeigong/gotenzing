@@ -12,10 +12,14 @@
 }
 
 .left.carousel-control {
+    -ms-filter : none !important;
+    filter     : none !important;
     background-image : none;
 }
 
 .right.carousel-control {
+    -ms-filter : none !important;
+    filter     : none !important;
     background-image : none;
 }
 
