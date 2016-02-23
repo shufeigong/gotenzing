@@ -1,10 +1,10 @@
-.gallery-container {
-    .loading-icon {
-        position : absolute;
-        left     : calc(50% - 110px);
-        top      : calc(50% - 70px);
+.loading-icon {
+    position : absolute;
+    left     : calc(50% - 65px);
+    top      : 100px;
+}
 
-    }
+.gallery-container {
     .gallery-item {
         display : inline-block;
         margin  : 3px;
@@ -66,7 +66,7 @@
     .carousel-inner {
         width  : 72%;
         margin : 10px auto;
-        height: 213px;
+        height : 213px;
         .item {
             .slide-container {
                 cursor : pointer;
@@ -821,11 +821,11 @@
 }
 
 @media screen and (max-width : 640px) {
-    .carousel.slide,.carousel.slide.subpage  {
+    .carousel.slide, .carousel.slide.subpage {
         .carousel-inner {
-            width  : 100%;
-            height : auto;
-            min-height: 230px;
+            width      : 100%;
+            height     : auto;
+            min-height : 230px;
         }
     }
 

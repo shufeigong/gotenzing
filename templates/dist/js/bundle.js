@@ -20406,7 +20406,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'panel-default panel' },
+	                { className: 'panel panel-default' },
 	                _react2.default.createElement(AccordionHeader, { data: this.props.data }),
 	                _react2.default.createElement(AccordionBody, { data: this.props.data })
 	            );
@@ -20439,9 +20439,6 @@
 	        key: 'loadBiosFromServer',
 	        value: function loadBiosFromServer() {
 	            $.getJSON(this.props.url, function (data) {
-	                // Hide loading icon
-	                $('.loading-icon').hide();
-	
 	                this.setState({ data: data });
 	            }.bind(this)).fail(function (data) {
 	                var text = data.responseText;

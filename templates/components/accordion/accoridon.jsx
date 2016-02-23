@@ -108,9 +108,6 @@ export default class Accordion extends React.Component {
 
     loadBiosFromServer() {
         $.getJSON(this.props.url, function(data) {
-            // Hide loading icon
-            $('.loading-icon').hide();
-
             this.setState({data: data});
         }.bind(this))
             .fail(function(data) {
