@@ -2,9 +2,10 @@
     // Reset cookie
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
-    window.isGalleryOpen = false;
 
     $(document).ready(function () {
+        window.isGalleryOpen = false;
+
         initFirstClickMenuAnimation();
         initNoFirstClickMenuAnimation();
 
@@ -428,6 +429,12 @@
             if(!isUtility) {
                 $('.main-menu').find('#' + target).click();
             } else {
+                if(target == 'gallery-legacy') {
+                    if(!window.isGalleryOpen) {
+                        showGallery();
+                    }
+                }
+
                 $('.modal#'+target).modal('show');
             }
         });
