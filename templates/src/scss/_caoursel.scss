@@ -12,14 +12,14 @@
 }
 
 .left.carousel-control {
-    -ms-filter : none !important;
-    filter     : none !important;
+    -ms-filter       : none !important;
+    filter           : none !important;
     background-image : none;
 }
 
 .right.carousel-control {
-    -ms-filter : none !important;
-    filter     : none !important;
+    -ms-filter       : none !important;
+    filter           : none !important;
     background-image : none;
 }
 
@@ -62,6 +62,19 @@
     }
 }
 
+.carousel.slide.subpage {
+    .carousel-inner {
+        width  : 72%;
+        margin : 10px auto;
+        height: 213px;
+        .item {
+            .slide-container {
+                cursor : pointer;
+            }
+        }
+    }
+}
+
 /////1000px~////////////////////////////////
 @media screen and (min-width : 1000px) {
     .imgShow-div {
@@ -88,7 +101,7 @@
                 position               : absolute;
                 text-align             : center;
                 text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 82px;
+                top                    : calc(50% - 30px);
                 z-index                : 5;
                 -webkit-font-smoothing : antialiased;
                 background             : url(../../dist/img/left-arrow.svg) no-repeat;
@@ -115,7 +128,7 @@
                 right                  : 41.5469px;
                 text-align             : center;
                 text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 82px;
+                top                    : calc(50% - 30px);
                 z-index                : 5;
                 -webkit-font-smoothing : antialiased;
                 background             : url(../../dist/img/right-arrow.svg) no-repeat;
@@ -135,7 +148,7 @@
             .carousel-control.left {
                 &:hover, &:active, &:focus {
                     .left-arrow {
-                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                        background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
                 }
             }
@@ -143,164 +156,164 @@
             .carousel-control.right {
                 &:hover, &:active, &:focus {
                     .right-arrow {
-                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                        background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
                 }
             }
         }
 
-        .popup {
-            .left-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 97px;
-                width                  : 37px;
-                //border:solid 1px #333;
-                left                   : 41.5469px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-left            : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 45%;
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/left-arrow.svg) no-repeat;
+    }
 
-            }
-            .right-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 97px;
-                width                  : 37px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-right           : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                right                  : 41.5469px;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 45%;
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/right-arrow.svg) no-repeat;
-            }
+    .popup {
+        .left-arrow {
+            box-sizing             : border-box;
+            color                  : rgb(255, 255, 255);
+            cursor                 : pointer;
+            display                : block;
+            font-family            : 'Glyphicons Halflings';
+            font-size              : 30px;
+            font-style             : normal;
+            font-weight            : normal;
+            height                 : 97px;
+            width                  : 37px;
+            //border:solid 1px #333;
+            left                   : 41.5469px;
+            line-height            : 30px;
+            list-style-image       : none;
+            list-style-position    : outside;
+            list-style-type        : none;
+            margin-left            : -10px;
+            margin-top             : -10px;
+            position               : absolute;
+            text-align             : center;
+            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
+            top                    : 45%;
+            z-index                : 5;
+            -webkit-font-smoothing : antialiased;
+            background             : url(../../dist/img/left-arrow.svg) no-repeat;
 
-            .carousel-control.left {
-                &:hover, &:active, &:focus {
-                    .left-arrow {
-                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+        }
+        .right-arrow {
+            box-sizing             : border-box;
+            color                  : rgb(255, 255, 255);
+            cursor                 : pointer;
+            display                : block;
+            font-family            : 'Glyphicons Halflings';
+            font-size              : 30px;
+            font-style             : normal;
+            font-weight            : normal;
+            height                 : 97px;
+            width                  : 37px;
+            line-height            : 30px;
+            list-style-image       : none;
+            list-style-position    : outside;
+            list-style-type        : none;
+            margin-right           : -10px;
+            margin-top             : -10px;
+            position               : absolute;
+            right                  : 41.5469px;
+            text-align             : center;
+            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
+            top                    : 45%;
+            z-index                : 5;
+            -webkit-font-smoothing : antialiased;
+            background             : url(../../dist/img/right-arrow.svg) no-repeat;
+        }
+
+        .carousel-control.left {
+            &:hover, &:active, &:focus {
+                .left-arrow {
+                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
+        .carousel-control.right {
+            &:hover, &:active, &:focus {
+                .right-arrow {
+                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
+        .pop-close-icon {
+            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+            width      : 15px;
+            height     : 15px;
+            display    : inline-block;
+            position   : absolute;
+            right      : 15px;
+            top        : 15px;
+            //z-index:6;
+            opacity    : 1;
+
+            &:hover, &:active {
+                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+            }
+        }
+
+        .modal-dialog {
+            width     : 67%;
+            max-width : 938px;
+            margin    : 58px auto 0 auto;
+            height    : 95%;
+
+            .modal-content {
+                height           : 100%;
+                box-shadow       : none;
+                border           : none;
+                background-color : transparent;
+            }
+            .modal-body {
+                height : 100%;
+            }
+            .carousel-inner {
+                height : 100%;
+                .pop-img-container {
+                    img {
+                        MAX-WIDTH : 100% !important;
+                        HEIGHT    : auto !important;
+                        width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                    }
+
+                    .videoWrapper {
+                        position       : relative;
+                        padding-bottom : 56.25%; /* 16:9 */
+                        padding-top    : 25px;
+                        height         : 0;
+                    }
+                    .videoWrapper iframe {
+                        position : absolute;
+                        top      : 0;
+                        left     : 0;
+                        width    : 100%;
+                        height   : 100%;
                     }
                 }
+
+            }
+            .carousel-caption {
+                @include font-size(1.2);
+                margin  : 20px auto 0;
+                padding : 0;
+                left    : 20px;
+                right   : auto;
+                top     : 100%;
+                height  : 50px;
+
             }
 
-            .carousel-control.right {
-                &:hover, &:active, &:focus {
-                    .right-arrow {
-                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-
-            .pop-close-icon {
-                background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-                width      : 15px;
-                height     : 15px;
-                display    : inline-block;
-                position   : absolute;
-                right      : 15px;
-                top        : 15px;
-                //z-index:6;
-                opacity    : 1;
-
-                &:hover, &:active {
-                    background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-                }
-            }
-
-            .modal-dialog {
-                width     : 67%;
-                max-width : 938px;
-                margin    : 58px auto 0 auto;
-                height    : 95%;
-
-                .modal-content {
-                    height           : 100%;
-                    box-shadow       : none;
+            .carousel-indicators {
+                li {
                     border           : none;
-                    background-color : transparent;
+                    background-color : #fff;
                 }
-                .modal-body {
-                    height : 100%;
+                .active {
+                    background-color : #55565a;
                 }
-                .carousel-inner {
-                    height : 100%;
-                    .pop-img-container {
-                        img {
-                            MAX-WIDTH : 100% !important;
-                            HEIGHT    : auto !important;
-                            width     : expression(this.width > 200 ? "200px" :     this.width) !important;
-                        }
-
-                        .videoWrapper {
-                            position: relative;
-                            padding-bottom: 56.25%; /* 16:9 */
-                            padding-top: 25px;
-                            height: 0;
-                        }
-                        .videoWrapper iframe {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-
-                }
-                .carousel-caption {
-                    @include font-size(1.2);
-                    margin  : 20px auto 0;
-                    padding : 0;
-                    left    : 20px;
-                    right   : auto;
-                    top     : 100%;
-                    height  : 50px;
-
-                }
-
-                .carousel-indicators {
-                    li {
-                        border           : none;
-                        background-color : #fff;
-                    }
-                    .active {
-                        background-color : #55565a;
-                    }
-                }
-
             }
-        }
 
+        }
     }
 
     .gallery-carousel-page {
@@ -362,7 +375,7 @@
         .carousel-control.left {
             &:hover, &:active, &:focus {
                 .left-arrow {
-                    background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
             }
         }
@@ -370,7 +383,7 @@
         .carousel-control.right {
             &:hover, &:active, &:focus {
                 .right-arrow {
-                    background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
             }
         }
@@ -415,7 +428,7 @@
                 padding : 0;
                 left    : 20px;
                 right   : auto;
-                top     : 104%;
+                top     : 100%;
                 height  : 50px;
             }
 
@@ -461,7 +474,7 @@
                 position               : absolute;
                 text-align             : center;
                 text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 82px;
+                top                    : calc(50% - 30px);
                 z-index                : 5;
                 -webkit-font-smoothing : antialiased;
                 background             : url(../../dist/img/left-arrow.svg) no-repeat;
@@ -488,7 +501,7 @@
                 right                  : 41.5469px;
                 text-align             : center;
                 text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 82px;
+                top                    : calc(50% - 30px);
                 z-index                : 5;
                 -webkit-font-smoothing : antialiased;
                 background             : url(../../dist/img/right-arrow.svg) no-repeat;
@@ -508,7 +521,7 @@
             .carousel-control.left {
                 &:hover, &:active, &:focus {
                     .left-arrow {
-                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                        background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
                 }
             }
@@ -516,167 +529,166 @@
             .carousel-control.right {
                 &:hover, &:active, &:focus {
                     .right-arrow {
-                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                        background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
                 }
             }
         }
+    }
 
-        .popup {
-            .left-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 97px;
-                width                  : 37px;
-                //border:solid 1px #333;
-                left                   : 41.5469px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-left            : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 28%;
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/left-arrow.svg) no-repeat;
+    .popup {
+        .left-arrow {
+            box-sizing             : border-box;
+            color                  : rgb(255, 255, 255);
+            cursor                 : pointer;
+            display                : block;
+            font-family            : 'Glyphicons Halflings';
+            font-size              : 30px;
+            font-style             : normal;
+            font-weight            : normal;
+            height                 : 97px;
+            width                  : 37px;
+            //border:solid 1px #333;
+            left                   : 41.5469px;
+            line-height            : 30px;
+            list-style-image       : none;
+            list-style-position    : outside;
+            list-style-type        : none;
+            margin-left            : -10px;
+            margin-top             : -10px;
+            position               : absolute;
+            text-align             : center;
+            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
+            top                    : 28%;
+            z-index                : 5;
+            -webkit-font-smoothing : antialiased;
+            background             : url(../../dist/img/left-arrow.svg) no-repeat;
 
+        }
+        .right-arrow {
+            box-sizing             : border-box;
+            color                  : rgb(255, 255, 255);
+            cursor                 : pointer;
+            display                : block;
+            font-family            : 'Glyphicons Halflings';
+            font-size              : 30px;
+            font-style             : normal;
+            font-weight            : normal;
+            height                 : 97px;
+            width                  : 37px;
+            line-height            : 30px;
+            list-style-image       : none;
+            list-style-position    : outside;
+            list-style-type        : none;
+            margin-right           : -10px;
+            margin-top             : -10px;
+            position               : absolute;
+            right                  : 41.5469px;
+            text-align             : center;
+            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
+            top                    : 28%;
+            z-index                : 5;
+            -webkit-font-smoothing : antialiased;
+            background             : url(../../dist/img/right-arrow.svg) no-repeat;
+        }
+
+        .carousel-control.left {
+            &:hover, &:active, &:focus {
+                .left-arrow {
+                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                }
             }
-            .right-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 97px;
-                width                  : 37px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-right           : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                right                  : 41.5469px;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : 28%;
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/right-arrow.svg) no-repeat;
-            }
+        }
 
-            .carousel-control.left {
-                &:hover, &:active, &:focus {
-                    .left-arrow {
-                        background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+        .carousel-control.right {
+            &:hover, &:active, &:focus {
+                .right-arrow {
+                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                }
+            }
+        }
+
+        .pop-close-icon {
+            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
+            width      : 15px;
+            height     : 15px;
+            display    : inline-block;
+            position   : absolute;
+            right      : 15px;
+            top        : 15px;
+            //z-index:6;
+            opacity    : 1;
+
+            &:hover, &:active, &:focus {
+                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+            }
+        }
+
+        .modal-dialog {
+            width     : 67%;
+            max-width : 938px;
+            margin    : 58px auto 0 auto;
+            height    : 80%;
+
+            .modal-content {
+                height           : 100%;
+                box-shadow       : none;
+                border           : none;
+                background-color : transparent;
+            }
+            .modal-body {
+                height : 100%;
+            }
+            .carousel-inner {
+                height : 100%;
+                .pop-img-container {
+                    //height     : 75%;
+                    margin     : 0 auto;
+                    text-align : center;
+                    img {
+                        max-width : 100% !important;
+                        height    : auto !important;
+                        //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
                     }
-                }
-            }
 
-            .carousel-control.right {
-                &:hover, &:active, &:focus {
-                    .right-arrow {
-                        background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    .videoWrapper {
+                        position       : relative;
+                        padding-bottom : 56.25%; /* 16:9 */
+                        padding-top    : 25px;
+                        height         : 0;
                     }
+                    .videoWrapper iframe {
+                        position : absolute;
+                        top      : 0;
+                        left     : 0;
+                        width    : 100%;
+                        height   : 100%;
+                    }
+
                 }
+
+            }
+            .carousel-caption {
+                @include font-size(1.2);
+                margin  : 20px auto 0;
+                padding : 0;
+                left    : 20px;
+                right   : auto;
+                top     : 100%;
+                height  : 50px;
             }
 
-            .pop-close-icon {
-                background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-                width      : 15px;
-                height     : 15px;
-                display    : inline-block;
-                position   : absolute;
-                right      : 15px;
-                top        : 15px;
-                //z-index:6;
-                opacity    : 1;
-
-                &:hover, &:active, &:focus {
-                    background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-                }
-            }
-
-            .modal-dialog {
-                width     : 67%;
-                max-width : 938px;
-                margin    : 58px auto 0 auto;
-                height    : 80%;
-
-                .modal-content {
-                    height           : 100%;
-                    box-shadow       : none;
+            .carousel-indicators {
+                li {
                     border           : none;
-                    background-color : transparent;
+                    background-color : #fff;
                 }
-                .modal-body {
-                    height : 100%;
+                .active {
+                    background-color : #55565a;
                 }
-                .carousel-inner {
-                    height : 100%;
-                    .pop-img-container {
-                        height : 75%;
-                        margin: 0 auto;
-                        text-align:center;
-                        img {
-                            max-width : 100% !important;
-                            height    : auto !important;
-                            //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
-                        }
-
-                        .videoWrapper {
-                            position: relative;
-                            padding-bottom: 56.25%; /* 16:9 */
-                            padding-top: 25px;
-                            height: 0;
-                        }
-                        .videoWrapper iframe {
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                        }
-
-                    }
-
-                }
-                .carousel-caption {
-                    @include font-size(1.2);
-                    margin  : 0 auto;
-                    padding : 0;
-                    left    : 20px;
-                    right   : auto;
-                    top     : 104%;
-                    height  : 50px;
-                }
-
-                .carousel-indicators {
-                    li {
-                        border           : none;
-                        background-color : #fff;
-                    }
-                    .active {
-                        background-color : #55565a;
-                    }
-                }
-
             }
-        }
 
+        }
     }
 
     .gallery-carousel-page {
@@ -738,7 +750,7 @@
         .carousel-control.left {
             &:hover, &:active, &:focus {
                 .left-arrow {
-                    background             : url(../../dist/img/left-arrow-hover.svg) no-repeat;
+                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
             }
         }
@@ -746,7 +758,7 @@
         .carousel-control.right {
             &:hover, &:active, &:focus {
                 .right-arrow {
-                    background             : url(../../dist/img/right-arrow-hover.svg) no-repeat;
+                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
             }
         }
@@ -791,7 +803,7 @@
                 padding : 0;
                 left    : 20px;
                 right   : auto;
-                top     : 104%;
+                top     : 100%;
                 height  : 50px;
             }
 
@@ -804,24 +816,29 @@
                     background-color : #55565a;
                 }
             }
-
         }
-
     }
 }
 
-
 @media screen and (max-width : 640px) {
+    .carousel.slide,.carousel.slide.subpage  {
+        .carousel-inner {
+            width  : 100%;
+            height : auto;
+            min-height: 230px;
+        }
+    }
+
     .gallery-container {
         .gallery-item {
             img {
-                max-width: 90px;
+                max-width : 90px;
             }
         }
     }
 
     .modal.carousel.slide {
-        margin-top: 60px;
+        margin-top : 60px;
         .pop-close-icon {
             background : url(../../dist/img/pop-close-icon.svg) no-repeat;
             width      : 15px;
@@ -844,13 +861,12 @@
             height    : 80%;
 
             .modal-content {
-                height: 100%;
-                box-shadow: none;
-                border: none;
-                background-color: transparent;
+                height           : 100%;
+                box-shadow       : none;
+                border           : none;
+                background-color : transparent;
                 .modal-body {
-                    height: 100%;
-
+                    height : 100%;
 
                     .carousel-indicators {
                         li {
@@ -865,13 +881,27 @@
                     .carousel-inner {
                         height : 100%;
 
+                        .videoWrapper {
+                            position       : relative;
+                            padding-bottom : 56.25%; /* 16:9 */
+                            padding-top    : 25px;
+                            height         : 0;
+                        }
+                        .videoWrapper iframe {
+                            position : absolute;
+                            top      : 0;
+                            left     : 0;
+                            width    : 100%;
+                            height   : 100%;
+                        }
+
                         .carousel-caption {
                             @include font-size(1.2);
-                            margin  : 0 auto;
+                            margin  : 20px auto 0;
                             padding : 0;
                             left    : 20px;
                             right   : auto;
-                            top     : 104%;
+                            top     : 100%;
                             height  : 50px;
                         }
                     }

@@ -64,4 +64,10 @@
 </div>
  <!-- Display mobile pages -->
 
+<div class="lightbox-container">
+	{% for page in pageList %}
+		{% include page.lightboxTemplateUrl ignore missing %}
+	{% endfor %}
+</div>
+
 {% include 'footer.html' %}

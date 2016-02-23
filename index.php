@@ -19,12 +19,12 @@ $view->parserExtensions = array(
 /////Create normal version pages//////////////////////////
 $surprising      = new Page("surprising", "surprising", "pages/surprising.html");
 $whoswho         = new Page("whoswho", "whoswho", "pages/whoswho.html");
-$branding        = new Page("branding", "branding", "pages/branding.html");
-$engaging        = new Page("engaging", "engaging", "pages/engaging.html");
-$orienteering    = new Page("orienteering", "orienteering", "pages/orienteering.html");
-$integrating     = new Page("integrating", "integrating", "pages/integrating.html");
-$positioning     = new Page("positioning", "positioning", "pages/positioning.html");
-$humanchanneling = new Page("humanchanneling", "humanchanneling", "pages/humanchanneling.html");
+$branding        = new Page("branding", "branding", "pages/branding.html", "lightboxes/branding.html");
+$engaging        = new Page("engaging", "engaging", "pages/engaging.html", "lightboxes/engaging.html");
+$orienteering    = new Page("orienteering", "orienteering", "pages/orienteering.html", "lightboxes/orienteering.html");
+$integrating     = new Page("integrating", "integrating", "pages/integrating.html", "lightboxes/integrating.html");
+$positioning     = new Page("positioning", "positioning", "pages/positioning.html", "lightboxes/positioning.html");
+$humanchanneling = new Page("humanchanneling", "humanchanneling", "pages/humanchanneling.html", "lightboxes/humanchanneling.html");
 $serving         = new Page("serving", "serving", "pages/serving.html");
 $spending        = new Page("spending", "spending", "pages/spending.html");
 

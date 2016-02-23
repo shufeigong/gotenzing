@@ -18,7 +18,6 @@
             }
 
             window.history.pushState(null, null, $(this).attr("id").replace('utility-', '/utility/'));
-
             // Open Mobile utility menu content
             var target = $(this).attr("data-id");
 

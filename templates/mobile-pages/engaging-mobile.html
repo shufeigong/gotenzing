@@ -25,21 +25,58 @@
         </div>
 
         <div class="mobile-img-show">
-            <div id="engaging-mobile-img-show" class="carousel slide" data-ride="carousel">
+            <div id="engaging-page-mobile" class="carousel slide subpage" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators subpageindi engaging-page">
+                    <li data-target="#engaging-page-mobile" data-slide-to="0" class="active"></li>
+                    <li data-target="#engaging-page-mobile" data-slide-to="1"></li>
+                    <li data-target="#engaging-page-mobile" data-slide-to="2"></li>
+                    <li data-target="#engaging-page-mobile" data-slide-to="3"></li>
+                    <li data-target="#engaging-page-mobile" data-slide-to="4"></li>
+                </ol>
 
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active mobile-pop">
-                        <img src="http://placehold.it/280x260">
+                <div class="carousel-inner engaging-page" role="listbox">
+                    <div class="item active">
+                        <div data-target="#lightbox-engaging-page" data-toggle="modal" data-slide-to="0"
+                             class="slide-container">
+                            <img src="/templates/dist/img/gallery/NCU_PS_WebsiteNing_1407x875.jpg"/>
+                        </div>
                     </div>
-
+                    <div class="item">
+                        <div data-target="#lightbox-engaging-page" data-toggle="modal" data-slide-to="1"
+                             class="slide-container">
+                            <img src="/templates/dist/img/gallery/NCU_PS_Postcard_1407x875.jpg" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div data-target="#lightbox-engaging-page" data-toggle="modal" data-slide-to="2"
+                             class="slide-container">
+                            <img src="/templates/dist/img/gallery/CWL_2014spring_Website_1407x875.jpg" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div data-target="#lightbox-engaging-page" data-toggle="modal" data-slide-to="3"
+                             class="slide-container">
+                            <img src="/templates/dist/img/gallery/CWL_2015spring_Ad_1407x875.jpg" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div data-target="#lightbox-engaging-page" data-toggle="modal" data-slide-to="4"
+                             class="slide-container">
+                            <img src="/templates/dist/img/gallery/CWL_2014spring_Logo_1407x875.jpg" />
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#engaging-page" role="button" data-slide="prev">
+                    <div class="left-arrow"></div>
+                </a>
+                <a class="right carousel-control" href="#engaging-page" role="button" data-slide="next">
+                    <div class="right-arrow"></div>
+                </a>
             </div>
-
-
         </div>
-        <!-- end of mobile-img-show-->
-
-
     </div>
 </div>

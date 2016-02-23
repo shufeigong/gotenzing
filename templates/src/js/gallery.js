@@ -3,7 +3,6 @@ var showGallery = function () {
         $('.loading-icon').hide();
         var galleryImages = data;
         var linksContainer = $('.gallery-container.gallerypage');
-        var linksContainerMobile = $('.gallery-container.gallerypage-mobile');
 
         for (var i = 0; i < galleryImages.length; i++) {
             $('<a/>')
