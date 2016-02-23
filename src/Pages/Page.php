@@ -13,12 +13,14 @@ class Page
     public $pageName;
     public $pageUrl;
     public $pageTemplateUrl;
+    public $lightboxTemplateUrl;
 
-    function __construct($pageName, $pageUrl, $pageTemplateUrl)
+    function __construct($pageName, $pageUrl, $pageTemplateUrl, $lightboxTemplateUrl = '')
     {
         $this->pageName        = $pageName;
         $this->pageUrl         = $pageUrl;
         $this->pageTemplateUrl = $pageTemplateUrl;
+        $this->lightboxTemplateUrl = $lightboxTemplateUrl;
     }
 
 }
