@@ -20406,7 +20406,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'panel panel-default' },
+	                { className: 'panel-default panel' },
 	                _react2.default.createElement(AccordionHeader, { data: this.props.data }),
 	                _react2.default.createElement(AccordionBody, { data: this.props.data })
 	            );

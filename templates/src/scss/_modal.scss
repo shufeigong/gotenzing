@@ -139,7 +139,7 @@
 }
 
 @media screen and (min-width : 640px) and (max-width : 999px) {
-    .modal-fullscreen {
+    .modal-fullscreen, .modal-content-box {
         .modal-header {
             .close-button {
                 right : 30px;
@@ -151,7 +151,7 @@
 
 ///////mobile modal page//////////
 @media screen and (max-width : 640px) {
-    .modal-fullscreen {
+    .modal-fullscreen, .modal-content-box {
         margin-top : 60px;
         .modal-dialog {
             margin-top : 0;
@@ -230,6 +230,16 @@
             .mobile-text-div {
                 @include font-size(1.4);
                 color : #77777a;
+
+                a {
+                    color : #77777a;
+                    &:hover, &:active {
+                        text-decoration: none;
+                        span {
+                            text-decoration: underline;
+                        }
+                    }
+                }
 
             }
             //end of .mobile-text-div

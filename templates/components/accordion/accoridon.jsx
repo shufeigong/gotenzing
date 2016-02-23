@@ -69,7 +69,8 @@ class AccordionHeader extends React.Component {
 
                 <div className="panel-title title-info visible-xs">
                     <div className="additional-info">
-                        <span className="obl">{this.props.data.title}, </span><span className="obl">{this.props.data.what_you_do}, </span><br />
+                        <span className="obl">{this.props.data.title}, </span>
+                        <span className="obl">{this.props.data.what_you_do}, </span><br />
                         <span className="bold-obl">{this.props.data.spirtual_role}</span>
                     </div>
                 </div>

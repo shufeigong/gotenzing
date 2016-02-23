@@ -228,7 +228,7 @@
                 padding    : 0;
                 li {
                     a {
-                        font-size   : 16px;
+                        @include font-size(1.6);
                         font-family : $font-site-bold;
                         color       : #ffffff;
                         &:hover {

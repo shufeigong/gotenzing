@@ -4,6 +4,7 @@
         var modalFullscreen = $(".modal.modal-fullscreen");
         var mobileModal = $('.modal.mobile-modal');
         var modalPopup = $('.modal.mobile-pop-modal');
+        var modalContentBox = $('.modal.modal-content-box');
 
         modalCarousel.on('show.bs.modal', function (event) {
             var zIndex = 3040 + (10 * $('.modal:visible').length);
@@ -57,30 +58,11 @@
             $('body').css('overflow', 'hidden');
             $(this).css('overflow', 'hidden');
 
-            $(".modal-fullscreen.fade.in").find('a.close').click(function(e) {
-                e.preventDefault();
-                //var hasPreviousUrl = $.cookie('previousUrl') != null;
-                //if (hasPreviousUrl) {
-                //    var previousUrl = $.cookie("previousUrl");
-                //    var isSameDomain = previousUrl.search(document.domain) != -1;
-                //    var path = previousUrl.split('/').pop();
-                //
-                //    if (isSameDomain) {
-                //        window.history.pushState(null, null, "/" + path);
-                //    } else {
-                //        // if the previous is not the same domain,
-                //        window.history.pushState(null, null, "/");
-                //        location.reload();
-                //    }
-                //} else {
-                //    window.history.pushState(null, null, "/");
-                //}
-                //
-                //$('.div-exlist a.selected').removeClass('selected');
-                //$.removeCookie("utilityMenuOpen");
-                //
-                //return true;
-            });
+        });
+
+        modalContentBox.on('shown.bs.modal', function (event) {
+            $('body').css('overflow', 'hidden');
+            $(this).css('overflow', 'hidden');
 
         });
 
