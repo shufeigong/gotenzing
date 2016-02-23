@@ -233,7 +233,7 @@
 
                 a {
                     color : #77777a;
-                    &:hover, &:active {
+                    &:hover, &:active, &:focus {
                         text-decoration: none;
                         span {
                             text-decoration: underline;
