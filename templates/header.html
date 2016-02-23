@@ -142,7 +142,7 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     {% for page in pageList %}
-                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" data-target=".modal#{{page.pageName}}-mobile-page" data-toggle="modal" class="text-uppercase">{{page.pageName}}</a></li>
+                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" class="text-uppercase">{{page.pageName}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -150,13 +150,13 @@
             <div class="utility-mobile-list">
                 <ul>
                     <li class="mobile-item-side utility">
-                        <a href="personalities-bios" data-target=".modal#personalities-bios" id="personalities-bios-mobile-side" data-toggle="modal">Personalities + bios</a>
+                        <a href="personalities-bios">Personalities + Bios</a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="gallery-legacy" data-target=".modal#gallery-legacy" id="gallery-legacy-mobile-side" data-toggle="modal">Gallery + Legacy</a>
+                        <a href="gallery-legacy">Gallery + Legacy</a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="services-skills" data-target=".modal#services-skills" id="services-skills-mobile-side" data-toggle="modal">Services + Skills</a>
+                        <a href="services-skills">Services + Skills</a>
                     </li>
                 </ul>
             </div>
@@ -169,11 +169,11 @@
                     </li>
                     <li class="mobile-item-side utility">
                         <img src="/templates/dist/img/lockiconmobile.svg" width="20px" height="38px" />
-                        <a href="privacy" data-target=".modal#privacy" data-toggle="modal" data-id="privacy">Privacy</a>
+                        <a href="privacy" data-id="privacy">Privacy</a>
                     </li>
                     <li class="mobile-item-side utility">
                         <img src="/templates/dist/img/bookiconmobile.svg" width="25px" height="23px" />
-                        <a href="contact" data-target=".modal#contact" data-toggle="modal" data-id="contact">Contact</a>
+                        <a href="contact" data-id="contact">Contact</a>
                     </li>
                 </ul>
             </div>

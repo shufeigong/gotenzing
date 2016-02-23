@@ -406,6 +406,7 @@
         $(".mobile-item-side").click(function (e) {
             e.preventDefault();
 
+            var target = $(this).find('a').attr('href').replace('utility/', '');
             var isUtility = $(this).hasClass('utility');
 
             if(isUtility) {
@@ -421,44 +422,13 @@
             $('.ham-icon').removeClass('hidden');
             $('body').removeClass('nav-expanded');
 
-            var target = $(this).find('a').attr('href').replace('utility/', '');
 
-            mobileButtonClicked = true;
-            $('.main-menu').find('#' + target).click();
+            //mobileButtonClicked = true;
 
             if(!isUtility) {
-                // Open desktop menu content
-                //if (!$('.main-menu').find('#' + target).hasClass('orange')) {
-                //    //$('.main-menu').find('#' + target).click();
-                //}
-                //
-                //var mainMenuItem = $('.main-menu').find('#' + target);
-                //timeLine.clear();
-                //mainMenuItem.addClass('orange');
-                //
-                //var i = 0;
-                //mainMenuItem.parent().siblings().each(function () {
-                //    if (i == 0) {
-                //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                //            "fontSize": "20px",
-                //            ease: easeValue
-                //        }));
-                //        i++;
-                //    } else {
-                //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                //            "fontSize": "20px",
-                //            ease: easeValue
-                //        }), "-=0.45");
-                //    }
-                //});
-                //
-                //timeLine.add(TweenLite.set(mainMenuItem.next(), {height: "auto"}));
-                //timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
-
-
-
+                $('.main-menu').find('#' + target).click();
             } else {
-                //$('.modal#'+target).modal('show');
+                $('.modal#'+target).modal('show');
             }
         });
 

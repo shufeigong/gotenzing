@@ -46,40 +46,10 @@
             e.preventDefault();
             var target = $(this).find('a').attr('href');
 
-            //$.cookie("previousUrl", window.location.href, {path:"/"});
             window.history.pushState(null, null, "/" + target);//change url to be current subpage
             $("body").css("overflow-y", "hidden");
-            //$($(this).children("a").attr("data-target")).addClass("in").css("display", "block");
 
-            //$('#' + target).modal('show');
-            //$($(this).children("a").attr("data-target")).modal('show');
-            // Open desktop menu content
-
-            //var mainMenuItem = $('.main-menu').find('#' + target);
             $('.main-menu').find('#' + target).click();
-
-            //timeLine.clear();
-            //mainMenuItem.addClass('orange');
-            //mainMenuItem.attr('style', '');
-            //
-            //var i = 0;
-            //mainMenuItem.parent().siblings().each(function () {
-            //    if (i == 0) {
-            //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-            //            "fontSize": "20px",
-            //            ease: easeValue
-            //        }));
-            //        i++;
-            //    } else {
-            //        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-            //            "fontSize": "20px",
-            //            ease: easeValue
-            //        }), "-=0.45");
-            //    }
-            //});
-            //
-            //timeLine.add(TweenLite.set(mainMenuItem.next(), {height: "auto"}));
-            //timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
         });
 
         $(".mobile-close").click(function (e) {
@@ -97,42 +67,13 @@
             $('.mobile-item').find('.orange').removeClass('orange');
             $('.main-menu').find('#' + target).closest('li').find('.page-content .sub-close-icon').click();
 
-            //if(isUtility) {
-            //    //$('.entry-content').find('#' + target).find('.utility-close-icon').modal('hide');
-            //    $('.modal#' + target).modal('hide');
-            //} else {
-            //    // Clear the timeline
-            //    var menuItem = $('.main-menu').find('#' + target).parent().find('.sub-close-icon');
-            //
-            //    timeLine.clear();
-            //    timeLine.add(TweenLite.to(menuItem.parent(".page-content"), 0.5, {"height": "0", ease: easeValue}));
-            //
-            //    // De-select the menu item
-            //    menuItem.parent(".page-content").prev("a").removeClass("orange");
-            //
-            //    // Return animation
-            //    var i = 0;
-            //    menuItem.parents(".item").siblings().each(function () {
-            //        if (i == 0) {
-            //            timeLine.add(TweenLite.to($(this).children("a"), 0.5, {"fontSize": "67px", ease: easeValue}));
-            //            i++;
-            //        } else {
-            //            timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-            //                "fontSize": "67px",
-            //                ease: easeValue
-            //            }), "-=0.45");
-            //        }
-            //
-            //    });
-            //
-            //    //$('.main-menu').find('#' + target).parent().find('.sub-close-icon').click().length;
-            //}
         });
 
         // Mobile side menu
         $(".mobile-item-side").click(function (e) {
             e.preventDefault();
 
+            var target = $(this).find('a').attr('href').replace('utility/', '');
             var isUtility = $(this).hasClass('utility');
 
             if(isUtility) {
@@ -148,39 +89,12 @@
             $('.ham-icon').removeClass('hidden');
             $('body').removeClass('nav-expanded');
 
-            var target = $(this).find('a').attr('href').replace('utility/', '');
-
+            alert(target);
+            //return false;
             if(!isUtility) {
-                // Open desktop menu content
-                if (!$('.main-menu').find('#' + target).hasClass('orange')) {
-                    //$('.main-menu').find('#' + target).click();
-                }
-
-                var mainMenuItem = $('.main-menu').find('#' + target);
-                timeLine.clear();
-                mainMenuItem.addClass('orange');
-
-                var i = 0;
-                mainMenuItem.parent().siblings().each(function () {
-                    if (i == 0) {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "20px",
-                            ease: easeValue
-                        }));
-                        i++;
-                    } else {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
-                            "fontSize": "20px",
-                            ease: easeValue
-                        }), "-=0.45");
-                    }
-                });
-
-                timeLine.add(TweenLite.set(mainMenuItem.next(), {height: "auto"}));
-                timeLine.add(TweenLite.from(mainMenuItem.next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
-
+                $('.main-menu').find('#' + target).click();
             } else {
-                //$('.modal#'+target).modal('show');
+                $('.modal#'+target).modal('show');
             }
         });
 
@@ -194,30 +108,7 @@
             $($(this).attr("close-target")).hide();
         });
 
-        /////////////jquery touch swipe/////////
-        //jQuery("#brading-mobile-img-show").touchwipe({
-        //    wipeLeft: function () {
-        //        jQuery("#brading-mobile-img-show").carousel("next");
-        //    },
-        //    wipeRight: function () {
-        //        jQuery("#brading-mobile-img-show").carousel("prev")
-        //    },
-        //    min_move_x: 20,
-        //    preventDefaultEvents: false
-        //});
-        //
-        //$('#lightbox-mobile-pop-gallery-page').touchwipe({
-        //    wipeLeft: function () {
-        //        jQuery('#lightbox-mobile-pop-gallery-page').carousel("next");
-        //    },
-        //    wipeRight: function () {
-        //        jQuery('#lightbox-mobile-pop-gallery-page').carousel("prev")
-        //    },
-        //    min_move_x: 20,
-        //    preventDefaultEvents: false
-        //});
-
-        $(".carousel-inner.gallerypage").swipe( {
+        $(".carousel-inner").swipe( {
             //Generic swipe handler for all directions
             swipeLeft:function(event, direction, distance, duration, fingerCount) {
                 $(this).parent().carousel('prev');
