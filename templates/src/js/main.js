@@ -132,7 +132,7 @@
          *  Main menu animation
          */
 
-        $(".item").children("a").hover(function () {
+        $(".main-menu .item").children("a").hover(function () {
             // Prevent to open the same mobile modal
             if ($(this).hasClass('orange')) {
                 return false;
@@ -172,7 +172,7 @@
             }
         });
 
-        $(".item").children("a").click(function () {
+        $(".main-menu .item").children("a").click(function () {
             // Prevent to open the same mobile modal
             if ($(this).hasClass('orange')) {
                 return false;
