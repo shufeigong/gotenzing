@@ -2,6 +2,7 @@
     // Reset cookie
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
+    window.isGalleryOpen = false;
 
     $(document).ready(function () {
         initFirstClickMenuAnimation();

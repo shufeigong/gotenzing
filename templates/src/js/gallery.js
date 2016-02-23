@@ -58,7 +58,7 @@ var showGallery = function () {
                 );
             }
         }
-
+        window.isGalleryOpen = true;
     })
         .fail(function () {
             alert('error');
