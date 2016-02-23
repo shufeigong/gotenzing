@@ -24,7 +24,9 @@
 
             //$('#' + target + '-mobile-page').modal('show');
             if(target == 'gallery-legacy') {
-                showGallery();
+                if(!window.isGalleryOpen) {
+                    showGallery();
+                }
             }
         });
 
