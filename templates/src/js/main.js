@@ -468,7 +468,9 @@
             $(this).attr('topv', $(this).position().top);
         });
 
-        $(".mobile-main-menu").scroll(function () {
+        var mobileMainMenu = $(".mobile-main-menu");
+
+        mobileMainMenu.scroll(function () {
             var scroH = parseInt($(this).scrollTop());
 
             $(".mobile-main-ul li").each(function () {
@@ -488,7 +490,7 @@
             });
         });
 
-        $(".mobile-main-menu").scrollTop(1);
+        mobileMainMenu.scrollTop(1);
     }
 
     function initFirstClickMenuAnimation() {
