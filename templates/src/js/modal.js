@@ -15,6 +15,8 @@
                 player = $f(iframe);
                 var playButton = $(target).find('.video-play-button');
 
+                player.api("play");
+
                 player.addEvent('ready', function() {
                     player.addEvent('pause', function() {
                         playButton.show();
