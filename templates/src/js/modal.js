@@ -30,7 +30,9 @@
                 });
 
             } else {
-                player.api('pause');
+                if(player != undefined) {
+                    player.api('pause');
+                }
             }
         });
 
@@ -43,7 +45,9 @@
         });
 
         modalCarousel.on('hide.bs.modal', function() {
-            player.api('pause');
+            if(player != undefined) {
+                player.api('pause');
+            }
         });
 
         modalFullscreen.on('show.bs.modal', function (event) {
