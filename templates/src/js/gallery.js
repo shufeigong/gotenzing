@@ -6,7 +6,9 @@ var showGallery = function () {
 
         for (var i = 0; i < galleryImages.length; i++) {
             $('<a/>')
-                .append($('<img>').prop('src', '/templates/dist/img/gallery/thumbnails/' + galleryImages[i].thumbnail_image))
+                .append($('<img>')
+                .prop('src', '/templates/dist/img/gallery/thumbnails/' + galleryImages[i].thumbnail_image))
+                .prop('alt', galleryImages[i].thumbnail_image)
                 .addClass('gallery-item')
                 .prop('href', '#lightbox')
                 .attr('data-toggle', 'modal')
@@ -21,7 +23,9 @@ var showGallery = function () {
                 $('.carousel-inner.gallerypage')
                     .append(
                     $('<div/>').addClass('item active').append(
-                        $('<img>').prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
+                        $('<img>')
+                            .prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
+                            .prop('alt', galleryImages[i].thumbnail_image)
                     ).append(
                         $('<div/>').addClass('carousel-caption').append(galleryImages[i].caption)
                     )
@@ -32,7 +36,9 @@ var showGallery = function () {
 
                 $('.carousel-inner.gallerypage')
                     .append($('<div/>').addClass('item').append(
-                        $('<img>').prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
+                        $('<img>')
+                            .prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
+                            .prop('alt', galleryImages[i].thumbnail_image)
                     ).append(
                         $('<div/>').addClass('carousel-caption').append(galleryImages[i].caption)
                     )
