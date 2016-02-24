@@ -4,6 +4,9 @@
 	        .panel-default {
 	            border: none;
 	            margin-top: 0;
+				-webkit-box-shadow : none;
+				-moz-box-shadow    : none;
+				box-shadow         : none;
 	            .panel-heading {
 	                padding : 5px 0;
 	                background : none;
