@@ -17,9 +17,10 @@ function showThumb(data){
 
 (function($) {
     $(document).ready(function() {
-        vimeoLoadingThumb(142881734);
-        vimeoLoadingThumb(87009438);
-        vimeoLoadingThumb(55531909);
-        vimeoLoadingThumb(141903598);
+        //vimeoLoadingThumb(155403714);
+        //vimeoLoadingThumb(142881734);
+        //vimeoLoadingThumb(87009438);
+        //vimeoLoadingThumb(55531909);
+        //vimeoLoadingThumb(141903598);
     });
 })(jQuery);
