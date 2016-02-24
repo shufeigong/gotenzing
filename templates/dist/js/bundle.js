@@ -61,12 +61,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//import AccordionMobile from './accordion/mobile-accoridon.jsx';
+	//import Branding from './carousels/branding.jsx';
 	
 	//render(<GalleryThumbnail url='/templates/json/gallery.json' />, document.getElementById('gallery-container'));
 	(0, _reactDom.render)(_react2.default.createElement(_accoridon2.default, { url: '/templates/json/bios.json' }), document.getElementById('accordion-container'));
-	//render(<AccordionMobile url='/templates/json/bios.json'/>, document.getElementById('mobile-accordion-container'));
-
 	//import GalleryCarousel from './gallery/gallery-carousel.jsx';
 	//import GalleryThumbnail from './gallery/gallery-thumbnail.jsx';
 
