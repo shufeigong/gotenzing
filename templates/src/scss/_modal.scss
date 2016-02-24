@@ -58,6 +58,7 @@
             margin-top : 100px;
             padding    : 0 5%;
             .title {
+                @include font-size(6.6);
                 text-transform : uppercase;
             }
 
