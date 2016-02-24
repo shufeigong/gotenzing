@@ -75,6 +75,27 @@
     }
 }
 
+.videoWrapper {
+    .video-play-button {
+        display: block;
+        position: absolute;
+        z-index: 99;
+        top: calc(50% - 36px);
+        left: calc(50% - 36px);
+
+        -webkit-transition: all 0.5s linear;
+        -moz-transition: all 0.5s linear;
+        -o-transition: all 0.5s linear;
+        transition: all 0.5s linear;
+
+        opacity: 0.5;
+
+        &:hover, &:active, &:focus {
+            opacity: 1;
+        }
+    }
+}
+
 /////1000px~////////////////////////////////
 @media screen and (min-width : 1000px) {
     .imgShow-div {
@@ -280,14 +301,6 @@
                         padding-bottom : 56.25%; /* 16:9 */
                         padding-top    : 25px;
                         height         : 0;
-
-                        .video-play-button {
-                            display: block;
-                            position: absolute;
-                            z-index: 99;
-                            top: calc(50% - 36px);
-                            left: calc(50% - 36px);
-                        }
                     }
                     .videoWrapper iframe {
                         position : absolute;
@@ -663,14 +676,6 @@
                         padding-bottom : 56.25%; /* 16:9 */
                         padding-top    : 25px;
                         height         : 0;
-
-                        .video-play-button {
-                            display: block;
-                            position: absolute;
-                            z-index: 99;
-                            top: calc(50% - 36px);
-                            left: calc(50% - 36px);
-                        }
                     }
                     .videoWrapper iframe {
                         position : absolute;
@@ -901,15 +906,6 @@
                             padding-bottom : 56.25%; /* 16:9 */
                             padding-top    : 25px;
                             height         : 0;
-
-                            .video-play-button {
-                                display: block;
-                                position: absolute;
-                                z-index: 99;
-                                top: calc(50% - 36px);
-                                left: calc(50% - 36px);
-                            }
-
                         }
                         .videoWrapper iframe {
                             position : absolute;

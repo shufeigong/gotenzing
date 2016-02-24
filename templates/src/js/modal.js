@@ -5,6 +5,34 @@
         var mobileModal = $('.modal.mobile-modal');
         var modalPopup = $('.modal.mobile-pop-modal');
         var modalContentBox = $('.modal.modal-content-box');
+        var player;
+
+        modalCarousel.on('slid.bs.carousel', function (event) {
+            var target = event.relatedTarget;
+            var isVideo = $(target).find('.videoWrapper').length > 0;
+            if(isVideo) {
+                var iframe = $(target).find('iframe').get(0);
+                player = $f(iframe);
+                var playButton = $(target).find('.video-play-button');
+
+                player.addEvent('ready', function() {
+                    player.addEvent('pause', function() {
+                        playButton.show();
+
+                    });
+                    player.addEvent('play', function() {
+                        playButton.hide();
+                    });
+                });
+
+                playButton.bind("click", function() {
+                    player.api("play");
+                });
+
+            } else {
+                player.api('pause');
+            }
+        });
 
         modalCarousel.on('show.bs.modal', function (event) {
             var zIndex = 3040 + (10 * $('.modal:visible').length);
@@ -12,6 +40,10 @@
             setTimeout(function () {
                 $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
             }, 0);
+        });
+
+        modalCarousel.on('hide.bs.modal', function() {
+            player.api('pause');
         });
 
         modalFullscreen.on('show.bs.modal', function (event) {
