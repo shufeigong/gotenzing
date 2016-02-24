@@ -19,6 +19,7 @@
 
                 if(isFirstCarouselModal) {
                     player.api("play");
+                    isFirstCarouselModal = false;
                 }
 
                 player.addEvent('ready', function() {
@@ -46,8 +47,6 @@
             var zIndex = 3040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
 
-            isFirstCarouselModal = false;
-
             setTimeout(function () {
                 $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
             }, 0);
@@ -55,7 +54,7 @@
 
         modalCarousel.on('hide.bs.modal', function() {
             if(player != undefined) {
-                player.api('pause').api("seekTo", "0");
+                player.api('unload');
             }
             isFirstCarouselModal = true;
         });
