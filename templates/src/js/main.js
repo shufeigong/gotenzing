@@ -51,6 +51,13 @@
         //normal version reload page
         if (link !== "" && !isUtilityPage) {
             var thisItem = $("[href=" + link + "]");
+            var isPageExist = thisItem.length > 0;
+
+            // If the page doesn't exist, redirect to home page.
+            if(!isPageExist) {
+                location.href = '/';
+            }
+
             thisItem.next().find('a').attr('tabindex', "0");
             thisItem.addClass('orange');
             var i = 0;
