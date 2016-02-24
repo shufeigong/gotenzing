@@ -21,11 +21,6 @@
 		    {% endfor %}
 		</ul>
 	</div>
-
-    <!-- Display utility pages -->
-	{% for page in utilityPageList %}
-		{% include page.pageTemplateUrl ignore missing %}
-	{% endfor %}
 </div>
 
 <div class="mobile-content visible-xs">
@@ -59,6 +54,12 @@
 
 </div>
  <!-- Display mobile pages -->
+<div class="utility-page-container">
+	<!-- Display utility pages -->
+	{% for page in utilityPageList %}
+	{% include page.pageTemplateUrl ignore missing %}
+	{% endfor %}
+</div>
 
 <div class="lightbox-container">
 	{% for page in pageList %}

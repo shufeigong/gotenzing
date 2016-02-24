@@ -90,6 +90,7 @@
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
                             min-height    : 239px;
+                            width: 100%;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -102,6 +103,11 @@
                                     color : #77777a;
                                     &:hover, &:focus {
                                         text-decoration : none;
+
+                                        span {
+                                            text-decoration: underline;
+                                        }
+
                                     }
                                 }
                                 p {
@@ -231,7 +237,7 @@
                             border-top    : solid 1px #b9b8ba;
                             border-bottom : solid 1px #b9b8ba;
                             min-height    : 239px;
-
+                            width: 100%;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -246,6 +252,11 @@
                                     color : #77777a;
                                     &:hover, &:focus {
                                         text-decoration : none;
+
+                                        span {
+                                            text-decoration: underline;
+                                        }
+
                                     }
                                 }
                                 p {
