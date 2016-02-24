@@ -16,9 +16,9 @@
                 var iframe = $(target).find('iframe').get(0);
                 player = $f(iframe);
                 var playButton = $(target).find('.video-play-button');
-                console.log(player);
+
                 if(isFirstCarouselModal) {
-                    player.api("seekTo", "0").api("play");
+                    player.api("play");
                 }
 
                 player.addEvent('ready', function() {
@@ -55,7 +55,7 @@
 
         modalCarousel.on('hide.bs.modal', function() {
             if(player != undefined) {
-                player.api('pause');
+                player.api('pause').api("seekTo", "0");
             }
             isFirstCarouselModal = true;
         });
