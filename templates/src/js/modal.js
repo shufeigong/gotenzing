@@ -6,24 +6,28 @@
         var modalPopup = $('.modal.mobile-pop-modal');
         var modalContentBox = $('.modal.modal-content-box');
         var player;
+        var isFirstCarouselModal = true;
 
         modalCarousel.on('slid.bs.carousel', function (event) {
+            // video play button function
             var target = event.relatedTarget;
             var isVideo = $(target).find('.videoWrapper').length > 0;
             if(isVideo) {
                 var iframe = $(target).find('iframe').get(0);
                 player = $f(iframe);
                 var playButton = $(target).find('.video-play-button');
-
-                player.api("play");
+                console.log(player);
+                if(isFirstCarouselModal) {
+                    player.api("seekTo", "0").api("play");
+                }
 
                 player.addEvent('ready', function() {
                     player.addEvent('pause', function() {
-                        playButton.show();
+                        playButton.fadeIn();
 
                     });
                     player.addEvent('play', function() {
-                        playButton.hide();
+                        playButton.fadeOut();
                     });
                 });
 
@@ -41,6 +45,9 @@
         modalCarousel.on('show.bs.modal', function (event) {
             var zIndex = 3040 + (10 * $('.modal:visible').length);
             $(this).css('z-index', zIndex);
+
+            isFirstCarouselModal = false;
+
             setTimeout(function () {
                 $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
             }, 0);
@@ -50,6 +57,7 @@
             if(player != undefined) {
                 player.api('pause');
             }
+            isFirstCarouselModal = true;
         });
 
         modalFullscreen.on('show.bs.modal', function (event) {
