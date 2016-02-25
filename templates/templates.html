@@ -6,11 +6,11 @@
 		    {% for page in pageList %}
 		       <li class="item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">whos<span class="grey">who</span></a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">whos<span class="grey">who</span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">human<span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">human<span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">{{page.pageName}}</a>
 		           {% endif %}
 
 		           <div class="page-content">
@@ -29,11 +29,11 @@
              {% for page in pageList %}
               <li class="mobile-item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#whoswho-mobile-page" data-toggle="modal">whos<span class="grey">who<span></a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#whoswho-mobile-page" data-toggle="modal"  class="main-menu-item">whos<span class="grey">who<span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#humanchanneling-mobile-page" data-toggle="modal">human<br/><span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#humanchanneling-mobile-page" data-toggle="modal"  class="main-menu-item">human<br/><span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#{{page.pageName}}-mobile-page" data-toggle="modal">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile" data-target=".modal#{{page.pageName}}-mobile-page" data-toggle="modal" class="main-menu-item">{{page.pageName}}</a>
 		           {% endif %}
 		       </li>
              {% endfor%}
