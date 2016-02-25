@@ -53,6 +53,14 @@
                                 }
                             }
                         }
+
+                        .utility-menu-item {
+                            span {
+                                text-indent: -999999px;
+                                position: absolute;
+                            }
+                        }
+
                         &.orange {
                             .stt0 {
                                 fill : #f7a800;
