@@ -75,7 +75,7 @@
                 <div class="div-iconlist">
                     <ul>
                         <li>
-                            <a href="https://www.facebook.com/Tenzing.co/" target="_blank">
+                            <a href="https://www.facebook.com/Tenzing.co/" target="_blank" class="social-menu-item">
                             <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17"
                                  style="width:17px;height:17px;">
                                 <style>.stt0 {
@@ -89,7 +89,7 @@
                         </a>
                         </li>
                         <li>
-                            <a href="#" id="utility-privacy" data-toggle="modal" data-target=".modal#privacy" data-id="privacy">
+                            <a href="#" id="utility-privacy" data-toggle="modal" data-target=".modal#privacy" data-id="privacy" class="utility-menu-item">
                             <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 22"
                                  style="width:17px;height:22px;">
                                 <style>.stt0 {
@@ -110,7 +110,7 @@
                         </a>
                         </li>
                         <li>
-                            <a href="#" id="utility-contact" data-toggle="modal" data-target=".modal#contact" data-id="contact">
+                            <a href="#" id="utility-contact" data-toggle="modal" data-target=".modal#contact" data-id="contact" class="utility-menu-item">
                             <svg id="Layer_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 17"
                                  style="width:18px;height:17px;">
                                 <style>.stt0 {
@@ -140,9 +140,15 @@
         <div class="extension-header col-md-12 hidden-xs">
             <div class="div-exlist">
                 <ul>
-                    <li><a href="#" id="utility-personalities-bios" data-toggle="modal" data-target=".modal#personalities-bios" data-id="personalities-bios">PERSONALITIES + BIOS</a></li>
-                    <li><a href="#" id="utility-gallery-legacy" data-toggle="modal" data-target=".modal#gallery-legacy" data-id="gallery-legacy">GALLERY + LEGACY</a></li>
-                    <li><a href="#" id="utility-services-skills" data-toggle="modal" data-target=".modal#services-skills" data-id="services-skills">SERVICES + SKILLS</a></li>
+                    <li>
+                        <a href="#" id="utility-personalities-bios" data-toggle="modal" data-target=".modal#personalities-bios" data-id="personalities-bios" class="utility-menu-item">PERSONALITIES + BIOS</a>
+                    </li>
+                    <li>
+                        <a href="#" id="utility-gallery-legacy" data-toggle="modal" data-target=".modal#gallery-legacy" data-id="gallery-legacy" class="utility-menu-item">GALLERY + LEGACY</a>
+                    </li>
+                    <li>
+                        <a href="#" id="utility-services-skills" data-toggle="modal" data-target=".modal#services-skills" data-id="services-skills" class="utility-menu-item">SERVICES + SKILLS</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -152,7 +158,9 @@
                 <ul>
                     <li><a href="/">HOME</a></li>
                     {% for page in pageList %}
-                    <li class="mobile-item-side"><a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" class="text-uppercase">{{page.pageName}}</a></li>
+                    <li class="mobile-item-side">
+                        <a href="{{page.pageUrl}}" id="{{page.pageName}}-mobile-side" class="text-uppercase main-menu-item">{{page.pageName}}</a>
+                    </li>
                     {% endfor %}
                 </ul>
             </div>
@@ -160,13 +168,13 @@
             <div class="utility-mobile-list">
                 <ul>
                     <li class="mobile-item-side utility">
-                        <a href="personalities-bios">Personalities + Bios</a>
+                        <a href="personalities-bios" class="utility-menu-item">Personalities + Bios</a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="gallery-legacy">Gallery + Legacy</a>
+                        <a href="gallery-legacy" class="utility-menu-item">Gallery + Legacy</a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="services-skills">Services + Skills</a>
+                        <a href="services-skills" class="utility-menu-item">Services + Skills</a>
                     </li>
                 </ul>
             </div>
@@ -174,19 +182,19 @@
             <div class="social-mobile-list">
                 <ul>
                     <li>
-                        <a href="https://www.facebook.com/" target="_blank">
+                        <a href="https://www.facebook.com/" target="_blank" class="social-menu-item">
                             <img src="/templates/dist/img/facebookiconmobile.svg" width="25px" height="25px" alt="Facebook Social icon"/>
                             <span>Facebook</span>
                         </a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="privacy" data-id="privacy">
+                        <a href="privacy" data-id="privacy" class="utility-menu-item">
                             <img src="/templates/dist/img/lockiconmobile.svg" width="25px" height="38px" alt="Privacy page icon"/>
                             <span>Privacy</span>
                         </a>
                     </li>
                     <li class="mobile-item-side utility">
-                        <a href="contact" data-id="contact">
+                        <a href="contact" data-id="contact" class="utility-menu-item">
                             <img src="/templates/dist/img/bookiconmobile.svg" width="25px" height="23px" alt="Contact page icon"/>
                             <span>Contact</span>
                         </a>
