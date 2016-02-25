@@ -3,12 +3,16 @@
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
 
-    $(document).ready(function () {
-        $('img.lazy').lazyload({
-            threshold : 200,
-            effect : "fadeIn"
+    $(window).load(function() {
+        new LazyLoad({
+            threshold: 500,
+            throttle: 30,
+            skip_invisible: false
         });
 
+    });
+
+    $(document).ready(function () {
         window.isGalleryOpen = false;
 
         initFirstClickMenuAnimation();

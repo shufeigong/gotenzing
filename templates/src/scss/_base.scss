@@ -86,8 +86,14 @@ ul, ol {
 }
 
 img {
+    display: block;
     max-width: 100%;
     height: auto;
+}
+
+/* Prevents img without src to appear */
+img:not([src]) {
+    visibility: hidden;
 }
 
 a {

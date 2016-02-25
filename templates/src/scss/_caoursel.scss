@@ -72,6 +72,10 @@
                 cursor : pointer;
                 text-align: center;
 
+                img {
+                    margin : 0 auto;
+                }
+
                 .video-play-icon {
                     display: block;
                     background: url("/templates/dist/img/video-play.svg") no-repeat;
