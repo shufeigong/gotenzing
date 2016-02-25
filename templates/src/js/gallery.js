@@ -9,6 +9,8 @@ var showGallery = function () {
                 .append($('<img>')
                 .prop('src', '/templates/dist/img/gallery/thumbnails/' + galleryImages[i].thumbnail_image))
                 .prop('alt', galleryImages[i].thumbnail_image)
+                .prop('width', 119)
+                .prop('height', 119)
                 .addClass('gallery-item')
                 .prop('href', '#lightbox')
                 .attr('data-toggle', 'modal')
@@ -26,6 +28,8 @@ var showGallery = function () {
                         $('<img>')
                             .prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
                             .prop('alt', galleryImages[i].thumbnail_image)
+                            .prop('width', 1407)
+                            .prop('height', 875)
                     ).append(
                         $('<div/>').addClass('carousel-caption').append(galleryImages[i].caption)
                     )
@@ -39,6 +43,8 @@ var showGallery = function () {
                         $('<img>')
                             .prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
                             .prop('alt', galleryImages[i].thumbnail_image)
+                            .prop('width', 1407)
+                            .prop('height', 875)
                     ).append(
                         $('<div/>').addClass('carousel-caption').append(galleryImages[i].caption)
                     )
