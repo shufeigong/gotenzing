@@ -1,12 +1,12 @@
 (function ($, viewport) {
+    "use strict";
+
     // Reset cookie
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
 
     $(window).load(function() {
         new LazyLoad({
-            threshold: 500,
-            throttle: 30,
             skip_invisible: false
         });
 
@@ -123,6 +123,7 @@
 
         // Main page extend menu
         $(".menuicon").click(function () {
+            $(this).toggleClass('is-active');
             $(".arrow-down, .extension-header").slideToggle();
             $(".shadow-main").toggle();
             $(this).parent("li").toggleClass('orange');
@@ -131,23 +132,13 @@
         /////mobile swip menu/////
         $('.ham-icon').on('click', function (e) {
             e.preventDefault();
+            $(this).toggleClass('is-active');
             $('body').toggleClass('nav-expanded');
-
-            $('.close-icon').removeClass('hidden');
-            $('.ham-icon').removeClass('visible-xs').addClass('hidden');
-        });
-        $('.close-icon').on('click', function (e) {
-            e.preventDefault();
-            $('body').removeClass('nav-expanded');
-
-            $('.close-icon').addClass('hidden');
-            $('.ham-icon').removeClass('hidden');
         });
 
         /*
          *  Main menu animation
          */
-
         $(".main-menu .item").children("a").hover(function () {
             // Prevent to open the same mobile modal
             if ($(this).hasClass('orange')) {

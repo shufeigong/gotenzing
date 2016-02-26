@@ -17,7 +17,6 @@ function showThumb(data){
 
 (function($) {
     $(document).ready(function() {
-        //vimeoLoadingThumb(155403714);
         //vimeoLoadingThumb(142881734);
         //vimeoLoadingThumb(87009438);
         //vimeoLoadingThumb(55531909);

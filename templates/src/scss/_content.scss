@@ -1,7 +1,7 @@
 .sub-link {
     &:hover, &:focus {
         .sub-face {
-            fill : #77777a;
+            fill : $text-grey;
         }
         div {
             text-decoration : underline;
@@ -27,13 +27,13 @@
                         margin-left    : 25px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : #77777a;
+                        color          : $text-grey;
                         text-transform : uppercase;
                         overflow       : hidden;
                         vertical-align: middle;
 
                         .grey {
-                            color : #b9b8ba;
+                            color : $main-menu-light-grey;
                         }
 
                         &.orange {
@@ -53,7 +53,7 @@
                     }
 
                     #engaging, #integrating, #spending {
-                        color : #b9b8ba;
+                        color : $main-menu-light-grey;
                         &.orange {
                             color : #f7a800 !important;
                             .grey {
@@ -78,7 +78,10 @@
                             right      : 8px;
                             top        : 8px;
                             z-index    : 6;
+                            transition: transform 0.3s;
+
                             &:hover, &:active {
+                                transform: rotate(90deg);
                                 background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
                             }
                         }
@@ -87,10 +90,11 @@
                             display: inline-block;
                             margin-top    : 1px;
                             margin-bottom : 10px;
-                            border-top    : solid 1px #b9b8ba;
-                            border-bottom : solid 1px #b9b8ba;
+                            border-top    : solid 1px $main-menu-light-grey;
+                            border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 239px;
                             width: 100%;
+
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -100,7 +104,7 @@
                                 padding       : 0;
                                 @include font-size(1.4);
                                 a {
-                                    color : #77777a;
+                                    color : $text-grey;
                                     &:hover, &:focus {
                                         text-decoration : none;
 
@@ -112,7 +116,7 @@
                                 }
                                 p {
                                     line-height: 1.5;
-                                    color: #77777a;
+                                    color: $text-grey;
                                 }
                             }
 
@@ -127,7 +131,7 @@
                                     li {
                                         @include font-size(1.2);
                                         font-family   : $font_site-default;
-                                        color         : #77777a;
+                                        color         : $text-grey;
                                         margin-bottom : 5px;
                                         width         : 190px;
                                         .client-name {
@@ -137,6 +141,9 @@
                                 }
                                 .sub-img-container {
                                     height : 100%;
+                                    div {
+                                        cursor: pointer;
+                                    }
                                     img {
                                         float : right;
                                     }
@@ -177,12 +184,12 @@
                         margin-left    : 25px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : #77777a;
+                        color          : $text-grey;
                         text-transform : uppercase;
                         vertical-align: middle;
                         overflow : hidden;
                         .grey {
-                            color : #b9b8ba;
+                            color : $main-menu-light-grey;
                         }
                         &.orange {
                             color : #f7a800 !important;
@@ -200,7 +207,7 @@
 
                     }
                     #engaging, #integrating, #spending {
-                        color : #b9b8ba;
+                        color : $main-menu-light-grey;
                         &.orange {
                             color : #f7a800 !important;
                             .grey {
@@ -234,8 +241,8 @@
                             display: inline-block;
                             margin-top    : 1px;
                             margin-bottom : 10px;
-                            border-top    : solid 1px #b9b8ba;
-                            border-bottom : solid 1px #b9b8ba;
+                            border-top    : solid 1px $main-menu-light-grey;
+                            border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 239px;
                             width: 100%;
                             .text-div {
@@ -247,9 +254,9 @@
                                 padding       : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
-                                color         : #77777a;
+                                color         : $text-grey;
                                 a {
-                                    color : #77777a;
+                                    color : $text-grey;
                                     &:hover, &:focus {
                                         text-decoration : none;
 
@@ -261,7 +268,7 @@
                                 }
                                 p {
                                     line-height   : 1.5;
-                                    color         : #77777a;
+                                    color         : $text-grey;
                                 }
                             }
                             .imgShow-div {
@@ -271,6 +278,9 @@
                                 padding : 0;
                                 .sub-img-container {
                                     height : 100%;
+                                    div {
+                                        cursor: pointer;
+                                    }
                                     img {
                                         float : right;
                                     }
@@ -323,10 +333,10 @@
                     a {
                         @include font-size(2.6);
                         font-family    : $font-site-bold;
-                        color          : #77777a;
+                        color          : $text-grey;
                         text-transform : uppercase;
                         .grey {
-                            color : #b9b8ba;
+                            color : $main-menu-light-grey;
                         }
                         &.orange {
                             color : #f7a800;
@@ -346,7 +356,7 @@
                     }
                     //end of a
                     #engaging, #integrating, #spending {
-                        color : #b9b8ba;
+                        color : $main-menu-light-grey;
                         &.orange {
                             color : #f7a800;
                             .grey {
@@ -378,13 +388,13 @@
                 padding    : 0;
                 li {
                     border-radius    : 10px;
-                    border           : 1px solid #77777a;
+                    border           : 1px solid $text-grey;
                     width            : 7px;
                     height           : 7px;
                     margin-bottom    : 10px;
                     background-color : #fff;
                     &.active-indicator {
-                        background-color : #b9b8ba;
+                        background-color : $main-menu-light-grey;
                     }
                 }
 
