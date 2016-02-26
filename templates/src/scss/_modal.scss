@@ -44,7 +44,11 @@
             display    : inline-block;
             cursor     : pointer;
             z-index    : 10;
-            &:hover, &:active, &:focus {
+
+            transition: transform 0.3s;
+
+            &:hover, &:active {
+                transform: rotate(90deg);
                 background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
             }
         }

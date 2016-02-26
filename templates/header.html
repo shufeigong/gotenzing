@@ -35,6 +35,8 @@
     <meta name="description" content="Tenzing Communications is a full-service agency which uses advertising, branding and web solutions to help you position in a clear space, on higher ground. We’re here to make your brand and your communications legendary (as opposed to making a name for ourselves). Our creative is planned and designed to ensure your stakeholders advocate your value proposition. Sherpas are expert guides, they never leave people behind and they always carry more than their share of the load. We believe that is a unique positioning for an ad agency.">
     <meta name="author" content="Tenzing Communications, Inc.">
 
+    <meta property="og:image" content="/templates/dist/img/favicon/apple-touch-icon-precomposed.png"/>
+
     <!-- Add social data for google search result -->
     <script type="application/ld+json">
         {
@@ -68,8 +70,11 @@
         <div class="header col-md-12">
             <div class="div-logo">
                 <a class="site-logo" href="/" title="gotenzing logo"></a>
-                <a class="ham-icon visible-xs" href="#" title="mobile button"></a>
-                <a class="close-icon hidden" href="#" title="mobile close icon"></a>
+                <button class="c-hamburger c-hamburger--htx ham-icon visible-xs">
+                    <span>toggle menu</span>
+                </button>
+                <!--<a class="ham-icon visible-xs" href="#" title="mobile button"></a>-->
+                <!--<a class="close-icon hidden" href="#" title="mobile close icon"></a>-->
 
                 <div class="div-iconlist">
                     <ul>
@@ -122,16 +127,13 @@
                                 <path class="stt0"
                                       d="M12.9 6.9c0 .2-.1.5-.1.8-.2.7-.6 1.1-1.3 1.3-.5.1-1 .1-1.5 0-.8-.2-1.3-.7-1.5-1.5-.1-.5-.1-1 .1-1.5.2-.7.6-1.1 1.3-1.3.5-.1 1.1-.1 1.6 0 .7.2 1.2.7 1.3 1.4 0 .3.1.5.1.8zm-2.4 5.5c-.5 0-1.1 0-1.7-.2-.2-.1-.4-.2-.7-.3-.2-.1-.3-.3-.2-.6.1-.3.2-.5.4-.7.4-.4.9-.5 1.4-.6.8-.1 1.7-.1 2.5.2.3.1.6.3.8.5.2.2.3.3.3.6.1.3 0 .4-.2.6-.2.1-.5.2-.8.3-.5.1-1.1.2-1.8.2z" />
                             </svg>
-                        </a></li>
-                        <li><a href="#" class="menuicon" onclick="return false;">
-                            <svg id="Layer_4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15"
-                                 style="width:17px;height:16px;">
-                                <style>.stt0 {
-                                    fill : #77777a
-                                }</style>
-                                <path class="stt0" d="M0 0h17v3.2H0zm0 5.9h17v3.2H0zm0 5.9h17V15H0z" />
-                            </svg>
-                        </a></li>
+                        </a>
+                        </li>
+                        <li>
+                            <button class="menuicon c-hamburger c-hamburger--rot hidden-xs">
+                                <span>toggle menu</span>
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="arrow-down"></div>
