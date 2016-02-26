@@ -3,7 +3,7 @@
         var modalCarousel = $('.modal.carousel.slide');
         var modalFullscreen = $(".modal.modal-fullscreen");
         var mobileModal = $('.modal.mobile-modal');
-        var modalPopup = $('.modal.mobile-pop-modal');
+        var modalPopup = $('.modal.popup');
         var modalContentBox = $('.modal.modal-content-box');
         var player;
         var isFirstCarouselModal = true;
@@ -68,6 +68,7 @@
             $(this).css('z-index', zIndex);
 
             $(this).focus();
+
             setTimeout(function () {
                 //$(".modal-backdrop").addClass("modal-backdrop-fullscreen hidden-xs");
                 //$('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
@@ -90,18 +91,81 @@
         modalPopup.on('show.bs.modal', function (event) {
             console.log('popup mobile show');
 
-            $(".mobile-pop-modal.fade.in").modal('hide');
+            //$(".mobile-pop-modal.fade.in").modal('hide');
 
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
+            //var zIndex = 1040 + (10 * $('.modal:visible').length);
+            //$(this).css('z-index', zIndex);
             setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
+                //$(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
             }, 0);
+
         });
 
         modalFullscreen.on('shown.bs.modal', function (event) {
             $('body').css('overflow', 'hidden');
             $(this).css('overflow', 'hidden');
+
+            var target = event.currentTarget;
+            if($(target).attr('id') == 'contact') {
+                initMap();
+
+                var torontoMap, londonMap;
+                var torontoMarker, londonMarker;
+
+                function initMap() {
+                    torontoMap = new google.maps.Map(document.getElementById('toronto-map'), {
+                        zoom: 15,
+                        center: {
+                            lat: 43.644518,
+                            lng: -79.395313
+                        }
+                    });
+
+                    londonMap = new google.maps.Map(document.getElementById('london-map'), {
+                        zoom: 15,
+                        center: {
+                            lat: 42.981651,
+                            lng: -81.247711
+                        }
+                    });
+
+                    torontoMarker = new google.maps.Marker({
+                        map: torontoMap,
+                        draggable: true,
+                        animation: google.maps.Animation.DROP,
+                        position: {
+                            lat: 43.644518,
+                            lng: -79.395313
+                        }
+                    });
+                    torontoMarker.addListener('click', toggleBounce);
+
+                    londonMarker = new google.maps.Marker({
+                        map: londonMap,
+                        draggable: true,
+                        animation: google.maps.Animation.DROP,
+                        position: {
+                            lat: 42.981651,
+                            lng: -81.247711
+                        }
+                    });
+                    londonMarker.addListener('click', toggleBounce);
+                }
+
+                function toggleBounce() {
+                    if (torontoMarker.getAnimation() !== null) {
+                        torontoMarker.setAnimation(null);
+                    } else {
+                        torontoMarker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+
+                    if (londonMarker.getAnimation() !== null) {
+                        londonMarker.setAnimation(null);
+                    } else {
+                        londonMarker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                }
+            }
 
         });
 
