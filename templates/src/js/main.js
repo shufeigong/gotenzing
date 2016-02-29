@@ -44,10 +44,6 @@
             $(this).carouselHeights();
         });
 
-        //new LazyLoad({
-        //    skip_invisible: false
-        //});
-
     });
 
     $(document).ready(function () {
@@ -71,7 +67,6 @@
 
         var timeLine = new TimelineMax({
             onComplete: function () {
-
                 $(".entry-content .main-menu li.item").each(function () {
                     var fontSize = $(this).find('> a').css('font-size');
                     if (fontSize == '67px' || fontSize == '70px') {
@@ -130,9 +125,6 @@
                 }
             });
 
-            //timeLine.add($(this), 0, {onComplete: function() {
-            //    getPageCarousel(link);
-            //}});
             timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
             timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
                 "height": "0",

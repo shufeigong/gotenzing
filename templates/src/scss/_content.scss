@@ -71,18 +71,23 @@
 
                         .sub-close-icon {
                             background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width      : 15px;
-                            height     : 15px;
-                            display    : inline-block;
-                            position   : absolute;
-                            right      : 8px;
-                            top        : 8px;
-                            z-index    : 6;
+                            width: 30px;
+                            height: 30px;
+                            display: inline-block;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            z-index: 6;
                             transition: transform 0.3s;
+
+                            background-size: 15px 15px;
+                            background-position: 50% 50%;
 
                             &:hover, &:active {
                                 transform: rotate(90deg);
                                 background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                background-size: 15px 15px;
+                                background-position: 50% 50%;
                             }
                         }
 
@@ -222,15 +227,21 @@
 
                         .sub-close-icon {
                             background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width      : 15px;
-                            height     : 15px;
-                            display    : inline-block;
-                            position   : absolute;
-                            right      : 8px;
-                            top        : 8px;
-                            z-index    : 6;
+                            width: 30px;
+                            height: 30px;
+                            display: inline-block;
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            z-index: 6;
+
+                            background-size: 15px 15px;
+                            background-position: 50% 50%;
                             &:hover, &:active {
                                 background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+
+                                background-size: 15px 15px;
+                                background-position: 50% 50%;
                             }
                         }
 
