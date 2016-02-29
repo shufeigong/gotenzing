@@ -196,6 +196,10 @@
                 bottom : -20.5px;
                 li {
                     border : 1px solid #77777a;
+
+                    &:hover {
+                        background :#f7a800;
+                    }
                 }
                 .active {
                     background-color : #b9b8ba;
@@ -353,7 +357,7 @@
                 @include font-size(1.2);
                 margin  : 20px auto 0;
                 padding : 0;
-                left    : 20px;
+                left    : 0;
                 right   : auto;
                 top     : 100%;
                 height  : 50px;
@@ -364,6 +368,10 @@
                 li {
                     border           : none;
                     background-color : #fff;
+
+                    &:hover {
+                        background :#f7a800;
+                    }
                 }
                 .active {
                     background-color : #55565a;
@@ -568,6 +576,10 @@
                 bottom : -20.5px;
                 li {
                     border : 1px solid #77777a;
+
+                    &:hover {
+                        background :#f7a800;
+                    }
                 }
                 .active {
                     background-color : #b9b8ba;
@@ -729,7 +741,7 @@
                 @include font-size(1.2);
                 margin  : 20px auto 0;
                 padding : 0;
-                left    : 20px;
+                left    : 0;
                 right   : auto;
                 top     : 100%;
                 height  : 50px;
@@ -739,6 +751,11 @@
                 li {
                     border           : none;
                     background-color : #fff;
+
+                    &:hover {
+                        background :#f7a800;
+                    }
+
                 }
                 .active {
                     background-color : #55565a;
@@ -929,6 +946,10 @@
                         li {
                             border           : none;
                             background-color : #fff;
+
+                            &:hover {
+                                background :#f7a800;
+                            }
                         }
                         .active {
                             background-color : #55565a;
@@ -956,7 +977,7 @@
                             @include font-size(1.2);
                             margin  : 20px auto 0;
                             padding : 0;
-                            left    : 20px;
+                            left    : 0;
                             right   : auto;
                             top     : 100%;
                             height  : 50px;
