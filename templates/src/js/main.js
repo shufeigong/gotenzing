@@ -38,15 +38,16 @@
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
 
+    new LazyLoad({
+        skip_invisible: false,
+        elements_selector: ".lazy"
+    });
+
     $(window).load(function() {
         $('.carousel.subpage').each(function(){
             $(this).carouselHeights();
         });
 
-        new LazyLoad({
-            skip_invisible: false,
-            elements_selector: ".lazy"
-        });
     });
 
     $(document).ready(function () {
@@ -61,6 +62,8 @@
         var isFirstClick = true;
         var timeLine = new TimelineMax({
             onComplete: function () {
+                console.log(getPageContent('branding'));
+
                 $(".entry-content .main-menu li.item").each(function () {
                     var fontSize = $(this).find('> a').css('font-size');
                     if (fontSize == '67px' || fontSize == '70px') {
@@ -720,6 +723,16 @@
 
             element.noFirstClickFontAnimation = fontTl;
         });
+    }
+
+    function getPageContent(url) {
+        var returnValue = '';
+        $.ajax({
+            url: '/templates/pages/'+url+'.html'
+        })
+            .done(function(data) {
+                console.log(data);
+            });
     }
 
 })(jQuery, ResponsiveBootstrapToolkit);

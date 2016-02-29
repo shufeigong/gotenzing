@@ -65,6 +65,8 @@
 	
 	//render(<GalleryThumbnail url='/templates/json/gallery.json' />, document.getElementById('gallery-container'));
 	(0, _reactDom.render)(_react2.default.createElement(_accoridon2.default, { url: '/templates/json/bios.json' }), document.getElementById('accordion-container'));
+	//import { Router, Route, Link, browserHistory } from 'react-router'
+
 	//import GalleryCarousel from './gallery/gallery-carousel.jsx';
 	//import GalleryThumbnail from './gallery/gallery-thumbnail.jsx';
 
