@@ -1,4 +1,4 @@
-set :application, 'directory-to-deploy-to'
+set :application, 'tenzing-web-2016-staging'
 set :stage, :staging
 set :branch, :staging
 
