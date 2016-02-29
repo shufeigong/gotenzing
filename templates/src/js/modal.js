@@ -1,12 +1,17 @@
 (function ($) {
     $(document).ready(function() {
-        var modalCarousel = $('.modal.carousel.slide');
+        var modalCarousel = $('.modal.carousel.slide.gallery, .modal.carousel.slide.popup');
         var modalFullscreen = $(".modal.modal-fullscreen");
         var mobileModal = $('.modal.mobile-modal');
         var modalPopup = $('.modal.popup');
         var modalContentBox = $('.modal.modal-content-box');
+        var carouselSubpage = $('.carousel.slide.subpage');
         var player;
         var isFirstCarouselModal = true;
+
+        carouselSubpage.on('slide.bs.carousel', function() {
+
+        });
 
         modalCarousel.on('slid.bs.carousel', function (event) {
             // video play button function
