@@ -5,14 +5,21 @@
     $.fn.carouselHeights = function() {
         var items = $(this).find('.item'), // grab all slides
             heights = [], // create empty array to store height values
+            widths = [],
             tallest, // create variable to make note of the tallest slide
+            widest,
             call;
         var normalizeHeights = function() {
             items.each(function() { // add heights to array
                 heights.push($(this).outerHeight());
+                widths.push($(this).outerWidth());
+
             });
+
             tallest = Math.max.apply(null, heights); // cache largest value
+            widest = Math.max.apply(null, widths);
             items.css('height', tallest);
+            items.find('img').css({'height': tallest, 'width': widest});
         };
         normalizeHeights();
         $(window).on('resize orientationchange', function() {
@@ -22,7 +29,7 @@
             items.css('height', ''); // reset height
             if(call){
                 clearTimeout(call);
-            };
+            }
             call = setTimeout(normalizeHeights, 100); // run it again
         });
     };
@@ -32,17 +39,17 @@
     $.removeCookie("utilityMenuOpen");
 
     $(window).load(function() {
-        $('.carousel').each(function(){
+        $('.carousel.subpage').each(function(){
             $(this).carouselHeights();
         });
 
         new LazyLoad({
-            skip_invisible: false
+            skip_invisible: false,
+            elements_selector: ".lazy"
         });
     });
 
     $(document).ready(function () {
-
         window.isGalleryOpen = false;
 
         initFirstClickMenuAnimation();
@@ -103,20 +110,20 @@
 
             thisItem.parent().siblings().each(function () {
                 if (i == 0) {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                    timeLine.to($(this).children("a"), 0.5, {
                         "css": {
                             "fontSize": "20px"
                         },
                         ease: easeValue
-                    }));
+                    });
                     i++;
                 } else {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                    timeLine.to($(this).children("a"), 0.5, {
                         "css": {
                             "fontSize": "20px"
                         },
                         ease: easeValue
-                    }), "-=0.45");
+                    }, "-=0.45");
                 }
             });
 
@@ -218,7 +225,7 @@
             var elem = $(this).parent()[0];
             var _this = this;
             var colorGrey = "#77777a";
-            var colorLightGrey = "#b9b8ba";
+            var colorLightGrey = "#949494";
 
             $('.mobile-content').find('.modal.mobile-modal.in').modal('hide');
 
@@ -231,22 +238,22 @@
                 var i = 0;
                 $(this).parent().siblings().each(function () {
                     if (i == 0) {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                        timeLine.to($(this).children("a"), 0.5, {
                             "css": {
                                 "fontSize": "20px",
                                 "line-height": "18px"
                             },
                             ease: easeValue
-                        }));
+                        });
                         i++;
                     } else {
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                        timeLine.to($(this).children("a"), 0.5, {
                             "css": {
                                 "fontSize": "20px",
                                 "line-height": "18px"
                             },
                             ease: easeValue
-                        }), "-=0.45");
+                        }, "-=0.45");
                     }
                 });
 
@@ -259,49 +266,49 @@
             } else {
                 timeLine.clear();
                 // Close the content box first
-                timeLine.add(TweenLite.to($('.item .orange').next(), 0.5, {"height": "0", ease: easeValue}), "cleanup");
+                timeLine.to($('.item .orange').next(), 0.5, {"height": "0", ease: easeValue}, "cleanup");
 
                 var orangeClassElement = $('.item .orange');
                 var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
 
                 if (isLightGrey) {
-                    timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                    timeLine.to(orangeClassElement, 0.5, {
                         "color": colorLightGrey,
                         ease: easeValue
-                    }), "cleanup+=0.25");
+                    }, "cleanup+=0.25");
                 } else {
-                    timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                    timeLine.to(orangeClassElement, 0.5, {
                         "color": colorGrey,
                         ease: easeValue
-                    }), "cleanup+=0.25");
+                    }, "cleanup+=0.25");
 
-                    timeLine.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+                    timeLine.to(orangeClassElement.find('.grey'), 0.5, {
                         "color": colorLightGrey,
                         ease: easeValue
-                    }), "cleanup+=0.25");
+                    }, "cleanup+=0.25");
                 }
 
-                timeLine.add(TweenLite.to($('.item .orange'), 0.5, {
+                timeLine.to($('.item .orange'), 0.5, {
                     "css": {
                         "line-height": "18px"
                     },
                     ease: easeValue
-                }), "feature");
+                }, "feature");
 
                 $('.item .orange').next().find('a').attr('tabindex', "-1");
 
                 $(this).parent().siblings().each(function () {
                     if ($(this).children("a").hasClass("orange")) {
 
-                        timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                        timeLine.to($(this).children("a"), 0.5, {
                             "fontSize": "20px",
                             ease: easeValue
-                        }), "feature");
+                        }, "feature");
 
-                        timeLine.add(TweenLite.to($(this).children("a").next(), 0.5, {
+                        timeLine.to($(this).children("a").next(), 0.5, {
                             "height": "0",
                             ease: easeValue
-                        }), "feature+=0.25");
+                        }, "feature+=0.25");
 
                         $(this).children("a").removeClass("orange");
                     }
@@ -310,8 +317,8 @@
                 // Remove orange class
                 $('.item').find('.orange').removeClass('orange');
 
-                timeLine.add(TweenLite.to($(this), 0.5, {"css": {"line-height": "60px"}, ease: easeValue}), "feature");
-                timeLine.add(TweenLite.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}), "feature");
+                timeLine.to($(this), 0.5, {"css": {"line-height": "60px"}, ease: easeValue}, "feature");
+                timeLine.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}, "feature");
 
                 timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
                 timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
@@ -331,7 +338,7 @@
 
         $(".sub-close-icon").click(function (e) {
             var colorGrey = "#77777a";
-            var colorLightGrey = "#b9b8ba";
+            var colorLightGrey = "#949494";
 
             e.preventDefault();
             $.cookie("previousUrl", window.location.href, {path: "/"});
@@ -339,29 +346,29 @@
 
             // Clear the timeline
             timeLine.clear();
-            timeLine.add(TweenLite.to($(this).parent(".page-content"), 0.5, {
+            timeLine.to($(this).parent(".page-content"), 0.5, {
                 "height": "0",
                 ease: easeValue
-            }), "cleanup");
+            }, "cleanup");
 
             var orangeClassElement = $('.item .orange');
             var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
 
             if (isLightGrey) {
-                timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                timeLine.to(orangeClassElement, 0.5, {
                     "color": colorLightGrey,
                     ease: easeValue
-                }), "cleanup+=0.25");
+                }, "cleanup+=0.25");
             } else {
-                timeLine.add(TweenLite.to(orangeClassElement, 0.5, {
+                timeLine.to(orangeClassElement, 0.5, {
                     "color": colorGrey,
                     ease: easeValue
-                }), "cleanup+=0.25");
+                }, "cleanup+=0.25");
 
-                timeLine.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+                timeLine.to(orangeClassElement.find('.grey'), 0.5, {
                     "color": colorLightGrey,
                     ease: easeValue
-                }), "cleanup+=0.25");
+                }, "cleanup+=0.25");
             }
 
             // De-select the menu item
@@ -371,21 +378,21 @@
             var i = 0;
             $(this).parents(".item").siblings().each(function () {
                 if (i == 0) {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                    timeLine.to($(this).children("a"), 0.5, {
                         "css": {
                             "fontSize": "67px",
                             "line-height": "60px"
                         }, ease: easeValue
                     }
-                    ));
+                    );
                     i++;
                 } else {
-                    timeLine.add(TweenLite.to($(this).children("a"), 0.5, {
+                    timeLine.to($(this).children("a"), 0.5, {
                         "css": {
                             "fontSize": "67px",
                             "line-height": "60px"
                         }, ease: easeValue
-                    }), "-=0.45");
+                    }, "-=0.45");
                 }
 
             });
@@ -395,7 +402,6 @@
             // Close mobile content as well
             var target = $(this).closest('li.item').find('a').attr('id');
             $('#' + target + '-mobile-page').modal('hide');
-
 
             isFirstClick = true;
         });
@@ -594,12 +600,12 @@
                 }
             });
 
-            fontTl.add(TweenLite.set($(menu).next(), {height: "auto"}));
-            fontTl.add(TweenLite.from($(menu).next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
+            fontTl.set($(menu).next(), {height: "auto"});
+            fontTl.from($(menu).next(), 0.5, {"height": "0", ease: easeValue}, "-=0.35");
 
-            fontTl.add(TweenLite.to(menu, 0.5, {onComplete: function() {
+            fontTl.to(menu, 0.5, {onComplete: function() {
                 $(menu).addClass('orange');
-            }}));
+            }});
 
             element.firstClickFontAnimation = fontTl;
         });
@@ -649,7 +655,7 @@
             // Close the content box first
             var orangeClassElement = $('.item').find('.orange');
 
-            fontTl.add(TweenLite.to(orangeClassElement.next(), 0.5, {"height": "0", ease: easeValue}), "cleanup");
+            fontTl.to(orangeClassElement.next(), 0.5, {"height": "0", ease: easeValue}, "cleanup");
 
             var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
 
@@ -660,57 +666,57 @@
             //        ease: easeValue
             //    }), "cleanup+=0.25");
             //} else {
-                fontTl.add(TweenLite.to(orangeClassElement, 0.5, {
+                fontTl.to(orangeClassElement, 0.5, {
                     "color": colorGrey,
                     ease: easeValue
-                }), "cleanup+=0.25");
+                }, "cleanup+=0.25");
 
-                fontTl.add(TweenLite.to(orangeClassElement.find('.grey'), 0.5, {
+                fontTl.to(orangeClassElement.find('.grey'), 0.5, {
                     "color": colorLightGrey,
                     ease: easeValue
-                }), "cleanup+=0.25");
+                }, "cleanup+=0.25");
             //}
 
-            fontTl.add(TweenLite.to($('.item .orange'), 0.5, {
+            fontTl.to($('.item .orange'), 0.5, {
                 "css": {
                     "line-height": "18px"
                 },
                 ease: easeValue
-            }), "feature");
+            }, "feature");
 
             $(element).siblings().each(function (index, elem) {
                 var sibling = $(elem).find('> a');
 
                 if ($(sibling).hasClass("orange")) {
 
-                    fontTl.add(TweenLite.to(sibling, 0.5, {
+                    fontTl.to(sibling, 0.5, {
                         "css": {
                             "fontSize": smallFontSize,
                             "line-height": "18px"
                         },
                         ease: easeValue
-                    }), "feature");
+                    }, "feature");
 
-                    fontTl.add(TweenLite.to($(sibling).next(), 0.5, {
+                    fontTl.to($(sibling).next(), 0.5, {
                         "height": "0",
                         ease: easeValue
-                    }), "feature+=0.25");
+                    }, "feature+=0.25");
 
                     $(sibling).removeClass("orange");
                 }
             });
 
-            fontTl.add(TweenLite.to(menu, 0.5, {onComplete: function() {
+            fontTl.to(menu, 0.5, {onComplete: function() {
                 $('.item').find('.orange').removeClass('orange');
-            }}));
+            }});
 
-            fontTl.add(TweenLite.to(menu, 0.5, {"fontSize": "67px", ease: easeValue}), "feature");
-            fontTl.add(TweenLite.set($(menu).next(), {height: "auto"}));
-            fontTl.add(TweenLite.from($(menu).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
+            fontTl.to(menu, 0.5, {"fontSize": "67px", ease: easeValue}, "feature");
+            fontTl.set($(menu).next(), {height: "auto"});
+            fontTl.from($(menu).next(), 0.5, {"height": "0", ease: easeValue}, "feature+=0.25");
 
-            fontTl.add(TweenLite.to(menu, 0.5, {onComplete: function() {
+            fontTl.to(menu, 0.5, {onComplete: function() {
                 $(menu).addClass('orange');
-            }}));
+            }});
 
             element.noFirstClickFontAnimation = fontTl;
         });

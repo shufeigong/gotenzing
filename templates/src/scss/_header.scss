@@ -54,6 +54,13 @@
                             }
                         }
 
+                        .social-menu-item {
+                            span {
+                                text-indent: -999999px;
+                                position: absolute;
+                            }
+                        }
+
                         .utility-menu-item {
                             span {
                                 text-indent: -999999px;
