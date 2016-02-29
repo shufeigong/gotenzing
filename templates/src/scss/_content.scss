@@ -107,11 +107,9 @@
                                     color : $text-grey;
                                     &:hover, &:focus {
                                         text-decoration : none;
-
                                         span {
                                             text-decoration: underline;
                                         }
-
                                     }
                                 }
                                 p {
