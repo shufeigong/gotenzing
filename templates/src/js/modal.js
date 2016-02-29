@@ -5,7 +5,7 @@
         var mobileModal = $('.modal.mobile-modal');
         var modalPopup = $('.modal.popup');
         var modalContentBox = $('.modal.modal-content-box');
-        var carouselSubpage = $('.carousel.slide.subpage');
+        var carouselSubpage = $('.carousel.slide.subpage,.carousel.slide.mobile');
         var player;
         var isFirstCarouselModal = true;
 

@@ -208,7 +208,11 @@
             background : url(../../dist/img/mobile-close.svg) no-repeat;
             display    : inline-block;
             cursor: pointer;
-            &:hover, &:active, &:focus {
+
+            transition: transform 0.3s;
+
+            &:hover, &:active {
+                transform: rotate(90deg);
                 background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
 
             }
@@ -266,8 +270,26 @@
                             width            : 10px;
                             height           : 10px;
                         }
+
+                        &:hover {
+                            background: #f7a800;
+                        }
                     }
                 }
+
+                .carousel-inner {
+                    .item {
+                        cursor: pointer;
+
+                        .slide-container {
+                            position: relative;
+                        }
+
+                    }
+
+                }
+
+
                 //end of .carousel-indicators
                 img {
                     margin : 0 auto;

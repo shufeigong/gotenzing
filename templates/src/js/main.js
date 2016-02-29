@@ -18,8 +18,7 @@
 
             tallest = Math.max.apply(null, heights); // cache largest value
             widest = Math.max.apply(null, widths);
-            items.css('height', tallest);
-            items.find('img').css({'height': tallest, 'width': widest});
+            items.css({'height': tallest});
         };
         normalizeHeights();
         $(window).on('resize orientationchange', function() {
@@ -40,7 +39,7 @@
 
 
     $(window).load(function() {
-        $('.carousel.subpage').each(function(){
+        $('.carousel.subpage, .carousel.mobile').each(function(){
             $(this).carouselHeights();
         });
 
