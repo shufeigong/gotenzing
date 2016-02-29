@@ -4,7 +4,7 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname + '/../dist/js');
+var BUILD_DIR = path.resolve(__dirname + '/../src/js');
 var APP_DIR = path.resolve(__dirname);
 
 var config = {
