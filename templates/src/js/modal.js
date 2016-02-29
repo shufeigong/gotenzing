@@ -9,11 +9,22 @@
         var player;
         var isFirstCarouselModal = true;
 
-        carouselSubpage.on('slide.bs.carousel', function() {
+        carouselSubpage.on('slide.bs.carousel', function(event) {
+            var lazy;
+            lazy = $(event.relatedTarget).find("img[data-original]");
+            lazy.attr("src", lazy.data('original'));
+            lazy.removeAttr("data-src");
+        });
 
+        modalCarousel.on('slide.bs.carousel', function(event) {
+            var lazy;
+            lazy = $(event.relatedTarget).find("img[data-original]");
+            lazy.attr("src", lazy.data('original'));
+            lazy.removeAttr("data-src");
         });
 
         modalCarousel.on('slid.bs.carousel', function (event) {
+
             // video play button function
             var target = event.relatedTarget;
             var isVideo = $(target).find('.videoWrapper').length > 0;

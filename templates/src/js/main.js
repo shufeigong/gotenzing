@@ -38,15 +38,15 @@
     $.removeCookie('previousUrl', {'path': '/'});
     $.removeCookie("utilityMenuOpen");
 
-    new LazyLoad({
-        skip_invisible: false,
-        elements_selector: ".lazy"
-    });
 
     $(window).load(function() {
         $('.carousel.subpage').each(function(){
             $(this).carouselHeights();
         });
+
+        //new LazyLoad({
+        //    skip_invisible: false
+        //});
 
     });
 
@@ -60,9 +60,17 @@
         $('.main-menu .page-content').find('a').attr('tabindex', "-1");
 
         var isFirstClick = true;
+
+        // Use polyfill for history
+        var location = window.history.location || window.location;
+
+        var link = location.pathname.split('/').pop();
+        var isUtilityPage = location.pathname.search('/utility/') !== -1;
+
+        var mobileButtonClicked = false;
+
         var timeLine = new TimelineMax({
             onComplete: function () {
-                console.log(getPageContent('branding'));
 
                 $(".entry-content .main-menu li.item").each(function () {
                     var fontSize = $(this).find('> a').css('font-size');
@@ -76,14 +84,6 @@
         });
 
         var easeValue = Power2.easeInOut;
-
-        // Use polyfill for history
-        var location = window.history.location || window.location;
-
-        var link = location.pathname.split('/').pop();
-        var isUtilityPage = location.pathname.search('/utility/') !== -1;
-
-        var mobileButtonClicked = false;
 
         window.addEventListener('popstate', function () {
             location.reload();
@@ -130,11 +130,15 @@
                 }
             });
 
+            //timeLine.add($(this), 0, {onComplete: function() {
+            //    getPageCarousel(link);
+            //}});
             timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
             timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
                 "height": "0",
                 ease: easeValue
             }), "-=0.35");
+
 
             isFirstClick = false;
 
@@ -725,13 +729,20 @@
         });
     }
 
-    function getPageContent(url) {
-        var returnValue = '';
+    function getPageCarousel(url) {
+        if(url == '') {
+            return false;
+        }
+
         $.ajax({
-            url: '/templates/pages/'+url+'.html'
+            url: '/templates/carousels/'+url+'.html'
         })
             .done(function(data) {
-                console.log(data);
+                $('#' + url).parent().find('.imgShow-div').html(data);
+
+                $('.carousel.subpage').each(function(){
+                    $(this).carouselHeights();
+                });
             });
     }
 
