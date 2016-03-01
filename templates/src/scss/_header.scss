@@ -6,7 +6,7 @@
         z-index            : 1090;
         float              : none;
         padding            : 0;
-        background: #ffffff;
+        background         : #ffffff;
         .div-logo {
             width    : 95%;
             margin   : 0 auto;
@@ -23,13 +23,13 @@
                 display      : none;
             }
             .site-logo {
-                background : url(../../dist/img/tenzing-logo.svg) no-repeat;
-                display    : inline-block;
-                margin-top: 21px;
-                width: 365px;
-                height: 34px;
-                background-size: 345px 25px;
-                background-position: 0;
+                background          : url(../../dist/img/tenzing-logo.svg) no-repeat;
+                display             : inline-block;
+                margin-top          : 21px;
+                width               : 365px;
+                height              : 34px;
+                background-size     : 345px 25px;
+                background-position : 0;
             }
             .div-iconlist {
                 float      : right;
@@ -42,7 +42,7 @@
                         display      : inline-block;
                         margin-right : 10px;
                         a {
-                            display: inline-block;
+                            display : inline-block;
                             &:hover, &:focus {
                                 text-decoration : none;
                                 .stt0 {
@@ -56,15 +56,17 @@
 
                         .social-menu-item {
                             span {
-                                text-indent: -999999px;
-                                position: absolute;
+                                text-indent : -999999px;
+                                position    : absolute;
+                                display     : none;
                             }
                         }
 
                         .utility-menu-item {
                             span {
-                                text-indent: -999999px;
-                                position: absolute;
+                                text-indent : -999999px;
+                                position    : absolute;
+                                display     : none;
                             }
                         }
 
@@ -90,7 +92,7 @@
         display          : none;
         background-color : #f7a800;
         height           : 31px;
-        z-index: 1089;
+        z-index          : 1089;
         .div-exlist {
             display : inline-block;
             margin  : 2px 42px 5px 0;
@@ -291,7 +293,7 @@
                         font-size   : 16px;
                         font-family : $font-site-bold;
                         color       : #ffffff;
-                        display: block;
+                        display     : block;
                         &:hover {
                             text-decoration : none;
                             color           : #77777a

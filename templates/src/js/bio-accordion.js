@@ -1,8 +1,8 @@
 /**
  * Created by insu on 16-02-02.
  */
-(function($) {
-    $(document).ready(function() {
+(function ($) {
+    $(document).ready(function () {
         function toggleSign(e) {
             $(e.target)
                 .prev('.panel-heading')
