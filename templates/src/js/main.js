@@ -475,9 +475,8 @@
 
             // change page icon and open page
             $('.close-icon').addClass('hidden');
-            $('.ham-icon').removeClass('hidden');
+            $('.ham-icon').removeClass('hidden').removeClass('is-active');
             $('body').removeClass('nav-expanded');
-
 
             //mobileButtonClicked = true;
 
