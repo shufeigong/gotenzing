@@ -1,134 +1,141 @@
 @media screen and (min-width : 641px) {
-	.bio-container {
-	    .panel-group {
-	        .panel-default {
-	            border: none;
-	            margin-top: 0;
-				-webkit-box-shadow : none;
-				-moz-box-shadow    : none;
-				box-shadow         : none;
-	            .panel-heading {
-	                padding : 5px 0;
-	                background : none;
-	                border-bottom: 1px solid #989799;
-	                .panel-title {
-	                    .accordion-sign {
-	                        margin-right: 5px;
-	                    }
-	                    a {
-	                        @include font-size(1.4);
-	                        color: #f7a800;
-	                    }
-	                    .accordion-open {
-	                        &:after{
-	                            display: inline-block;
-	                            content: "[−]";
-	                            color: #f7a800;
-	                            font-size: 16px;
-	                        }
-	                    }
-	
-	                    .accordion-close {
-	                        &:after{
-	                            display: inline-block;
-	                            content: "[+]";
-	                            color: #f7a800;
-								font-size: 16px;
-							}
-	                    }
-	                    .additional-info {
-	                        @include font-size(1.2);
-	                        font-family: $font_site-default;
-	                        color : #989799;
-	                        display: block;
-	                        margin-top : 3px;
-	                    }
-	                }
-	            }
-	            .panel-body {
-	                padding-left: 0;
-	                border-top: none;
-	                border-bottom: 1px solid #989799;
-	                padding-bottom: 0;
+    .bio-container {
+        .panel-group {
+            .panel-default {
+                border             : none;
+                margin-top         : 0;
+                -webkit-box-shadow : none;
+                -moz-box-shadow    : none;
+                box-shadow         : none;
+                .panel-heading {
+                    padding       : 5px 0;
+                    background    : none;
+                    border-bottom : 1px solid #989799;
+                    .panel-title {
+                        .accordion-sign {
+                            margin-right : 5px;
+                        }
+                        a {
+                            @include font-size(1.4);
+                            color : #f7a800;
+                        }
+                        .accordion-open {
+                            &:after {
+                                display   : inline-block;
+                                content   : "[−]";
+                                color     : #f7a800;
+                                font-size : 16px;
+                            }
+                        }
 
+                        .accordion-close {
+                            &:after {
+                                display   : inline-block;
+                                content   : "[+]";
+                                color     : #f7a800;
+                                font-size : 16px;
+                            }
+                        }
+                        .additional-info {
+                            @include font-size(1.2);
+                            font-family : $font_site-default;
+                            color       : #989799;
+                            display     : block;
+                            margin-top  : 3px;
+                        }
+                    }
+                }
+                .panel-body {
+                    padding-left   : 0;
+                    border-top     : none;
+                    border-bottom  : 1px solid #989799;
+                    padding-bottom : 0;
 
-	            }
-	        }
-	    }
-	}
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width : 640px) {
-  
-      .bio-container {
-	    .panel-group {
-	        .panel-default {
-	            border-top:none;
-	            border-right:none;
-	            border-left:none;
-	            border-bottom: 1px solid #77777a;
-	            border-radius:0px;
-	            margin-top: 0;
-	            
-	            .panel-heading {
-	                padding : 5px 0;
-	                background : none;
-	                //border-bottom: 1px solid #989799;
-	                .panel-title {
-	                    &.title-info{margin-left:22px;}
-	                    .accordion-sign {
-	                        margin-right: 5px;
-	                    }
-	                    a {
-	                        @include font-size(1.4);
-	                        color: #f7a800;
-	                    }
-	                    .accordion-open {
-	                        &:after{
-	                            display: inline-block;
-	                            content: "[-]";
-	                            color: #f7a800;
-	                            font-size: 18px;
-	                        }
-	                    }//end of .accordion-open
-	
-	                    .accordion-close {
-	                        &:after{
-	                            display: inline-block;
-	                            content: "[+]";
-	                            color: #f7a800;
-	                        }
-	                    }//end of .accordion-close
-	                    .additional-info {
-	                        @include font-size(1.2);
-	                        font-family: $font_site-default;
-	                        color : #989799;
-	                        display: block;
-	                        margin-top : 3px;
-	                    }//end of .additional-info 
-	                }//end of .panel-title
-	            }//end of .panel-heading
-	            
-	          .panel-collapse{
-	                width:90%;
-	                margin-left:22px;
-		            .panel-body {
-		                padding-left: 0;
-		                border-top: none;
-		                //border-bottom: 1px solid #989799;
-		                padding-bottom: 0;
 
-						p {
-							line-height: 1.6;
-						}
-		                
-		            }//end of .panel-body
-	            }//end of .panel-collapse
-	        }//end of .panel-default 
-	    }//end of .panel-group 
-	}// end of .bio-container
+    .bio-container {
+        .panel-group {
+            .panel-default {
+                border-top    : none;
+                border-right  : none;
+                border-left   : none;
+                border-bottom : 1px solid #77777a;
+                border-radius : 0px;
+                margin-top    : 0;
 
+                .panel-heading {
+                    padding    : 5px 0;
+                    background : none;
+                    //border-bottom: 1px solid #989799;
+                    .panel-title {
+                        &.title-info {
+                            margin-left : 22px;
+                        }
+                        .accordion-sign {
+                            margin-right : 5px;
+                        }
+                        a {
+                            @include font-size(1.4);
+                            color : #f7a800;
+                        }
+                        .accordion-open {
+                            &:after {
+                                display   : inline-block;
+                                content   : "[−]";
+                                color     : #f7a800;
+                                font-size : 16px;
+                            }
+                        }
 
+                        .accordion-close {
+                            &:after {
+                                display   : inline-block;
+                                content   : "[+]";
+                                color     : #f7a800;
+                                font-size : 16px;
+                            }
+                        }
+                        //end of .accordion-close
+                        .additional-info {
+                            @include font-size(1.2);
+                            font-family : $font_site-default;
+                            color       : #989799;
+                            display     : block;
+                            margin-top  : 3px;
+                        }
+                        //end of .additional-info
+                    }
+                    //end of .panel-title
+                }
+                //end of .panel-heading
 
+                .panel-collapse {
+                    width       : 90%;
+                    margin-left : 22px;
+                    .panel-body {
+                        padding-left   : 0;
+                        border-top     : none;
+                        padding-bottom : 0;
+
+                        p {
+                            line-height : 1.6;
+                        }
+
+                    }
+                    //end of .panel-body
+                }
+                //end of .panel-collapse
+            }
+            //end of .panel-default
+        }
+        //end of .panel-group
+    }
+    // end of .bio-container
 
 }
