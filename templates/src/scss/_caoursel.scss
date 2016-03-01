@@ -64,6 +64,7 @@
 }
 
 .carousel.slide.subpage {
+    margin-right: 4px;
     .carousel-inner {
         width  : 70%;
         margin : 10px auto;
@@ -109,6 +110,12 @@
                     left: calc(50% - 36px);
                 }
             }
+        }
+    }
+
+    .carousel-control {
+        &:focus {
+            outline: 5px auto -webkit-focus-ring-color;
         }
     }
 }
@@ -209,10 +216,11 @@
 
             .carousel-control {
                 opacity: 1;
+
             }
 
             .carousel-control.left {
-                &:hover, &:active, &:focus {
+                &:hover, &:active, &.pressed {
                     .left-arrow {
                         background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -220,7 +228,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active, &:focus {
+                &:hover, &:active, &.pressed {
                     .right-arrow {
                         background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -291,7 +299,7 @@
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .left-arrow {
                     background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -299,7 +307,7 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
@@ -446,7 +454,8 @@
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+
+            &:hover, &:active, &.pressed {
                 .left-arrow {
                     background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -454,7 +463,8 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+
+            &:hover, &:active, &.pressed {
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
@@ -604,7 +614,7 @@
             }
 
             .carousel-control.left {
-                &:hover, &:active {
+                &:hover, &:active, &.pressed {
                     .left-arrow {
                         background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                     }
@@ -612,7 +622,7 @@
             }
 
             .carousel-control.right {
-                &:hover, &:active {
+                &:hover, &:active, &.pressed {
                     .right-arrow {
                         background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                     }
@@ -679,10 +689,11 @@
 
         .carousel-control {
             opacity: 1;
+
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .left-arrow {
                     background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -690,7 +701,7 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
@@ -842,7 +853,7 @@
         }
 
         .carousel-control.left {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .left-arrow {
                     background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
                 }
@@ -850,7 +861,7 @@
         }
 
         .carousel-control.right {
-            &:hover, &:active {
+            &:hover, &:active, &.pressed {
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }

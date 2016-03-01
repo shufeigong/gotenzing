@@ -90,6 +90,20 @@
             }, 150)
         );
 
+        $('.carousel.slide.subpage .carousel-control, .carousel.slide.popup').on('keyup', function(e) {
+            $(this).parent().find('.pressed').removeClass('pressed');
+
+            // Right
+            if(e.keyCode==39){
+                $(this).parent().find('.right').focus().addClass('pressed');
+            }
+
+            // Left
+            else if(e.keyCode==37){
+                $(this).parent().find('.left').focus().addClass('pressed');
+            }
+        });
+
         //if ($(window).width() > 640) {
         //normal version reload page
         if (link !== "" && !isUtilityPage) {
