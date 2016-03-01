@@ -36,17 +36,23 @@
 
 .pop-close-icon {
     background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-    width      : 15px;
-    height     : 15px;
+    width      : 30px;
+    height     : 30px;
     display    : inline-block;
     position   : absolute;
-    right      : 15px;
-    top        : 15px;
+    right      : 0;
+    top        : 0;
     opacity    : 1;
-    transition: transform 0.3s;
+
+    background-size: 15px 15px;
+    background-position: 50% 50%;
+
+    transition : transform 0.3s;
     &:hover, &:active {
-        transform: rotate(90deg);
+        transform  : rotate(90deg);
         background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+        background-size: 15px 15px;
+        background-position: 50% 50%;
     }
 }
 
@@ -64,35 +70,35 @@
 }
 
 .carousel.slide.subpage {
-    margin-right: 4px;
+    margin-right : 4px;
     .carousel-inner {
         width  : 70%;
         margin : 10px auto;
         .item {
             .slide-container {
-                cursor : pointer;
-                text-align: center;
-                position: relative;
+                cursor     : pointer;
+                text-align : center;
+                position   : relative;
 
                 img {
                     margin : 0 auto;
                 }
 
                 .video-play-icon {
-                    display: block;
-                    background: url("/templates/dist/img/video-play.svg") no-repeat;
-                    width: 70px;
-                    height : 70px;
-                    position : absolute;
-                    top: calc(50% - 36px);
-                    left: calc(50% - 36px);
+                    display    : block;
+                    background : url("/templates/dist/img/video-play.svg") no-repeat;
+                    width      : 70px;
+                    height     : 70px;
+                    position   : absolute;
+                    top        : calc(50% - 36px);
+                    left       : calc(50% - 36px);
                 }
             }
         }
     }
 
     .carousel-indicators {
-        bottom: -16.5px;
+        bottom : -16.5px;
     }
 }
 
@@ -101,13 +107,13 @@
         .item {
             .slide-container {
                 .video-play-icon {
-                    display: block;
-                    background: url("/templates/dist/img/video-play.svg") no-repeat;
-                    width: 70px;
-                    height : 70px;
-                    position : absolute;
-                    top: calc(50% - 36px);
-                    left: calc(50% - 36px);
+                    display    : block;
+                    background : url("/templates/dist/img/video-play.svg") no-repeat;
+                    width      : 70px;
+                    height     : 70px;
+                    position   : absolute;
+                    top        : calc(50% - 36px);
+                    left       : calc(50% - 36px);
                 }
             }
         }
@@ -115,28 +121,28 @@
 
     .carousel-control {
         &:focus {
-            outline: 5px auto -webkit-focus-ring-color;
+            outline : 5px auto -webkit-focus-ring-color;
         }
     }
 }
 
 .videoWrapper {
     .video-play-button {
-        display: block;
-        position: absolute;
-        z-index: 99;
-        top: calc(50% - 36px);
-        left: calc(50% - 36px);
+        display            : block;
+        position           : absolute;
+        z-index            : 99;
+        top                : calc(50% - 36px);
+        left               : calc(50% - 36px);
 
-        -webkit-transition: all 0.5s linear;
-        -moz-transition: all 0.5s linear;
-        -o-transition: all 0.5s linear;
-        transition: all 0.5s linear;
+        -webkit-transition : all 0.5s linear;
+        -moz-transition    : all 0.5s linear;
+        -o-transition      : all 0.5s linear;
+        transition         : all 0.5s linear;
 
-        opacity: 0.5;
+        opacity            : 0.5;
 
         &:hover, &:active, &:focus {
-            opacity: 1;
+            opacity : 1;
         }
     }
 }
@@ -205,7 +211,7 @@
                     border : 1px solid #77777a;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
                 }
                 .active {
@@ -215,7 +221,7 @@
             }
 
             .carousel-control {
-                opacity: 1;
+                opacity : 1;
 
             }
 
@@ -295,7 +301,7 @@
         }
 
         .carousel-control {
-            opacity: 1;
+            opacity : 1;
         }
 
         .carousel-control.left {
@@ -311,21 +317,6 @@
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
-            }
-        }
-
-        .pop-close-icon {
-            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-            width      : 15px;
-            height     : 15px;
-            display    : inline-block;
-            position   : absolute;
-            right      : 15px;
-            top        : 15px;
-            opacity    : 1;
-
-            &:hover, &:active {
-                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
             }
         }
 
@@ -386,7 +377,7 @@
                     background-color : #fff;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
                 }
                 .active {
@@ -471,22 +462,6 @@
             }
         }
 
-        .pop-close-icon {
-            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-            width      : 15px;
-            height     : 15px;
-            display    : inline-block;
-            position   : absolute;
-            right      : 15px;
-            top        : 15px;
-            //z-index:6;
-            opacity    : 1;
-
-            &:hover, &:active {
-                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-            }
-        }
-
         .modal-dialog {
             width     : 67%;
             max-width : 938px;
@@ -521,7 +496,7 @@
                     background-color : #fff;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
                 }
                 .active {
@@ -600,7 +575,7 @@
                     border : 1px solid #77777a;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
                 }
                 .active {
@@ -610,7 +585,7 @@
             }
 
             .carousel-control {
-                opacity: 1;
+                opacity : 1;
             }
 
             .carousel-control.left {
@@ -688,7 +663,7 @@
         }
 
         .carousel-control {
-            opacity: 1;
+            opacity : 1;
 
         }
 
@@ -705,22 +680,6 @@
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
                 }
-            }
-        }
-
-        .pop-close-icon {
-            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-            width      : 15px;
-            height     : 15px;
-            display    : inline-block;
-            position   : absolute;
-            right      : 15px;
-            top        : 15px;
-            //z-index:6;
-            opacity    : 1;
-
-            &:hover, &:active {
-                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
             }
         }
 
@@ -784,7 +743,7 @@
                     background-color : #fff;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
 
                 }
@@ -868,22 +827,6 @@
             }
         }
 
-        .pop-close-icon {
-            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-            width      : 15px;
-            height     : 15px;
-            display    : inline-block;
-            position   : absolute;
-            right      : 15px;
-            top        : 15px;
-            //z-index:6;
-            opacity    : 1;
-
-            &:hover, &:active {
-                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-            }
-        }
-
         .modal-dialog {
             width     : 67%;
             max-width : 938px;
@@ -918,7 +861,7 @@
                     background-color : #fff;
 
                     &:hover {
-                        background :#f7a800;
+                        background : #f7a800;
                     }
                 }
                 .active {
@@ -948,20 +891,6 @@
 
     .modal.carousel.slide {
         margin-top : 60px;
-        .pop-close-icon {
-            background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-            width      : 15px;
-            height     : 15px;
-            display    : inline-block;
-            position   : absolute;
-            right      : 15px;
-            top        : 15px;
-            opacity    : 1;
-
-            &:hover, &:active {
-                background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-            }
-        }
 
         .modal-dialog {
             width     : 90%;
@@ -978,7 +907,7 @@
                     height : 100%;
 
                     .carousel-control {
-                        opacity: 1;
+                        opacity : 1;
                     }
 
                     .carousel-indicators {
@@ -987,7 +916,7 @@
                             background-color : #fff;
 
                             &:hover {
-                                background :#f7a800;
+                                background : #f7a800;
                             }
                         }
                         .active {
