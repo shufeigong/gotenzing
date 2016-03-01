@@ -169,11 +169,11 @@
                     londonMarker.addListener('click', toggleBounce);
 
                     infoWindowToronto = new google.maps.InfoWindow({
-                        content:"<span>184 York St, London, ON N6A 1B5</span>"
+                        content:"<span>376 Wellington St W, Toronto, ON M5V 1E7</span>"
                     });
 
                     infoWindowLondon = new google.maps.InfoWindow({
-                        content:"<span>376 Wellington St W, Toronto, ON M5V 1E7</span>"
+                        content:"<span>184 York St, London, ON N6A 1B5</span>"
                     });
 
                     infoWindowToronto.open(torontoMap, torontoMarker);
