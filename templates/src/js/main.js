@@ -90,7 +90,7 @@
             }, 150)
         );
 
-        $('.carousel.slide.subpage .carousel-control, .carousel.slide.popup').on('keyup', function(e) {
+        $('.carousel.slide.subpage .carousel-control, .carousel.slide.popup, .carousel.slide.gallery').on('keyup', function(e) {
             $(this).parent().find('.pressed').removeClass('pressed');
 
             // Right
