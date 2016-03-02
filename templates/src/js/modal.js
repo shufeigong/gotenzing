@@ -5,7 +5,7 @@
         var mobileModal = $('.modal.mobile-modal');
         var modalPopup = $('.modal.popup');
         var modalContentBox = $('.modal.modal-content-box');
-        var carouselSubpage = $('.carousel.slide.subpage');
+        var carouselSubpage = $('.carousel.slide.subpage,.carousel.slide.mobile');
         var player;
         var isFirstCarouselModal = true;
 
@@ -127,6 +127,7 @@
 
                 var torontoMap, londonMap;
                 var torontoMarker, londonMarker;
+                var infoWindowToronto, infoWindowLondon;
 
                 function initMap() {
                     torontoMap = new google.maps.Map(document.getElementById('toronto-map'), {
@@ -166,6 +167,17 @@
                         }
                     });
                     londonMarker.addListener('click', toggleBounce);
+
+                    infoWindowToronto = new google.maps.InfoWindow({
+                        content:"<span>376 Wellington St W, Toronto, ON M5V 1E7</span>"
+                    });
+
+                    infoWindowLondon = new google.maps.InfoWindow({
+                        content:"<span>184 York St, London, ON N6A 1B5</span>"
+                    });
+
+                    infoWindowToronto.open(torontoMap, torontoMarker);
+                    infoWindowLondon.open(londonMap, londonMarker);
                 }
 
                 function toggleBounce() {

@@ -41,7 +41,7 @@ var showGallery = function () {
                 $('.carousel-inner.gallerypage')
                     .append($('<div/>').addClass('item').append(
                         $('<img>')
-                            .prop('src', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
+                            .attr('data-original', '/templates/dist/img/gallery/' + galleryImages[i].original_image)
                             .prop('alt', galleryImages[i].thumbnail_image)
                             .prop('width', 1407)
                             .prop('height', 875)

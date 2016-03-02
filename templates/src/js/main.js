@@ -18,8 +18,7 @@
 
             tallest = Math.max.apply(null, heights); // cache largest value
             widest = Math.max.apply(null, widths);
-            items.css('height', tallest);
-            items.find('img').css({'height': tallest, 'width': widest});
+            items.css({'height': tallest});
         };
         normalizeHeights();
         $(window).on('resize orientationchange', function() {
@@ -40,13 +39,9 @@
 
 
     $(window).load(function() {
-        $('.carousel.subpage').each(function(){
+        $('.carousel.subpage, .carousel.mobile').each(function(){
             $(this).carouselHeights();
         });
-
-        //new LazyLoad({
-        //    skip_invisible: false
-        //});
 
     });
 
@@ -71,7 +66,6 @@
 
         var timeLine = new TimelineMax({
             onComplete: function () {
-
                 $(".entry-content .main-menu li.item").each(function () {
                     var fontSize = $(this).find('> a').css('font-size');
                     if (fontSize == '67px' || fontSize == '70px') {
@@ -95,6 +89,20 @@
                 }
             }, 150)
         );
+
+        $('.carousel.slide.subpage .carousel-control, .carousel.slide.popup, .carousel.slide.gallery').on('keyup', function(e) {
+            $(this).parent().find('.pressed').removeClass('pressed');
+
+            // Right
+            if(e.keyCode==39){
+                $(this).parent().find('.right').focus().addClass('pressed');
+            }
+
+            // Left
+            else if(e.keyCode==37){
+                $(this).parent().find('.left').focus().addClass('pressed');
+            }
+        });
 
         //if ($(window).width() > 640) {
         //normal version reload page
@@ -130,9 +138,6 @@
                 }
             });
 
-            //timeLine.add($(this), 0, {onComplete: function() {
-            //    getPageCarousel(link);
-            //}});
             timeLine.add(TweenLite.set(thisItem.next(), {height: "auto"}));
             timeLine.add(TweenLite.from(thisItem.next(), 0.5, {
                 "height": "0",
@@ -470,9 +475,8 @@
 
             // change page icon and open page
             $('.close-icon').addClass('hidden');
-            $('.ham-icon').removeClass('hidden');
+            $('.ham-icon').removeClass('hidden').removeClass('is-active');
             $('body').removeClass('nav-expanded');
-
 
             //mobileButtonClicked = true;
 
