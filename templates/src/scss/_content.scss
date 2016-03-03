@@ -116,6 +116,13 @@
                                             text-decoration: underline;
                                         }
                                     }
+
+                                    .social-icon-text {
+                                        display: inline-block;
+                                        margin-left: 5px;
+                                        margin-top: -15px;
+                                        vertical-align: middle;
+                                    }
                                 }
                                 p {
                                     line-height: 1.5;
@@ -234,12 +241,13 @@
                             right: 0;
                             top: 0;
                             z-index: 6;
+                            transition: transform 0.3s;
 
                             background-size: 15px 15px;
                             background-position: 50% 50%;
                             &:hover, &:active {
+                                transform: rotate(90deg);
                                 background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-
                                 background-size: 15px 15px;
                                 background-position: 50% 50%;
                             }
@@ -272,6 +280,13 @@
                                             text-decoration: underline;
                                         }
 
+                                    }
+
+                                    .social-icon-text {
+                                        display: inline-block;
+                                        margin-left: 40px;
+                                        margin-top: -50px;
+                                        vertical-align: middle;
                                     }
                                 }
                                 p {
