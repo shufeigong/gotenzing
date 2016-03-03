@@ -342,6 +342,7 @@
                         MAX-WIDTH : 100% !important;
                         HEIGHT    : auto !important;
                         width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                        margin: 0 auto;
                     }
 
                     .videoWrapper {
@@ -708,6 +709,8 @@
                         max-width : 100% !important;
                         height    : auto !important;
                         //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                        margin: 0 auto;
+
                     }
 
                     .videoWrapper {

@@ -124,6 +124,14 @@
                                         vertical-align: middle;
                                     }
                                 }
+
+                                .content-link {
+                                    text-decoration: underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
+                                    }
+                                }
+
                                 p {
                                     line-height: 1.5;
                                     color: $text-grey;
@@ -287,6 +295,12 @@
                                         margin-left: 40px;
                                         margin-top: -50px;
                                         vertical-align: middle;
+                                    }
+                                }
+                                .content-link {
+                                    text-decoration: underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
                                     }
                                 }
                                 p {
