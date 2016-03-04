@@ -19,18 +19,18 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height: 0.9;
-                    position: relative;
+                    line-height : 0.9;
+                    position    : relative;
 
                     > a {
                         display        : inline-block;
-                        margin-left    : 25px;
+                        margin-left    : 30px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
                         overflow       : hidden;
-                        vertical-align: middle;
+                        vertical-align : middle;
 
                         .grey {
                             color : $main-menu-light-grey;
@@ -45,10 +45,6 @@
 
                         &:hover, &:focus {
                             text-decoration : none;
-                            //color           : #f7a800;
-                            //.grey {
-                            //    color : #ffe0ae;
-                            //}
                         }
                     }
 
@@ -69,36 +65,41 @@
                         overflow : hidden;
                         height   : 0;
 
-                        .sub-close-icon {
-                            background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width: 30px;
-                            height: 30px;
-                            display: inline-block;
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            z-index: 6;
-                            transition: transform 0.3s;
+                        &.is-active {
+                            overflow : inherit;
+                        }
 
-                            background-size: 15px 15px;
-                            background-position: 50% 50%;
+                        .sub-close-icon {
+                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            width               : 30px;
+                            height              : 30px;
+                            display             : inline-block;
+                            position            : absolute;
+                            left                : -23px;
+                            top                 : -7px;
+                            z-index             : 6;
+                            transition          : transform 0.3s;
+
+                            background-size     : 15px 15px;
+                            background-position : 50% 50%;
+
+                            opacity: 0;
 
                             &:hover, &:active {
-                                transform: rotate(90deg);
-                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size: 15px 15px;
-                                background-position: 50% 50%;
+                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                background-size     : 15px 15px;
+                                background-position : 50% 50%;
                             }
                         }
 
                         .sub-container {
-                            display: inline-block;
-                            margin-top    : 1px;
+                            display       : inline-block;
+                            margin-top    : 7px;
                             margin-bottom : 10px;
                             border-top    : solid 1px $main-menu-light-grey;
                             border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 237px;
-                            width: 100%;
+                            width         : 100%;
 
                             .text-div {
                                 display       : inline-block;
@@ -113,28 +114,28 @@
                                     &:hover, &:focus {
                                         text-decoration : none;
                                         span {
-                                            text-decoration: underline;
+                                            text-decoration : underline;
                                         }
                                     }
 
                                     .social-icon-text {
-                                        display: inline-block;
-                                        margin-left: 5px;
-                                        margin-top: -15px;
-                                        vertical-align: middle;
+                                        display        : inline-block;
+                                        margin-left    : 5px;
+                                        margin-top     : -15px;
+                                        vertical-align : middle;
                                     }
                                 }
 
                                 .content-link {
-                                    text-decoration: underline;
+                                    text-decoration : underline;
                                     &:hover, &:active {
                                         color : #f7a800;
                                     }
                                 }
 
                                 p {
-                                    line-height: 1.5;
-                                    color: $text-grey;
+                                    line-height : 1.5;
+                                    color       : $text-grey;
                                 }
                             }
 
@@ -159,7 +160,7 @@
                                 .sub-img-container {
                                     height : 100%;
                                     div {
-                                        cursor: pointer;
+                                        cursor : pointer;
                                     }
                                     img {
                                         float : right;
@@ -194,17 +195,17 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height: 0.9;
+                    line-height : 0.9;
 
                     > a {
                         display        : inline-block;
-                        margin-left    : 25px;
+                        margin-left    : 30px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
                         color          : $text-grey;
                         text-transform : uppercase;
-                        vertical-align: middle;
-                        overflow : hidden;
+                        vertical-align : middle;
+                        overflow       : hidden;
                         .grey {
                             color : $main-menu-light-grey;
                         }
@@ -240,35 +241,38 @@
                         overflow : hidden;
                         height   : 0;
 
-                        .sub-close-icon {
-                            background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width: 30px;
-                            height: 30px;
-                            display: inline-block;
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            z-index: 6;
-                            transition: transform 0.3s;
+                        &.is-active {
+                            overflow : inherit;
+                        }
 
-                            background-size: 15px 15px;
-                            background-position: 50% 50%;
+                        .sub-close-icon {
+                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            width               : 30px;
+                            height              : 30px;
+                            display             : inline-block;
+                            position            : absolute;
+                            left                : -23px;
+                            top                 : -7px;
+                            z-index             : 6;
+                            transition          : transform 0.3s;
+
+                            background-size     : 15px 15px;
+                            background-position : 50% 50%;
                             &:hover, &:active {
-                                transform: rotate(90deg);
-                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size: 15px 15px;
-                                background-position: 50% 50%;
+                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                background-size     : 15px 15px;
+                                background-position : 50% 50%;
                             }
                         }
 
                         .sub-container {
-                            display: inline-block;
-                            margin-top    : 1px;
+                            display       : inline-block;
+                            margin-top    : 7px;
                             margin-bottom : 10px;
                             border-top    : solid 1px $main-menu-light-grey;
                             border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 239px;
-                            width: 100%;
+                            width         : 100%;
                             .text-div {
                                 display       : inline-block;
                                 width         : 45%;
@@ -285,27 +289,27 @@
                                         text-decoration : none;
 
                                         span {
-                                            text-decoration: underline;
+                                            text-decoration : underline;
                                         }
 
                                     }
 
                                     .social-icon-text {
-                                        display: inline-block;
-                                        margin-left: 40px;
-                                        margin-top: -50px;
-                                        vertical-align: middle;
+                                        display        : inline-block;
+                                        margin-left    : 40px;
+                                        margin-top     : -50px;
+                                        vertical-align : middle;
                                     }
                                 }
                                 .content-link {
-                                    text-decoration: underline;
+                                    text-decoration : underline;
                                     &:hover, &:active {
                                         color : #f7a800;
                                     }
                                 }
                                 p {
-                                    line-height   : 1.5;
-                                    color         : $text-grey;
+                                    line-height : 1.5;
+                                    color       : $text-grey;
                                 }
                             }
                             .imgShow-div {
@@ -316,7 +320,7 @@
                                 .sub-img-container {
                                     height : 100%;
                                     div {
-                                        cursor: pointer;
+                                        cursor : pointer;
                                     }
                                     img {
                                         float : right;

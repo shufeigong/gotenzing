@@ -6,9 +6,37 @@
 
 .gallery-container {
     .gallery-item {
-        display : inline-block;
-        margin  : 3px;
+        display       : inline-block;
+        margin        : 3px;
+
+        position      : relative;
+        float         : left;
+        margin-right  : 10px;
+        margin-bottom : 10px;
+        cursor        : pointer;
+        box-shadow    : rgba(0, 0, 0, .2) 3px 5px 5px;
+
+        &:before {
+            background : none;
+            transition : all .3s linear;
+        }
+
+        &:hover {
+            &:before {
+                content    : "";
+                display    : block;
+                position   : absolute;
+                top        : 0;
+                bottom     : 0;
+                left       : 0;
+                right      : 0;
+                background : rgba(247, 168, 0, 0.5);
+                transition : all .3s linear;
+            }
+
+        }
     }
+
 }
 
 .left.carousel-control {
@@ -35,24 +63,24 @@
 }
 
 .pop-close-icon {
-    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-    width      : 30px;
-    height     : 30px;
-    display    : inline-block;
-    position   : absolute;
-    right      : 0;
-    top        : 0;
-    opacity    : 1;
+    background          : url(../../dist/img/pop-close-icon.svg) no-repeat;
+    width               : 30px;
+    height              : 30px;
+    display             : inline-block;
+    position            : absolute;
+    left                : 10px;
+    top                 : 10px;
+    opacity             : 1;
 
-    background-size: 15px 15px;
-    background-position: 50% 50%;
+    background-size     : 15px 15px;
+    background-position : 50% 50%;
 
-    transition : transform 0.3s;
+    transition          : transform 0.3s;
     &:hover, &:active {
-        transform  : rotate(90deg);
-        background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-        background-size: 15px 15px;
-        background-position: 50% 50%;
+        transform           : rotate(90deg);
+        background          : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+        background-size     : 15px 15px;
+        background-position : 50% 50%;
     }
 }
 
@@ -342,7 +370,7 @@
                         MAX-WIDTH : 100% !important;
                         HEIGHT    : auto !important;
                         width     : expression(this.width > 200 ? "200px" :     this.width) !important;
-                        margin: 0 auto;
+                        margin    : 0 auto;
                     }
 
                     .videoWrapper {
@@ -363,12 +391,13 @@
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 20px auto 0;
-                padding : 0;
-                left    : 0;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
+                margin     : 20px auto 0;
+                padding    : 0;
+                left       : 0;
+                right      : auto;
+                top        : 100%;
+                height     : 50px;
+                text-align : left;
 
             }
 
@@ -483,12 +512,13 @@
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 0 auto;
-                padding : 0;
-                left    : 20px;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
+                margin     : 0 auto;
+                padding    : 0;
+                left       : 20px;
+                right      : auto;
+                top        : 100%;
+                height     : 50px;
+                text-align : left;
             }
 
             .carousel-indicators {
@@ -709,7 +739,7 @@
                         max-width : 100% !important;
                         height    : auto !important;
                         //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
-                        margin: 0 auto;
+                        margin    : 0 auto;
 
                     }
 
@@ -732,12 +762,13 @@
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 20px auto 0;
-                padding : 0;
-                left    : 0;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
+                margin     : 20px auto 0;
+                padding    : 0;
+                left       : 0;
+                right      : auto;
+                top        : 100%;
+                height     : 50px;
+                text-align : left;
             }
 
             .carousel-indicators {
@@ -850,12 +881,13 @@
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 0 auto;
-                padding : 0;
-                left    : 20px;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
+                margin     : 0 auto;
+                padding    : 0;
+                left       : 20px;
+                right      : auto;
+                top        : 100%;
+                height     : 50px;
+                text-align : left;
             }
 
             .carousel-indicators {
@@ -946,12 +978,13 @@
 
                         .carousel-caption {
                             @include font-size(1.2);
-                            margin  : 20px auto 0;
-                            padding : 0;
-                            left    : 0;
-                            right   : auto;
-                            top     : 100%;
-                            height  : 50px;
+                            margin     : 20px auto 0;
+                            padding    : 0;
+                            left       : 0;
+                            right      : auto;
+                            top        : 100%;
+                            height     : 50px;
+                            text-align : left;
                         }
                     }
                 }

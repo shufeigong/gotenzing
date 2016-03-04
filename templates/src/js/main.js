@@ -66,14 +66,14 @@
 
         var timeLine = new TimelineMax({
             onComplete: function () {
-                $(".entry-content .main-menu li.item").each(function () {
-                    var fontSize = $(this).find('> a').css('font-size');
-                    if (fontSize == '67px' || fontSize == '70px') {
-                        $(this).find('> a').css('line-height', '60px');
-                    } else {
-                        $(this).find('> a').css('line-height', '18px');
-                    }
-                });
+                //$(".entry-content .main-menu li.item").each(function () {
+                //    var fontSize = $(this).find('> a').css('font-size');
+                //    if (fontSize == '67px' || fontSize == '70px') {
+                //        $(this).find('> a').css('line-height', '60px');
+                //    } else {
+                //        $(this).find('> a').css('line-height', '18px');
+                //    }
+                //});
             }
         });
 
@@ -143,7 +143,23 @@
                 "height": "0",
                 ease: easeValue
             }), "-=0.35");
+            timeLine.add(TweenLite.to(thisItem.next().find('a'),0.5,{onComplete: function() {
+                thisItem.next().addClass('is-active');
+            }}));
+            timeLine.add(
+                TweenLite.to(
+                    thisItem.next().find('.sub-close-icon'), 0.25, {
+                        "css": {
+                            "opacity": 1,
+                            "left": -8,
+                            rotation:180
 
+                        },
+                        ease: easeValue
+
+                    }
+                )
+            );
 
             isFirstClick = false;
 
@@ -188,6 +204,11 @@
         /*
          *  Main menu animation
          */
+        var colorGrey = "#555555";
+        var colorLightGrey = "#949494";
+        var colorOrange = '#f7a800';
+        var colorLightOrange = '#ffe0ae';
+
         $(".main-menu .item").children("a").hover(function () {
             // Prevent to open the same mobile modal
             if ($(this).hasClass('orange')) {
@@ -201,12 +222,20 @@
 
             var elem = $(this).parent()[0];
 
+            TweenLite.to($(this), 0.3, {
+                "scale" : 1.1,
+                "color" : colorOrange
+            });
 
-            if (isFirstClick) {
-                elem.firstClickAnimation.play();
-            } else {
-                elem.noFirstClickAnimation.play();
-            }
+            TweenLite.to($(this).find('.grey'), 0.3, {
+                "color" : colorLightOrange
+            });
+
+            //if (isFirstClick) {
+            //    elem.firstClickHoverAnimation.play();
+            //} else {
+            //    elem.noFirstClickHoverAnimation.play();
+            //}
 
         }, function () {
             // Prevent to open the same mobile modal
@@ -220,12 +249,20 @@
             }
 
             var elem = $(this).parent()[0];
+            TweenLite.to($(this), 0.3, {
+                "scale" : 1,
+                "color": colorGrey
+            });
 
-            if (isFirstClick) {
-                elem.firstClickAnimation.reverse();
-            } else {
-                elem.noFirstClickAnimation.reverse();
-            }
+            TweenLite.to($(this).find('.grey'), 0.3, {
+                "color" : colorLightGrey
+            });
+
+            //if (isFirstClick) {
+            //    elem.firstClickHoverAnimation.reverse();
+            //} else {
+            //    elem.noFirstClickHoverAnimation.reverse();
+            //}
         });
 
         $(".main-menu .item").children("a").click(function () {
@@ -238,6 +275,7 @@
             var _this = this;
             var colorGrey = "#77777a";
             var colorLightGrey = "#949494";
+            var previousItem = $('.item .orange');
 
             $('.mobile-content').find('.modal.mobile-modal.in').modal('hide');
 
@@ -253,7 +291,7 @@
                         timeLine.to($(this).children("a"), 0.5, {
                             "css": {
                                 "fontSize": "20px",
-                                "line-height": "18px"
+                                "scale" : 1
                             },
                             ease: easeValue
                         });
@@ -262,50 +300,85 @@
                         timeLine.to($(this).children("a"), 0.5, {
                             "css": {
                                 "fontSize": "20px",
-                                "line-height": "18px"
+                                "scale" : 1
+
                             },
                             ease: easeValue
                         }, "-=0.45");
                     }
                 });
 
-                timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
-                timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "-=0.35");
+                timeLine.add(TweenLite.set($(this).next(), {height: "auto"}), 'feature');
+                timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature-=0.35");
+
+                timeLine.add(TweenLite.to($(this).next(), 0.5, {onComplete: function() {
+                    $(_this).next().addClass('is-active');
+                }}), 'feature');
+                timeLine.add(
+                    TweenLite.to(
+                        $(this).next().find('.sub-close-icon'), 0.25, {
+                            "css": {
+                                "opacity": 1,
+                                "left": -8,
+                                rotation:180
+                            },
+                            ease: easeValue
+
+                        }
+                    )
+                , 'feature+=0.5');
                 //elem.firstClickFontAnimation.play();
                 $(this).addClass('orange');
 
                 isFirstClick = false;
             } else {
                 timeLine.clear();
-                // Close the content box first
-                timeLine.to($('.item .orange').next(), 0.5, {"height": "0", ease: easeValue}, "cleanup");
 
-                var orangeClassElement = $('.item .orange');
+                // Close the content box first
+                timeLine.to(previousItem.next().find('.sub-close-icon'), 0.25, {
+                    "css": {
+                        "opacity": 0,
+                        "left": -23,
+                        rotation:-180
+
+                    },
+                    ease: easeValue
+
+                }, 'cleanup');
+                timeLine.to(previousItem.next(), 0, {onComplete: function() {
+                    previousItem.next().removeClass('is-active');
+                }}, 'cleanup+=0.5');
+                timeLine.to(previousItem.next(), 0.5, {
+                    "height": "0",
+                    ease: easeValue
+                }, 'cleanup+=0.5');
+
+                var orangeClassElement = previousItem;
                 var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
 
                 if (isLightGrey) {
                     timeLine.to(orangeClassElement, 0.5, {
                         "color": colorLightGrey,
-                        ease: easeValue
+                        "ease": easeValue
                     }, "cleanup+=0.25");
                 } else {
                     timeLine.to(orangeClassElement, 0.5, {
                         "color": colorGrey,
-                        ease: easeValue
+                        "ease": easeValue
                     }, "cleanup+=0.25");
 
                     timeLine.to(orangeClassElement.find('.grey'), 0.5, {
                         "color": colorLightGrey,
-                        ease: easeValue
+                        "ease": easeValue
                     }, "cleanup+=0.25");
                 }
 
-                timeLine.to($('.item .orange'), 0.5, {
-                    "css": {
-                        "line-height": "18px"
-                    },
-                    ease: easeValue
-                }, "feature");
+                //timeLine.to($('.item .orange'), 0.5, {
+                //    "css": {
+                //        "line-height": "18px"
+                //    },
+                //    ease: easeValue
+                //}, "feature");
 
                 $('.item .orange').next().find('a').attr('tabindex', "-1");
 
@@ -314,12 +387,14 @@
 
                         timeLine.to($(this).children("a"), 0.5, {
                             "fontSize": "20px",
-                            ease: easeValue
+                            "scale" : 1,
+                            "ease": easeValue
                         }, "feature");
 
                         timeLine.to($(this).children("a").next(), 0.5, {
                             "height": "0",
-                            ease: easeValue
+                            "scale" : 1,
+                            "ease": easeValue
                         }, "feature+=0.25");
 
                         $(this).children("a").removeClass("orange");
@@ -329,11 +404,24 @@
                 // Remove orange class
                 $('.item').find('.orange').removeClass('orange');
 
-                timeLine.to($(this), 0.5, {"css": {"line-height": "60px"}, ease: easeValue}, "feature");
-                timeLine.to($(this), 0.5, {"fontSize": "67px", ease: easeValue}, "feature");
+                timeLine.to($(this), 0.5, {"fontSize": "67px", "ease": easeValue}, "feature");
 
-                timeLine.add(TweenLite.set($(this).next(), {height: "auto"}));
-                timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", ease: easeValue}), "feature+=0.25");
+                timeLine.add(TweenLite.set($(this).next(), {"height": "auto"}));
+                timeLine.add(TweenLite.from($(this).next(), 0.5, {"height": "0", "ease": easeValue}), "feature+=0.25");
+
+                timeLine.to($(this).next(),0.5,{onComplete: function(){
+                    $(_this).next().addClass('is-active');
+                }}, 'feature');
+                timeLine.to($(this).next().find('.sub-close-icon'),0.25,{
+                    "css": {
+                        "opacity": 1,
+                        "left": -8,
+                        "rotation":180
+
+                    },
+                    "ease": easeValue
+
+                }, 'feature+=0.5');
 
                 $(this).addClass('orange');
                 //elem.noFirstClickFontAnimation.play();
@@ -348,9 +436,21 @@
             }
         });
 
+        $(".sub-close-icon").hover(
+            function() {
+                TweenLite.to($(this), 0.1, {
+                    "rotation" : 90
+                });
+        },  function() {
+                TweenLite.to($(this), 0.1, {
+                    "rotation" : 0
+                });
+        });
+
         $(".sub-close-icon").click(function (e) {
             var colorGrey = "#77777a";
             var colorLightGrey = "#949494";
+            var pageContent = $(this).parent(".page-content");
 
             e.preventDefault();
             $.cookie("previousUrl", window.location.href, {path: "/"});
@@ -358,10 +458,23 @@
 
             // Clear the timeline
             timeLine.clear();
-            timeLine.to($(this).parent(".page-content"), 0.5, {
+            timeLine.to(pageContent.find('.sub-close-icon'), 0.25, {
+                "css": {
+                    "opacity": 0,
+                    "left": -23,
+                    rotation:-180
+
+                },
+                ease: easeValue
+
+            }, 'cleanup');
+            timeLine.to(pageContent, 0, {onComplete: function() {
+                pageContent.removeClass('is-active');
+            }}, 'cleanup+=0.5');
+            timeLine.to(pageContent, 0.5, {
                 "height": "0",
                 ease: easeValue
-            }, "cleanup");
+            }, "cleanup+=0.5");
 
             var orangeClassElement = $('.item .orange');
             var isLightGrey = $(orangeClassElement).attr('id') === 'engaging' || $(orangeClassElement).attr('id') === 'integrating' || $(orangeClassElement).attr('id') === 'spending';
@@ -392,8 +505,7 @@
                 if (i == 0) {
                     timeLine.to($(this).children("a"), 0.5, {
                         "css": {
-                            "fontSize": "67px",
-                            "line-height": "60px"
+                            "fontSize": "67px"
                         }, ease: easeValue
                     }
                     );
@@ -401,8 +513,7 @@
                 } else {
                     timeLine.to($(this).children("a"), 0.5, {
                         "css": {
-                            "fontSize": "67px",
-                            "line-height": "60px"
+                            "fontSize": "67px"
                         }, ease: easeValue
                     }, "-=0.45");
                 }
@@ -417,7 +528,6 @@
 
             isFirstClick = true;
         });
-
 
         /**
          * Mobile Version menu script
@@ -559,28 +669,24 @@
             var duration = 0.2;
             var easeValue = Power2.easeInOut;
 
-            //if (hasGreyClass.length > 0) {
-                tl.to(menu, duration, {
-                    "css": {
-                        "color": colorOrange,
-                        "fontSize": (currentFontSize + fontSizeAdjustment) + "px"
-                    },
-                    ease: easeValue
-                }, "hover");
+            tl.to(menu, duration, {
+                "css": {
+                    "color": colorOrange,
+                    "scale": 1.1
+                    //"fontSize": (currentFontSize + fontSizeAdjustment) + "px"
+                },
+                ease: easeValue
+            }, "hover");
 
-                tl.to($(menu).find('.grey'), duration, {
-                    "css": {
-                        "color": colorLightOrange
-                    },
-                    ease: easeValue
-                }, "hover");
-            //} else {
-            //    tl.to(menu, duration, {
-            //        "css": {"color": colorOrange, "fontSize": (currentFontSize + fontSizeAdjustment) + "px"},
-            //        ease: easeValue
-            //    });
-            //}
-            element.firstClickAnimation = tl;
+            tl.to($(menu).find('.grey'), duration, {
+                "css": {
+                    "color": colorLightOrange,
+                    "scale": 1.1
+                },
+                ease: easeValue
+            }, "hover");
+
+            element.firstClickHoverAnimation = tl;
 
             // Menu font animation
             var fontTl = new TimelineMax({paused: true});
@@ -636,24 +742,24 @@
             var duration = 0.2;
             var easeValue = Power2.easeInOut;
 
-            //if (hasGreyClass.length > 0) {
-                tl.to(menu, duration, {
-                    "css": {"color": colorOrange, "fontSize": (currentFontSize + fontSizeAdjustment) + "px"},
-                    ease: easeValue
-                }, "hover");
+            tl.to(menu, duration, {
+                "css": {
+                    "color": colorOrange,
+                    "scale": 1.1
+                    //"fontSize": (currentFontSize + fontSizeAdjustment) + "px"
+                },
+                ease: easeValue
+            }, "hover");
 
-                tl.to($(menu).find('.grey'), duration, {
-                    "css": {"color": colorLightOrange},
-                    ease: easeValue
-                }, "hover");
-            //} else {
-            //    tl.to(menu, duration, {
-            //        "css": {"color": colorOrange, "fontSize": (currentFontSize + fontSizeAdjustment) + "px"},
-            //        ease: easeValue
-            //    });
-            //}
+            tl.to($(menu).find('.grey'), duration, {
+                "css": {
+                    "color": colorLightOrange,
+                    "scale": 1.1
+                },
+                ease: easeValue
+            }, "hover");
 
-            element.noFirstClickAnimation = tl;
+            element.noFirstClickHoverAnimation = tl;
 
             // Menu font animation
             var fontTl = new TimelineMax({paused: true});

@@ -35,21 +35,25 @@
         border-bottom : none;
         padding       : 0;
         .close-button {
-            width      : 25px;
-            height     : 25px;
-            position   : absolute;
-            right      : 100px;
-            top        : 110px;
-            background : url(../../dist/img/mobile-close.svg) no-repeat;
-            display    : inline-block;
-            cursor     : pointer;
-            z-index    : 10;
+            width               : 30px;
+            height              : 30px;
+            position            : absolute;
+            left                : 5.3%;
+            top                 : 138px;
+            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+            display             : inline-block;
+            cursor              : pointer;
+            z-index             : 10;
 
-            transition: transform 0.3s;
+            transition          : transform 0.3s;
+            background-size     : 15px 15px;
+            background-position : 50% 50%;
 
             &:hover, &:active {
-                transform: rotate(90deg);
-                background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
+                transform           : rotate(90deg);
+                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                background-size     : 15px 15px;
+                background-position : 50% 50%;
             }
         }
 
@@ -60,7 +64,7 @@
 
         .entry-content {
             margin-top : 100px;
-            padding    : 0 5%;
+            padding    : 0 6.5%;
             .title {
                 @include font-size(6.6);
                 text-transform : uppercase;
@@ -79,6 +83,14 @@
             }
         }
     }
+}
+
+.modal-backdrop {
+    background-color: #555555;
+}
+
+.modal-backdrop.in {
+    opacity: 0.95;
 }
 
 .modal-fullscreen .modal-content, .modal-content-box .modal-content {
@@ -108,31 +120,26 @@
     }
 }
 
-@media (min-width : 768px) {
-    .modal-fullscreen .modal-dialog {
-        .modal-content {
-            //width : 95%;
-            //margin : 0 auto;
-
-        }
-    }
-}
-
 @media (min-width : 992px) {
     .modal-fullscreen .modal-dialog {
         .modal-content {
-            //width : 90%;
-            //margin : 0 auto;
-
+            .modal-body {
+                .entry-content {
+                    margin-top: 85px;
+                }
+            }
         }
     }
 }
 
-@media (min-width : 1200px) {
+@media (min-width : 1000px) {
     .modal-fullscreen .modal-dialog {
         .modal-content {
-            //width : 90%;
-            //margin : 0 auto;
+            .modal-body {
+                .entry-content {
+                    margin-top: 100px;
+                }
+            }
         }
     }
 }
@@ -145,8 +152,8 @@
     .modal-fullscreen, .modal-content-box {
         .modal-header {
             .close-button {
-                right : 30px;
-                top   : 110px;
+                top  : 118px;
+                left : 4%;
             }
         }
     }
@@ -161,8 +168,8 @@
         }
         .modal-header {
             .close-button {
-                right: 15px;
-                top: 10px;
+                left : 0;
+                top  : 45px;
             }
         }
         .modal-body {
@@ -207,12 +214,12 @@
             top        : 20px;
             background : url(../../dist/img/mobile-close.svg) no-repeat;
             display    : inline-block;
-            cursor: pointer;
+            cursor     : pointer;
 
-            transition: transform 0.3s;
+            transition : transform 0.3s;
 
             &:hover, &:active {
-                transform: rotate(90deg);
+                transform  : rotate(90deg);
                 background : url(../../dist/img/mobile-close-hover.svg) no-repeat;
 
             }
@@ -250,7 +257,7 @@
                 }
 
                 .content-link {
-                    text-decoration: underline;
+                    text-decoration : underline;
                     &:hover, &:active {
                         color : #f7a800;
                     }
@@ -279,23 +286,22 @@
                         }
 
                         &:hover {
-                            background: #f7a800;
+                            background : #f7a800;
                         }
                     }
                 }
 
                 .carousel-inner {
                     .item {
-                        cursor: pointer;
+                        cursor : pointer;
 
                         .slide-container {
-                            position: relative;
+                            position : relative;
                         }
 
                     }
 
                 }
-
 
                 //end of .carousel-indicators
                 img {
