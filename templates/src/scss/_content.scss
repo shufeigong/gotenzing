@@ -202,7 +202,7 @@
                         margin-left    : 30px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
                         vertical-align : middle;
                         overflow       : hidden;
@@ -374,7 +374,7 @@
                     a {
                         @include font-size(2.6);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
                         .grey {
                             color : $main-menu-light-grey;

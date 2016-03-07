@@ -35,60 +35,7 @@
         </div>
 
         <div class="mobile-img-show">
-            <div id="positioning-page-mobile" class="carousel slide mobile" data-ride="carousel" data-interval='false'>
-                <!-- Indicators -->
-                <ol class="carousel-indicators subpageindi positioning-page">
-                    <li data-target="#positioning-page-mobile" data-slide-to="0" class="active"></li>
-                    <li data-target="#positioning-page-mobile" data-slide-to="1"></li>
-                    <li data-target="#positioning-page-mobile" data-slide-to="2"></li>
-                    <li data-target="#positioning-page-mobile" data-slide-to="3"></li>
-                    <li data-target="#positioning-page-mobile" data-slide-to="4"></li>
-
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner positioning-page" role="listbox">
-                    <div class="item active">
-                        <div data-target="#lightbox-positioning-page" data-toggle="modal" data-slide-to="0"
-                             class="slide-container">
-                            <img class="lazy" src="/templates/dist/img/gallery/NClean_Orange_PrintAd_1407x875.jpg" alt="Nature Clean orange girl" width="1407" height="875"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div data-target="#lightbox-positioning-page" data-toggle="modal" data-slide-to="1"
-                             class="slide-container">
-                            <img class="lazy" data-original="/templates/dist/img/gallery/NClean_Pregnant_PrintAd_1407x875.jpg" alt="Nature Clean pregnant woman" width="1407" height="875"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div data-target="#lightbox-positioning-page" data-toggle="modal" data-slide-to="2"
-                             class="slide-container">
-                            <span class="video-play-icon"></span>
-                            <img class="lazy" data-original="/templates/dist/img/video-thumbnails/nclean-thumbnail.jpg" alt="NClean TV story board" width="295" height="166"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div data-target="#lightbox-positioning-page" data-toggle="modal" data-slide-to="3"
-                             class="slide-container">
-                            <img class="lazy" data-original="/templates/dist/img/gallery/MISS_EDO_Web_1407x875.jpg" alt="Mississauga Human race website" width="1407" height="875"/>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div data-target="#lightbox-positioning-page" data-toggle="modal" data-slide-to="4"
-                             class="slide-container">
-                            <img class="lazy" data-original="/templates/dist/img/gallery/MISS_EDO_Ads_1407x875.jpg" alt="Mississauga print advert" width="1407" height="875"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#positioning-page" role="button" data-slide="prev">
-                    <div class="left-arrow"></div>
-                </a>
-                <a class="right carousel-control" href="#positioning-page" role="button" data-slide="next">
-                    <div class="right-arrow"></div>
-                </a>
-            </div>
+            {% include 'tiles/positioning.html' %}
         </div>
     </div>
 </div>
