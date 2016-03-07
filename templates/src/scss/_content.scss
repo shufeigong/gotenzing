@@ -9,8 +9,7 @@
     }
 }
 
-/////1000px~////////////////////////////////
-@media screen and (min-width : 1000px) {
+@media screen and (min-width : 1040px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -83,7 +82,7 @@
                             background-size     : 15px 15px;
                             background-position : 50% 50%;
 
-                            opacity: 0;
+                            opacity             : 0;
 
                             &:hover, &:active {
                                 background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
@@ -185,8 +184,7 @@
 
 }
 
-////640~999px///////////////////////////////////////////////////
-@media screen and (min-width : 0) and (max-width : 999px) {
+@media screen and (min-width : 0) and (max-width : 1039px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {

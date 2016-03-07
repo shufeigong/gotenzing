@@ -11,20 +11,12 @@
 
         li {
             border-top: 1px solid #b9b8ba;
-            padding: 3.5px 0;
+            padding: 4.5px 0;
             line-height: 1.2;
             &:last-child {
                 border-bottom: 1px solid #b9b8ba;
             }
         }
-    }
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-    li {
-        margin-bottom: 10px;
     }
 }
 
@@ -68,7 +60,7 @@
                 li {
                     @include font-size(1.6);
                     border-top: 1px solid #b9b8ba;
-                    padding : 3.5px 0;
+                    padding : 4.5px 0;
                     &:last-child {
                         //border-bottom: 1px solid #b9b8ba;
                     }

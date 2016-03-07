@@ -151,7 +151,7 @@
                     thisItem.next().find('.sub-close-icon'), 0.25, {
                         "css": {
                             "opacity": 1,
-                            "left": -8,
+                            "left": -7,
                             rotation:180
 
                         },
@@ -283,8 +283,14 @@
             $.cookie("previousUrl", window.location.href, {path: "/"});
             window.history.pushState(null, null, "/" + $(this).attr("href"));
 
+
             if (isFirstClick == true) {
                 timeLine.clear();
+                timeLine.to($(this), 0.25, {
+                    "scale" : 1,
+                    ease: easeValue
+                });
+
                 var i = 0;
                 $(this).parent().siblings().each(function () {
                     if (i == 0) {
@@ -319,7 +325,7 @@
                         $(this).next().find('.sub-close-icon'), 0.25, {
                             "css": {
                                 "opacity": 1,
-                                "left": -8,
+                                "left": -7,
                                 rotation:180
                             },
                             ease: easeValue
@@ -333,6 +339,10 @@
                 isFirstClick = false;
             } else {
                 timeLine.clear();
+                timeLine.to($(this), 0.25, {
+                    "scale" : 1,
+                    ease: easeValue
+                });
 
                 // Close the content box first
                 timeLine.to(previousItem.next().find('.sub-close-icon'), 0.25, {
@@ -415,7 +425,7 @@
                 timeLine.to($(this).next().find('.sub-close-icon'),0.25,{
                     "css": {
                         "opacity": 1,
-                        "left": -8,
+                        "left": -7,
                         "rotation":180
 
                     },
@@ -458,7 +468,7 @@
 
             // Clear the timeline
             timeLine.clear();
-            timeLine.to(pageContent.find('.sub-close-icon'), 0.25, {
+            timeLine.to($(this), 0.25, {
                 "css": {
                     "opacity": 0,
                     "left": -23,

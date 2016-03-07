@@ -1,13 +1,11 @@
-/////1000px~////////////////////////////////
-@media screen and (min-width : 1000px) {
+@media screen and (min-width : 1040px) {
     .container {
         width : 90%;
     }
 
 }
 
-////640~999px///////////////////////////////////////////////////
-@media screen and (min-width : 641px) and (max-width : 999px) {
+@media screen and (min-width : 641px) and (max-width : 1039px) {
     .container {
         width : 95%;
     }
