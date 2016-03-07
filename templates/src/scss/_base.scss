@@ -95,6 +95,16 @@ img:not([src]) {
     visibility: hidden;
 }
 
+img.fit-height {
+    width: auto;
+    max-height: 100%;
+    max-width: inherit;
+}
+
+img.fit-width {
+    max-width: 100%;
+}
+
 a {
     color:#f7a800;
     &:hover {

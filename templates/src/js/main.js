@@ -201,6 +201,27 @@
             $('body').toggleClass('nav-expanded');
         });
 
+        /**
+         * Subpage tile item hover
+         *
+         */
+        $('.tile-item').hover(
+            function () {
+                TweenLite.to(
+                    $(this), 0.1, {
+                        "scale": 1.1
+                    }
+                );
+            }, function () {
+                TweenLite.to(
+                    $(this), 0.1, {
+                        "scale": 1
+                    }
+                );
+            }
+        );
+
+
         /*
          *  Main menu animation
          */
@@ -273,7 +294,7 @@
 
             var elem = $(this).parent()[0];
             var _this = this;
-            var colorGrey = "#77777a";
+            var colorGrey = "#555555";
             var colorLightGrey = "#949494";
             var previousItem = $('.item .orange');
 
