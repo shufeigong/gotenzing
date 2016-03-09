@@ -1,16 +1,16 @@
 {% include 'header.html' %}
 
 <div class="entry-content">
-	<div class="main-menu hidden-xs">
+	<div class="main-menu">
 		<ul>
 		    {% for page in pageList %}
 		       <li class="item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">whos<span class="grey">who</span></a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">whos<span class="grey">who</span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">human<span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">human<span class="grey">channel</span>ing</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">{{page.pageName}}</a>
 		           {% endif %}
 
 		           <div class="page-content">
@@ -47,10 +47,6 @@
              {% endfor%}
          </ol>
       </div>
-
-  	{% for page in mobilePageList %}
-		{% include page.pageTemplateUrl ignore missing %}
-	{% endfor %}
 
 </div>
  <!-- Display mobile pages -->

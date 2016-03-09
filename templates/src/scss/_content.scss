@@ -63,7 +63,7 @@
                         position : relative;
                         overflow : hidden;
                         height   : 0;
-                        width: 97%;
+                        width    : 96%;
 
                         &.is-active {
                             overflow : inherit;
@@ -94,19 +94,15 @@
 
                         .sub-container {
                             display       : inline-block;
-                            margin-top    : 7px;
-                            margin-bottom : 10px;
+                            margin        : 7px 0 10px 30px;
                             border-top    : solid 1px $main-menu-light-grey;
                             border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 237px;
-                            width         : 100%;
 
                             .text-div {
                                 display       : inline-block;
-                                //width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
-                                margin-left   : 25px;
                                 padding       : 0;
                                 @include font-size(1.4);
                                 a {
@@ -140,10 +136,11 @@
                             }
 
                             .imgShow-div {
-                                margin  : auto;
-                                //width   : 45%;
-                                height  : auto;
-                                padding : 0;
+                                margin     : auto;
+                                height     : auto;
+                                padding    : 0;
+                                min-height : 237px;
+
                                 ul {
                                     list-style : disc;
                                     li {
@@ -186,7 +183,7 @@
 
 }
 
-@media screen and (min-width : 0) and (max-width : 1039px) {
+@media screen and (min-width : 641px) and (max-width : 1039px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -240,6 +237,7 @@
                         position : relative;
                         overflow : hidden;
                         height   : 0;
+                        width    : 96%;
 
                         &.is-active {
                             overflow : inherit;
@@ -267,18 +265,16 @@
 
                         .sub-container {
                             display       : inline-block;
-                            margin-top    : 7px;
-                            margin-bottom : 10px;
+                            margin        : 7px 0 10px 30px;
+
                             border-top    : solid 1px $main-menu-light-grey;
                             border-bottom : solid 1px $main-menu-light-grey;
                             min-height    : 239px;
-                            width         : 100%;
+
                             .text-div {
                                 display       : inline-block;
-                                width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
-                                margin-left   : 25px;
                                 padding       : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
@@ -313,10 +309,10 @@
                                 }
                             }
                             .imgShow-div {
-                                margin  : auto;
-                                width   : 45%;
-                                height  : auto;
-                                padding : 0;
+                                margin     : auto;
+                                height     : auto;
+                                padding    : 0;
+                                min-height : 237px;
                                 .sub-img-container {
                                     height : 100%;
                                     div {
@@ -348,10 +344,183 @@
 ////////////////~640px////////////////////////
 @media screen and (max-width : 640px) {
     .entry-content {
+        margin-top : 30px;
+        .main-menu {
+            margin : 70px auto 0 auto;
+            ul {
+                list-style : none;
+                padding    : 0;
+                > li {
+                    line-height : 0.9;
+
+                    > a {
+                        display        : inline-block;
+                        margin-left    : 30px;
+                        @include font-size(6.7);
+                        font-family    : $font-site-bold;
+                        color          : $main-menu-dark-grey;
+                        text-transform : uppercase;
+                        vertical-align : middle;
+                        overflow       : hidden;
+                        .grey {
+                            color : $main-menu-light-grey;
+                        }
+                        &.orange {
+                            color : #f7a800 !important;
+                            .grey {
+                                color : #ffe0ae !important;
+                            }
+                        }
+
+                        &:hover, &:focus {
+                            text-decoration : none;
+                            .grey {
+                                //color : #ffe0ae;
+                            }
+                        }
+
+                    }
+                    #engaging, #integrating, #spending {
+                        color : $main-menu-light-grey;
+                        &.orange {
+                            color : #f7a800 !important;
+                            .grey {
+                                color : #f7a800 !important;
+                            }
+                        }
+                        &:hover, &:focus {
+                            text-decoration : none;
+                        }
+                    }
+                    .page-content {
+                        overflow   : hidden;
+                        height     : 0;
+
+                        background : #ffffff;
+                        position   : absolute;
+                        z-index    : 100;
+
+                        &.is-active {
+                            overflow : inherit;
+                        }
+
+                        .sub-close-icon {
+                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            width               : 30px;
+                            height              : 30px;
+                            display             : inline-block;
+                            position            : absolute;
+                            left                : 10px;
+                            top                 : -7px;
+                            z-index             : 6;
+                            transition          : transform 0.3s;
+
+                            background-size     : 15px 15px;
+                            background-position : 50% 50%;
+                            &:hover, &:active {
+                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                background-size     : 15px 15px;
+                                background-position : 50% 50%;
+                            }
+                        }
+
+                        .sub-container {
+                            display       : inline-block;
+                            margin-top    : 7px;
+                            margin-bottom : 10px;
+                            border-top    : 0;
+                            border-bottom : 0;
+                            min-height    : 239px;
+                            width         : 100%;
+                            .text-div {
+                                display     : block;
+                                margin      : 10px auto;
+                                padding     : 0;
+
+                                @include font-size(1.4);
+                                line-height : 1.5;
+                                color       : $text-grey;
+
+                                float       : none !important;
+
+                                .mobile-title {
+                                    margin-top    : 20px;
+                                    margin-bottom : 25px;
+                                    @include font-size(4.1);
+                                    color         : #f7a800;
+                                }
+
+                                a {
+                                    color : $text-grey;
+                                    &:hover, &:focus {
+                                        text-decoration : none;
+
+                                        span {
+                                            text-decoration : underline;
+                                        }
+
+                                    }
+
+                                    .social-icon-text {
+                                        display        : inline-block;
+                                        margin-left    : 40px;
+                                        margin-top     : -50px;
+                                        vertical-align : middle;
+                                    }
+                                }
+                                .content-link {
+                                    text-decoration : underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
+                                    }
+                                }
+                                p {
+                                    line-height : 1.5;
+                                    color       : $text-grey;
+                                }
+                            }
+                            .imgShow-div {
+                                display    : block;
+
+                                margin     : auto;
+                                height     : auto;
+                                padding    : 0;
+                                min-height : 237px;
+
+                                float      : none !important;
+
+                                .sub-img-container {
+                                    height : 100%;
+                                    div {
+                                        cursor : pointer;
+                                    }
+                                    img {
+                                        float : right;
+                                    }
+                                }
+                                .slide-container {
+                                    cursor : pointer;
+                                    width  : 100%;
+                                    height : auto;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+        }
 
     }
 
     .mobile-content {
+        position     : absolute;
+        top          : 0;
+
+        z-index      : 10;
+
         margin-top   : 73px;
         margin-left  : 15px;
         margin-right : 15px;
@@ -365,7 +534,7 @@
             margin-right : -15px;
             ul {
                 list-style : none;
-                padding    : 0px;
+                padding    : 0;
                 margin     : 75px 0 0 0;
                 height     : 655px;
                 li {
