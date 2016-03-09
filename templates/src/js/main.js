@@ -305,8 +305,6 @@
                         return false;
                     }
 
-                    var elem = $(this).parent()[0];
-
                     TweenLite.to(
                         $(this), 0.3, {
                             "scale": 1.1,
@@ -330,11 +328,12 @@
                         return false;
                     }
 
-                    var elem = $(this).parent()[0];
+                    var isLightGrey = $(this).hasClass('grey');
+
                     TweenLite.to(
                         $(this), 0.3, {
                             "scale": 1,
-                            "color": colorGrey
+                            "color": isLightGrey ? colorLightGrey : colorGrey
                         }
                     );
 
@@ -350,6 +349,10 @@
                 function () {
                     // Prevent to open the same mobile modal
                     if ($(this).hasClass('orange')) {
+                        return false;
+                    }
+
+                    if (timeLine.isActive() == true) {
                         return false;
                     }
 
