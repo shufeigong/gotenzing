@@ -95,9 +95,11 @@
                         .sub-container {
                             display       : inline-block;
                             margin        : 7px 0 10px 30px;
-                            border-top    : solid 1px $main-menu-light-grey;
-                            border-bottom : solid 1px $main-menu-light-grey;
+                            border-top    : 1px solid $main-menu-light-grey;
+                            border-bottom : 1px solid $main-menu-light-grey;
+                            border-right  : 1px solid $main-menu-light-grey;
                             min-height    : 237px;
+                            padding       : 5px 5px 5px 0;
 
                             .text-div {
                                 display       : inline-block;
@@ -267,10 +269,12 @@
                             display       : inline-block;
                             margin        : 7px 0 10px 30px;
 
-                            border-top    : solid 1px $main-menu-light-grey;
-                            border-bottom : solid 1px $main-menu-light-grey;
-                            min-height    : 239px;
+                            border-top    : 1px solid $main-menu-light-grey;
+                            border-bottom : 1px solid $main-menu-light-grey;
+                            border-right  : 1px solid $main-menu-light-grey;
 
+                            min-height    : 239px;
+                            padding       : 5px 5px 5px 0;
                             .text-div {
                                 display       : inline-block;
                                 margin-top    : 10px;

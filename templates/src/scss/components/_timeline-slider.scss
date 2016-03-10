@@ -4,7 +4,6 @@ $yellow: #f7a800;
     position: relative;
     overflow: hidden;
     height: 100%;
-    margin-top: 5px;
 
     .image-wrap {
         .image-container {
@@ -28,6 +27,7 @@ $yellow: #f7a800;
         height: 30px;
         border :none;
         background : url("/templates/dist/img/slider-video-play.svg") no-repeat;
+        cursor: pointer;
     }
 
     .pause-button.playing {
@@ -66,6 +66,8 @@ $yellow: #f7a800;
             height: 30px;
             border :none;
             background : url("/templates/dist/img/slider-video-play.svg") no-repeat;
+            cursor: pointer;
+
         }
 
         .pause-button.playing {
