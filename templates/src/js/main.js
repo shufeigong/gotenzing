@@ -59,14 +59,9 @@
             } else {
                 imgDiv.css({'height': subContainerHeight});
                 imageContainers.css({'height': subContainerHeight});
-                imageWrap.css({'height': 'auto'});
+                imageWrap.css({'height': subContainerHeight});
 
-                $('.image-video-item').imageScale(
-                    {
-                        fadeInDuration: 0.25,
-                        rescaleOnResize: true
-                    }
-                );
+                $('.image-video-item').imageScale();
             }
         };
 
@@ -74,7 +69,9 @@
 
         $(window).on(
             'resize orientationchange', function () {
-                imgDiv.css('height', ''); // reset height
+                imgDiv.css('height', textDiv.outerHeight()); // reset height
+                imageContainers.css({'height': textDiv.outerHeight()});
+                imageWrap.css({'height': textDiv.outerHeight()});
 
                 if (call) {
                     clearTimeout(call);
