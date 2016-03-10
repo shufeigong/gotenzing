@@ -57,9 +57,9 @@
                 imageWrap.css({'height': 300});
                 images.css({'height': 'auto'});
             } else {
-                imgDiv.css({'height': subContainerHeight + 10});
+                imgDiv.css({'height': subContainerHeight});
                 imageContainers.css({'height': subContainerHeight});
-                imageWrap.css({'height': textDivHeight});
+                //imageWrap.css({'height': subContainerHeight});
 
                 $('.image-video-item').imageScale(
                     {
