@@ -172,7 +172,9 @@
                         container: $(thisItem).parent().find('.imgShow-div')[0],
                         callback_load: function () {
                             $(window).resize();
-                        }
+                            $(thisItem).parent().find('.imgShow-div').find('.pause-button').click();
+                        },
+                        placeholder: '/templates/dist/img/loading.gif'
                     }
                 );
 
@@ -218,20 +220,6 @@
                             onComplete: function () {
                                 thisItem.next().addClass('is-active');
                             }
-                        }
-                    )
-                );
-                timeLine.add(
-                    TweenLite.to(
-                        thisItem.next().find('.sub-close-icon'), 0.25, {
-                            "css": {
-                                "opacity": 1,
-                                "left": 8,
-                                rotation: 180
-
-                            },
-                            ease: easeValue
-
                         }
                     )
                 );
@@ -371,18 +359,20 @@
                     var colorLightGrey = "#949494";
                     var previousItem = $('.item .orange');
 
+                    //change url to be current subpage
+                    $.cookie("previousUrl", window.location.href, {path: "/"});
+                    window.history.pushState(null, null, "/" + $(this).attr("href"));
+
+                    // Lazy load
                     new LazyLoad(
                         {
                             container: $(this).parent().find('.imgShow-div')[0],
                             callback_load: function () {
                                 $(window).resize();
+                                $(_this).next().find('.pause-button').click();
                             }
                         }
                     );
-
-                    //change url to be current subpage
-                    $.cookie("previousUrl", window.location.href, {path: "/"});
-                    window.history.pushState(null, null, "/" + $(this).attr("href"));
 
                     if (isFirstClick == true) {
                         timeLine.clear();
@@ -441,20 +431,6 @@
                                 }
                             ), 'feature'
                         );
-                        timeLine.add(
-                            TweenLite.to(
-                                $(this).next().find('.sub-close-icon'), 0.25, {
-                                    "css": {
-                                        "opacity": 1,
-                                        "left": 8,
-                                        rotation: 180
-                                    },
-                                    ease: easeValue
-
-                                }
-                            )
-                            , 'feature+=0.5'
-                        );
 
                         $(this).addClass('orange');
 
@@ -470,23 +446,11 @@
 
                         // Close the content box first
                         timeLine.to(
-                            previousItem.next().find('.sub-close-icon'), 0.25, {
-                                "css": {
-                                    "opacity": 0,
-                                    "left": -23,
-                                    rotation: -180
-
-                                },
-                                ease: easeValue
-
-                            }, 'cleanup'
-                        );
-                        timeLine.to(
                             previousItem.next(), 0, {
                                 onComplete: function () {
                                     previousItem.next().removeClass('is-active');
                                 }
-                            }, 'cleanup+=0.5'
+                            }, 'cleanup'
                         );
                         timeLine.to(
                             previousItem.next(), 0.5, {
@@ -570,18 +534,6 @@
                                 }
                             }, 'feature'
                         );
-                        timeLine.to(
-                            $(this).next().find('.sub-close-icon'), 0.25, {
-                                "css": {
-                                    "opacity": 1,
-                                    "left": 8,
-                                    "rotation": 180
-
-                                },
-                                "ease": easeValue
-
-                            }, 'feature+=0.5'
-                        );
 
                         $(this).addClass('orange');
                     }
@@ -593,13 +545,14 @@
             // Close icon hover state
             $(".sub-close-icon").hover(
                 function () {
-                    TweenLite.to(
+                    TweenMax.to(
                         $(this), 0.1, {
-                            "rotation": 90
+                            "rotation": 180
                         }
                     );
+
                 }, function () {
-                    TweenLite.to(
+                    TweenMax.to(
                         $(this), 0.1, {
                             "rotation": 0
                         }
@@ -620,18 +573,6 @@
 
                     // Clear the timeline
                     timeLine.clear();
-                    timeLine.to(
-                        $(this), 0.25, {
-                            "css": {
-                                "opacity": 0,
-                                "left": -23,
-                                rotation: -180
-
-                            },
-                            ease: easeValue
-
-                        }, 'cleanup'
-                    );
                     timeLine.to(
                         pageContent, 0, {
                             onComplete: function () {

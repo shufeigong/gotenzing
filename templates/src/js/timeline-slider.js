@@ -120,6 +120,11 @@ $.fn.timeLineSlider = function(options) {
             imageVideoTimeLine.paused(!imageVideoTimeLine.paused());
             _this.innerHTML = imageVideoTimeLine.paused() ? "play" : "pause";
         });
+
+        //$(video).closest('.page-content').find('.sub-close-icon').bind('click',function() {
+        //    $(video).find('.pause-button').removeClass('playing');
+        //    imageVideoTimeLine.paused(!imageVideoTimeLine.paused());
+        //});
     });
 };
 
