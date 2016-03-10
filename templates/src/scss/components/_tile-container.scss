@@ -1,19 +1,19 @@
-$border-color: #b9b8ba;
+$border-color : #b9b8ba;
 .tile-container {
-    display: inline-block;
-    margin: 7px 0;
+    display : inline-block;
+    margin  : 0;
     .tile-item {
-        display       : block;
-        position      : relative;
-        margin        : 0 0 7px 7px;
+        display  : block;
+        position : relative;
+        margin   : 0 0 7px 7px;
 
-        width: 119px;
-        height: 119px;
+        width    : 119px;
+        height   : 119px;
 
-        float: left;
-        overflow: hidden;
+        float    : left;
+        overflow : hidden;
 
-        border :1px solid $border-color;
+        border   : 1px solid $border-color;
 
         .video-play-icon {
             display    : block;
