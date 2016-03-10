@@ -60,7 +60,7 @@ var tmax_options = {
 $.fn.timeLineSlider = function(options) {
     var defaultOptions = {
         delay: 0,
-        paused: true,
+        paused: false,
         repeat: -1,
         repeatDelay: 0
     };
