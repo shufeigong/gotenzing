@@ -1,16 +1,19 @@
 $yellow: #f7a800;
+$grey-background: rgba(85, 85, 85, 0.5);
 
 .imageVideo {
     position: relative;
     overflow: hidden;
-    height: 100%;
+    height: auto;
 
     .image-wrap {
         .image-container {
             width: 100%;
+            height :auto;
             position: absolute;
             opacity: 0;
             overflow: hidden;
+
             .image-video-item {
 
             }
@@ -28,10 +31,17 @@ $yellow: #f7a800;
         border :none;
         background : url("/templates/dist/img/slider-video-play.svg") no-repeat;
         cursor: pointer;
+        background-color: $grey-background;
+        padding-bottom: 29px;
+        border-radius: 5px;
     }
 
     .pause-button.playing {
         background : url("/templates/dist/img/slider-video-stop.svg") no-repeat;
+        background-color: $grey-background;
+        padding-bottom: 30px;
+        border-radius: 5px;
+
     }
 }
 
@@ -56,23 +66,7 @@ $yellow: #f7a800;
             }
         }
 
-        .pause-button {
-            position: absolute;
-            left: 10px;
-            bottom :20px;
-            z-index :999;
-            text-indent: -999999px;
-            width: 30px;
-            height: 30px;
-            border :none;
-            background : url("/templates/dist/img/slider-video-play.svg") no-repeat;
-            cursor: pointer;
 
-        }
-
-        .pause-button.playing {
-            background : url("/templates/dist/img/slider-video-stop.svg") no-repeat;
-        }
     }
 
 }

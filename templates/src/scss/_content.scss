@@ -98,8 +98,9 @@
                             border-top    : 1px solid $main-menu-light-grey;
                             border-bottom : 1px solid $main-menu-light-grey;
                             border-right  : 1px solid $main-menu-light-grey;
-                            min-height    : 237px;
                             padding       : 5px 5px 5px 0;
+
+                            min-height    : 250px;
 
                             .text-div {
                                 display       : inline-block;
@@ -141,7 +142,6 @@
                                 margin     : auto;
                                 height     : auto;
                                 padding    : 0;
-                                min-height : 237px;
 
                                 ul {
                                     list-style : disc;
@@ -273,8 +273,9 @@
                             border-bottom : 1px solid $main-menu-light-grey;
                             border-right  : 1px solid $main-menu-light-grey;
 
-                            min-height    : 239px;
                             padding       : 5px 5px 5px 0;
+
+                            min-height    : 250px;
                             .text-div {
                                 display       : inline-block;
                                 margin-top    : 10px;
@@ -316,7 +317,6 @@
                                 margin     : auto;
                                 height     : auto;
                                 padding    : 0;
-                                min-height : 237px;
                                 .sub-img-container {
                                     height : 100%;
                                     div {
@@ -434,7 +434,7 @@
                             margin-bottom : 10px;
                             border-top    : 0;
                             border-bottom : 0;
-                            min-height    : 239px;
+                            min-height    : 250px;
                             width         : 100%;
                             .text-div {
                                 display     : block;

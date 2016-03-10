@@ -14,7 +14,6 @@
                 function () { // add heights to array
                     heights.push($(this).outerHeight());
                     widths.push($(this).outerWidth());
-
                 }
             );
 
@@ -34,7 +33,7 @@
                 }
                 call = setTimeout(normalizeHeights, 100); // run it again
             }
-        );
+        ).resize();
     };
 
     $.fn.imageWrapHeights = function () {
@@ -52,14 +51,14 @@
             subContainerHeight = subContainer.outerHeight();
 
             if($(window).width() < 640) {
-                imgDiv.css({'height': 300});
                 imageContainers.css({'height': 300});
                 imageWrap.css({'height': 300});
                 images.css({'height': 'auto'});
             } else {
-                imgDiv.css({'height': subContainerHeight});
-                imageContainers.css({'height': subContainerHeight});
-                imageWrap.css({'height': subContainerHeight});
+                var height = textDiv.outerHeight() < 250 ? 250 : subContainerHeight;
+
+                imageContainers.css({'height': height});
+                imageWrap.css({'height': height});
 
                 $('.image-video-item').imageScale();
             }
@@ -69,17 +68,30 @@
 
         $(window).on(
             'resize orientationchange', function () {
-                imgDiv.css('height', textDiv.outerHeight()); // reset height
-                imageContainers.css({'height': textDiv.outerHeight()});
-                imageWrap.css({'height': textDiv.outerHeight()});
+                var resetValue = textDiv.outerHeight() < 250 ? 250 : textDiv.outerHeight();
+                imageContainers.css({'height': resetValue});
+                imageWrap.css({'height': resetValue});
 
                 if (call) {
                     clearTimeout(call);
                 }
-                call = setTimeout(normalizeHeights, 100); // run it again
+                call = setTimeout(normalizeHeights, 50); // run it again
             }
         );
     };
+
+    $(window).load(function() {
+        /**
+         * Normalize image slider height
+         */
+
+        $('.sub-container').find('.imageVideo').each(
+            function () {
+                $(this).imageWrapHeights();
+            }
+        );
+
+    });
 
     // Reset cookie
     $.removeCookie('previousUrl', {'path': '/'});
@@ -692,16 +704,6 @@
                     $(this).parent(".page-content").find('a').attr('tabindex', "-1");
 
                     isFirstClick = true;
-                }
-            );
-
-            /**
-             * Normalize image slider height
-             */
-
-            $('.sub-container').find('.imageVideo').each(
-                function () {
-                    $(this).imageWrapHeights();
                 }
             );
 
