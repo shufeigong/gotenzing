@@ -87,6 +87,10 @@ $.fn.timeLineSlider = function(options) {
             var elem = $(value).find('.image-video-item');
             var movement = elem.attr('data-move');
 
+            if(index == 0) {
+                imageVideoTimeLine.set(value, {"alpha": 1});
+            }
+
             imageVideoTimeLine.to(value, 2, {"alpha": 1, "ease": easeValue}, '-=2.5');
             imageVideoTimeLine.to(value, duration, {"left": 0, "ease": easeValue});
 
