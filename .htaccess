@@ -83,6 +83,12 @@ ExpiresDefault "access plus 7 days"
 </IfModule>
 ## EXPIRES CACHING ##
 
+<IfModule mod_headers.c>
+    <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|swf|css)$">
+        Header set Cache-Control "max-age=1209600, public"
+    </filesMatch>
+</IfModule>
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

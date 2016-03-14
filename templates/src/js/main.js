@@ -145,6 +145,8 @@
                 }
 
                 thisItem.next().find('a').attr('tabindex', "0");
+                thisItem.next().find('.imgShow-div .pause-button').attr('tabindex', "0");
+
                 thisItem.addClass('orange');
 
                 new LazyLoad(
@@ -468,6 +470,7 @@
                         }
 
                         $('.item .orange').next().find('a').attr('tabindex', "-1");
+                        $('.item .orange').next(). find('.imgShow-div .pause-button').attr('tabindex', "-1");
 
                         $(this).parent().siblings().each(
                             function () {
@@ -521,6 +524,7 @@
                     }
 
                     $(_this).next().find('a').attr('tabindex', "0");
+                    $(_this).next().find('.imgShow-div .pause-button').attr('tabindex', "0");
                 }
             );
 
@@ -625,6 +629,7 @@
                     );
 
                     $(this).parent(".page-content").find('a').attr('tabindex', "-1");
+                    $(this).parent(".page-content").find('.pause-button').attr('tabindex', "-1");
 
                     isFirstClick = true;
                 }
