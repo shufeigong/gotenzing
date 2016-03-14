@@ -123,3 +123,11 @@ a {
 .text-indent-away {
     text-indent: -999999px;
 }
+
+.text-indent-away-span {
+    span {
+        text-indent: -999999px;
+        display: block;
+        position: absolute;
+    }
+}
