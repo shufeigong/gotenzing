@@ -83,6 +83,12 @@
     }
 }
 
+.carousel-indicators {
+    left: initial;
+    width: 100%;
+    margin-left: auto;
+}
+
 .carousel-indicators.subpageindi {
     li {
         width            : 10px;
