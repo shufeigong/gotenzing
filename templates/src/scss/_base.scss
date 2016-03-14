@@ -79,7 +79,7 @@ ul, ol {
     }
 }
 
-@media screen and (max-width : 640px) {
+@media screen and (max-width : 639px) {
     p {
         line-height: 1.6;
     }
@@ -118,4 +118,8 @@ a {
 
 .cursor-pointer {
     cursor: pointer;
+}
+
+.text-indent-away {
+    text-indent: -999999px;
 }

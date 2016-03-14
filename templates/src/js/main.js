@@ -1,41 +1,7 @@
 (function ($, viewport) {
     "use strict";
 
-    // Normalize Bootstrap Carousel Heights
-    $.fn.carouselHeights = function () {
-        var items   = $(this).find('.item'), // grab all slides
-            heights = [], // create empty array to store height values
-            widths  = [],
-            tallest, // create variable to make note of the tallest slide
-            widest,
-            call;
-        var normalizeHeights = function () {
-            items.each(
-                function () { // add heights to array
-                    heights.push($(this).outerHeight());
-                    widths.push($(this).outerWidth());
-                }
-            );
-
-            tallest = Math.max.apply(null, heights); // cache largest value
-            widest = Math.max.apply(null, widths);
-            items.css({'height': tallest});
-        };
-        normalizeHeights();
-        $(window).on(
-            'resize orientationchange', function () {
-                // reset vars
-                tallest = 0;
-                heights.length = 0;
-                items.css('height', ''); // reset height
-                if (call) {
-                    clearTimeout(call);
-                }
-                call = setTimeout(normalizeHeights, 100); // run it again
-            }
-        ).resize();
-    };
-
+    // Normalize Heights
     $.fn.imageWrapHeights = function () {
         var textDiv = $(this).parent().prev();
         var subContainer = $(this).closest('.sub-container');
@@ -48,7 +14,7 @@
 
         var normalizeHeights = function () {
             textDivHeight = textDiv.outerHeight();
-            subContainerHeight = subContainer.outerHeight();
+            subContainerHeight = subContainer.innerHeight() - 10;
 
             if($(window).width() < 640) {
                 imageContainers.css({'height': 300});
@@ -60,7 +26,11 @@
                 imageContainers.css({'height': height});
                 imageWrap.css({'height': height});
 
-                $('.image-video-item').imageScale();
+                $('.image-video-item').imageScale(
+                    {
+                        fadeInDuration: 0.25
+                    }
+                );
             }
         };
 
@@ -68,17 +38,28 @@
 
         $(window).on(
             'resize orientationchange', function () {
-                var resetValue = textDiv.outerHeight() < 250 ? 250 : textDiv.outerHeight();
+                var resetValue = textDiv.outerHeight() < 250 ? 250 : textDiv.outerHeight() + 20;
                 imageContainers.css({'height': resetValue});
                 imageWrap.css({'height': resetValue});
 
                 if (call) {
                     clearTimeout(call);
                 }
-                call = setTimeout(normalizeHeights, 50); // run it again
+                call = setTimeout(normalizeHeights, 250); // run it again
             }
         );
     };
+
+    var menu = function () {
+        function init() {
+
+        }
+
+        function normalizeSliderHeight() {
+
+        }
+    };
+
 
     $(window).load(function() {
         /**
@@ -99,7 +80,6 @@
 
     $(document).ready(
         function () {
-
             window.isGalleryOpen = false;
 
             initFirstClickMenuAnimation();
@@ -352,6 +332,8 @@
                     if (timeLine.isActive() == true) {
                         return false;
                     }
+
+                    $('body').css('overflow', 'hidden');
 
                     var elem = $(this).parent()[0];
                     var _this = this;

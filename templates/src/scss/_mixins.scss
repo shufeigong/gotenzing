@@ -46,3 +46,11 @@
 	display: table-cell;
 	vertical-align: middle;
 }
+
+@mixin transition-all($duration) {
+	-webkit-transition: all $duration;
+	-moz-transition: all $duration;
+	-ms-transition: all $duration;
+	-o-transition: all $duration;
+	transition: all $duration;
+}

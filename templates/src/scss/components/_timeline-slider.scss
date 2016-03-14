@@ -1,5 +1,6 @@
 $yellow: #f7a800;
 $grey-background: rgba(85, 85, 85, 0.5);
+$yellow-background: rgba(247, 168, 0, 0.5);
 
 .imageVideo {
     position: relative;
@@ -7,6 +8,10 @@ $grey-background: rgba(85, 85, 85, 0.5);
     height: auto;
 
     .image-wrap {
+        /* Set our transitions up. */
+        -webkit-transition: height 0.5s;
+        -moz-transition: height 0.5s;
+        transition: height 0.5s;
         .image-container {
             width: 100%;
             height :auto;
@@ -14,8 +19,11 @@ $grey-background: rgba(85, 85, 85, 0.5);
             opacity: 0;
             overflow: hidden;
 
-            .image-video-item {
+            /* Set our transitions up. */
+            @include transition-all(0.25s);
 
+            .image-video-item {
+                @include transition-all(0.2s);
             }
         }
     }
@@ -34,19 +42,32 @@ $grey-background: rgba(85, 85, 85, 0.5);
         background-color: $grey-background;
         padding-bottom: 29px;
         border-radius: 5px;
-    }
 
-    .pause-button.playing {
-        background : url("/templates/dist/img/slider-video-stop.svg") no-repeat;
-        background-color: $grey-background;
-        padding-bottom: 30px;
-        border-radius: 5px;
+        -webkit-transition : background-color 0.5s ease;
+        -moz-transition    : background-color 0.5s ease;
+        -ms-transition     : background-color 0.5s ease;
+        -o-transition      : background-color 0.5s ease;
+        transition         : background-color 0.5s ease;
 
+        &.playing {
+            background : url("/templates/dist/img/slider-video-stop.svg") no-repeat;
+            background-color: $grey-background;
+            padding-bottom: 30px;
+            border-radius: 5px;
+
+            &:hover {
+                background-color: $yellow-background;
+            }
+        }
+
+        &:hover {
+            background-color: $yellow-background;
+        }
     }
 }
 
 ////////////////~640px////////////////////////
-@media screen and (max-width : 640px) {
+@media screen and (max-width : 639px) {
     .imageVideo {
         position: relative;
         overflow: hidden;

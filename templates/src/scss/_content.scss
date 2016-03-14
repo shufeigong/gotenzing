@@ -107,6 +107,13 @@
                                 @include font-size(1.4);
                                 a {
                                     color : $text-grey;
+
+                                    -webkit-transition: all 0.25s;
+                                    -moz-transition: all 0.25s;
+                                    -ms-transition: all 0.25s;
+                                    -o-transition: all 0.25s;
+                                    transition: all 0.25s;
+
                                     &:hover, &:focus {
                                         text-decoration : none;
                                         span {
@@ -119,7 +126,13 @@
                                         margin-left    : 5px;
                                         margin-top     : -15px;
                                         vertical-align : middle;
+                                        width          : 87%;
+                                        line-height: 1.2;
                                     }
+                                }
+
+                                .social-icon-button {
+                                    width : 100%;
                                 }
 
                                 .content-link {
@@ -182,7 +195,7 @@
 
 }
 
-@media screen and (min-width : 641px) and (max-width : 1039px) {
+@media screen and (min-width : 640px) and (max-width : 1039px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -283,6 +296,7 @@
                                 color         : $text-grey;
                                 a {
                                     color : $text-grey;
+
                                     &:hover, &:focus {
                                         text-decoration : none;
 
@@ -297,8 +311,14 @@
                                         margin-left    : 40px;
                                         margin-top     : -50px;
                                         vertical-align : middle;
+                                        line-height: 1.2;
                                     }
                                 }
+
+                                .social-icon-button {
+                                    width: 100%;
+                                }
+
                                 .content-link {
                                     text-decoration : underline;
                                     &:hover, &:active {
@@ -343,7 +363,7 @@
 }
 
 ////////////////~640px////////////////////////
-@media screen and (max-width : 640px) {
+@media screen and (max-width : 639px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -453,22 +473,39 @@
 
                                 a {
                                     color : $text-grey;
+
+                                    -webkit-transition: all 0.25s;
+                                    -moz-transition: all 0.25s;
+                                    -ms-transition: all 0.25s;
+                                    -o-transition: all 0.25s;
+                                    transition: all 0.25s;
+
                                     &:hover, &:focus {
                                         text-decoration : none;
 
                                         span {
                                             text-decoration : underline;
                                         }
+                                    }
+                                }
 
+                                .social-icon-button {
+                                    width: 100%;
+                                    svg {
+                                        float: left;
                                     }
 
                                     .social-icon-text {
-                                        display        : inline-block;
-                                        margin-left    : 40px;
-                                        margin-top     : -50px;
-                                        vertical-align : middle;
+                                        float: left;
+
+                                        display: inline-block;
+                                        margin-left: 10px;
+                                        margin-top: 7px;
+                                        vertical-align: middle;
+                                        width: 85%;
                                     }
                                 }
+
                                 .content-link {
                                     text-decoration : underline;
                                     &:hover, &:active {
