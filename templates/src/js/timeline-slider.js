@@ -1,42 +1,45 @@
-'use strict';
+/*
+ Timeline Slider v0.1,
+ By Insu Mun, www.gotenzing.com
+ Available for use under the MIT License
+ */
 
 // Possible options
-
 var tmax_options = {
     delay: 0,
     paused: false,
-    onComplete: function() {
+    onComplete: function () {
         console.log('animation is complete');
     },
-    onCompleteScope: function() {
+    onCompleteScope: function () {
         console.log('animation scope is complete');
     },
     tweens: [],
     stagger: 0,
     align: 'normal',
     useFrames: false,
-    onStart: function() {
+    onStart: function () {
         console.log('on start called');
     },
-    onStartScope: function() {
+    onStartScope: function () {
         console.log('on start scope called');
     },
-    onUpdate: function() {
+    onUpdate: function () {
         console.log('on update called');
     },
-    onUpdateScope: function() {
+    onUpdateScope: function () {
         console.log('on update scope called');
     },
-    onRepeat: function() {
+    onRepeat: function () {
         console.log('on repeat called');
     },
-    onRepeatScope: function() {
+    onRepeatScope: function () {
         console.log('on repeat scope called');
     },
-    onReverseComplete: function() {
+    onReverseComplete: function () {
         console.log('on reverse complete');
     },
-    onReverseCompleteScope: function() {
+    onReverseCompleteScope: function () {
         console.log('on reverse complete scope called');
     },
     autoRemoveChildren: false,
@@ -51,95 +54,122 @@ var tmax_options = {
     onRepeatParams: []
 };
 
+;(function ($, window, document, undefined) {
+    'use strict';
 
-/**
- * Timeline Slider
- * @param options
- *
- *
- */
+    $.fn.timeLineSlider = function (options) {
+        options = $.extend(
+            {
+                defaultMove: 'left-right',
+                duration: 3,
+                autoStart: false,
+                infinityLoop: true
+            },
+            options
+        );
 
-$.fn.timeLineSlider = function(options) {
-    var sliderOptions = {
-      tmaxOptions: {
-          delay: 0,
-          paused: true,
-          repeat: -1,
-          repeatDelay: 0
-      }
+        var tmaxOptions = {
+            delay: 0,
+            paused: !options.autoStart,
+            repeat: options.infinityLoop ? -1 : 1,
+            repeatDelay: 0
+        };
+
+        var $this = $(this);
+        var _this = this;
+
+        var easeValue = Circ.easeInOut;
+
+        // Default movement is Left to Right
+        // Left to Right
+        // Right to Left
+        // Up to Down
+        // Down to Up
+        // Fade
+        // Zoom
+        // Rotate
+
+        $this.each(
+            function () {
+                var $imageContainers = $(this).find('.image-container');
+                var tl = new TimelineMax(tmaxOptions);
+
+                $imageContainers.each(
+                    function (index, value) {
+                        var $imageItem = $(value).find('.image-item');
+                        var movement = $imageItem.attr('data-move');
+
+                        if(movement == undefined) {
+                            movement = options.defaultMove;
+                        }
+
+                        if (index == 0) {
+                            tl.to(value, 0, {"alpha": 1});
+                        } else {
+                            tl.to(value, 2, {"alpha": 1, "ease": easeValue}, '-=2.5');
+                        }
+
+                        tl.to(value, options.duration, {"left": 0, "ease": easeValue});
+
+                        switch (movement) {
+                            case 'right-left':
+                                tl.to(value, 2, {"left": "-5%", "alpha": 0, "ease": easeValue});
+                                break;
+                            case 'up-down':
+                                tl.to(value, 2, {"top": "5%", "alpha": 0, "ease": easeValue});
+                                break;
+                            case 'down-up':
+                                tl.to(value, 2, {"top": "-5%", "alpha": 0, "ease": easeValue});
+                                break;
+                            case 'fade':
+                                tl.to(value, 2, {"alpha": 0, "ease": easeValue});
+                                break;
+                            case 'zoom':
+                                tl.to(value, 2, {"scale": 1.2, "alpha": 0, "ease": easeValue});
+                                break;
+                            case 'rotate':
+                                tl.to(
+                                    value, 2, {
+                                        "rotation": -180,
+                                        transformOrigin: "50% 100%",
+                                        "alpha": 0,
+                                        "ease": easeValue
+                                    }
+                                );
+                                break;
+                            default:
+                                tl.to(value, 2, {"left": "5%", "alpha": 0, "ease": easeValue}, '-=1');
+                        }
+                    }
+                );
+
+                $this.find('.pause-button').on(
+                    'click', function () {
+                        var _this = this;
+                        $(_this).toggleClass('playing');
+                        tl.paused(!tl.paused());
+                        _this.innerHTML = tl.paused() ? "play" : "pause";
+                    }
+                );
+
+                _this.timeLineSlider = tl;
+            }
+        );
+
+        return _this;
+
     };
+})(jQuery, window, document);
 
-    var imageVideos = $(this);
-
-    var duration = 3;
-    var easeValue = Circ.easeInOut;
-
-    // Default movement is Left to Right
-    // Left to Right
-    // Right to Left
-    // Up to Down
-    // Down to Up
-    // Fade
-    // Zoom
-    // Rotate
-
-    _(imageVideos).forEach(function(video, index) {
-        var imageContainers = $(video).find('.image-container');
-        var imageVideoTimeLine = new TimelineMax(sliderOptions.tmaxOptions);
-
-        _(imageContainers).forEach(function(value, index) {
-            var elem = $(value).find('.image-video-item');
-            var movement = elem.attr('data-move');
-
-            if(index == 0) {
-                imageVideoTimeLine.set(value, {"alpha": 1});
+$(document).ready(
+    function () {
+        var ts = $('.imageVideo').timeLineSlider(
+            {
+                defaultMove: 'left-right'
             }
-
-            imageVideoTimeLine.to(value, 2, {"alpha": 1, "ease": easeValue}, '-=2.5');
-            imageVideoTimeLine.to(value, duration, {"left": 0, "ease": easeValue});
-
-            switch(movement) {
-                case 'right-left':
-                    imageVideoTimeLine.to(value, 2, {"left": "-5%", "alpha": 0, "ease": easeValue});
-                    break;
-                case 'up-down':
-                    imageVideoTimeLine.to(value, 2, {"top": "5%", "alpha": 0, "ease": easeValue});
-                    break;
-                case 'down-up':
-                    imageVideoTimeLine.to(value, 2, {"top": "-5%", "alpha": 0, "ease": easeValue});
-                    break;
-                case 'fade':
-                    imageVideoTimeLine.to(value, 2, {"alpha": 0, "ease": easeValue});
-                    break;
-                case 'zoom':
-                    imageVideoTimeLine.to(value, 2, {"scale": 1.2, "alpha": 0, "ease": easeValue});
-                    break;
-                case 'rotate':
-                    imageVideoTimeLine.to(value, 2, {"rotation": -180, transformOrigin:"50% 100%", "alpha": 0, "ease": easeValue});
-                    break;
-                default:
-                    imageVideoTimeLine.to(value, 2, {"left": "5%", "alpha": 0, "ease": easeValue}, '-=1');
-            }
-        });
-
-        $(video).find('.pause-button').on('click', function() {
-            var _this = this;
-            $(_this).toggleClass('playing');
-            imageVideoTimeLine.paused(!imageVideoTimeLine.paused());
-            _this.innerHTML = imageVideoTimeLine.paused() ? "play" : "pause";
-        });
-
-        //$(video).closest('.page-content').find('.sub-close-icon').bind('click',function() {
-        //    $(video).find('.pause-button').removeClass('playing');
-        //    imageVideoTimeLine.paused(!imageVideoTimeLine.paused());
-        //});
-    });
-};
-
-
-$(document).ready(function() {
-    $('.imageVideo').timeLineSlider();
-});
+        );
+    }
+);
 
 
 
