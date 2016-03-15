@@ -205,8 +205,6 @@
                     )
                 );
 
-                $('body').css('overflow', 'hidden');
-
                 isFirstClick = false;
 
             } else if (link !== "" && isUtilityPage) {
@@ -524,7 +522,6 @@
                     $(_this).next().find('a').attr('tabindex', "0");
                     $(_this).next().find('.imgShow-div .pause-button').attr('tabindex', "0");
 
-                    $('body').css('overflow', 'hidden');
                 }
             );
 
@@ -533,14 +530,18 @@
                 function () {
                     TweenMax.to(
                         $(this), 0.1, {
-                            "rotation": 180
+                            "rotation": 90,
+                            transformOrigin:"54% 52%",
+                            ease:Back.easeOut
                         }
                     );
 
                 }, function () {
                     TweenMax.to(
                         $(this), 0.1, {
-                            "rotation": 0
+                            "rotation": 0,
+                            transformOrigin:"54% 52%",
+                            ease:Back.easeOut
                         }
                     );
                 }
@@ -632,8 +633,6 @@
                     $(this).parent(".page-content").find('.pause-button').attr('tabindex', "-1");
 
                     isFirstClick = true;
-
-                    $('.body').css('overflow', '');
                 }
             );
 

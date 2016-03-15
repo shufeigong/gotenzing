@@ -70,7 +70,7 @@
                         }
 
                         .sub-close-icon {
-                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            //background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
                             width               : 30px;
                             height              : 30px;
                             display             : inline-block;
@@ -80,12 +80,27 @@
                             z-index             : 6;
                             transition          : transform 0.3s;
 
-                            background-size     : 14px 16px;
-                            background-position : 50% 50%;
+                            .subpage-close-button {
+                                width: 16px;
+                                height: 16px;
+
+                                position: absolute;
+                                top: calc(50% - 7px);
+                                left: calc(50% - 7px);
+                            }
+
+                            //background-size     : 14px 16px;
+                            //background-position : 50% 50%;
                             &:hover, &:active {
-                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size     : 16px 14px;
-                                background-position : 50% 50%;
+                                //background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                //background-size     : 16px 14px;
+                                //background-position : 50% 50%;
+
+                                .subpage-close-button {
+                                    .st0, .st1 {
+                                        stroke: #f7a800;
+                                    }
+                                }
                             }
                         }
 
@@ -256,7 +271,7 @@
                         }
 
                         .sub-close-icon {
-                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            //background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
                             width               : 30px;
                             height              : 30px;
                             display             : inline-block;
@@ -266,12 +281,27 @@
                             z-index             : 6;
                             transition          : transform 0.3s;
 
-                            background-size     : 14px 16px;
-                            background-position : 50% 50%;
+                            //background-size     : 14px 16px;
+                            //background-position : 50% 50%;
+
+                            .subpage-close-button {
+                                width: 16px;
+                                height: 16px;
+
+                                position: absolute;
+                                top: calc(50% - 7px);
+                                left: calc(50% - 7px);
+                            }
                             &:hover, &:active {
-                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size     : 16px 14px;
-                                background-position : 50% 50%;
+                                //background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                //background-size     : 16px 14px;
+                                //background-position : 50% 50%;
+
+                                .subpage-close-button {
+                                    .st0, .st1 {
+                                        stroke: #f7a800;
+                                    }
+                                }
                             }
                         }
 
@@ -426,7 +456,7 @@
                         }
 
                         .sub-close-icon {
-                            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
+                            //background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
                             width               : 30px;
                             height              : 30px;
                             display             : inline-block;
@@ -436,12 +466,12 @@
                             z-index             : 6;
                             transition          : transform 0.3s;
 
-                            background-size     : 14px 16px;
-                            background-position : 50% 50%;
+                            //background-size     : 14px 16px;
+                            //background-position : 50% 50%;
                             &:hover, &:active {
-                                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size     : 16px 14px;
-                                background-position : 50% 50%;
+                                //background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
+                                //background-size     : 16px 14px;
+                                //background-position : 50% 50%;
                             }
                         }
 
