@@ -205,6 +205,8 @@
                     )
                 );
 
+                $('body').css('overflow', 'hidden');
+
                 isFirstClick = false;
 
             } else if (link !== "" && isUtilityPage) {
@@ -332,8 +334,6 @@
                     if (timeLine.isActive() == true) {
                         return false;
                     }
-
-                    $('body').css('overflow', 'hidden');
 
                     var elem = $(this).parent()[0];
                     var _this = this;
@@ -523,6 +523,8 @@
 
                     $(_this).next().find('a').attr('tabindex', "0");
                     $(_this).next().find('.imgShow-div .pause-button').attr('tabindex', "0");
+
+                    $('body').css('overflow', 'hidden');
                 }
             );
 
@@ -630,6 +632,8 @@
                     $(this).parent(".page-content").find('.pause-button').attr('tabindex', "-1");
 
                     isFirstClick = true;
+
+                    $('.body').css('overflow', '');
                 }
             );
 
