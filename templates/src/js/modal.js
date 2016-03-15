@@ -30,22 +30,18 @@
 
             modalCarousel.on(
                 'slid.bs.carousel', function (event) {
-
                     // video play button function
                     var target = event.relatedTarget;
                     var isVideo = $(target).find('.videoWrapper').length > 0;
+                    var player;
                     if (isVideo) {
                         var iframe = $(target).find('iframe').get(0);
                         player = $f(iframe);
                         var playButton = $(target).find('.video-play-button');
 
-                        if (isFirstCarouselModal) {
-                            player.api("play");
-                            isFirstCarouselModal = false;
-                        }
-
                         player.addEvent(
                             'ready', function () {
+                                alert('ready');
                                 player.addEvent(
                                     'pause', function () {
                                         playButton.fadeIn();
@@ -59,6 +55,11 @@
                                 );
                             }
                         );
+
+                        if (isFirstCarouselModal) {
+                            player.api("play");
+                            isFirstCarouselModal = false;
+                        }
 
                         playButton.bind(
                             "click", function () {
