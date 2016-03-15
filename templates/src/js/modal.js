@@ -142,8 +142,6 @@
                                     var $container = $(container),
                                         center     = new google.maps.LatLng($container.attr('data-lat'), $container.attr('data-lng'));
 
-                                    $.data( map, 'center', center );
-                                    mapInstances.push( map );
                                     map.setOptions({zoom: 15, center: center});
                                     new google.maps.Marker(
                                         {
@@ -153,12 +151,15 @@
                                             draggable: true
                                         }
                                     );
+
+                                    $.data( map, 'center', center );
+                                    mapInstances.push( map );
                                 }
                             }
                         );
 
 
-                        $window.on( 'resize', $pluginInstance.debounce( 1000, function()
+                        $window.on('resize',$pluginInstance.debounce( 1000, function()
                         {
                             $.each( mapInstances, function()
                             {
