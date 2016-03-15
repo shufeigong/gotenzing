@@ -33,7 +33,6 @@
                     // video play button function
                     var target = event.relatedTarget;
                     var isVideo = $(target).find('.videoWrapper').length > 0;
-                    var player;
                     if (isVideo) {
                         var iframe = $(target).find('iframe').get(0);
                         player = $f(iframe);
@@ -41,7 +40,6 @@
 
                         player.addEvent(
                             'ready', function () {
-                                alert('ready');
                                 player.addEvent(
                                     'pause', function () {
                                         playButton.fadeIn();
