@@ -55,14 +55,18 @@ var tmax_options = {
 /**
  * Timeline Slider
  * @param options
+ *
+ *
  */
 
 $.fn.timeLineSlider = function(options) {
-    var defaultOptions = {
-        delay: 0,
-        paused: false,
-        repeat: -1,
-        repeatDelay: 0
+    var sliderOptions = {
+      tmaxOptions: {
+          delay: 0,
+          paused: true,
+          repeat: -1,
+          repeatDelay: 0
+      }
     };
 
     var imageVideos = $(this);
@@ -81,7 +85,7 @@ $.fn.timeLineSlider = function(options) {
 
     _(imageVideos).forEach(function(video, index) {
         var imageContainers = $(video).find('.image-container');
-        var imageVideoTimeLine = new TimelineMax(defaultOptions);
+        var imageVideoTimeLine = new TimelineMax(sliderOptions.tmaxOptions);
 
         _(imageContainers).forEach(function(value, index) {
             var elem = $(value).find('.image-video-item');

@@ -154,9 +154,8 @@
                         container: $(thisItem).parent().find('.imgShow-div')[0],
                         callback_load: function () {
                             $(window).resize();
-                            $(thisItem).parent().find('.imgShow-div').find('.pause-button').click();
-                        },
-                        placeholder: '/templates/dist/img/loading.gif'
+                            //$(thisItem).parent().find('.imgShow-div').find('.pause-button').click();
+                        }
                     }
                 );
 
@@ -246,7 +245,6 @@
 
             /**
              * Subpage tile item hover
-             *
              */
             $('.tile-item').hover(
                 function () {
@@ -353,7 +351,7 @@
                             container: $(this).parent().find('.imgShow-div')[0],
                             callback_load: function () {
                                 $(window).resize();
-                                $(_this).next().find('.pause-button').click();
+                                //$(_this).next().find('.pause-button').click();
                             }
                         }
                     );
