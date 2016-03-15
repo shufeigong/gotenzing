@@ -163,7 +163,7 @@ var tmax_options = {
 
 $(document).ready(
     function () {
-        var ts = $('.imageVideo').timeLineSlider(
+        $('.imageVideo').timeLineSlider(
             {
                 defaultMove: 'left-right'
             }

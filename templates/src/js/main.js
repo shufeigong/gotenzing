@@ -6,7 +6,7 @@
         var textDiv = $(this).parent().prev();
         var subContainer = $(this).closest('.sub-container');
         var imgDiv = $(this).parent();
-        var images = $(this).find('.image-video-item');
+        var images = $(this).find('.image-item');
         var imageContainers = $(this).find('.image-container');
         var imageWrap = $(this).find('.image-wrap');
         var textDivHeight, subContainerHeight;
@@ -26,7 +26,7 @@
                 imageContainers.css({'height': height});
                 imageWrap.css({'height': height});
 
-                $('.image-video-item').imageScale(
+                $('.image-item').imageScale(
                     {
                         fadeInDuration: 0.25
                     }
