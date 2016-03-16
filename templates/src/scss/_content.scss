@@ -452,9 +452,9 @@
                             width      : 30px;
                             height     : 30px;
                             display    : inline-block;
-                            position   : fixed;
-                            left       : calc(10% - 34px);
-                            top        : 80px;
+                            position   : absolute;
+                            left       : 5px;
+                            top        : 10px;
                             z-index    : 6;
                             transition : transform 0.3s;
 
@@ -467,7 +467,6 @@
                                 left     : calc(50% - 7px);
                             }
                             &:hover, &:active {
-
                                 .subpage-close-button {
                                     .st0, .st1 {
                                         stroke : #f7a800;
