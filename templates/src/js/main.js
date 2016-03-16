@@ -149,15 +149,17 @@
 
                 thisItem.addClass('orange');
 
-                new LazyLoad(
-                    {
-                        container: $(thisItem).parent().find('.imgShow-div')[0],
-                        callback_load: function () {
-                            $(window).resize();
-                            //$(thisItem).parent().find('.imgShow-div').find('.pause-button').click();
+                // Lazy load If the menu sub content has lazy load images
+                if(link != 'whoswho') {
+                    new LazyLoad(
+                        {
+                            container: $(thisItem).parent().find('.imgShow-div')[0],
+                            callback_load: function () {
+                                $(window).resize();
+                            }
                         }
-                    }
-                );
+                    );
+                }
 
                 var i = 0;
 
@@ -343,16 +345,18 @@
                     $.cookie("previousUrl", window.location.href, {path: "/"});
                     window.history.pushState(null, null, "/" + $(this).attr("href"));
 
-                    // Lazy load
-                    new LazyLoad(
-                        {
-                            container: $(this).parent().find('.imgShow-div')[0],
-                            callback_load: function () {
-                                $(window).resize();
-                                //$(_this).next().find('.pause-button').click();
+                    // Lazy load If the menu sub content has lazy load images
+                    if($(this).attr('id') != 'whoswho') {
+                        new LazyLoad(
+                            {
+                                container: $(this).parent().find('.imgShow-div')[0],
+                                callback_load: function () {
+                                    $(window).resize();
+                                    //$(_this).next().find('.pause-button').click();
+                                }
                             }
-                        }
-                    );
+                        );
+                    }
 
                     if (isFirstClick == true) {
                         timeLine.clear();
