@@ -76,6 +76,7 @@ var showGallery = function () {
                 }
             );
 
+
             window.isGalleryOpen = true;
         }
         )

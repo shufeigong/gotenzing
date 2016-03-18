@@ -60,88 +60,152 @@ var tmax_options = {
     $.fn.timeLineSlider = function (options) {
         options = $.extend(
             {
-                defaultMove: 'left-right',
-                duration: 3,
+                defaultEffect: '',
+                duration: 6,
                 autoStart: false,
                 infinityLoop: true
             },
             options
         );
 
-        var tmaxOptions = {
-            delay: 0,
-            paused: !options.autoStart,
-            repeat: options.infinityLoop ? -1 : 1,
-            repeatDelay: 0
-        };
 
-        var $this = $(this);
-        var _this = this;
+        var childTl = [];
 
-        var easeValue = Circ.easeInOut;
+        var easeValue = Sine.easeInOut;
 
-        // Default movement is Left to Right
-        // Left to Right
-        // Right to Left
-        // Up to Down
-        // Down to Up
-        // Fade
-        // Zoom
-        // Rotate
+        function setProgress(timeline, progressBar) {
+            TweenMax.set(progressBar, {scaleX: timeline.progress(), transformOrigin: "0px 0px"});
+        }
 
-        $this.each(
+        //==================================
+        // Type of panning effect used.
+
+        // 'zoom-in'
+        // 'zoom-out'
+
+        // 'zoom-in-up'
+        // 'zoom-in-down'
+        // 'zoom-in-left'
+        // 'zoom-in-right'
+
+        // 'zoom-out-up'
+        // 'zoom-out-down'
+        // 'zoom-out-left'
+        // 'zoom-out-right'
+
+        // 'pan-up'
+        // 'pan-down'
+        // 'pan-left'
+        // 'pan-right'
+
+        $(this).each(
             function () {
+                var $this = $(this);
+                var _this = this;
+
+                var progressBar = $(this).find('.progressBar');
+
+                var tmaxOptions = {
+                    delay: 0,
+                    paused: !options.autoStart,
+                    repeat: options.infinityLoop ? -1 : 1,
+                    repeatDelay: 0,
+                    onUpdateParams: ["{self}",progressBar],
+                    onUpdate: setProgress
+                };
+
                 var $imageContainers = $(this).find('.image-container');
                 var tl = new TimelineMax(tmaxOptions);
+                childTl.push(tl);
+
+                var $video;
 
                 $imageContainers.each(
                     function (index, value) {
                         var $imageItem = $(value).find('.image-item');
-                        var movement = $imageItem.attr('data-move');
+                        var effect = $imageItem.attr('data-effect');
 
-                        if(movement == undefined) {
-                            movement = options.defaultMove;
+                        if(effect == undefined) {
+                            effect = options.defaultMove;
                         }
 
-                        if (index == 0) {
-                            tl.to(value, 0, {"alpha": 1});
-                        } else {
-                            tl.to(value, 2, {"alpha": 1, "ease": easeValue}, '-=2.5');
-                        }
+                        tl.to(value, 0.5, {"autoAlpha": 1, onComplete: function() {
+                            var isVideo = $(value).find('video').length > 0;
+                            if(isVideo){
+                                var startTime = $(value).find('video').attr('data-start');
+                                $video = $(value).find('video')[0];
+                                $video.currentTime = startTime;
+                                $video.play();
+                            }
+                        }},'effect' + index);
 
-                        tl.to(value, options.duration, {"left": 0, "ease": easeValue});
-
-                        switch (movement) {
-                            case 'right-left':
-                                tl.to(value, 2, {"left": "-5%", "alpha": 0, "ease": easeValue});
+                        switch (effect) {
+                            case 'zoom-out':
+                                tl.fromTo($imageItem, options.duration, {"scale": 1.8, "ease": easeValue},{"scale": 1.1, "ease": easeValue}, 'effect' + index);
                                 break;
-                            case 'up-down':
-                                tl.to(value, 2, {"top": "5%", "alpha": 0, "ease": easeValue});
+                            case 'zoom-in':
+                                tl.to($imageItem, options.duration, {"scale": "1.4", "ease": easeValue}, 'effect' + index);
                                 break;
-                            case 'down-up':
-                                tl.to(value, 2, {"top": "-5%", "alpha": 0, "ease": easeValue});
+                            case 'zoom-in-up':
+                                tl.to($imageItem, options.duration, {"scale": 1.4, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"y": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
                                 break;
-                            case 'fade':
-                                tl.to(value, 2, {"alpha": 0, "ease": easeValue});
+                            case 'zoom-in-down':
+                                tl.to($imageItem, options.duration, {"scale": 1.4, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"y": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
                                 break;
-                            case 'zoom':
-                                tl.to(value, 2, {"scale": 1.2, "alpha": 0, "ease": easeValue});
+                            case 'zoom-in-left':
+                                tl.to($imageItem, options.duration, {"scale": 1.4, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"x": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
                                 break;
-                            case 'rotate':
-                                tl.to(
-                                    value, 2, {
-                                        "rotation": -180,
-                                        transformOrigin: "50% 100%",
-                                        "alpha": 0,
-                                        "ease": easeValue
-                                    }
-                                );
+                            case 'zoom-in-right':
+                                tl.to($imageItem, options.duration, {"scale": 1.4, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"x": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
+                                break;
+                            case 'zoom-out-up':
+                                tl.fromTo($imageItem, options.duration, {"scale": 1.8, "ease": easeValue}, {"scale": 1.3, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"y": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
+                                break;
+                            case 'zoom-out-down':
+                                tl.fromTo($imageItem, options.duration, {"scale": 1.8, "ease": easeValue}, {"scale": 1.3, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"y": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
+                                break;
+                            case 'zoom-out-left':
+                                tl.fromTo($imageItem, options.duration, {"scale": 1.8, "ease": easeValue}, {"scale": 1.3, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"x": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
+                                break;
+                            case 'zoom-out-right':
+                                tl.fromTo($imageItem, options.duration, {"scale": 1.8, "ease": easeValue}, {"scale": 1.3, "ease": easeValue}, 'effect' + index);
+                                tl.to($imageItem, options.duration, {"x": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/3);
+                                break;
+                            case 'pan-up':
+                                tl.to($imageItem, options.duration, {"y": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/4);
+                                break;
+                            case 'pan-down':
+                                tl.to($imageItem, options.duration, {"y": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/4);
+                                break;
+                            case 'pan-left':
+                                tl.to($imageItem, options.duration, {"x": "+15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/4);
+                                break;
+                            case 'pan-right':
+                                tl.to($imageItem, options.duration, {"x": "-15%", "ease": easeValue}, 'effect' + index + '+=' + options.duration/4);
                                 break;
                             default:
-                                tl.to(value, 2, {"left": "5%", "alpha": 0, "ease": easeValue}, '-=1');
+                                tl.to($imageItem, options.duration, {"left": 0},'effect' + index);
                         }
+
+                        tl.to(value, 0.5, {"autoAlpha": 0, onComplete: function() {
+                            var isVideo = $(value).find('video').length > 0;
+                            if(isVideo) {
+                                $video.pause();
+                            }
+                        }});
                     }
                 );
+
+                if(options.autoStart) {
+                    $this.find('.pause-button').addClass('playing');
+                }
 
                 $this.find('.pause-button').on(
                     'click', function () {
@@ -149,15 +213,21 @@ var tmax_options = {
                         $(_this).toggleClass('playing');
                         tl.paused(!tl.paused());
                         _this.innerHTML = tl.paused() ? "play" : "pause";
+
+                        // play & pause video
+                        if($video) {
+                            if(tl.paused()) {
+                                $video.pause();
+                            } else {
+                                $video.play();
+                            }
+                        }
                     }
                 );
 
                 _this.timeLineSlider = tl;
             }
         );
-
-        return _this;
-
     };
 })(jQuery, window, document);
 
@@ -165,7 +235,7 @@ $(document).ready(
     function () {
         $('.imageVideo').timeLineSlider(
             {
-                defaultMove: 'left-right'
+                autoStart: false
             }
         );
     }

@@ -50,17 +50,6 @@
         );
     };
 
-    var menu = function () {
-        function init() {
-
-        }
-
-        function normalizeSliderHeight() {
-
-        }
-    };
-
-
     $(window).load(function() {
         /**
          * Normalize image slider height
@@ -71,7 +60,6 @@
                 $(this).imageWrapHeights();
             }
         );
-
     });
 
     // Reset cookie
@@ -155,6 +143,8 @@
                         {
                             container: $(thisItem).parent().find('.imgShow-div')[0],
                             callback_load: function () {
+                                $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+
                                 $(window).resize();
                             }
                         }
@@ -219,22 +209,14 @@
                 $('.div-iconlist').find('#utility-' + link).parent().addClass('orange');
                 $(".modal#" + link).modal('show');
 
+                $('body').addClass('full-screen-modal-open');
+
                 if (link == 'gallery-legacy') {
                     showGallery();
                 }
             } else {
-                // If it's home
+                // It's home
             }
-
-            // Main page extend menu
-            $(".menuicon").click(
-                function () {
-                    $(this).toggleClass('is-active');
-                    $(".arrow-down, .extension-header").slideToggle();
-                    $(".shadow-main").toggle();
-                    $(this).parent("li").toggleClass('orange');
-                }
-            );
 
             /////mobile swip menu/////
             $('.ham-icon').on(
@@ -346,16 +328,26 @@
                     window.history.pushState(null, null, "/" + $(this).attr("href"));
 
                     // Lazy load If the menu sub content has lazy load images
-                    if($(this).attr('id') != 'whoswho') {
+                    if($(_this).attr('id') != 'whoswho') {
+                        //new Blazy({
+                        //    container: '#' + $(_this).attr('id') + '-container',
+                        //    success: function(ele) {
+                        //        console.log(ele);
+                        //        $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
+                        //        $(window).resize();
+                        //    }
+                        //});
+
                         new LazyLoad(
                             {
-                                container: $(this).parent().find('.imgShow-div')[0],
+                                container: $(_this).parent().find('.imgShow-div')[0],
                                 callback_load: function () {
+                                    $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
                                     $(window).resize();
-                                    //$(_this).next().find('.pause-button').click();
                                 }
                             }
                         );
+
                     }
 
                     if (isFirstClick == true) {

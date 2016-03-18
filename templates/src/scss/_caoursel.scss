@@ -181,101 +181,6 @@
 }
 
 @media screen and (min-width : 1040px) {
-    .imgShow-div {
-        .subpage {
-            .left-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                left                   : 41.5469px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-left            : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/left-arrow.svg) no-repeat;
-
-            }
-            .right-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-right           : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                right                  : 41.5469px;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/right-arrow.svg) no-repeat;
-            }
-
-            .carousel-indicators {
-                bottom : -20.5px;
-                li {
-                    border : 1px solid #77777a;
-
-                    &:hover {
-                        background : #f7a800;
-                    }
-                }
-                .active {
-                    background-color : #b9b8ba;
-                }
-
-            }
-
-            .carousel-control {
-                opacity : 1;
-
-            }
-
-            .carousel-control.left {
-                &:hover, &:active, &.pressed {
-                    .left-arrow {
-                        background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-
-            .carousel-control.right {
-                &:hover, &:active, &.pressed {
-                    .right-arrow {
-                        background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-        }
-
-    }
-
     .popup {
         .left-arrow {
             box-sizing             : border-box;
@@ -422,7 +327,7 @@
         }
     }
 
-    .gallery-carousel-page {
+    .gallery-carousel-page, .popup {
         .left-arrow {
             box-sizing             : border-box;
             color                  : rgb(255, 255, 255);
@@ -434,7 +339,6 @@
             font-weight            : normal;
             height                 : 97px;
             width                  : 37px;
-            //border:solid 1px #333;
             left                   : 41.5469px;
             line-height            : 30px;
             list-style-image       : none;
@@ -497,10 +401,9 @@
         }
 
         .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 95%;
+            max-width: 67%;
+            height: 100%;
+            width: auto;
 
             .modal-content {
                 height           : 100%;
@@ -509,10 +412,18 @@
                 background-color : transparent;
             }
             .modal-body {
-                height : 100%;
+                height : 95%;
             }
             .carousel-inner {
-                height : 100%;
+                height : 90%;
+                .item {
+                    height: 100%;
+                    img {
+                        margin: 0 auto;
+                        max-height: 100%;
+                        width: auto;
+                    }
+                }
             }
             .carousel-caption {
                 @include font-size(1.2);
@@ -526,6 +437,7 @@
             }
 
             .carousel-indicators {
+                bottom :0;
                 li {
                     border           : none;
                     background-color : #fff;
@@ -652,7 +564,6 @@
             font-weight            : normal;
             height                 : 97px;
             width                  : 37px;
-            //border:solid 1px #333;
             left                   : 41.5469px;
             line-height            : 30px;
             list-style-image       : none;
@@ -718,10 +629,9 @@
         }
 
         .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 80%;
+            max-width: 67%;
+            height: 100%;
+            width: auto;
 
             .modal-content {
                 height           : 100%;
@@ -792,7 +702,7 @@
         }
     }
 
-    .gallery-carousel-page {
+    .gallery-carousel-page, .popup {
         .left-arrow {
             box-sizing             : border-box;
             color                  : rgb(255, 255, 255);
@@ -804,7 +714,6 @@
             font-weight            : normal;
             height                 : 97px;
             width                  : 37px;
-            //border:solid 1px #333;
             left                   : 41.5469px;
             line-height            : 30px;
             list-style-image       : none;
@@ -865,10 +774,9 @@
         }
 
         .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 80%;
+            max-width: 67%;
+            height: 100%;
+            width: auto;
 
             .modal-content {
                 height           : 100%;
@@ -877,10 +785,18 @@
                 background-color : transparent;
             }
             .modal-body {
-                height : 100%;
+                height : 95%;
             }
             .carousel-inner {
-                height : 100%;
+                height : 90%;
+                .item {
+                    height: 100%;
+                    img {
+                        margin: 0 auto;
+                        max-height: 100%;
+                        width: auto;
+                    }
+                }
             }
             .carousel-caption {
                 @include font-size(1.2);
@@ -927,6 +843,29 @@
         }
     }
 
+    .gallery-carousel-page {
+        .modal-dialog {
+            height: 100%;
+            width: auto;
+
+            .modal-body {
+                height : 95%;
+            }
+            .carousel-inner {
+                height : 90%;
+                .item {
+                    height: 100%;
+                    img {
+                        margin: 0 auto;
+                        max-height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+
+        }
+    }
+
     .modal.carousel.slide {
         margin-top : 60px;
 
@@ -963,7 +902,7 @@
                     }
 
                     .carousel-inner {
-                        height : 100%;
+                        height : 90%;
 
                         .videoWrapper {
                             position       : relative;

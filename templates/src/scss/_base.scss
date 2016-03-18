@@ -16,6 +16,11 @@ body {
             color : #ffffff;;
         }
     }
+
+    &.full-screen-modal-open {
+        overflow: hidden !important;
+        padding-right: 15px !important;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {

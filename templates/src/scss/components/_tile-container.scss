@@ -2,6 +2,7 @@ $border-color : #b9b8ba;
 .tile-container {
     display : inline-block;
     margin  : 0;
+
     .tile-item {
         display  : block;
         position : relative;
@@ -44,5 +45,34 @@ $border-color : #b9b8ba;
             }
 
         }
+
+        &.no-border {
+            border :none;
+        }
     }
+}
+
+
+@media screen and (min-width: 869px) and (max-width : 1208px) {
+    .tile-container {
+        width: 380px;
+        float: right;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 865px){
+    .tile-container {
+        width: 255px;
+        float: right;
+    }
+}
+
+
+@media screen and (max-width : 639px) {
+    .tile-container {
+        .tile-item {
+            float: left;
+        }
+    }
+
 }
