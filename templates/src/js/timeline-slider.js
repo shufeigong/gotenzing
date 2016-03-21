@@ -104,6 +104,7 @@ var tmax_options = {
                 var _this = this;
 
                 var progressBar = $(this).find('.progressBar');
+                var pauseButton = $(this).find('.pause-button');
 
                 var tmaxOptions = {
                     delay: 0,
@@ -111,7 +112,15 @@ var tmax_options = {
                     repeat: options.infinityLoop ? -1 : 1,
                     repeatDelay: 0,
                     onUpdateParams: ["{self}",progressBar],
-                    onUpdate: setProgress
+                    onStartParams: [pauseButton],
+                    onPauseParams: [pauseButton],
+                    onUpdate: setProgress,
+                    onStart: function(pauseButton) {
+                        $(pauseButton).addClass('playing');
+                    },
+                    onPause: function(pauseButton) {
+                        $(pauseButton).removeClass('playing');
+                    }
                 };
 
                 var $imageContainers = $(this).find('.image-container');

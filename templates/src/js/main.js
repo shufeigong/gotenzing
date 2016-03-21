@@ -90,6 +90,7 @@
                 repeat: -1,
                 repeatDelay: 5
             });
+            var currentSlider;
 
             var easeValue = Power2.easeInOut;
 
@@ -159,6 +160,8 @@
                         $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
                         $(window).resize();
 
+                        currentSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                        currentSlider.play();
                     });
                 }
 
@@ -364,8 +367,15 @@
                         $(window).on('lazycomplete', function() {
                             $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
                             $(window).resize();
+                            if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
+
+                                currentSlider.pause(0);
+                                currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                                currentSlider.play();
+                            }
 
                         });
+
 
                     }
 
@@ -657,6 +667,8 @@
                     $(this).parent(".page-content").find('.pause-button').attr('tabindex', "-1");
 
                     isFirstClick = true;
+
+                    currentSlider.clear();
                 }
             );
 
