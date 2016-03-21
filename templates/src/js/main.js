@@ -388,6 +388,10 @@
                                 currentSlider.play();
                             }
                         }
+                    } else {
+                        if(currentSlider != undefined) {
+                            currentSlider.pause(0);
+                        }
                     }
 
                     if (isFirstClick == true) {
