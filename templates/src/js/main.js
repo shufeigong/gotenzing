@@ -368,8 +368,7 @@
                             $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
                             $(window).resize();
                             if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
-
-                                if(isFirstClick == true) {
+                                if(isFirstClick === false && currentSlider != undefined) {
                                     currentSlider.pause(0);
                                 }
                                 currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
@@ -377,7 +376,6 @@
                             }
 
                         });
-
 
                     }
 
