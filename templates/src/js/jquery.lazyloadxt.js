@@ -13,7 +13,7 @@
         //  force load all images in Opera Mini and some mobile browsers without scroll event or getBoundingClientRect()
         forceLoad = (window.onscroll === undefined || !!window.operamini || !docElement.getBoundingClientRect),
         options = {
-            autoInit: true, // auto initialize in $.ready
+            autoInit: false, // auto initialize in $.ready
             selector: 'img[data-src]', // selector for lazyloading elements
             blankImage: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
             throttle: 99, // interval (ms) for changes check
@@ -23,12 +23,12 @@
             updateEvent: 'load orientationchange resize scroll touchmove focus', // page-modified events
             forceEvent: 'lazyloadall', // force loading of all elements
 
-            //onstart: null,
+            onstart: null,
             oninit: {removeClass: 'lazy'}, // init handler
             onshow: {addClass: classLazyHidden}, // start loading handler
             onload: {removeClass: classLazyHidden, addClass: 'lazy-loaded'}, // load success handler
             onerror: {removeClass: classLazyHidden}, // error handler
-            //oncomplete: null, // complete handler
+            oncomplete: null, // complete handler
 
             //scrollContainer: undefined,
             checkDuplicates: true

@@ -153,15 +153,13 @@
                     //    }
                     //);
 
-                    //$(thisItem).parent().find('.imgShow-div').lazyLoadXT(
-                    //    {
-                    //        oncomplete: function () {
-                    //            alert('done!');
-                    //            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
-                    //            $(window).resize();
-                    //        }
-                    //    }
-                    //);
+                    $(thisItem).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
+
+                    $(window).on('lazycomplete', function() {
+                        $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                        $(window).resize();
+
+                    });
                 }
 
                 var i = 0;
@@ -351,15 +349,6 @@
 
                     // Lazy load If the menu sub content has lazy load images
                     if($(_this).attr('id') != 'whoswho') {
-                        //new Blazy({
-                        //    container: '#' + $(_this).attr('id') + '-container',
-                        //    success: function(ele) {
-                        //        console.log(ele);
-                        //        $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
-                        //        $(window).resize();
-                        //    }
-                        //});
-
                         //new LazyLoad(
                         //    {
                         //        container: $(_this).parent().find('.imgShow-div')[0],
@@ -369,6 +358,14 @@
                         //        }
                         //    }
                         //);
+
+                        $(_this).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
+
+                        $(window).on('lazycomplete', function() {
+                            $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                            $(window).resize();
+
+                        });
 
                     }
 
