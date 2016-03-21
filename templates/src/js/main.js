@@ -369,7 +369,9 @@
                             $(window).resize();
                             if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
 
-                                currentSlider.pause(0);
+                                if(isFirstClick == true) {
+                                    currentSlider.pause(0);
+                                }
                                 currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
                                 currentSlider.play();
                             }
