@@ -85,6 +85,7 @@ ExpiresDefault "access plus 7 days"
 
 <IfModule mod_headers.c>
     <filesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|swf|css)$">
+        Header set Access-Control-Allow-Origin "*"
         Header set Cache-Control "max-age=1209600, public"
     </filesMatch>
 </IfModule>
