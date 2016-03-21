@@ -85,7 +85,8 @@
             var timeLine = new TimelineMax();
             var closeButtonTl = new TimelineMax({
                 repeat: -1,
-                repeatDelay: 5
+                repeatDelay: 5,
+                yoyo: true
             });
             var currentSlider;
             var loadedPages = [];
