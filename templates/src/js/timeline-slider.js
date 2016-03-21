@@ -139,21 +139,25 @@ var tmax_options = {
                         }
 
                         var isVideo = $(value).find('video').length > 0;
-                        tl.to(value, 0, {onStart: function() {
-                            if(isVideo) {
-                                var startTime = $(value).find('video').attr('data-start');
-                                $video = $(value).find('video')[0];
-                                $video.currentTime = startTime;
-                            }
-                        }});
+                        var startTime = $(value).find('video').attr('data-start');
 
-                        tl.to(value, 0.5, {onStart: function() {
-                            if(isVideo){
+                        if(isVideo) {
+                            $video = $(value).find('video')[0];
+                            $video.currentTime = startTime;
+                        }
+
+                        tl.to(value, 0, {onComplete: function() {
+                            if(isVideo) {
+                                $video = $(value).find('video')[0];
                                 $video.play();
                             }
                         }});
 
-                        tl.to(value, 0.5, {"autoAlpha": 1}, index == 0 ? '' : '-=0.5');
+                        tl.to(value, 0.5, {onStart: function() {
+
+                        }});
+
+                        tl.to(value, 1, {"autoAlpha": 1}, index == 0 ? '' : '-=2');
 
                         switch (effect) {
                             case 'zoom-out':
@@ -211,11 +215,11 @@ var tmax_options = {
                         }
 
                         tl.to(value, 1, {"autoAlpha": 0, onComplete: function() {
-                            var isVideo = $(value).find('video').length > 0;
                             if(isVideo) {
                                 $video.pause();
+                                $video.currentTime = startTime;
                             }
-                        }}, '-=1');
+                        }});
                     }
                 );
 
