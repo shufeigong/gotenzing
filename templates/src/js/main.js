@@ -54,7 +54,6 @@
         /**
          * Normalize image slider height
          */
-
         $('.sub-container').find('.imageVideo').each(
             function () {
                 $(this).imageWrapHeights();
@@ -87,6 +86,10 @@
             var mobileButtonClicked = false;
 
             var timeLine = new TimelineMax();
+            var closeButtonTl = new TimelineMax({
+                repeat: -1,
+                repeatDelay: 5
+            });
 
             var easeValue = Power2.easeInOut;
 
@@ -139,16 +142,26 @@
 
                 // Lazy load If the menu sub content has lazy load images
                 if(link != 'whoswho') {
-                    new LazyLoad(
-                        {
-                            container: $(thisItem).parent().find('.imgShow-div')[0],
-                            callback_load: function () {
-                                $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                    //new LazyLoad(
+                    //    {
+                    //        container: $(thisItem).parent().find('.imgShow-div')[0],
+                    //        callback_load: function () {
+                    //            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                    //
+                    //            $(window).resize();
+                    //        }
+                    //    }
+                    //);
 
-                                $(window).resize();
-                            }
-                        }
-                    );
+                    //$(thisItem).parent().find('.imgShow-div').lazyLoadXT(
+                    //    {
+                    //        oncomplete: function () {
+                    //            alert('done!');
+                    //            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                    //            $(window).resize();
+                    //        }
+                    //    }
+                    //);
                 }
 
                 var i = 0;
@@ -196,6 +209,15 @@
                         }
                     )
                 );
+
+                closeButtonTl.clear();
+                closeButtonTl.add(TweenMax.to(
+                     thisItem.next().find('.sub-close-icon .subpage-close-button'), 2, {
+                        "rotation": 360,
+                        transformOrigin:"50% 50%",
+                        ease:Sine.easeInOut
+                    }
+                ));
 
                 isFirstClick = false;
 
@@ -338,15 +360,15 @@
                         //    }
                         //});
 
-                        new LazyLoad(
-                            {
-                                container: $(_this).parent().find('.imgShow-div')[0],
-                                callback_load: function () {
-                                    $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
-                                    $(window).resize();
-                                }
-                            }
-                        );
+                        //new LazyLoad(
+                        //    {
+                        //        container: $(_this).parent().find('.imgShow-div')[0],
+                        //        callback_load: function () {
+                        //            $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
+                        //            $(window).resize();
+                        //        }
+                        //    }
+                        //);
 
                     }
 
@@ -515,6 +537,15 @@
                         $(this).addClass('orange');
                     }
 
+                    closeButtonTl.clear();
+                    closeButtonTl.add(TweenMax.to(
+                        $(_this).next().find('.sub-close-icon .subpage-close-button'), 2, {
+                            "rotation": 360,
+                            transformOrigin:"50% 50%",
+                            ease:Sine.easeInOut
+                        }
+                    ));
+
                     $(_this).next().find('a').attr('tabindex', "0");
                     $(_this).next().find('.imgShow-div .pause-button').attr('tabindex', "0");
 
@@ -525,18 +556,18 @@
             $(".sub-close-icon").hover(
                 function () {
                     TweenMax.to(
-                        $(this), 0.1, {
+                        $(this).find('.subpage-close-button'), 0.5, {
                             "rotation": 90,
-                            transformOrigin:"54% 52%",
+                            transformOrigin:"50% 50%",
                             ease:Back.easeOut
                         }
                     );
 
                 }, function () {
                     TweenMax.to(
-                        $(this), 0.1, {
+                        $(this).find('.subpage-close-button'), 0.5, {
                             "rotation": 0,
-                            transformOrigin:"54% 52%",
+                            transformOrigin:"50% 50%",
                             ease:Back.easeOut
                         }
                     );

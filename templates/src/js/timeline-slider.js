@@ -129,15 +129,20 @@ var tmax_options = {
                             effect = options.defaultMove;
                         }
 
-                        tl.to(value, 0.5, {"autoAlpha": 1, onComplete: function() {
-                            var isVideo = $(value).find('video').length > 0;
-                            if(isVideo){
+                        var isVideo = $(value).find('video').length > 0;
+                        tl.to(value, 0, { onComplete: function() {
+                            if(isVideo) {
                                 var startTime = $(value).find('video').attr('data-start');
                                 $video = $(value).find('video')[0];
                                 $video.currentTime = startTime;
+                            }
+                        }});
+
+                        tl.to(value, 0.5, {"autoAlpha": 1, onComplete: function() {
+                            if(isVideo){
                                 $video.play();
                             }
-                        }},'effect' + index);
+                        }});
 
                         switch (effect) {
                             case 'zoom-out':
@@ -199,7 +204,7 @@ var tmax_options = {
                             if(isVideo) {
                                 $video.pause();
                             }
-                        }});
+                        }}, '-=1');
                     }
                 );
 
