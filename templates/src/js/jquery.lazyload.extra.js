@@ -335,7 +335,9 @@
 
         // reload video
         if (changed) {
+            $(this).removeClass('lazy-hidden').addClass('lazy-loaded');
             this.load();
+            $(this).trigger('video-lazyload');
         }
     });
 

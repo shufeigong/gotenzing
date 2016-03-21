@@ -131,7 +131,7 @@ var tmax_options = {
 
                 $imageContainers.each(
                     function (index, value) {
-                        var $imageItem = $(value).find('.image-item');
+                        var $imageItem = $(value).find('.image-item, video');
                         var effect = $imageItem.attr('data-effect');
 
                         if(effect == undefined) {
@@ -139,7 +139,7 @@ var tmax_options = {
                         }
 
                         var isVideo = $(value).find('video').length > 0;
-                        tl.to(value, 0, { onComplete: function() {
+                        tl.to(value, 0, {onStart: function() {
                             if(isVideo) {
                                 var startTime = $(value).find('video').attr('data-start');
                                 $video = $(value).find('video')[0];
@@ -147,11 +147,13 @@ var tmax_options = {
                             }
                         }});
 
-                        tl.to(value, 0.5, {"autoAlpha": 1, onComplete: function() {
+                        tl.to(value, 0.5, {onStart: function() {
                             if(isVideo){
                                 $video.play();
                             }
                         }});
+
+                        tl.to(value, 0.5, {"autoAlpha": 1}, index == 0 ? '' : '-=0.5');
 
                         switch (effect) {
                             case 'zoom-out':
@@ -208,7 +210,7 @@ var tmax_options = {
                                 tl.to($imageItem, options.duration, {"left": 0},'effect' + index);
                         }
 
-                        tl.to(value, 0.5, {"autoAlpha": 0, onComplete: function() {
+                        tl.to(value, 1, {"autoAlpha": 0, onComplete: function() {
                             var isVideo = $(value).find('video').length > 0;
                             if(isVideo) {
                                 $video.pause();

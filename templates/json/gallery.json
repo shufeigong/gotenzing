@@ -31,6 +31,12 @@
     },
     {
         "id": 5,
+        "original_image": "BRI_Vehicle_1407x875.png",
+        "thumbnail_image": "BRI_Vehicle_119x119.jpg",
+        "caption": ""
+    },
+    {
+        "id": 5,
         "original_image": "BRI_Centre_1407x875.png",
         "thumbnail_image": "BRI_Centre_119x119.jpg",
         "caption": ""
@@ -44,13 +50,25 @@
     {
         "id": 7,
         "original_image": "Bruce_2015_MasterToolKit_1407x875.png",
-        "thumbnail_image": "Bruce_2015_MasterToolKit_119x119.jpg",
+        "thumbnail_image": "Bruce_2015_MasterToolKit_119x119.png",
         "caption": ""
     },
     {
         "id": 8,
         "original_image": "Bruce_Website_1407x875.png",
-        "thumbnail_image": "Bruce_Website_119x119.jpg",
+        "thumbnail_image": "Bruce_Website_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 8,
+        "original_image": "Bruce_Wiarton_Ad_1407x875.png",
+        "thumbnail_image": "Bruce_Wiarton_Ad_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 8,
+        "original_image": "Bruce_Wiarton_PopUp_1407x875.png",
+        "thumbnail_image": "Bruce_Wiarton_PopUp_119x119.png",
         "caption": ""
     },
     {
@@ -90,6 +108,12 @@
         "caption": ""
     },
     {
+        "id": 14,
+        "original_image": "CMHA_FB_Tiles_1407x875.png",
+        "thumbnail_image": "CMHA_FB_Tiles_119x119.png",
+        "caption": ""
+    },
+    {
         "id": 15,
         "original_image": "CSI_2008_HandleMe_PrintAd_1407x875.png",
         "thumbnail_image": "CSI_2008_HandleMe_PrintAd_119x119.jpg",
@@ -120,9 +144,15 @@
         "caption": ""
     },
     {
+        "id": 19,
+        "original_image": "CWL_OnlineAd_1407x875.png",
+        "thumbnail_image": "CWL_OnlineAd_119x119.png",
+        "caption": ""
+    },
+    {
         "id": 20,
         "original_image": "Evergreen_PrintAds_1407x875.png",
-        "thumbnail_image": "Evergreen_PrintAds_119x119.jpg",
+        "thumbnail_image": "Evergreen_PrintAds_119x119.png",
         "caption": ""
     },
     {
@@ -144,15 +174,21 @@
         "caption": ""
     },
     {
+        "id": 23,
+        "original_image": "HHS_2011_Brochure_Spread_2_1407x875.png",
+        "thumbnail_image": "HHS_2011_Brochure_Spread_119x119.png",
+        "caption": ""
+    },
+    {
         "id": 24,
         "original_image": "Huntsville_Billboard_Antiques_1407x875.png",
-        "thumbnail_image": "Huntsville_Billboard_Antiques_119x119.jpg",
+        "thumbnail_image": "Huntsville_Billboard_Antiques_119x119.png",
         "caption": ""
     },
     {
         "id": 25,
         "original_image": "Huntsville_Billboard_Toque_1407x875.png",
-        "thumbnail_image": "Huntsville_Billboard_Toque_119x119.jpg",
+        "thumbnail_image": "Huntsville_Billboard_Toque_119x119.png",
         "caption": ""
     },
     {
@@ -164,25 +200,37 @@
     {
         "id": 27,
         "original_image": "Libro_2012_Website_Sacha_1407x875.png",
-        "thumbnail_image": "Libro_2012_Website_119x119.jpg",
+        "thumbnail_image": "LIBRO_2012_Website_Sacha_119x119.png",
         "caption": ""
     },
     {
         "id": 28,
         "original_image": "Libro_2013_BeYou_Ads_1407x875.png",
-        "thumbnail_image": "Libro_2013_BeYou_Ads_119x119.jpg",
+        "thumbnail_image": "Libro_BeYou_Ads_119x119.png",
         "caption": ""
     },
     {
         "id": 29,
-        "original_image": "Libro_2015_TV_1407x875.png",
-        "thumbnail_image": "Libro_2015_TV_119x119.jpg",
+        "original_image": "_VIDEO_ LIBRO_2015_TV_1407x875.png",
+        "thumbnail_image": "LIBRO_2015_TV_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 29,
+        "original_image": "_VIDEO_Libro_Video_Money_School_1407x875.png",
+        "thumbnail_image": "Libro_Video_Money_School_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 29,
+        "original_image": "Libro_Web_Money_School_1407x875.png",
+        "thumbnail_image": "Libro_Web_Money_School_119x119.png",
         "caption": ""
     },
     {
         "id": 30,
         "original_image": "LRN_Poster_1407x875.png",
-        "thumbnail_image": "LRN_Poster_119x119.jpg",
+        "thumbnail_image": "LRN_Poster_119x119.png",
         "caption": ""
     },
     {
@@ -194,13 +242,31 @@
     {
         "id": 32,
         "original_image": "Millionnaire_Sardines_Poster_1407x875.png",
-        "thumbnail_image": "Millionnaire_Sardines_Poster_119x119.jpg",
+        "thumbnail_image": "Millionnaire_Sardines_Poster_119x119.png",
         "caption": ""
     },
     {
         "id": 33,
         "original_image": "MISS_EDO_Ads_1407x875.png",
-        "thumbnail_image": "MISS_EDO_Ads_119x119.jpg",
+        "thumbnail_image": "MISS_EDO_Ads_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 33,
+        "original_image": "MISS_EDO_Ad_Horz_1407x875.png",
+        "thumbnail_image": "MISS_EDO_Ad_Horz_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 33,
+        "original_image": "MISS_EDO_Brochure_1407x875.png",
+        "thumbnail_image": "MISS_EDO_Brochure_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 33,
+        "original_image": "MISS_EDO_Brochure_Spread_1407x875.png",
+        "thumbnail_image": "MISS_EDO_Brochure_Spread_119x119.png",
         "caption": ""
     },
     {
@@ -229,6 +295,12 @@
     },
     {
         "id": 38,
+        "original_image": "NCU-PurseStrings-Poster_1407x875.png",
+        "thumbnail_image": "NCU-PurseStrings-Poster_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 38,
         "original_image": "NCU_PS_Postcard_1407x875.png",
         "thumbnail_image": "NCU_PS_Postcard_119x119.jpg",
         "caption": ""
@@ -236,7 +308,7 @@
     {
         "id": 39,
         "original_image": "NCU_PS_WebsiteNing_1407x875.png",
-        "thumbnail_image": "NCU_PS_WebsiteNing_119x119.jpg",
+        "thumbnail_image": "NCU_PS_WebsiteNing_119x119.png",
         "caption": ""
     },
     {
@@ -259,14 +331,26 @@
     },
     {
         "id": 43,
-        "original_image": "RCB_2010_DE_IronSpke_Cans_1407x875.png",
-        "thumbnail_image": "RCB_2010_DE_IronSpke_Cans_119x119.jpg",
+        "original_image": "DeadElephant_Cans_1407x875.png",
+        "thumbnail_image": "DeadElephant_Cans_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 43,
+        "original_image": "DE_TransitAd_1407x875.png",
+        "thumbnail_image": "DE_TransitAd_119x119.png",
         "caption": ""
     },
     {
         "id": 44,
         "original_image": "RUS_Screaming_Kid_1407x875.png",
         "thumbnail_image": "RUS_Screaming_Kid_119x119.jpg",
+        "caption": ""
+    },
+    {
+        "id": 45,
+        "original_image": "STJ_IOH_CoffeeSleeve_1407x875.png",
+        "thumbnail_image": "SJH_IOH_CoffeeSleeve_119x119.png",
         "caption": ""
     },
     {
@@ -300,6 +384,12 @@
         "caption": ""
     },
     {
+        "id": 49,
+        "original_image": "STJ_IOH_Banner_1407x875.png",
+        "thumbnail_image": "STJ_IOH_Banner_119x119.png",
+        "caption": ""
+    },
+    {
         "id": 50,
         "original_image": "SOAP_Man_Poster_1407x875.png",
         "thumbnail_image": "SOAP_Man_Poster_119x119.jpg",
@@ -308,7 +398,13 @@
     {
         "id": 51,
         "original_image": "STT_Video_1407x875.png",
-        "thumbnail_image": "STT_Video_119x119.jpg",
+        "thumbnail_image": "STT_Video_119x119.png",
+        "caption": ""
+    },
+    {
+        "id": 51,
+        "original_image": "STT_YouTube_1407x875.png",
+        "thumbnail_image": "STT_YouTube_119x119.png",
         "caption": ""
     },
     {

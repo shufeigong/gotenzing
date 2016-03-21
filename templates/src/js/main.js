@@ -69,9 +69,6 @@
         function () {
             window.isGalleryOpen = false;
 
-            //initFirstClickMenuAnimation();
-            //initNoFirstClickMenuAnimation();
-
             // Set tabindex to -1 for all the link
             $('.main-menu .page-content').find('a').attr('tabindex', "-1");
 
@@ -91,6 +88,13 @@
                 repeatDelay: 5
             });
             var currentSlider;
+            var loadedPages = [];
+            var imageCount = {
+                surprising: 12,
+                seving: 7,
+                spending: 9
+            };
+            var count = 0;
 
             var easeValue = Power2.easeInOut;
 
@@ -125,7 +129,6 @@
                 }
             );
 
-            //if ($(window).width() > 640) {
             //normal version reload page
             if (link !== "" && !isUtilityPage) {
                 var thisItem = $(".main-menu [href=" + link + "]");
@@ -143,26 +146,26 @@
 
                 // Lazy load If the menu sub content has lazy load images
                 if(link != 'whoswho') {
-                    //new LazyLoad(
-                    //    {
-                    //        container: $(thisItem).parent().find('.imgShow-div')[0],
-                    //        callback_load: function () {
-                    //            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
-                    //
-                    //            $(window).resize();
-                    //        }
-                    //    }
-                    //);
+                    if($.inArray(link, loadedPages) === -1) {
+                        var lazyImages = $(thisItem).parent().find('.imgShow-div').find('img[data-src]').lazyLoadXT();
+                        var lazyVideos = $(thisItem).parent().find('.imgShow-div').find('video').lazyLoadXT();
 
-                    $(thisItem).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
+                        lazyImages.last().on('lazyload', function() {
+                            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                            $(window).resize();
 
-                    $(window).on('lazycomplete', function() {
-                        $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
-                        $(window).resize();
+                            var isSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo').length > 0;
+                            if(isSlider) {
+                                currentSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                                currentSlider.play();
+                            }
+                        });
 
+                        loadedPages.push(link);
+                    } else {
                         currentSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
                         currentSlider.play();
-                    });
+                    }
                 }
 
                 var i = 0;
@@ -345,38 +348,45 @@
                     var colorGrey = "#555555";
                     var colorLightGrey = "#949494";
                     var previousItem = $('.item .orange');
+                    var link = $(_this).attr('id');
+                    count = 0;
 
                     //change url to be current subpage
                     $.cookie("previousUrl", window.location.href, {path: "/"});
                     window.history.pushState(null, null, "/" + $(this).attr("href"));
 
                     // Lazy load If the menu sub content has lazy load images
-                    if($(_this).attr('id') != 'whoswho') {
-                        //new LazyLoad(
-                        //    {
-                        //        container: $(_this).parent().find('.imgShow-div')[0],
-                        //        callback_load: function () {
-                        //            $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut();
-                        //            $(window).resize();
-                        //        }
-                        //    }
-                        //);
+                    if(link != 'whoswho') {
+                        if($.inArray($(_this).attr('id'), loadedPages) === -1) {
+                            $(_this).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
 
-                        $(_this).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
+                            $(_this).parent().find('.imgShow-div').find('.image-container:last-child').find('img[data-src]')
+                                .on('lazyload', function() {
+                                    $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
 
-                        $(window).on('lazycomplete', function() {
-                            $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
-                            $(window).resize();
-                            if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
-                                if(isFirstClick === false && currentSlider != undefined) {
-                                    currentSlider.pause(0);
-                                }
-                                currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                                    $(window).resize();
+
+                                    if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
+                                        if(isFirstClick === false && currentSlider != undefined) {
+                                            currentSlider.pause(0);
+                                        }
+                                        currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0 ? $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider : null;
+                                        if(currentSlider) {
+                                            currentSlider.play();
+                                        }
+                                    }
+                                });
+
+                            loadedPages.push(link);
+                        } else {
+                            if(isFirstClick === false && currentSlider != undefined) {
+                                currentSlider.pause(0);
+                            }
+                            currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0 ? $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider : null;
+                            if(currentSlider) {
                                 currentSlider.play();
                             }
-
-                        });
-
+                        }
                     }
 
                     if (isFirstClick == true) {

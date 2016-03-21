@@ -33,12 +33,26 @@
                     var target = event.relatedTarget;
                     var isVideo = $(target).find('.videoWrapper').length > 0;
                     if (isVideo) {
+
                         var iframe = $(target).find('iframe').get(0);
+                        var isVideoLoaded = $(iframe).hasClass('lazy-loaded');
+
+                        if(!isVideoLoaded) {
+                            $(target).find('.videoWrapper').find('iframe[data-src]').lazyLoadXT();
+                        }
                         player = $f(iframe);
                         var playButton = $(target).find('.video-play-button');
 
                         player.addEvent(
                             'ready', function () {
+                                $(target).find('.videoWrapper .video-loading-icon').fadeOut();
+                                $(target).find('.videoWrapper .video-play-button').fadeIn();
+
+                                if (isFirstCarouselModal) {
+                                    player.api("play");
+                                    isFirstCarouselModal = false;
+                                }
+
                                 player.addEvent(
                                     'pause', function () {
                                         playButton.fadeIn();
@@ -50,13 +64,9 @@
                                         playButton.fadeOut();
                                     }
                                 );
+
                             }
                         );
-
-                        if (isFirstCarouselModal) {
-                            player.api("play");
-                            isFirstCarouselModal = false;
-                        }
 
                         playButton.bind(
                             "click", function () {
