@@ -31,7 +31,7 @@ $border-color : #b9b8ba;
             transition : all .3s linear;
         }
 
-        &:hover {
+        &:hover:not(&.tile-disable) {
             &:before {
                 content    : "";
                 display    : block;

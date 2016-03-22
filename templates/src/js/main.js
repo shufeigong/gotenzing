@@ -257,7 +257,7 @@
             /**
              * Subpage tile item hover
              */
-            $('.tile-item').hover(
+            $('.tile-item').not('.tile-disable').hover(
                 function () {
                     TweenLite.to(
                         $(this), 0.1, {
