@@ -231,6 +231,38 @@
                     $('body').css('overflow', 'hidden');
                     $(this).css('overflow', 'hidden');
 
+                    var target = event.currentTarget;
+                    // Set interval animation for close button
+                    closeButtonTl.clear();
+                    closeButtonTl.add(TweenMax.to(
+                        $(target).find('.utility-close-button'), 2, {
+                            "rotation": 360,
+                            transformOrigin:"50% 50%",
+                            ease:Sine.easeInOut
+                        }
+                    ));
+
+                    $(target).find('.utility-close-icon').hover(
+                        function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 90,
+                                    transformOrigin:"50% 50%",
+                                    ease:Back.easeOut
+                                }
+                            );
+
+                        }, function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 0,
+                                    transformOrigin:"50% 50%",
+                                    ease:Back.easeOut
+                                }
+                            );
+                        }
+                    );
+
                 }
             );
 
