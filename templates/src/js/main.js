@@ -130,6 +130,13 @@
                 }
             );
 
+            // Disable carousel slide interval
+            $('.carousel').each(function(){
+                $(this).carousel({
+                     interval: false
+                 });
+            });
+
             //normal version reload page
             if (link !== "" && !isUtilityPage) {
                 var thisItem = $(".main-menu [href=" + link + "]");

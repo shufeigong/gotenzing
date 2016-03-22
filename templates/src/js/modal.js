@@ -101,7 +101,6 @@
                 'show.bs.modal', function (event) {
                     var zIndex = 3040 + (10 * $('.modal:visible').length);
                     $(this).css('z-index', zIndex);
-
                     $('body').css('overflow', 'hidden');
 
                     setTimeout(
