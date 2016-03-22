@@ -18,8 +18,8 @@
 
 /* .modal-fullscreen */
 .modal-fullscreen, .modal-content-box {
-    background : #ffffff;
-    padding-right: 0 !important;
+    background    : #ffffff;
+    padding-right : 0 !important;
 
     .modal-dialog {
         margin : 0;
@@ -43,25 +43,26 @@
             width     : 98%;
         }
         .close-button {
-            width               : 30px;
-            height              : 30px;
-            position            : absolute;
-            left                : 0;
-            top                 : 135px;
-            background          : url(../../dist/img/sub-close-icon.svg) no-repeat;
-            display             : inline-block;
-            cursor              : pointer;
-            z-index             : 10;
+            width    : 30px;
+            height   : 30px;
+            position : absolute;
+            left     : 0;
+            top      : 135px;
+            display  : inline-block;
+            cursor   : pointer;
+            z-index  : 10;
 
-            transition          : transform 0.3s;
-            background-size     : 15px 15px;
-            background-position : 50% 50%;
+            .utility-close-button {
+                width  : 16px;
+                height : 16px;
+            }
 
             &:hover, &:active {
-                transform           : rotate(90deg);
-                background          : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                background-size     : 15px 15px;
-                background-position : 50% 50%;
+                .utility-close-button {
+                    .st0,.st1{
+                        stroke:#f7a800;
+                    }
+                }
             }
         }
 
@@ -168,7 +169,7 @@
         }
         .modal-header {
             .modal-header-sub-container {
-                width     : 100%;
+                width : 100%;
             }
             .close-button {
                 left : 0;

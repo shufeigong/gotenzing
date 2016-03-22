@@ -8,6 +8,11 @@
             var carouselSubpage = $('.carousel.slide.subpage,.carousel.slide.mobile');
             var player;
             var isFirstCarouselModal = true;
+            var closeButtonTl = new TimelineMax({
+                repeat: -1,
+                repeatDelay: 5,
+                yoyo: true
+            });
 
             carouselSubpage.on(
                 'slide.bs.carousel', function (event) {
@@ -24,6 +29,11 @@
                     lazy = $(event.relatedTarget).find("img[data-original]");
                     lazy.attr("src", lazy.data('original'));
                     lazy.removeAttr("data-original");
+
+                    lazy.on('load',function(){
+                        lazy.removeClass('lazy').addClass('lazy-loaded');
+                    });
+
                 }
             );
 
@@ -136,6 +146,7 @@
                     $(this).css({'overflow':'hidden'});
 
                     var target = event.currentTarget;
+
                     if ($(target).attr('id') == 'contact') {
 
                         var $window         = $(window),
@@ -175,6 +186,37 @@
 
                     $(target).find('.modal-body').css('overflow-y', 'auto');
 
+                    // Set interval animation for close button
+                    closeButtonTl.clear();
+                    closeButtonTl.add(TweenMax.to(
+                        $(target).find('.utility-close-button'), 2, {
+                            "rotation": 360,
+                            transformOrigin:"50% 50%",
+                            ease:Sine.easeInOut
+                        }
+                    ));
+
+                    $(target).find('.utility-close-icon').hover(
+                        function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 90,
+                                    transformOrigin:"50% 50%",
+                                    ease:Back.easeOut
+                                }
+                            );
+
+                        }, function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 0,
+                                    transformOrigin:"50% 50%",
+                                    ease:Back.easeOut
+                                }
+                            );
+                        }
+                    );
+
                 }
             );
 
@@ -192,6 +234,7 @@
 
                     $(event.currentTarget).find('.modal-body').css('overflow-y', '');
 
+                    closeButtonTl.clear();
                 }
             );
 

@@ -51,7 +51,6 @@
 }
 
 .utility-close-icon {
-    background : url(../../dist/img/sub-close-icon.svg) no-repeat;
     width      : 15px;
     height     : 15px;
     display    : inline-block;
@@ -163,8 +162,8 @@
     .video-loading-icon {
         position : absolute;
         display  : block;
-        width    : 30px;
-        height   : 30px;
+        width    : 70px;
+        height   : 70px;
         top      : calc(50% - 60px);
         left     : calc(50% - 60px);
         z-index  : 100;
@@ -269,7 +268,7 @@
             width     : 67%;
             max-width : 938px;
             margin    : 58px auto 0 auto;
-            height    : 95%;
+            height    : 85%;
 
             .modal-content {
                 height           : 100%;
@@ -284,10 +283,15 @@
                 height : 100%;
                 .pop-img-container {
                     img {
-                        MAX-WIDTH : 100% !important;
-                        HEIGHT    : auto !important;
-                        width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                        max-width : 100% !important;
+                        height    : auto !important;
                         margin    : 0 auto;
+
+                        &.lazy {
+                            background: url('/templates/dist/img/loading.gif') no-repeat;
+                            background-size: 70px 70px;
+                            background-position : 50% 50%;
+                        }
                     }
 
                     .videoWrapper {
@@ -408,7 +412,7 @@
 
         .modal-dialog {
             max-width : 67%;
-            height    : 100%;
+            height    : 85%;
             width     : auto;
 
             .modal-content {
@@ -650,15 +654,18 @@
             .carousel-inner {
                 height : 100%;
                 .pop-img-container {
-                    //height     : 75%;
                     margin     : 0 auto;
                     text-align : center;
                     img {
                         max-width : 100% !important;
                         height    : auto !important;
-                        //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
                         margin    : 0 auto;
 
+                        &.lazy {
+                            background: url('/templates/dist/img/loading.gif') no-repeat;
+                            background-size: 70px 70px;
+                            background-position : 50% 50%;
+                        }
                     }
 
                     .videoWrapper {

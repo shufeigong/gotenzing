@@ -138,5 +138,7 @@ a {
 }
 
 .lazy-hidden {
-    visibility: hidden;
+    background: url('/templates/dist/img/loading.gif') no-repeat;
+    background-size: 30px 30px;
+    background-position : 50% 50%;
 }
