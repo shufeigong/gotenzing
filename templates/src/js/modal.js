@@ -42,14 +42,16 @@
                     // video play button function
                     var target = event.relatedTarget;
                     var isVideo = $(target).find('.videoWrapper').length > 0;
-                    if (isVideo) {
 
+                    // If the content is video
+                    if (isVideo) {
                         var iframe = $(target).find('iframe').get(0);
                         var isVideoLoaded = $(iframe).hasClass('lazy-loaded');
 
                         if(!isVideoLoaded) {
                             $(target).find('.videoWrapper').find('iframe[data-src]').lazyLoadXT();
                         }
+
                         player = $f(iframe);
                         var playButton = $(target).find('.video-play-button');
 
@@ -58,10 +60,10 @@
                                 $(target).find('.videoWrapper .video-loading-icon').fadeOut();
                                 $(target).find('.videoWrapper .video-play-button').fadeIn();
 
-                                if (isFirstCarouselModal) {
-                                    player.api("play");
-                                    isFirstCarouselModal = false;
-                                }
+                                //if (isFirstCarouselModal) {
+                                //    player.api("play");
+                                //    isFirstCarouselModal = false;
+                                //}
 
                                 player.addEvent(
                                     'pause', function () {
@@ -75,8 +77,11 @@
                                     }
                                 );
 
+                                player.api("play");
+
                             }
                         );
+
 
                         playButton.bind(
                             "click", function () {
@@ -109,6 +114,7 @@
 
             modalCarousel.on(
                 'hide.bs.modal', function () {
+                    // Reset video player
                     if (player != undefined) {
                         player.api('unload');
                     }
