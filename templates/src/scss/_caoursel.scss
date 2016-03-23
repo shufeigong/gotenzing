@@ -284,6 +284,10 @@
             .carousel-indicators {
                 position : relative;
                 bottom   : 0;
+                left: 0;
+                margin: 0;
+                width: auto;
+
                 li {
                     border           : none;
                     background-color : #fff;
@@ -433,6 +437,9 @@
             .carousel-indicators {
                 position : relative;
                 bottom   : 0;
+                left: 0;
+                margin: 0;
+                width: auto;
                 li {
                     border           : none;
                     background-color : #fff;
@@ -494,7 +501,7 @@
 
         .modal-dialog {
             width     : auto;
-            max-width : 65%;
+            max-width : 80%;
             margin    : auto;
             height    : 100%;
 
@@ -514,6 +521,9 @@
                     .carousel-indicators {
                         position : relative;
                         bottom   : 0;
+                        left: 0;
+                        margin: 0;
+                        width: auto;
                         li {
                             border           : none;
                             background-color : #fff;
