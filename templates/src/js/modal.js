@@ -210,6 +210,9 @@
                     $(this).find('.carousel-inner').hide();
                     $(this).find('.carousel-indicators').hide();
 
+                    if(player != null) {
+                        player.api('pause');
+                    }
                     // Reset video player
                     player = null;
                     isFirstCarouselModal = true;
