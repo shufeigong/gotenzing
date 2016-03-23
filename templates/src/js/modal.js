@@ -329,11 +329,7 @@
 
             modalContentBox.on(
                 'shown.bs.modal', function (event) {
-                    $('body').css('overflow', 'hidden');
-                    $(this).css('overflow', 'hidden');
-
                     var target = event.currentTarget;
-
                     $(target).find('.modal-body').css('overflow-y', 'auto');
 
                     // Set interval animation for close button
