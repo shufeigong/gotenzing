@@ -114,7 +114,7 @@
                 )
             );
 
-            $('.carousel.slide.subpage .carousel-control, .carousel.slide.popup, .carousel.slide.gallery').on(
+            $('.carousel.slide.popup, .carousel.slide.gallery').on(
                 'keyup', function (e) {
                     $(this).parent().find('.pressed').removeClass('pressed');
 
@@ -129,13 +129,6 @@
                     }
                 }
             );
-
-            // Disable carousel slide interval
-            $('.carousel').each(function(){
-                $(this).carousel({
-                     interval: false
-                 });
-            });
 
             //normal version reload page
             if (link !== "" && !isUtilityPage) {
@@ -159,7 +152,7 @@
                         var lazyVideos = $(thisItem).parent().find('.imgShow-div').find('video').lazyLoadXT();
 
                         lazyImages.last().on('lazyload', function() {
-                            $(thisItem).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                            $(thisItem).parent().find('.imgShow-div').find('.lazy-loading').fadeOut(1000);
                             $(window).resize();
 
                             var isSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo').length > 0;
@@ -370,7 +363,7 @@
 
                             $(_this).parent().find('.imgShow-div').find('.image-container:last-child').find('img[data-src]')
                                 .on('lazyload', function() {
-                                    $(_this).parent().find('.imgShow-div').find('.image-loading-icon').fadeOut(1000);
+                                    $(_this).parent().find('.imgShow-div').find('.lazy-loading').fadeOut(1000);
 
                                     $(window).resize();
 

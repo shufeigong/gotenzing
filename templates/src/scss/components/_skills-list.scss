@@ -22,6 +22,7 @@
 
 @media screen and (max-width : 639px) {
     .skills-list.no-border {
+        overflow: visible;
         .col-1 {
             padding-left: 0;
         }
@@ -36,13 +37,28 @@
             li {
                 @include font-size(1.6);
                 border-top: none;
+                margin :0;
+                padding-left: 7px;
                 &:before {
                     content: "– ";
                     text-indent: -5px;
+                    display: inline-block;
+
                 }
 
                 &:last-child {
                     border-bottom: none;
+                }
+
+                div {
+                    padding :0;
+                    margin-left: 11px;
+                    width: 96%;
+                }
+
+                div:first-child {
+                    display: inline-block;
+                    margin-left: 0;
                 }
             }
         }

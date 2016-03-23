@@ -67,14 +67,16 @@ $yellow-background : rgba(247, 168, 0, 0.5);
         bottom             : 20px;
         z-index            : 999;
         text-indent        : -999999px;
-        width              : 30px;
-        height             : 30px;
+        width: 29px;
+        height: 29px;
         border             : none;
         background         : url("/templates/dist/img/slider-video-play.svg") no-repeat;
         cursor             : pointer;
         background-color   : $grey-background;
-        padding-bottom     : 29px;
-        border-radius      : 5px;
+        border-radius      : 3px;
+        padding: 0;
+        background-size: 31px 31px;
+        background-position: -1px -1px;
 
         -webkit-transition : background-color 0.5s ease;
         -moz-transition    : background-color 0.5s ease;
@@ -85,9 +87,11 @@ $yellow-background : rgba(247, 168, 0, 0.5);
         &.playing {
             background       : url("/templates/dist/img/slider-video-pause.svg") no-repeat;
             background-color : $grey-background;
-            padding-bottom   : 30px;
-            border-radius    : 5px;
-            bottom           : 19px;
+            padding: 0;
+            background-size: 31px 31px;
+            background-position: -1px -1px;
+            border-radius    : 3px;
+            bottom           : 20px;
 
             &:hover {
                 background-color : $yellow-background;

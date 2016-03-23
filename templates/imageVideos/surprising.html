@@ -1,5 +1,5 @@
 <div id="surprising-image-video" class="imageVideo">
-    <img class="image-loading-icon" src="/templates/dist/img/loading.gif" alt="Loading icon" width="128" height="128"/>
+    <img class="lazy-loading" src="/templates/dist/img/ajax-loader.gif" alt="Loader">
     <div class="progressBar"></div>
     <div id="surprising-container" class="image-wrap">
         <div class="image-container">
@@ -7,7 +7,7 @@
                  data-src="/templates/dist/img/surprising/Arowhon_Panorama-NEW.jpg" alt="Arowhon Canoe" width="4199" height="738" />
         </div>
         <div class="image-container">
-            <video style="border:none;" data-start="19" width="640" height="480" muted>
+            <video class="video" style="border:none;" data-start="19" width="640" height="480" muted>
                 <source data-src="/templates/src/videos/EY_480p_CLIPCHAMP_360p.mp4" />
             </video>
         </div>
@@ -19,16 +19,12 @@
             <img class="image-item lazy" data-effect="zoom-in-down" data-scale="best-fill" data-align="top-left" data-pan="zoom" data-src="/templates/dist/img/surprising/EY-Filming.jpg" alt="EY Filming" width="2195" height="2195" />
         </div>
         <div class="image-container">
-            <video style="border:none;" data-start="0" width="640" height="480" muted>
+            <video class="lazy" style="border:none;" data-start="0" width="640" height="480" muted>
                 <source data-src="/templates/src/videos/StJoes.mp4" />
             </video>
         </div>
         <div class="image-container">
-            <img class="image-item lazy" data-effect="zoom-out" data-scale="best-fill" data-align="top-left"
-                 data-src="/templates/dist/img/surprising/Bruce_Poster-NEW.jpg" alt="Bruce Poster" width="4877" height="2825" />
-        </div>
-        <div class="image-container">
-            <video class="fit-height" data-start="11" style="border:none;" width="640" height="480" muted>
+            <video class="lazy" data-start="11" style="border:none;" width="640" height="480" muted>
                 <source data-src="/templates/src/videos/citi_480p_CLIPCHAMP_360p.mp4" />
             </video>
         </div>

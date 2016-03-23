@@ -5,34 +5,48 @@
             var modalFullscreen = $(".modal.modal-fullscreen");
             var modalPopup = $('.modal.popup');
             var modalContentBox = $('.modal.modal-content-box');
-            var carouselSubpage = $('.carousel.slide.subpage,.carousel.slide.mobile');
             var player;
             var isFirstCarouselModal = true;
-            var closeButtonTl = new TimelineMax({
-                repeat: -1,
-                repeatDelay: 5,
-                yoyo: true
-            });
-
-            carouselSubpage.on(
-                'slide.bs.carousel', function (event) {
-                    var lazy;
-                    lazy = $(event.relatedTarget).find("img[data-original]");
-                    lazy.attr("src", lazy.data('original'));
-                    lazy.removeAttr("data-original");
+            var closeButtonTl = new TimelineMax(
+                {
+                    repeat: -1,
+                    repeatDelay: 5,
+                    yoyo: true
                 }
             );
 
             modalCarousel.on(
                 'slide.bs.carousel', function (event) {
-                    var lazy;
-                    lazy = $(event.relatedTarget).find("img[data-original]");
-                    lazy.attr("src", lazy.data('original'));
-                    lazy.removeAttr("data-original");
+                    var target = event.relatedTarget;
+                    var lazy = $(target).find('.lazy');
+                    var src = lazy.attr('data-src');
 
-                    lazy.on('load',function(){
-                        lazy.removeClass('lazy').addClass('lazy-loaded');
-                    });
+                    if (src !== "") {
+                        var carousel = $(this).find('.carousel-inner').hide();
+                        var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                        var loader = $('.modal-body', this).find('.lazy-loading');
+                        loader.show();
+
+                        var d = $.Deferred();
+                        var datasrc;
+
+                        datasrc = lazy.attr('data-src');
+                        if (datasrc) {
+                            d = $.Deferred();
+
+                            lazy.one('load', d.resolve)
+                                .attr("src", datasrc)
+                                .attr('data-src', '');
+                        }
+
+                        $.when(d).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                carousel.fadeIn(1000);
+                                carouselIndicators.fadeIn(1000);
+                            }
+                        );
+                    }
 
                 }
             );
@@ -42,28 +56,16 @@
                     // video play button function
                     var target = event.relatedTarget;
                     var isVideo = $(target).find('.videoWrapper').length > 0;
+                    var playButton = $(target).find('.video-play-button');
 
                     // If the content is video
                     if (isVideo) {
                         var iframe = $(target).find('iframe').get(0);
-                        var isVideoLoaded = $(iframe).hasClass('lazy-loaded');
-
-                        if(!isVideoLoaded) {
-                            $(target).find('.videoWrapper').find('iframe[data-src]').lazyLoadXT();
-                        }
 
                         player = $f(iframe);
-                        var playButton = $(target).find('.video-play-button');
-
                         player.addEvent(
                             'ready', function () {
-                                $(target).find('.videoWrapper .video-loading-icon').fadeOut();
                                 $(target).find('.videoWrapper .video-play-button').fadeIn();
-
-                                //if (isFirstCarouselModal) {
-                                //    player.api("play");
-                                //    isFirstCarouselModal = false;
-                                //}
 
                                 player.addEvent(
                                     'pause', function () {
@@ -76,12 +78,9 @@
                                         playButton.fadeOut();
                                     }
                                 );
-
                                 player.api("play");
-
                             }
                         );
-
 
                         playButton.bind(
                             "click", function () {
@@ -90,15 +89,47 @@
                         );
 
                     } else {
-                        if (player != undefined) {
+                        if (player != null) {
                             player.api('pause');
                         }
                     }
+
                 }
             );
 
             modalCarousel.on(
                 'show.bs.modal', function (event) {
+                    var $this = $(this);
+                    var carousel = $(this).find('.carousel-inner').hide();
+                    var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                    var loader = $('.modal-body', this).find('.lazy-loading');
+
+                    var targetIndex = $(event.relatedTarget).attr('data-slide-to');
+
+                    var item = $('.carousel-inner', this).find('.item').eq(targetIndex);
+                    var lazy = $(item).find('.lazy');
+                    var d = $.Deferred();
+                    var datasrc;
+
+                    datasrc = lazy.attr('data-src');
+                    if (datasrc) {
+                        d = $.Deferred();
+
+                        lazy.one('load', d.resolve)
+                            .attr("src", datasrc)
+                            .attr('data-src', '');
+                    }
+
+                    $.when(d).done(
+                        function () {
+                            loader.fadeOut(1000);
+                            carousel.fadeIn(1000);
+                            carouselIndicators.fadeIn(1000);
+
+                            $this.trigger('slid');
+                        }
+                    );
+
                     var zIndex = 3040 + (10 * $('.modal:visible').length);
                     $(this).css('z-index', zIndex);
                     $('body').css('overflow', 'hidden');
@@ -108,18 +139,79 @@
                             $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
                         }, 0
                     );
+
+                    //var carousel = $(this).find('.carousel-inner').hide();
+                    //var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                    //
+                    //var deferreds = [];
+                    //var lazies = $('.carousel-inner', this).find('.lazy');
+                    //var loader = $('.modal-body', this).find('.lazy-loading');
+                    //
+                    //// loop over each img
+                    //lazies.each(
+                    //    function () {
+                    //        var self = $(this);
+                    //        var _self = this;
+                    //        var datasrc, d;
+                    //
+                    //        if (self.hasClass('video')) {
+                    //            datasrc = self.children('source').attr('data-src');
+                    //            if (datasrc) {
+                    //                self.children('source')
+                    //                    .attr("src", datasrc)
+                    //                    .attr('data-src', '');
+                    //
+                    //                _self.load();
+                    //            }
+                    //        } else {
+                    //            datasrc = self.attr('data-src');
+                    //            if (datasrc) {
+                    //                d = $.Deferred();
+                    //
+                    //                self.one('load', d.resolve)
+                    //                    .attr("src", datasrc)
+                    //                    .attr('data-src', '');
+                    //
+                    //                deferreds.push(d.promise());
+                    //            }
+                    //        }
+                    //    }
+                    //);
+                    //
+                    //$.when.apply($, deferreds).done(
+                    //    function () {
+                    //        loader.fadeOut(1000);
+                    //        carousel.fadeIn(1000);
+                    //        carouselIndicators.fadeIn(1000);
+                    //    }
+                    //);
                 }
             );
 
             modalCarousel.on(
-                'hide.bs.modal', function () {
-                    // Reset video player
-                    if (player != undefined) {
-                        player.api('unload');
-                    }
+                'shown.bs.modal', function (event) {
+                    // Disable carousel slide interval
+                    $('.carousel.fade.in').each(
+                        function () {
+                            $(this).carousel(
+                                {
+                                    interval: false
+                                }
+                            );
+                        }
+                    );
+                }
+            );
 
+            modalCarousel.on(
+                'hide.bs.modal', function (event) {
                     $('body').css('overflow', 'auto');
 
+                    $(this).find('.carousel-inner').hide();
+                    $(this).find('.carousel-indicators').hide();
+
+                    // Reset video player
+                    player = null;
                     isFirstCarouselModal = true;
                 }
             );
@@ -139,16 +231,10 @@
                 }
             );
 
-            modalPopup.on(
-                'show.bs.modal', function (event) {
-                    console.log('popup mobile show');
-                }
-            );
-
             modalFullscreen.on(
                 'shown.bs.modal', function (event) {
                     $('body').css('overflow', 'hidden');
-                    $(this).css({'overflow':'hidden'});
+                    $(this).css({'overflow': 'hidden'});
 
                     var target = event.currentTarget;
 
@@ -157,57 +243,62 @@
                         var $window         = $(window),
                             mapInstances    = [],
                             $pluginInstance = $('#toronto-map, #london-map').lazyLoadGoogleMaps(
-                            {
-                                api_key: 'AIzaSyD_VREr-We898pVftz2T3c9EU7kKkylSPs',
-                                callback: function (container, map) {
-                                    var $container = $(container),
-                                        center     = new google.maps.LatLng($container.attr('data-lat'), $container.attr('data-lng'));
+                                {
+                                    api_key: 'AIzaSyD_VREr-We898pVftz2T3c9EU7kKkylSPs',
+                                    callback: function (container, map) {
+                                        var $container = $(container),
+                                            center     = new google.maps.LatLng($container.attr('data-lat'), $container.attr('data-lng'));
 
-                                    map.setOptions({zoom: 15, center: center});
-                                    new google.maps.Marker(
-                                        {
-                                            position: center,
-                                            map: map,
-                                            animation: google.maps.Animation.DROP,
-                                            draggable: true
+                                        map.setOptions({zoom: 15, center: center});
+                                        new google.maps.Marker(
+                                            {
+                                                position: center,
+                                                map: map,
+                                                animation: google.maps.Animation.DROP,
+                                                draggable: true
+                                            }
+                                        );
+
+                                        $.data(map, 'center', center);
+                                        mapInstances.push(map);
+                                    }
+                                }
+                            );
+
+                        $window.on(
+                            'resize', $pluginInstance.debounce(
+                                1000, function () {
+                                    $.each(
+                                        mapInstances, function () {
+                                            this.setCenter($.data(this, 'center'));
                                         }
                                     );
-
-                                    $.data( map, 'center', center );
-                                    mapInstances.push( map );
                                 }
-                            }
+                            )
                         );
-
-
-                        $window.on('resize',$pluginInstance.debounce( 1000, function()
-                        {
-                            $.each( mapInstances, function()
-                            {
-                                this.setCenter( $.data( this, 'center' ) );
-                            });
-                        }));
                     }
 
                     $(target).find('.modal-body').css('overflow-y', 'auto');
 
                     // Set interval animation for close button
                     closeButtonTl.clear();
-                    closeButtonTl.add(TweenMax.to(
-                        $(target).find('.utility-close-button'), 2, {
-                            "rotation": 360,
-                            transformOrigin:"50% 50%",
-                            ease:Sine.easeInOut
-                        }
-                    ));
+                    closeButtonTl.add(
+                        TweenMax.to(
+                            $(target).find('.utility-close-button'), 2, {
+                                "rotation": 360,
+                                transformOrigin: "50% 50%",
+                                ease: Sine.easeInOut
+                            }
+                        )
+                    );
 
                     $(target).find('.utility-close-icon').hover(
                         function () {
                             TweenMax.to(
                                 $(target).find('.utility-close-button'), 0.5, {
                                     "rotation": 90,
-                                    transformOrigin:"50% 50%",
-                                    ease:Back.easeOut
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
                                 }
                             );
 
@@ -215,8 +306,8 @@
                             TweenMax.to(
                                 $(target).find('.utility-close-button'), 0.5, {
                                     "rotation": 0,
-                                    transformOrigin:"50% 50%",
-                                    ease:Back.easeOut
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
                                 }
                             );
                         }
@@ -231,23 +322,28 @@
                     $(this).css('overflow', 'hidden');
 
                     var target = event.currentTarget;
+
+                    $(target).find('.modal-body').css('overflow-y', 'auto');
+
                     // Set interval animation for close button
                     closeButtonTl.clear();
-                    closeButtonTl.add(TweenMax.to(
-                        $(target).find('.utility-close-button'), 2, {
-                            "rotation": 360,
-                            transformOrigin:"50% 50%",
-                            ease:Sine.easeInOut
-                        }
-                    ));
+                    closeButtonTl.add(
+                        TweenMax.to(
+                            $(target).find('.utility-close-button'), 2, {
+                                "rotation": 360,
+                                transformOrigin: "50% 50%",
+                                ease: Sine.easeInOut
+                            }
+                        )
+                    );
 
                     $(target).find('.utility-close-icon').hover(
                         function () {
                             TweenMax.to(
                                 $(target).find('.utility-close-button'), 0.5, {
                                     "rotation": 90,
-                                    transformOrigin:"50% 50%",
-                                    ease:Back.easeOut
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
                                 }
                             );
 
@@ -255,8 +351,8 @@
                             TweenMax.to(
                                 $(target).find('.utility-close-button'), 0.5, {
                                     "rotation": 0,
-                                    transformOrigin:"50% 50%",
-                                    ease:Back.easeOut
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
                                 }
                             );
                         }

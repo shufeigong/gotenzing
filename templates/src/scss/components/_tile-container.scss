@@ -31,7 +31,7 @@ $border-color : #b9b8ba;
             transition : all .3s linear;
         }
 
-        &:hover:not(&.tile-disable) {
+        &:hover {
             &:before {
                 content    : "";
                 display    : block;
@@ -43,11 +43,26 @@ $border-color : #b9b8ba;
                 background : rgba(247, 168, 0, 0.5);
                 transition : all .3s linear;
             }
-
         }
 
         &.no-border {
             border :none;
+        }
+    }
+
+    .tile-item.tile-disable {
+        &:hover {
+            &:before {
+                content    : "";
+                display    : block;
+                position   : absolute;
+                top        : 0;
+                bottom     : 0;
+                left       : 0;
+                right      : 0;
+                background : transparent;
+                transition : all .3s linear;
+            }
         }
     }
 }
