@@ -38,11 +38,11 @@
                 @include font-size(1.6);
                 border-top: none;
                 margin :0;
-                padding-left: 7px;
+                //padding-left: 7px;
                 &:before {
-                    content: "– ";
-                    text-indent: -5px;
-                    display: inline-block;
+                    //content: "– ";
+                    //text-indent: -5px;
+                    //display: inline-block;
 
                 }
 
@@ -52,7 +52,7 @@
 
                 div {
                     padding :0;
-                    margin-left: 11px;
+                    //margin-left: 11px;
                     width: 96%;
                 }
 
