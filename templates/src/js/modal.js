@@ -100,35 +100,43 @@
             modalCarousel.on(
                 'show.bs.modal', function (event) {
                     var $this = $(this);
-                    var carousel = $(this).find('.carousel-inner').hide();
-                    var carouselIndicators = $(this).find('.carousel-indicators').hide();
-                    var loader = $('.modal-body', this).find('.lazy-loading');
-
                     var targetIndex = $(event.relatedTarget).attr('data-slide-to');
 
                     var item = $('.carousel-inner', this).find('.item').eq(targetIndex);
                     var lazy = $(item).find('.lazy');
-                    var d = $.Deferred();
-                    var datasrc;
+                    var src = lazy.attr('data-src');
 
-                    datasrc = lazy.attr('data-src');
-                    if (datasrc) {
-                        d = $.Deferred();
+                    if (src !== "") {
+                        var carousel = $(this).find('.carousel-inner').hide();
+                        var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                        var loader = $('.modal-body', this).find('.lazy-loading');
 
-                        lazy.one('load', d.resolve)
-                            .attr("src", datasrc)
-                            .attr('data-src', '');
-                    }
+                        var d = $.Deferred();
+                        var datasrc;
 
-                    $.when(d).done(
-                        function () {
-                            loader.fadeOut(1000);
-                            carousel.fadeIn(1000);
-                            carouselIndicators.fadeIn(1000);
+                        datasrc = lazy.attr('data-src');
+                        if (datasrc) {
+                            d = $.Deferred();
 
-                            $this.trigger('slid');
+                            lazy.one('load', d.resolve)
+                                .attr("src", datasrc)
+                                .attr('data-src', '');
                         }
-                    );
+
+                        $.when(d).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                carousel.fadeIn(1000);
+                                carouselIndicators.fadeIn(1000);
+
+                                $this.trigger('slid');
+                            }
+                        );
+
+                    } else {
+                        $(this).find('.carousel-inner').show();
+                        $(this).find('.carousel-indicators').show();
+                    }
 
                     var zIndex = 3040 + (10 * $('.modal:visible').length);
                     $(this).css('z-index', zIndex);
