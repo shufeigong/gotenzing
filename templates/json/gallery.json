@@ -428,8 +428,8 @@
         "original_image": "OSL_Video_1407x875.png",
         "thumbnail_image": "OSL_Video_119x119.jpg",
         "caption": "",
-        "isVideo": false,
-        "videoSrc": ""
+        "isVideo": true,
+        "videoSrc": "https://player.vimeo.com/video/87598249?api=1"
     },
     {
         "id": 41,
