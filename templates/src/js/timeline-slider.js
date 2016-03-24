@@ -202,7 +202,7 @@ var tmax_options = {
                                         $video.api('setVolume', 0);
                                         $video.api('setColor', '#f7a800');
                                         $video.api('seekTo', startTime);
-                                        $video.api("play");
+                                        //$video.api("play");
                                     }
                                 );
 

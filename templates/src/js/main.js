@@ -283,7 +283,6 @@
 
                 isFirstClick = false;
 
-
             } else if (link !== "" && isUtilityPage) {
                 // If the page is utility page with the orange menu down
                 $(".arrow-down, .extension-header").slideDown();

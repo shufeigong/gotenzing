@@ -3,7 +3,6 @@
         function () {
             var modalCarousel = $('.modal.carousel.slide.gallery, .modal.carousel.slide.popup');
             var modalFullscreen = $(".modal.modal-fullscreen");
-            var modalPopup = $('.modal.popup');
             var modalContentBox = $('.modal.modal-content-box');
             var player;
             var isFirstCarouselModal = true;
@@ -295,7 +294,7 @@
                         );
                     }
 
-                    $(target).find('.modal-body').css('overflow-y', 'auto');
+                    //$(target).find('.modal-body').css('overflow-y', 'auto');
 
                     // Set interval animation for close button
                     closeButtonTl.clear();
@@ -376,9 +375,8 @@
 
             modalFullscreen.on(
                 'hide.bs.modal', function (event) {
-                    $('body').removeClass('full-screen-modal-open');
-
-                    $(event.currentTarget).find('.modal-body').css('overflow-y', '');
+                    //$('body').removeClass('full-screen-modal-open');
+                    //$(event.currentTarget).find('.modal-body').css('overflow-y', '');
 
                     closeButtonTl.clear();
                 }
@@ -386,15 +384,10 @@
 
             modalFullscreen.on(
                 'hidden.bs.modal', function (event) {
-                    $('body').css('overflow', 'auto');
+                    //$('body').css('overflow', 'auto');
                 }
             );
 
-            modalPopup.on(
-                'hidden.bs.modal', function (event) {
-                    $('body').css('overflow', 'auto');
-                }
-            );
         }
     );
 
