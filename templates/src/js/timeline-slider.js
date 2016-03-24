@@ -206,6 +206,7 @@ var tmax_options = {
                                     }
                                 );
 
+
                             }});
                             tl.to(value, 2, {"autoAlpha": 1}, '-=7');
 

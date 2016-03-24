@@ -294,7 +294,7 @@
                 $('.div-iconlist').find('#utility-' + link).parent().addClass('orange');
                 $(".modal#" + link).modal('show');
 
-                $('body').addClass('full-screen-modal-open');
+                //$('body').addClass('full-screen-modal-open');
 
                 if (link == 'gallery-legacy') {
                     showGallery();

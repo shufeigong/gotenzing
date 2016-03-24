@@ -235,10 +235,12 @@
                     // Close open modal box
                     $(".modal-fullscreen.fade.in").modal('hide');
 
-                    $('body').addClass('full-screen-modal-open');
+                    //$('body').addClass('full-screen-modal-open');
 
-                    var zIndex = 1040 + (10 * $('.modal:visible').length);
-                    $(this).css('z-index', zIndex);
+                    //var zIndex = 1040 + (10 * $('.modal:visible').length);
+                    //$(this).css('z-index', zIndex);
+                    //
+                    //$('.entry-content').css('z-index', -1);
 
                     $(this).focus();
                 }
@@ -246,8 +248,8 @@
 
             modalFullscreen.on(
                 'shown.bs.modal', function (event) {
-                    $('body').css('overflow', 'hidden');
-                    $(this).css({'overflow': 'hidden'});
+                    //$('body').css('overflow', 'hidden');
+                    //$(this).css({'overflow': 'hidden'});
 
                     var target = event.currentTarget;
 
@@ -274,6 +276,8 @@
 
                                         $.data(map, 'center', center);
                                         mapInstances.push(map);
+
+                                        $container.find('.lazy-loading').fadeOut();
                                     }
                                 }
                             );
