@@ -1,0 +1,7 @@
+.contact-map {
+    @include font-size(1.4);
+    overflow: hidden;
+    .map-container {
+        padding-left: 0;
+    }
+}

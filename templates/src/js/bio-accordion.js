@@ -10,7 +10,7 @@
                 .toggleClass('accordion-close accordion-open');
         }
 
-        $('#accordion, #mobile-accordion').on('hide.bs.collapse', toggleSign);
-        $('#accordion, #mobile-accordion').on('show.bs.collapse', toggleSign);
+        $('#accordion').on('hide.bs.collapse', toggleSign);
+        $('#accordion').on('show.bs.collapse', toggleSign);
     });
 })(jQuery);

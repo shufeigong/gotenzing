@@ -1,14 +1,15 @@
 <div class="sub-container">
-    <div class="text-div col-md-6 col-sm-6 pull-left">
+    <div class="text-div col-md-5 col-sm-5 col-xs-10 pull-left">
+        <h1 class="mobile-title visible-xs">WHOSWHO</h1>
+
         <p>
             We do important work for hospitals, financial institutions, municipalities, business-to-business companies,
             retailers, tech companies, not-for-profits, consumer products, b2b services and the good of humankind as
-            often
-            as we can.
+            often as we can.
         </p>
         <br />
 
-        <a href="#" style="position:relative;display:inline-block; height: 27px;" class="sub-link whoswho-link"
+        <a href="javascript:void(0)" style="position:relative;display:inline-block; height: 27px;" class="sub-link whoswho-link"
            data-target=".modal#current-client" data-toggle="modal">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 30 27" style="enable-background:new 0 0 29 29; width:29px; height:29px; display: inline-block; top:-10px;" xml:space="preserve">
@@ -45,10 +46,10 @@
 
         <br /><br />
 
-        <a href="#" style="position:relative;display:inline-block;height: 27px;" class="sub-link whoswho-link"
+        <a href="javascript:void(0)" style="position:relative;display:inline-block;height: 27px;" class="sub-link whoswho-link"
            data-target=".modal#legacy-client" data-toggle="modal">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 27" style="enable-background:new 0 0 29 29; width:29px; height:29px; display: inline-block; top:-10px;" xml:space="preserve">
+	 viewBox="0 0 30 27" style="enable-background:new 0 0 29 29; width:29px; height:29px; display: inline-block; margin-left: -2px;" xml:space="preserve">
 <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c067 79.157747, 2015/03/30-23:40:42        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -75,18 +76,14 @@
 </g>
 </svg>
             <span style="display: inline-block;
-    margin-left: 5px;
+    margin-left: 8px;
     margin-top: -25px;
     vertical-align: middle;">WHO Legacy</span>
         </a>
     </div>
 
-    <div class="imgShow-div col-md-6 col-sm-6 pull-right">
-        <div class="sub-img-container">
-                <div data-target=".modal#current-client" data-toggle="modal">
-                    <img class="lazy" src="/templates/dist/img/554x237/TZ_WhosWho_554x237.jpg" alt="Our clients" width="554" height="237"/>
-                </div>
-            </div>
+    <div class="imgShow-div col-md-6 col-sm-6 col-xs-10 pull-right">
+        {% include 'tiles/whoswho.html' %}
     </div>
 
 </div>

@@ -9,8 +9,7 @@
     }
 }
 
-/////1000px~////////////////////////////////
-@media screen and (min-width : 1000px) {
+@media screen and (min-width : 1040px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -19,18 +18,18 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height: 0.9;
-                    position: relative;
+                    line-height : 0.9;
+                    position    : relative;
 
                     > a {
                         display        : inline-block;
-                        margin-left    : 25px;
+                        margin-left    : 30px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
                         overflow       : hidden;
-                        vertical-align: middle;
+                        vertical-align : middle;
 
                         .grey {
                             color : $main-menu-light-grey;
@@ -45,10 +44,6 @@
 
                         &:hover, &:focus {
                             text-decoration : none;
-                            //color           : #f7a800;
-                            //.grey {
-                            //    color : #ffe0ae;
-                            //}
                         }
                     }
 
@@ -68,66 +63,104 @@
                         position : relative;
                         overflow : hidden;
                         height   : 0;
+                        width    : 96%;
+
+                        &.is-active {
+                            overflow : inherit;
+                        }
 
                         .sub-close-icon {
-                            background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width: 30px;
-                            height: 30px;
-                            display: inline-block;
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            z-index: 6;
-                            transition: transform 0.3s;
+                            width      : 30px;
+                            height     : 30px;
+                            display    : inline-block;
+                            position   : absolute;
+                            left       : 8px;
+                            top        : -8px;
+                            z-index    : 6;
 
-                            background-size: 15px 15px;
-                            background-position: 50% 50%;
+                            .subpage-close-button {
+                                width    : 16px;
+                                height   : 16px;
+
+                                position : absolute;
+                                top      : calc(50% - 7px);
+                                left     : calc(50% - 7px);
+                            }
 
                             &:hover, &:active {
-                                transform: rotate(90deg);
-                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
-                                background-size: 15px 15px;
-                                background-position: 50% 50%;
+                                .subpage-close-button {
+                                    .st0, .st1 {
+                                        stroke : #f7a800;
+                                    }
+                                }
                             }
                         }
 
                         .sub-container {
-                            display: inline-block;
-                            margin-top    : 1px;
-                            margin-bottom : 10px;
-                            border-top    : solid 1px $main-menu-light-grey;
-                            border-bottom : solid 1px $main-menu-light-grey;
-                            min-height    : 237px;
-                            width: 100%;
+                            display       : inline-block;
+                            margin        : 7px 0 10px 30px;
+                            border-top    : 1px solid $main-menu-light-grey;
+                            border-bottom : 1px solid $main-menu-light-grey;
+                            border-right  : 1px solid $main-menu-light-grey;
+                            padding       : 5px 5px 5px 0;
+
+                            min-height    : 250px;
 
                             .text-div {
                                 display       : inline-block;
-                                width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
-                                margin-left   : 25px;
                                 padding       : 0;
+                                width: 43%;
                                 @include font-size(1.4);
                                 a {
-                                    color : $text-grey;
+                                    color              : $text-grey;
+
+                                    -webkit-transition : all 0.25s;
+                                    -moz-transition    : all 0.25s;
+                                    -ms-transition     : all 0.25s;
+                                    -o-transition      : all 0.25s;
+                                    transition         : all 0.25s;
+
                                     &:hover, &:focus {
                                         text-decoration : none;
                                         span {
-                                            text-decoration: underline;
+                                            text-decoration : underline;
                                         }
                                     }
+
+                                    .social-icon-text {
+                                        display        : inline-block;
+                                        margin-left    : 5px;
+                                        margin-top     : -15px;
+                                        vertical-align : middle;
+                                        width          : 87%;
+                                        line-height    : 1.2;
+                                    }
                                 }
+
+                                .social-icon-button {
+                                    width : 100%;
+                                }
+
+                                .content-link {
+                                    text-decoration : underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
+                                    }
+                                }
+
                                 p {
-                                    line-height: 1.5;
-                                    color: $text-grey;
+                                    line-height : 1.5;
+                                    color       : $text-grey;
                                 }
                             }
 
                             .imgShow-div {
                                 margin  : auto;
-                                width   : 45%;
                                 height  : auto;
                                 padding : 0;
+
                                 ul {
                                     list-style : disc;
                                     li {
@@ -144,7 +177,7 @@
                                 .sub-img-container {
                                     height : 100%;
                                     div {
-                                        cursor: pointer;
+                                        cursor : pointer;
                                     }
                                     img {
                                         float : right;
@@ -155,6 +188,7 @@
                                     width  : 100%;
                                     height : auto;
                                 }
+
                             }
 
                         }
@@ -169,8 +203,7 @@
 
 }
 
-////640~999px///////////////////////////////////////////////////
-@media screen and (min-width : 0) and (max-width : 999px) {
+@media screen and (min-width : 640px) and (max-width : 1039px) {
     .entry-content {
         margin-top : 30px;
         .main-menu {
@@ -179,17 +212,17 @@
                 list-style : none;
                 padding    : 0;
                 > li {
-                    line-height: 0.9;
+                    line-height : 0.9;
 
                     > a {
                         display        : inline-block;
-                        margin-left    : 25px;
+                        margin-left    : 30px;
                         @include font-size(6.7);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
-                        vertical-align: middle;
-                        overflow : hidden;
+                        vertical-align : middle;
+                        overflow       : hidden;
                         .grey {
                             color : $main-menu-light-grey;
                         }
@@ -224,70 +257,102 @@
                         position : relative;
                         overflow : hidden;
                         height   : 0;
+                        width    : 96%;
+
+                        &.is-active {
+                            overflow : inherit;
+                        }
 
                         .sub-close-icon {
-                            background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-                            width: 30px;
-                            height: 30px;
-                            display: inline-block;
-                            position: absolute;
-                            right: 0;
-                            top: 0;
-                            z-index: 6;
+                            width      : 30px;
+                            height     : 30px;
+                            display    : inline-block;
+                            position   : absolute;
+                            left       : 8px;
+                            top        : -8px;
+                            z-index    : 6;
 
-                            background-size: 15px 15px;
-                            background-position: 50% 50%;
+                            .subpage-close-button {
+                                width    : 16px;
+                                height   : 16px;
+
+                                position : absolute;
+                                top      : calc(50% - 7px);
+                                left     : calc(50% - 7px);
+                            }
                             &:hover, &:active {
-                                background : url(../../dist/img/sub-close-icon-hover.svg) no-repeat;
 
-                                background-size: 15px 15px;
-                                background-position: 50% 50%;
+                                .subpage-close-button {
+                                    .st0, .st1 {
+                                        stroke : #f7a800;
+                                    }
+                                }
                             }
                         }
 
                         .sub-container {
-                            display: inline-block;
-                            margin-top    : 1px;
-                            margin-bottom : 10px;
-                            border-top    : solid 1px $main-menu-light-grey;
-                            border-bottom : solid 1px $main-menu-light-grey;
-                            min-height    : 239px;
-                            width: 100%;
+                            display       : inline-block;
+                            margin        : 7px 0 10px 30px;
+
+                            border-top    : 1px solid $main-menu-light-grey;
+                            border-bottom : 1px solid $main-menu-light-grey;
+                            border-right  : 1px solid $main-menu-light-grey;
+
+                            padding       : 5px 5px 5px 0;
+
+                            min-height    : 250px;
                             .text-div {
                                 display       : inline-block;
-                                width         : 45%;
                                 margin-top    : 10px;
                                 margin-bottom : 10px;
-                                margin-left   : 25px;
                                 padding       : 0;
                                 @include font-size(1.4);
                                 line-height   : 1.5;
                                 color         : $text-grey;
                                 a {
                                     color : $text-grey;
+
                                     &:hover, &:focus {
                                         text-decoration : none;
 
                                         span {
-                                            text-decoration: underline;
+                                            text-decoration : underline;
                                         }
 
                                     }
+
+                                    .social-icon-text {
+                                        display        : inline-block;
+                                        margin-left    : 40px;
+                                        margin-top     : -50px;
+                                        vertical-align : middle;
+                                        line-height    : 1.2;
+                                    }
+                                }
+
+                                .social-icon-button {
+                                    width : 100%;
+                                }
+
+                                .content-link {
+                                    text-decoration : underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
+                                    }
                                 }
                                 p {
-                                    line-height   : 1.5;
-                                    color         : $text-grey;
+                                    line-height : 1.5;
+                                    color       : $text-grey;
                                 }
                             }
                             .imgShow-div {
                                 margin  : auto;
-                                width   : 45%;
                                 height  : auto;
                                 padding : 0;
                                 .sub-img-container {
                                     height : 100%;
                                     div {
-                                        cursor: pointer;
+                                        cursor : pointer;
                                     }
                                     img {
                                         float : right;
@@ -313,17 +378,214 @@
 }
 
 ////////////////~640px////////////////////////
-@media screen and (max-width : 640px) {
+@media screen and (max-width : 639px) {
     .entry-content {
+        margin-top : 30px;
+        .main-menu {
+            margin : 70px auto 0 auto;
+            ul {
+                list-style : none;
+                padding    : 0;
+                > li {
+                    line-height : 0.9;
+
+                    > a {
+                        display        : inline-block;
+                        margin-left    : 30px;
+                        @include font-size(6.7);
+                        font-family    : $font-site-bold;
+                        color          : $main-menu-dark-grey;
+                        text-transform : uppercase;
+                        vertical-align : middle;
+                        overflow       : hidden;
+                        .grey {
+                            color : $main-menu-light-grey;
+                        }
+                        &.orange {
+                            color : #f7a800 !important;
+                            .grey {
+                                color : #ffe0ae !important;
+                            }
+                        }
+
+                        &:hover, &:focus {
+                            text-decoration : none;
+                            .grey {
+                                //color : #ffe0ae;
+                            }
+                        }
+
+                    }
+                    #engaging, #integrating, #spending {
+                        color : $main-menu-light-grey;
+                        &.orange {
+                            color : #f7a800 !important;
+                            .grey {
+                                color : #f7a800 !important;
+                            }
+                        }
+                        &:hover, &:focus {
+                            text-decoration : none;
+                        }
+                    }
+                    .page-content {
+                        overflow   : hidden;
+                        height     : 0;
+
+                        background : #ffffff;
+                        position   : absolute;
+                        z-index    : 100;
+
+                        &.is-active {
+                            overflow : inherit;
+                        }
+
+                        .sub-close-icon {
+                            width      : 30px;
+                            height     : 30px;
+                            display    : inline-block;
+                            position   : absolute;
+                            left       : 5px;
+                            top        : 10px;
+                            z-index    : 6;
+
+                            .subpage-close-button {
+                                width    : 16px;
+                                height   : 16px;
+
+                                position : absolute;
+                                top      : calc(50% - 7px);
+                                left     : calc(50% - 7px);
+                            }
+                            &:hover, &:active {
+                                .subpage-close-button {
+                                    .st0, .st1 {
+                                        stroke : #f7a800;
+                                    }
+                                }
+                            }
+                        }
+
+                        .sub-container {
+                            display       : inline-block;
+                            margin-top    : 7px;
+                            margin-bottom : 10px;
+                            border-top    : 0;
+                            border-bottom : 0;
+                            min-height    : 250px;
+                            width         : 100%;
+                            .text-div {
+                                display     : block;
+                                margin      : 10px auto;
+                                padding     : 0;
+
+                                @include font-size(1.4);
+                                line-height : 1.5;
+                                color       : $text-grey;
+
+                                float       : none !important;
+
+                                .mobile-title {
+                                    margin-top    : 20px;
+                                    margin-bottom : 25px;
+                                    @include font-size(4.1);
+                                    color         : #f7a800;
+                                }
+
+                                a {
+                                    color              : $text-grey;
+
+                                    -webkit-transition : all 0.25s;
+                                    -moz-transition    : all 0.25s;
+                                    -ms-transition     : all 0.25s;
+                                    -o-transition      : all 0.25s;
+                                    transition         : all 0.25s;
+
+                                    &:hover, &:focus {
+                                        text-decoration : none;
+
+                                        span {
+                                            text-decoration : underline;
+                                        }
+                                    }
+                                }
+
+                                .social-icon-button {
+                                    width : 100%;
+                                    svg {
+                                        float : left;
+                                    }
+
+                                    .social-icon-text {
+                                        float          : left;
+
+                                        display        : inline-block;
+                                        margin-left    : 10px;
+                                        margin-top     : 7px;
+                                        vertical-align : middle;
+                                        width          : 85%;
+                                    }
+                                }
+
+                                .content-link {
+                                    text-decoration : underline;
+                                    &:hover, &:active {
+                                        color : #f7a800;
+                                    }
+                                }
+                                p {
+                                    line-height : 1.5;
+                                    color       : $text-grey;
+                                }
+                            }
+                            .imgShow-div {
+                                display    : block;
+
+                                margin     : auto;
+                                height     : auto;
+                                padding    : 0;
+                                min-height : 250px;
+
+                                float      : none !important;
+
+                                .sub-img-container {
+                                    height : 100%;
+                                    div {
+                                        cursor : pointer;
+                                    }
+                                    img {
+                                        float : right;
+                                    }
+                                }
+                                .slide-container {
+                                    cursor : pointer;
+                                    width  : 100%;
+                                    height : auto;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+            }
+        }
 
     }
 
     .mobile-content {
+        position     : absolute;
+        top          : 0;
+
+        z-index      : 10;
+
         margin-top   : 73px;
         margin-left  : 15px;
         margin-right : 15px;
         overflow-x   : hidden;
 
+        width        : 90%;
         .mobile-main-menu {
             height       : 480px;
             position     : relative;
@@ -332,7 +594,7 @@
             margin-right : -15px;
             ul {
                 list-style : none;
-                padding    : 0px;
+                padding    : 0;
                 margin     : 75px 0 0 0;
                 height     : 655px;
                 li {
@@ -341,7 +603,7 @@
                     a {
                         @include font-size(2.6);
                         font-family    : $font-site-bold;
-                        color          : $text-grey;
+                        color          : $main-menu-dark-grey;
                         text-transform : uppercase;
                         .grey {
                             color : $main-menu-light-grey;
@@ -386,7 +648,7 @@
 
         .mobile-main-indicator {
             width    : 10px;
-            right    : 20px;
+            right    : 8%;
             top      : 200px;
             position : fixed;
             ol.mobile-indicator-ol {

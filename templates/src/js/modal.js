@@ -1,235 +1,394 @@
 (function ($) {
-    $(document).ready(function() {
-        var modalCarousel = $('.modal.carousel.slide.gallery, .modal.carousel.slide.popup');
-        var modalFullscreen = $(".modal.modal-fullscreen");
-        var mobileModal = $('.modal.mobile-modal');
-        var modalPopup = $('.modal.popup');
-        var modalContentBox = $('.modal.modal-content-box');
-        var carouselSubpage = $('.carousel.slide.subpage,.carousel.slide.mobile');
-        var player;
-        var isFirstCarouselModal = true;
-
-        carouselSubpage.on('slide.bs.carousel', function(event) {
-            var lazy;
-            lazy = $(event.relatedTarget).find("img[data-original]");
-            lazy.attr("src", lazy.data('original'));
-            lazy.removeAttr("data-src");
-        });
-
-        modalCarousel.on('slide.bs.carousel', function(event) {
-            var lazy;
-            lazy = $(event.relatedTarget).find("img[data-original]");
-            lazy.attr("src", lazy.data('original'));
-            lazy.removeAttr("data-src");
-        });
-
-        modalCarousel.on('slid.bs.carousel', function (event) {
-
-            // video play button function
-            var target = event.relatedTarget;
-            var isVideo = $(target).find('.videoWrapper').length > 0;
-            if(isVideo) {
-                var iframe = $(target).find('iframe').get(0);
-                player = $f(iframe);
-                var playButton = $(target).find('.video-play-button');
-
-                if(isFirstCarouselModal) {
-                    player.api("play");
-                    isFirstCarouselModal = false;
+    $(document).ready(
+        function () {
+            var modalCarousel = $('.modal.carousel.slide.gallery, .modal.carousel.slide.popup');
+            var modalFullscreen = $(".modal.modal-fullscreen");
+            var modalContentBox = $('.modal.modal-content-box');
+            var player;
+            var isFirstCarouselModal = true;
+            var closeButtonTl = new TimelineMax(
+                {
+                    repeat: -1,
+                    repeatDelay: 5,
+                    yoyo: true
                 }
+            );
 
-                player.addEvent('ready', function() {
-                    player.addEvent('pause', function() {
-                        playButton.fadeIn();
+            modalCarousel.on(
+                'slide.bs.carousel', function (event) {
+                    var target = event.relatedTarget;
+                    var lazy = $(target).find('.lazy');
+                    var src = lazy.attr('data-src');
 
-                    });
-                    player.addEvent('play', function() {
-                        playButton.fadeOut();
-                    });
-                });
+                    if (src !== "") {
+                        var carousel = $(this).find('.carousel-inner').hide();
+                        var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                        var loader = $('.modal-body', this).find('.lazy-loading');
+                        loader.show();
 
-                playButton.bind("click", function() {
-                    player.api("play");
-                });
+                        var d = $.Deferred();
+                        var datasrc;
 
-            } else {
-                if(player != undefined) {
-                    player.api('pause');
-                }
-            }
-        });
+                        datasrc = lazy.attr('data-src');
+                        if (datasrc) {
+                            d = $.Deferred();
 
-        modalCarousel.on('show.bs.modal', function (event) {
-            var zIndex = 3040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
-
-            setTimeout(function () {
-                $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
-            }, 0);
-        });
-
-        modalCarousel.on('hide.bs.modal', function() {
-            if(player != undefined) {
-                player.api('unload');
-            }
-            isFirstCarouselModal = true;
-        });
-
-        modalFullscreen.on('show.bs.modal', function (event) {
-            console.log('full show');
-            // Close open modal box
-            $(".modal-fullscreen.fade.in").modal('hide');
-
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
-
-            $(this).focus();
-
-            setTimeout(function () {
-                //$(".modal-backdrop").addClass("modal-backdrop-fullscreen hidden-xs");
-                //$('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-            }, 0);
-        });
-
-        mobileModal.on('show.bs.modal', function (event) {
-            console.log('mobile show');
-
-            //$(".modal-mobile.fade.in, .modal-fullscreen.fade.in").modal('hide');
-
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
-
-            setTimeout(function () {
-                //$(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
-            }, 0);
-        });
-
-        modalPopup.on('show.bs.modal', function (event) {
-            console.log('popup mobile show');
-
-            //$(".mobile-pop-modal.fade.in").modal('hide');
-
-            //var zIndex = 1040 + (10 * $('.modal:visible').length);
-            //$(this).css('z-index', zIndex);
-            setTimeout(function () {
-                //$(".modal-backdrop").addClass("modal-backdrop-mobile visible-xs");
-            }, 0);
-
-        });
-
-        modalFullscreen.on('shown.bs.modal', function (event) {
-            $('body').css('overflow', 'hidden');
-            $(this).css('overflow', 'hidden');
-
-            var target = event.currentTarget;
-            if($(target).attr('id') == 'contact') {
-                initMap();
-
-                var torontoMap, londonMap;
-                var torontoMarker, londonMarker;
-                var infoWindowToronto, infoWindowLondon;
-
-                function initMap() {
-                    torontoMap = new google.maps.Map(document.getElementById('toronto-map'), {
-                        zoom: 15,
-                        center: {
-                            lat: 43.644518,
-                            lng: -79.395313
+                            lazy.one('load', d.resolve)
+                                .attr("src", datasrc)
+                                .attr('data-src', '');
                         }
-                    });
 
-                    londonMap = new google.maps.Map(document.getElementById('london-map'), {
-                        zoom: 15,
-                        center: {
-                            lat: 42.981651,
-                            lng: -81.247711
-                        }
-                    });
-
-                    torontoMarker = new google.maps.Marker({
-                        map: torontoMap,
-                        draggable: true,
-                        animation: google.maps.Animation.DROP,
-                        position: {
-                            lat: 43.644518,
-                            lng: -79.395313
-                        }
-                    });
-                    torontoMarker.addListener('click', toggleBounce);
-
-                    londonMarker = new google.maps.Marker({
-                        map: londonMap,
-                        draggable: true,
-                        animation: google.maps.Animation.DROP,
-                        position: {
-                            lat: 42.981651,
-                            lng: -81.247711
-                        }
-                    });
-                    londonMarker.addListener('click', toggleBounce);
-
-                    infoWindowToronto = new google.maps.InfoWindow({
-                        content:"<span>376 Wellington St W, Toronto, ON M5V 1E7</span>"
-                    });
-
-                    infoWindowLondon = new google.maps.InfoWindow({
-                        content:"<span>184 York St, London, ON N6A 1B5</span>"
-                    });
-
-                    infoWindowToronto.open(torontoMap, torontoMarker);
-                    infoWindowLondon.open(londonMap, londonMarker);
-                }
-
-                function toggleBounce() {
-                    if (torontoMarker.getAnimation() !== null) {
-                        torontoMarker.setAnimation(null);
-                    } else {
-                        torontoMarker.setAnimation(google.maps.Animation.BOUNCE);
+                        $.when(d).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                carousel.fadeIn(1000);
+                                carouselIndicators.fadeIn(1000);
+                            }
+                        );
                     }
 
-                    if (londonMarker.getAnimation() !== null) {
-                        londonMarker.setAnimation(null);
-                    } else {
-                        londonMarker.setAnimation(google.maps.Animation.BOUNCE);
-                    }
                 }
-            }
+            );
 
-        });
+            modalCarousel.on(
+                'slid.bs.carousel', function (event) {
+                    // video play button function
+                    var target = event.relatedTarget;
+                    var isVideo = $(target).find('.videoWrapper').length > 0;
+                    var playButton = $(target).find('.video-play-button');
 
-        modalContentBox.on('shown.bs.modal', function (event) {
-            $('body').css('overflow', 'hidden');
-            $(this).css('overflow', 'hidden');
+                    // If the content is video
+                    if (isVideo) {
+                        var iframe = $(target).find('iframe').get(0);
 
-        });
+                        player = $f(iframe);
+                        player.api('setColor', '#f7a800');
 
-        mobileModal.on('shown.bs.modal', function (event) {
-            console.log('mobile shown');
-            $('body').css('overflow', 'hidden');
-            $(this).css('overflow', 'auto');
+                        player.addEvent(
+                            'ready', function () {
+                                $(target).find('.videoWrapper .video-play-button').fadeIn();
 
-        });
+                                player.addEvent(
+                                    'pause', function () {
+                                        playButton.fadeIn();
 
-        modalFullscreen.on('hide.bs.modal', function (event) {
+                                    }
+                                );
+                                player.addEvent(
+                                    'play', function () {
+                                        playButton.fadeOut();
+                                    }
+                                );
+                                player.api("play");
+                            }
+                        );
 
-        });
+                        playButton.bind(
+                            "click", function () {
+                                player.api("play");
+                            }
+                        );
 
-        mobileModal.on('hide.bs.modal', function (event) {
-            console.log('mobile hide');
+                    } else {
+                        if (player != null) {
+                            player.api('pause');
+                        }
+                    }
 
-        });
+                }
+            );
 
-        modalFullscreen.on('hidden.bs.modal', function (event) {
-            $('body').css('overflow', 'auto');
-        });
+            modalCarousel.on(
+                'show.bs.modal', function (event) {
+                    var $this = $(this);
+                    var targetIndex = $(event.relatedTarget).attr('data-slide-to');
 
-        mobileModal.on('hidden.bs.modal', function (event) {
-            $('body').css('overflow', 'auto');
-        });
+                    var item = $('.carousel-inner', this).find('.item').eq(targetIndex);
+                    var lazy = $(item).find('.lazy');
+                    var src = lazy.attr('data-src');
 
-        modalPopup.on('hidden.bs.modal', function (event) {
-            $('body').css('overflow', 'auto');
-        });
-    });
+                    if (src !== "") {
+                        var carousel = $(this).find('.carousel-inner').hide();
+                        var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                        var loader = $('.modal-body', this).find('.lazy-loading');
+
+                        var d = $.Deferred();
+                        var datasrc;
+
+                        datasrc = lazy.attr('data-src');
+                        if (datasrc) {
+                            d = $.Deferred();
+
+                            lazy.one('load', d.resolve)
+                                .attr("src", datasrc)
+                                .attr('data-src', '');
+                        }
+
+                        $.when(d).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                carousel.fadeIn(1000);
+                                carouselIndicators.fadeIn(1000);
+
+                                $this.trigger('slid');
+                            }
+                        );
+
+                    } else {
+                        $(this).find('.carousel-inner').show();
+                        $(this).find('.carousel-indicators').show();
+                    }
+
+                    var zIndex = 3040 + (10 * $('.modal:visible').length);
+                    $(this).css('z-index', zIndex);
+                    $('body').css('overflow', 'hidden');
+
+                    setTimeout(
+                        function () {
+                            $(".modal-backdrop").addClass("modal-backdrop-gallery").css('z-index', 3035);
+                        }, 0
+                    );
+
+                    //var carousel = $(this).find('.carousel-inner').hide();
+                    //var carouselIndicators = $(this).find('.carousel-indicators').hide();
+                    //
+                    //var deferreds = [];
+                    //var lazies = $('.carousel-inner', this).find('.lazy');
+                    //var loader = $('.modal-body', this).find('.lazy-loading');
+                    //
+                    //// loop over each img
+                    //lazies.each(
+                    //    function () {
+                    //        var self = $(this);
+                    //        var _self = this;
+                    //        var datasrc, d;
+                    //
+                    //        if (self.hasClass('video')) {
+                    //            datasrc = self.children('source').attr('data-src');
+                    //            if (datasrc) {
+                    //                self.children('source')
+                    //                    .attr("src", datasrc)
+                    //                    .attr('data-src', '');
+                    //
+                    //                _self.load();
+                    //            }
+                    //        } else {
+                    //            datasrc = self.attr('data-src');
+                    //            if (datasrc) {
+                    //                d = $.Deferred();
+                    //
+                    //                self.one('load', d.resolve)
+                    //                    .attr("src", datasrc)
+                    //                    .attr('data-src', '');
+                    //
+                    //                deferreds.push(d.promise());
+                    //            }
+                    //        }
+                    //    }
+                    //);
+                    //
+                    //$.when.apply($, deferreds).done(
+                    //    function () {
+                    //        loader.fadeOut(1000);
+                    //        carousel.fadeIn(1000);
+                    //        carouselIndicators.fadeIn(1000);
+                    //    }
+                    //);
+                }
+            );
+
+            modalCarousel.on(
+                'shown.bs.modal', function (event) {
+                    // Disable carousel slide interval
+                    $('.carousel.fade.in').each(
+                        function () {
+                            $(this).carousel(
+                                {
+                                    interval: false
+                                }
+                            );
+                        }
+                    );
+                }
+            );
+
+            modalCarousel.on(
+                'hide.bs.modal', function (event) {
+                    $('body').css('overflow', 'auto');
+
+                    $(this).find('.carousel-inner').hide();
+                    $(this).find('.carousel-indicators').hide();
+
+                    if(player != null) {
+                        player.api('pause');
+                    }
+                    // Reset video player
+                    player = null;
+                    isFirstCarouselModal = true;
+                }
+            );
+
+            modalFullscreen.on(
+                'show.bs.modal', function (event) {
+                    console.log('full show');
+                    // Close open modal box
+                    $(".modal-fullscreen.fade.in").modal('hide');
+
+                    //$('body').addClass('full-screen-modal-open');
+
+                    //var zIndex = 1040 + (10 * $('.modal:visible').length);
+                    //$(this).css('z-index', zIndex);
+                    //
+                    //$('.entry-content').css('z-index', -1);
+
+                    $(this).focus();
+                }
+            );
+
+            modalFullscreen.on(
+                'shown.bs.modal', function (event) {
+                    //$('body').css('overflow', 'hidden');
+                    //$(this).css({'overflow': 'hidden'});
+
+                    var target = event.currentTarget;
+
+                    if ($(target).attr('id') == 'contact') {
+
+                        var $window         = $(window),
+                            mapInstances    = [],
+                            $pluginInstance = $('#toronto-map, #london-map').lazyLoadGoogleMaps(
+                                {
+                                    api_key: 'AIzaSyD_VREr-We898pVftz2T3c9EU7kKkylSPs',
+                                    callback: function (container, map) {
+                                        var $container = $(container),
+                                            center     = new google.maps.LatLng($container.attr('data-lat'), $container.attr('data-lng'));
+
+                                        map.setOptions({zoom: 15, center: center});
+                                        new google.maps.Marker(
+                                            {
+                                                position: center,
+                                                map: map,
+                                                animation: google.maps.Animation.DROP,
+                                                draggable: true
+                                            }
+                                        );
+
+                                        $.data(map, 'center', center);
+                                        mapInstances.push(map);
+
+                                        $container.find('.lazy-loading').fadeOut();
+                                    }
+                                }
+                            );
+
+                        $window.on(
+                            'resize', $pluginInstance.debounce(
+                                1000, function () {
+                                    $.each(
+                                        mapInstances, function () {
+                                            this.setCenter($.data(this, 'center'));
+                                        }
+                                    );
+                                }
+                            )
+                        );
+                    }
+
+                    //$(target).find('.modal-body').css('overflow-y', 'auto');
+
+                    // Set interval animation for close button
+                    closeButtonTl.clear();
+                    closeButtonTl.add(
+                        TweenMax.to(
+                            $(target).find('.utility-close-button'), 2, {
+                                "rotation": 360,
+                                transformOrigin: "50% 50%",
+                                ease: Sine.easeInOut
+                            }
+                        )
+                    );
+
+                    $(target).find('.utility-close-icon').hover(
+                        function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 90,
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
+                                }
+                            );
+
+                        }, function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 0,
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
+                                }
+                            );
+                        }
+                    );
+
+                }
+            );
+
+            modalContentBox.on(
+                'shown.bs.modal', function (event) {
+                    var target = event.currentTarget;
+                    $(target).find('.modal-body').css('overflow-y', 'auto');
+
+                    // Set interval animation for close button
+                    closeButtonTl.clear();
+                    closeButtonTl.add(
+                        TweenMax.to(
+                            $(target).find('.utility-close-button'), 2, {
+                                "rotation": 360,
+                                transformOrigin: "50% 50%",
+                                ease: Sine.easeInOut
+                            }
+                        )
+                    );
+
+                    $(target).find('.utility-close-icon').hover(
+                        function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 90,
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
+                                }
+                            );
+
+                        }, function () {
+                            TweenMax.to(
+                                $(target).find('.utility-close-button'), 0.5, {
+                                    "rotation": 0,
+                                    transformOrigin: "50% 50%",
+                                    ease: Back.easeOut
+                                }
+                            );
+                        }
+                    );
+
+                }
+            );
+
+            modalFullscreen.on(
+                'hide.bs.modal', function (event) {
+                    //$('body').removeClass('full-screen-modal-open');
+                    //$(event.currentTarget).find('.modal-body').css('overflow-y', '');
+
+                    closeButtonTl.clear();
+                }
+            );
+
+            modalFullscreen.on(
+                'hidden.bs.modal', function (event) {
+                    //$('body').css('overflow', 'auto');
+                }
+            );
+
+        }
+    );
 
 })(jQuery);

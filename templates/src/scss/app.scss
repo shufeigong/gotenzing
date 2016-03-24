@@ -1,3 +1,5 @@
+@import "bootstrap-custom";
+
 @import "font";
 @import "mixins";
 @import 'variables';
@@ -5,10 +7,20 @@
 @import 'container';
 @import 'header';
 @import 'content';
-@import "list";
 @import "modal";
 @import "caoursel";
 @import "accordion";
 
 // Components
 @import "components/hamburger";
+@import "components/skills-list";
+@import "components/contact-list";
+@import "components/contact-map";
+@import "components/tile-container";
+@import "components/timeline-slider";
+
+// Fix
+@import "media-fix";
+
+// Print
+@import "print";

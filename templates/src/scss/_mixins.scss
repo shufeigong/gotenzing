@@ -39,10 +39,20 @@
 @mixin vertical-align($position) {
 	position: $position;
 	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
 
 @mixin vertical-align-table() {
 	display: table-cell;
 	vertical-align: middle;
+}
+
+@mixin transition-all($duration) {
+	-webkit-transition: all $duration;
+	-moz-transition: all $duration;
+	-ms-transition: all $duration;
+	-o-transition: all $duration;
+	transition: all $duration;
 }

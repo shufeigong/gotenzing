@@ -1,20 +1,25 @@
 {% include 'header.html' %}
 
 <div class="entry-content">
-	<div class="main-menu hidden-xs">
+	<div class="main-menu">
 		<ul>
 		    {% for page in pageList %}
 		       <li class="item">
 		           {% if page.pageName == 'whoswho'%}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">whos<span class="grey">who</span></a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">whos<span class="grey">who</span></a>
 		           {% elseif page.pageName == 'humanchanneling' %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">human<span class="grey">channel</span>ing</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">human<span class="grey">channel</span>ing</a>
+				   {% elseif page.pageName == 'engaging' or page.pageName == 'integrating' or page.pageName == 'spending' %}
+				   <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs grey">{{page.pageName}}</a>
 		           {% else %}
-		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item">{{page.pageName}}</a>
+		           <a href="{{page.pageUrl}}" onclick="return false;" id="{{page.pageName}}" class="main-menu-item hidden-xs">{{page.pageName}}</a>
 		           {% endif %}
 
 		           <div class="page-content">
-		                <a href="#" class="sub-close-icon" tabindex="-1" title="sub content close button"></a>
+		                <a href="javascript:void(0)" class="sub-close-icon text-indent-away-span" tabindex="-1" title="sub content close button">
+                            <span>Sub close icon</span>
+                            <svg class="subpage-close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.5 14.5"><style>.st0{fill:#fff}.st0,.st1{stroke:#949494;stroke-width:1.3065;stroke-miterlimit:10}.st1{fill:none;stroke-linecap:round}</style><circle class="st0" cx="7.2" cy="7.2" r="6.5"/><path class="st1" d="M4.4 10.1l5.7-5.7m0 5.7L4.4 4.4"/></svg>
+                        </a>
 		                {% include page.pageTemplateUrl ignore missing %}
 		           </div>
 		       </li>
@@ -48,11 +53,8 @@
          </ol>
       </div>
 
-  	{% for page in mobilePageList %}
-		{% include page.pageTemplateUrl ignore missing %}
-	{% endfor %}
-
 </div>
+
  <!-- Display mobile pages -->
 <div class="utility-page-container">
 	<!-- Display utility pages -->
@@ -65,6 +67,7 @@
 	{% for page in pageList %}
 		{% include page.lightboxTemplateUrl ignore missing %}
 	{% endfor %}
+	{% include 'lightboxes/spending.html' %}
 </div>
 
 {% include 'carousels/gallery.html' %}

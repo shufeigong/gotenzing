@@ -11,3 +11,10 @@ gulp.task('vendor', function () {
 
 });
 
+gulp.task('vendor-mu', function () {
+    return gulp.src('./src/js/vendor-mu/*.js') //select all javascript files under js/ and any subdirectory
+        .pipe(concat('vendor-mu.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js/')); //the destination folder
+
+});

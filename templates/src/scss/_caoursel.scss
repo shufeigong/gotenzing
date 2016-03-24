@@ -6,9 +6,46 @@
 
 .gallery-container {
     .gallery-item {
-        display : inline-block;
-        margin  : 3px;
+        display       : inline-block;
+        margin        : 3px;
+
+        position      : relative;
+        float         : left;
+        margin-right  : 5px;
+        margin-bottom : 5px;
+        cursor        : pointer;
+
+        &:before {
+            background : none;
+            transition : all .3s linear;
+        }
+
+        &:hover {
+            &:before {
+                content    : "";
+                display    : block;
+                position   : absolute;
+                top        : 0;
+                bottom     : 0;
+                left       : 0;
+                right      : 0;
+                background : rgba(247, 168, 0, 0.5);
+                transition : all .3s linear;
+            }
+
+        }
+
+        .video-play-icon {
+            display    : block;
+            background : url("/templates/dist/img/video-play.svg") no-repeat;
+            width      : 70px;
+            height     : 70px;
+            position   : absolute;
+            top        : calc(50% - 36px);
+            left       : calc(50% - 36px);
+        }
     }
+
 }
 
 .left.carousel-control {
@@ -24,81 +61,35 @@
 }
 
 .utility-close-icon {
-    background : url(../../dist/img/sub-close-icon.svg) no-repeat;
-    width      : 15px;
-    height     : 15px;
-    display    : inline-block;
-    position   : absolute;
-    right      : 15px;
-    top        : 15px;
-    opacity    : 1;
+    width    : 15px;
+    height   : 15px;
+    display  : inline-block;
+    position : absolute;
+    right    : 15px;
+    top      : 15px;
+    opacity  : 1;
 }
 
 .pop-close-icon {
-    background : url(../../dist/img/pop-close-icon.svg) no-repeat;
-    width      : 30px;
-    height     : 30px;
-    display    : inline-block;
-    position   : absolute;
-    right      : 0;
-    top        : 0;
-    opacity    : 1;
+    background          : url(../../dist/img/pop-close-icon.svg) no-repeat;
+    width               : 50px;
+    height              : 50px;
+    display             : inline-block;
+    position            : absolute;
+    left                : 10px;
+    top                 : 10px;
+    opacity             : 1;
+    z-index: 9999;
 
-    background-size: 15px 15px;
-    background-position: 50% 50%;
+    background-size     : 15px 15px;
+    background-position : 50% 50%;
 
-    transition : transform 0.3s;
+    transition          : transform 0.3s;
     &:hover, &:active {
-        transform  : rotate(90deg);
-        background : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
-        background-size: 15px 15px;
-        background-position: 50% 50%;
-    }
-}
-
-.carousel-indicators.subpageindi {
-    li {
-        width            : 10px;
-        height           : 10px;
-        margin           : 0;
-        background-color : #fff;
-    }
-    .active {
-        width  : 10px;
-        height : 10px;
-    }
-}
-
-.carousel.slide.subpage {
-    margin-right : 4px;
-    .carousel-inner {
-        width  : 70%;
-        margin : 10px auto;
-        .item {
-            .slide-container {
-                cursor     : pointer;
-                text-align : center;
-                position   : relative;
-
-                img {
-                    margin : 0 auto;
-                }
-
-                .video-play-icon {
-                    display    : block;
-                    background : url("/templates/dist/img/video-play.svg") no-repeat;
-                    width      : 70px;
-                    height     : 70px;
-                    position   : absolute;
-                    top        : calc(50% - 36px);
-                    left       : calc(50% - 36px);
-                }
-            }
-        }
-    }
-
-    .carousel-indicators {
-        bottom : -16.5px;
+        transform           : rotate(90deg);
+        background          : url(../../dist/img/pop-close-icon-hover.svg) no-repeat;
+        background-size     : 15px 15px;
+        background-position : 50% 50%;
     }
 }
 
@@ -127,19 +118,31 @@
 }
 
 .videoWrapper {
+    position       : relative;
+    padding-bottom : 56.25%;
+    padding-top    : 35px;
+    height         : 0;
+    overflow       : hidden;
+
+    iframe, video {
+        position : absolute;
+        top      : 0;
+        left     : 0;
+        width    : 100%;
+        height   : 100%;
+    }
+
     .video-play-button {
-        display            : block;
-        position           : absolute;
-        z-index            : 99;
-        top                : calc(50% - 36px);
-        left               : calc(50% - 36px);
+        display  : none;
+        position : absolute;
+        z-index  : 99;
+        top      : calc(50% - 35px);
+        left     : calc(50% - 35px);
+        width    : 70px;
+        height   : 70px;
 
-        -webkit-transition : all 0.5s linear;
-        -moz-transition    : all 0.5s linear;
-        -o-transition      : all 0.5s linear;
-        transition         : all 0.5s linear;
-
-        opacity            : 0.5;
+        @include transition-all(0.25);
+        opacity  : 0.5;
 
         &:hover, &:active, &:focus {
             opacity : 1;
@@ -147,104 +150,8 @@
     }
 }
 
-/////1000px~////////////////////////////////
-@media screen and (min-width : 1000px) {
-    .imgShow-div {
-        .subpage {
-            .left-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                left                   : 41.5469px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-left            : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/left-arrow.svg) no-repeat;
-
-            }
-            .right-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-right           : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                right                  : 41.5469px;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/right-arrow.svg) no-repeat;
-            }
-
-            .carousel-indicators {
-                bottom : -20.5px;
-                li {
-                    border : 1px solid #77777a;
-
-                    &:hover {
-                        background : #f7a800;
-                    }
-                }
-                .active {
-                    background-color : #b9b8ba;
-                }
-
-            }
-
-            .carousel-control {
-                opacity : 1;
-
-            }
-
-            .carousel-control.left {
-                &:hover, &:active, &.pressed {
-                    .left-arrow {
-                        background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-
-            .carousel-control.right {
-                &:hover, &:active, &.pressed {
-                    .right-arrow {
-                        background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-        }
-
-    }
-
-    .popup {
+@media screen and (min-width : 1040px) {
+    .carousel.slide.fade.in {
         .left-arrow {
             box-sizing             : border-box;
             color                  : rgb(255, 255, 255);
@@ -256,7 +163,6 @@
             font-weight            : normal;
             height                 : 97px;
             width                  : 37px;
-            //border:solid 1px #333;
             left                   : 41.5469px;
             line-height            : 30px;
             list-style-image       : none;
@@ -302,6 +208,7 @@
 
         .carousel-control {
             opacity : 1;
+            width   : 10%;
         }
 
         .carousel-control.left {
@@ -313,6 +220,7 @@
         }
 
         .carousel-control.right {
+
             &:hover, &:active, &.pressed {
                 .right-arrow {
                     background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
@@ -321,57 +229,66 @@
         }
 
         .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 95%;
+            width     : auto;
+            max-width : 65%;
+            margin    : auto;
+            height    : 100%;
 
             .modal-content {
-                height           : 100%;
                 box-shadow       : none;
                 border           : none;
                 background-color : transparent;
-            }
-            .modal-body {
-                height : 100%;
+                @include vertical-align(relative);
+                @include transition-all(0.25);
+
+                .modal-body {
+                    min-height : 100px;
+                }
+
             }
             .carousel-inner {
-                height : 100%;
-                .pop-img-container {
+                height        : auto;
+                margin-bottom : 30px;
+                .item, .pop-img-container {
+                    height : 100%;
                     img {
-                        MAX-WIDTH : 100% !important;
-                        HEIGHT    : auto !important;
-                        width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                        margin : 0 auto 30px;
                     }
 
                     .videoWrapper {
-                        position       : relative;
-                        padding-bottom : 56.25%; /* 16:9 */
-                        padding-top    : 25px;
-                        height         : 0;
+                        position  : relative;
+                        max-width : 100%;
+                        height    : auto;
+                        margin    : 0 auto 30px;
                     }
-                    .videoWrapper iframe {
-                        position : absolute;
-                        top      : 0;
-                        left     : 0;
-                        width    : 100%;
-                        height   : 100%;
+                    .videoWrapper iframe, video {
+                        //max-width  : 100%;
+                        //max-height : 500px;
+                        //
+                        //margin     : 0 auto;
+                        //width      : 100%;
                     }
                 }
-
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 20px auto 0;
-                padding : 0;
-                left    : 0;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
-
+                position   : relative;
+                margin     : 0 auto;
+                padding    : 0;
+                left       : 0;
+                right      : auto;
+                height     : auto;
+                text-align : left;
+                bottom     : initial;
             }
 
             .carousel-indicators {
+                position : relative;
+                bottom   : 0;
+                left: 0;
+                margin: 0;
+                width: auto;
+
                 li {
                     border           : none;
                     background-color : #fff;
@@ -384,229 +301,13 @@
                     background-color : #55565a;
                 }
             }
-
         }
-    }
-
-    .gallery-carousel-page {
-        .left-arrow {
-            box-sizing             : border-box;
-            color                  : rgb(255, 255, 255);
-            cursor                 : pointer;
-            display                : block;
-            font-family            : 'Glyphicons Halflings';
-            font-size              : 30px;
-            font-style             : normal;
-            font-weight            : normal;
-            height                 : 97px;
-            width                  : 37px;
-            //border:solid 1px #333;
-            left                   : 41.5469px;
-            line-height            : 30px;
-            list-style-image       : none;
-            list-style-position    : outside;
-            list-style-type        : none;
-            margin-left            : -10px;
-            margin-top             : -10px;
-            position               : absolute;
-            text-align             : center;
-            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 45%;
-            z-index                : 5;
-            -webkit-font-smoothing : antialiased;
-            background             : url(../../dist/img/left-arrow.svg) no-repeat;
-
-        }
-        .right-arrow {
-            box-sizing             : border-box;
-            color                  : rgb(255, 255, 255);
-            cursor                 : pointer;
-            display                : block;
-            font-family            : 'Glyphicons Halflings';
-            font-size              : 30px;
-            font-style             : normal;
-            font-weight            : normal;
-            height                 : 97px;
-            width                  : 37px;
-            line-height            : 30px;
-            list-style-image       : none;
-            list-style-position    : outside;
-            list-style-type        : none;
-            margin-right           : -10px;
-            margin-top             : -10px;
-            position               : absolute;
-            right                  : 41.5469px;
-            text-align             : center;
-            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 45%;
-            z-index                : 5;
-            -webkit-font-smoothing : antialiased;
-            background             : url(../../dist/img/right-arrow.svg) no-repeat;
-        }
-
-        .carousel-control.left {
-
-            &:hover, &:active, &.pressed {
-                .left-arrow {
-                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
-                }
-            }
-        }
-
-        .carousel-control.right {
-
-            &:hover, &:active, &.pressed {
-                .right-arrow {
-                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                }
-            }
-        }
-
-        .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 95%;
-
-            .modal-content {
-                height           : 100%;
-                box-shadow       : none;
-                border           : none;
-                background-color : transparent;
-            }
-            .modal-body {
-                height : 100%;
-            }
-            .carousel-inner {
-                height : 100%;
-            }
-            .carousel-caption {
-                @include font-size(1.2);
-                margin  : 0 auto;
-                padding : 0;
-                left    : 20px;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
-            }
-
-            .carousel-indicators {
-                li {
-                    border           : none;
-                    background-color : #fff;
-
-                    &:hover {
-                        background : #f7a800;
-                    }
-                }
-                .active {
-                    background-color : #55565a;
-                }
-            }
-
-        }
-
     }
 
 }
 
-////640~999px///////////////////////////////////////////////////
-@media screen and (min-width : 640px) and (max-width : 999px) {
-    .imgShow-div {
-        .subpage {
-            .left-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                //border:solid 1px #333;
-                left                   : 41.5469px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-left            : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/left-arrow.svg) no-repeat;
-
-            }
-            .right-arrow {
-                box-sizing             : border-box;
-                color                  : rgb(255, 255, 255);
-                cursor                 : pointer;
-                display                : block;
-                font-family            : 'Glyphicons Halflings';
-                font-size              : 30px;
-                font-style             : normal;
-                font-weight            : normal;
-                height                 : 75px;
-                width                  : 29px;
-                line-height            : 30px;
-                list-style-image       : none;
-                list-style-position    : outside;
-                list-style-type        : none;
-                margin-right           : -10px;
-                margin-top             : -10px;
-                position               : absolute;
-                right                  : 41.5469px;
-                text-align             : center;
-                text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-                top                    : calc(50% - 30px);
-                z-index                : 5;
-                -webkit-font-smoothing : antialiased;
-                background             : url(../../dist/img/right-arrow.svg) no-repeat;
-            }
-
-            .carousel-indicators {
-                bottom : -20.5px;
-                li {
-                    border : 1px solid #77777a;
-
-                    &:hover {
-                        background : #f7a800;
-                    }
-                }
-                .active {
-                    background-color : #b9b8ba;
-                }
-
-            }
-
-            .carousel-control {
-                opacity : 1;
-            }
-
-            .carousel-control.left {
-                &:hover, &:active, &.pressed {
-                    .left-arrow {
-                        background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-
-            .carousel-control.right {
-                &:hover, &:active, &.pressed {
-                    .right-arrow {
-                        background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                    }
-                }
-            }
-        }
-    }
-
-    .popup {
+@media screen and (min-width : 640px) and (max-width : 1039px) {
+    .carousel.slide.fade.in {
         .left-arrow {
             box-sizing             : border-box;
             color                  : rgb(255, 255, 255);
@@ -618,7 +319,6 @@
             font-weight            : normal;
             height                 : 97px;
             width                  : 37px;
-            //border:solid 1px #333;
             left                   : 41.5469px;
             line-height            : 30px;
             list-style-image       : none;
@@ -629,7 +329,7 @@
             position               : absolute;
             text-align             : center;
             text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 28%;
+            top                    : 45%;
             z-index                : 5;
             -webkit-font-smoothing : antialiased;
             background             : url(../../dist/img/left-arrow.svg) no-repeat;
@@ -656,15 +356,15 @@
             right                  : 41.5469px;
             text-align             : center;
             text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 28%;
+            top                    : 45%;
             z-index                : 5;
             -webkit-font-smoothing : antialiased;
             background             : url(../../dist/img/right-arrow.svg) no-repeat;
         }
 
         .carousel-control {
+            width   : 10%;
             opacity : 1;
-
         }
 
         .carousel-control.left {
@@ -684,178 +384,62 @@
         }
 
         .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 80%;
+            width     : auto;
+            max-width : 65%;
+            margin    : auto;
+            height    : 100%;
 
             .modal-content {
-                height           : 100%;
                 box-shadow       : none;
                 border           : none;
                 background-color : transparent;
-            }
-            .modal-body {
-                height : 100%;
+                @include vertical-align(relative);
+                @include transition-all(0.25);
+
+                .modal-body {
+                    min-height : 100px;
+                }
             }
             .carousel-inner {
-                height : 100%;
-                .pop-img-container {
-                    //height     : 75%;
-                    margin     : 0 auto;
-                    text-align : center;
+                height        : auto;
+                margin-bottom : 30px;
+                .item, .pop-img-container {
+                    height : 100%;
+
                     img {
-                        max-width : 100% !important;
-                        height    : auto !important;
-                        //width     : expression(this.width > 200 ? "200px" :     this.width) !important;
+                        margin : 0 auto 30px;
                     }
 
                     .videoWrapper {
-                        position       : relative;
-                        padding-bottom : 56.25%; /* 16:9 */
-                        padding-top    : 25px;
-                        height         : 0;
+                        position  : relative;
+                        max-width : 100%;
+                        height    : auto;
+                        margin    : 0 auto 30px;
                     }
-                    .videoWrapper iframe {
-                        position : absolute;
-                        top      : 0;
-                        left     : 0;
-                        width    : 100%;
-                        height   : 100%;
+                    .videoWrapper iframe, video {
+                        //max-width  : 100%;
+                        //max-height : 500px;
                     }
-
                 }
-
             }
             .carousel-caption {
                 @include font-size(1.2);
-                margin  : 20px auto 0;
-                padding : 0;
-                left    : 0;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
+                position   : relative;
+                margin     : 0 auto;
+                padding    : 0;
+                left       : 0;
+                right      : auto;
+                height     : auto;
+                text-align : left;
+                bottom     : initial;
             }
 
             .carousel-indicators {
-                li {
-                    border           : none;
-                    background-color : #fff;
-
-                    &:hover {
-                        background : #f7a800;
-                    }
-
-                }
-                .active {
-                    background-color : #55565a;
-                }
-            }
-
-        }
-    }
-
-    .gallery-carousel-page {
-        .left-arrow {
-            box-sizing             : border-box;
-            color                  : rgb(255, 255, 255);
-            cursor                 : pointer;
-            display                : block;
-            font-family            : 'Glyphicons Halflings';
-            font-size              : 30px;
-            font-style             : normal;
-            font-weight            : normal;
-            height                 : 97px;
-            width                  : 37px;
-            //border:solid 1px #333;
-            left                   : 41.5469px;
-            line-height            : 30px;
-            list-style-image       : none;
-            list-style-position    : outside;
-            list-style-type        : none;
-            margin-left            : -10px;
-            margin-top             : -10px;
-            position               : absolute;
-            text-align             : center;
-            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 28%;
-            z-index                : 5;
-            -webkit-font-smoothing : antialiased;
-            background             : url(../../dist/img/left-arrow.svg) no-repeat;
-
-        }
-        .right-arrow {
-            box-sizing             : border-box;
-            color                  : rgb(255, 255, 255);
-            cursor                 : pointer;
-            display                : block;
-            font-family            : 'Glyphicons Halflings';
-            font-size              : 30px;
-            font-style             : normal;
-            font-weight            : normal;
-            height                 : 97px;
-            width                  : 37px;
-            line-height            : 30px;
-            list-style-image       : none;
-            list-style-position    : outside;
-            list-style-type        : none;
-            margin-right           : -10px;
-            margin-top             : -10px;
-            position               : absolute;
-            right                  : 41.5469px;
-            text-align             : center;
-            text-shadow            : rgba(0, 0, 0, 0.6) 0px 1px 2px;
-            top                    : 28%;
-            z-index                : 5;
-            -webkit-font-smoothing : antialiased;
-            background             : url(../../dist/img/right-arrow.svg) no-repeat;
-        }
-
-        .carousel-control.left {
-            &:hover, &:active, &.pressed {
-                .left-arrow {
-                    background : url(../../dist/img/left-arrow-hover.svg) no-repeat;
-                }
-            }
-        }
-
-        .carousel-control.right {
-            &:hover, &:active, &.pressed {
-                .right-arrow {
-                    background : url(../../dist/img/right-arrow-hover.svg) no-repeat;
-                }
-            }
-        }
-
-        .modal-dialog {
-            width     : 67%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
-            height    : 80%;
-
-            .modal-content {
-                height           : 100%;
-                box-shadow       : none;
-                border           : none;
-                background-color : transparent;
-            }
-            .modal-body {
-                height : 100%;
-            }
-            .carousel-inner {
-                height : 100%;
-            }
-            .carousel-caption {
-                @include font-size(1.2);
-                margin  : 0 auto;
-                padding : 0;
-                left    : 20px;
-                right   : auto;
-                top     : 100%;
-                height  : 50px;
-            }
-
-            .carousel-indicators {
+                position : relative;
+                bottom   : 0;
+                left: 0;
+                margin: 0;
+                width: auto;
                 li {
                     border           : none;
                     background-color : #fff;
@@ -872,8 +456,8 @@
     }
 }
 
-@media screen and (max-width : 640px) {
-    .carousel.slide, .carousel.slide.subpage {
+@media screen and (max-width : 639px) {
+    .carousel.slide {
         .carousel-inner {
             width      : 100%;
             height     : auto;
@@ -889,28 +473,57 @@
         }
     }
 
-    .modal.carousel.slide {
+    .gallery-carousel-page {
+        .modal-dialog {
+            height : 100%;
+            width  : auto;
+
+            .modal-body {
+                height : 95%;
+            }
+            .carousel-inner {
+                height : 90%;
+                .item {
+                    height : 100%;
+                    img {
+                        margin     : 0 auto;
+                        max-height : 100%;
+                        width      : auto;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .carousel.slide.fade.in {
         margin-top : 60px;
 
         .modal-dialog {
-            width     : 90%;
-            max-width : 938px;
-            margin    : 58px auto 0 auto;
+            width     : auto;
+            max-width : 80%;
+            margin    : auto;
             height    : 100%;
 
             .modal-content {
-                height           : 100%;
                 box-shadow       : none;
                 border           : none;
                 background-color : transparent;
-                .modal-body {
-                    height : 100%;
+                @include vertical-align(relative);
+                @include transition-all(0.25);
 
+                .modal-body {
+                    min-height : 100px;
                     .carousel-control {
                         opacity : 1;
                     }
 
                     .carousel-indicators {
+                        position : relative;
+                        bottom   : 0;
+                        left: 0;
+                        margin: 0;
+                        width: auto;
                         li {
                             border           : none;
                             background-color : #fff;
@@ -925,30 +538,34 @@
                     }
 
                     .carousel-inner {
-                        height : 100%;
-
-                        .videoWrapper {
-                            position       : relative;
-                            padding-bottom : 56.25%; /* 16:9 */
-                            padding-top    : 25px;
-                            height         : 0;
+                        height : 90%;
+                        .item, .pop-img-container {
+                            img {
+                                margin : 0 auto 30px;
+                            }
                         }
-                        .videoWrapper iframe {
-                            position : absolute;
-                            top      : 0;
-                            left     : 0;
-                            width    : 100%;
-                            height   : 100%;
+                        .videoWrapper {
+                            position  : relative;
+                            max-width : 100%;
+                            height    : auto;
+                            margin    : 0 auto 30px;
+                        }
+                        .videoWrapper iframe, video {
+                            //max-width  : 100%;
+                            //max-height : 500px;
+                            //height     : auto;
                         }
 
                         .carousel-caption {
                             @include font-size(1.2);
-                            margin  : 20px auto 0;
-                            padding : 0;
-                            left    : 0;
-                            right   : auto;
-                            top     : 100%;
-                            height  : 50px;
+                            position   : relative;
+                            margin     : 0 auto;
+                            padding    : 0;
+                            left       : 0;
+                            right      : auto;
+                            height     : auto;
+                            text-align : left;
+                            bottom     : initial;
                         }
                     }
                 }
