@@ -7,16 +7,6 @@ $yellow-background : rgba(247, 168, 0, 0.5);
     overflow : hidden;
     height   : auto;
 
-    .image-loading-icon {
-        position : absolute;
-        display  : block;
-        width    : 30px;
-        height   : 30px;
-        top      : calc(50% - 20px);
-        left     : 50%;
-        z-index  : 100;
-    }
-
     .progressBar {
         position         : absolute;
         top              : 0;
@@ -31,8 +21,6 @@ $yellow-background : rgba(247, 168, 0, 0.5);
     }
 
     .image-wrap {
-        @include transition-all(0.25s);
-
         .image-container {
             width    : 100%;
             height   : auto;
@@ -41,57 +29,71 @@ $yellow-background : rgba(247, 168, 0, 0.5);
             overflow : hidden;
 
             /* Set our transitions up. */
-            @include transition-all(0.25s);
+            //@include transition-all(0.25s);
 
-            .image-item, video {
+            .image-item, iframe {
                 display  : block;
                 position : absolute;
                 top      : 0;
                 left     : 0;
             }
 
-            &:first-child {
-                opacity : 1;
+            iframe {
+                max-width  : none;
+                width      : auto;
+                max-height : 100%;
             }
 
-            video {
-                width  : auto;
-                height : 100%;
-            }
+            //.video-container {
+            //    position       : relative;
+            //    padding-bottom : 56.25%;
+            //    padding-top    : 35px;
+            //    height         : 0;
+            //    overflow       : hidden;
+            //
+            //    iframe, video {
+            //        position : absolute;
+            //        top      : 0;
+            //        left     : 0;
+            //        width    : 100%;
+            //        height   : 100%;
+            //    }
+            //}
         }
+
     }
 
     .pause-button {
-        position           : absolute;
-        left               : 10px;
-        bottom             : 20px;
-        z-index            : 999;
-        text-indent        : -999999px;
-        width: 29px;
-        height: 29px;
-        border             : none;
-        background         : url("/templates/dist/img/slider-video-play.svg") no-repeat;
-        cursor             : pointer;
-        background-color   : $grey-background;
-        border-radius      : 3px;
-        padding: 0;
-        background-size: 31px 31px;
-        background-position: -1px -1px;
+        position            : absolute;
+        left                : 10px;
+        bottom              : 20px;
+        z-index             : 999;
+        text-indent         : -999999px;
+        width               : 29px;
+        height              : 29px;
+        border              : none;
+        background          : url("/templates/dist/img/slider-video-play.svg") no-repeat;
+        cursor              : pointer;
+        background-color    : $grey-background;
+        border-radius       : 3px;
+        padding             : 0;
+        background-size     : 31px 31px;
+        background-position : -1px -1px;
 
-        -webkit-transition : background-color 0.5s ease;
-        -moz-transition    : background-color 0.5s ease;
-        -ms-transition     : background-color 0.5s ease;
-        -o-transition      : background-color 0.5s ease;
-        transition         : background-color 0.5s ease;
+        -webkit-transition  : background-color 0.5s ease;
+        -moz-transition     : background-color 0.5s ease;
+        -ms-transition      : background-color 0.5s ease;
+        -o-transition       : background-color 0.5s ease;
+        transition          : background-color 0.5s ease;
 
         &.playing {
-            background       : url("/templates/dist/img/slider-video-pause.svg") no-repeat;
-            background-color : $grey-background;
-            padding: 0;
-            background-size: 31px 31px;
-            background-position: -1px -1px;
-            border-radius    : 3px;
-            bottom           : 20px;
+            background          : url("/templates/dist/img/slider-video-pause.svg") no-repeat;
+            background-color    : $grey-background;
+            padding             : 0;
+            background-size     : 31px 31px;
+            background-position : -1px -1px;
+            border-radius       : 3px;
+            bottom              : 20px;
 
             &:hover {
                 background-color : $yellow-background;
@@ -113,7 +115,7 @@ $yellow-background : rgba(247, 168, 0, 0.5);
         margin-top : 5px;
 
         .image-wrap {
-            overflow: hidden;
+            overflow : hidden;
             .image-container {
                 width    : 100%;
                 position : absolute;
@@ -121,11 +123,12 @@ $yellow-background : rgba(247, 168, 0, 0.5);
                 overflow : hidden;
 
                 .image-item {
-                    max-width : none;
-                    max-height: 100%;
-                    height: 100%;
-                    width: auto;
+                    max-width  : none;
+                    max-height : 100%;
+                    height     : 100%;
+                    width      : auto;
                 }
+
             }
         }
 

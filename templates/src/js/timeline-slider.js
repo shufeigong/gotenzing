@@ -99,7 +99,7 @@ var tmax_options = {
         // 'pan-right'
 
         $(this).each(
-            function () {
+            function (index, value) {
                 var $this = $(this);
                 var _this = this;
 
@@ -123,11 +123,46 @@ var tmax_options = {
                     }
                 };
 
+                _this.videos = [];
+
                 var $imageContainers = $(this).find('.image-container');
                 var tl = new TimelineMax(tmaxOptions);
                 childTl.push(tl);
 
                 var $video;
+
+                //$imageContainers.each(
+                //    function (index, value) {
+                //        var isVideo = $(value).find('iframe').length > 0;
+                //        if(isVideo) {
+                //            var iframe = $(value).find('iframe').get(0);
+                //            var startTime = $(value).find('iframe').attr('data-start');
+                //
+                //            $video = $f(iframe);
+                //            $video.addEvent(
+                //                'ready', function () {
+                //                    $video.api('setVolume', 0);
+                //                    $video.api('setColor', '#f7a800');
+                //                    $video.api('seekTo', startTime);
+                //                    $video.api("play");
+                //                    $video.api("pause");
+                //                }
+                //            );
+                //
+                //
+                //            // Need to create function to detect video included
+                //            if($this.hasClass('vimeo-video')) {
+                //                var videoItem = {
+                //                    index: index,
+                //                    videoObj: $video
+                //                };
+                //
+                //                _this.videos.push(videoItem);
+                //            }
+                //
+                //
+                //        }
+                //    });
 
                 $imageContainers.each(
                     function (index, value) {
@@ -138,26 +173,45 @@ var tmax_options = {
                             effect = options.defaultMove;
                         }
 
-                        var isVideo = $(value).find('video').length > 0;
-                        var startTime = $(value).find('video').attr('data-start');
+                        //var isVideo = $(value).find('video').length > 0;
+                        var isVideo = $(value).find('iframe').length > 0;
+
+                        //var startTime = $(value).find('video').attr('data-start');
 
                         if(isVideo) {
-                            $video = $(value).find('video')[0];
-                            $video.currentTime = startTime;
+                            //$video = $(value).find('video')[0];
+                            //$video.currentTime = startTime;
+
+                            //tl.to(value, 2, {onStart: function() {
+                                //var startTime = $(value).find('iframe').attr('data-start');
+
+                                //$video = $(value).find('video')[0];
+                                //$video.play();
+
+                                //var iframe = $(value).find('iframe').get(0);
+
+                            //}});
+
+                            tl.to(value, 6, {onStart: function() {
+                                var iframe = $(value).find('iframe').get(0);
+                                var startTime = $(value).find('iframe').attr('data-start');
+
+                                $video = $f(iframe);
+                                $video.addEvent(
+                                    'ready', function () {
+                                        $video.api('setVolume', 0);
+                                        $video.api('setColor', '#f7a800');
+                                        $video.api('seekTo', startTime);
+                                        $video.api("play");
+                                    }
+                                );
+
+                            }});
+                            tl.to(value, 2, {"autoAlpha": 1}, '-=7');
+
+                        } else {
+                            tl.to(value, 1, {"autoAlpha": 1}, index == 0 ? '' : '-=2');
                         }
-
-                        tl.to(value, 0, {onComplete: function() {
-                            if(isVideo) {
-                                $video = $(value).find('video')[0];
-                                $video.play();
-                            }
-                        }});
-
-                        tl.to(value, 0.5, {onStart: function() {
-
-                        }});
-
-                        tl.to(value, 1, {"autoAlpha": 1}, index == 0 ? '' : '-=2');
 
                         switch (effect) {
                             case 'zoom-out':
@@ -214,10 +268,9 @@ var tmax_options = {
                                 tl.to($imageItem, options.duration, {"left": 0},'effect' + index);
                         }
 
-                        tl.to(value, 1, {"autoAlpha": 0, onComplete: function() {
+                        tl.to(value, 0, {"autoAlpha": 0, onComplete: function() {
                             if(isVideo) {
-                                $video.pause();
-                                $video.currentTime = startTime;
+                                $video.api("pause");
                             }
                         }});
                     }
@@ -237,9 +290,14 @@ var tmax_options = {
                         // play & pause video
                         if($video) {
                             if(tl.paused()) {
-                                $video.pause();
+                                //$video.pause();
+                                $video.api("pause");
+
+
                             } else {
-                                $video.play();
+                                //$video.play();
+                                $video.api("play");
+
                             }
                         }
                     }

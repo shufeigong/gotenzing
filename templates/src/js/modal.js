@@ -63,6 +63,8 @@
                         var iframe = $(target).find('iframe').get(0);
 
                         player = $f(iframe);
+                        player.api('setColor', '#f7a800');
+
                         player.addEvent(
                             'ready', function () {
                                 $(target).find('.videoWrapper .video-play-button').fadeIn();

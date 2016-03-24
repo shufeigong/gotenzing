@@ -7,6 +7,7 @@
         var subContainer = $(this).closest('.sub-container');
         var imgDiv = $(this).parent();
         var images = $(this).find('.image-item');
+        var iframes = $(this).find('iframe');
         var imageContainers = $(this).find('.image-container');
         var imageWrap = $(this).find('.image-wrap');
         var textDivHeight, subContainerHeight;
@@ -20,18 +21,19 @@
                 imageContainers.css({'height': 300});
                 imageWrap.css({'height': 300});
                 images.css({'height': 'auto'});
+
+                var height = textDiv.outerHeight() < 250 ? 250 : subContainerHeight;
+                iframes.css({'width': (height*16)/9, 'height': height});
+
             } else {
                 var height = textDiv.outerHeight() < 250 ? 250 : subContainerHeight;
 
                 imageContainers.css({'height': height});
                 imageWrap.css({'height': height});
-
-                $('.image-item').imageScale(
-                    {
-                        fadeInDuration: 0.25
-                    }
-                );
+                iframes.css({'width': ((height*16)/9) - 30, 'height': height});
             }
+
+            $('.image-item').imageScale({});
         };
 
         normalizeHeights();
@@ -45,7 +47,7 @@
                 if (call) {
                     clearTimeout(call);
                 }
-                call = setTimeout(normalizeHeights, 250); // run it again
+                call = setTimeout(normalizeHeights, 0); // run it again
             }
         );
     };
@@ -89,7 +91,8 @@
                 yoyo: true
             });
             var currentSlider;
-            var loadedPages = [];
+            var sliderPages = ['surprising', 'serving', 'spending'];
+            var tilePages = ['branding', 'engaging', 'humanchanneling', 'integrating', 'orienteering', 'positioning'];
             var imageCount = {
                 surprising: 12,
                 seving: 7,
@@ -146,27 +149,79 @@
                 thisItem.addClass('orange');
 
                 // Lazy load If the menu sub content has lazy load images
-                if(link != 'whoswho') {
-                    if($.inArray(link, loadedPages) === -1) {
-                        var lazyImages = $(thisItem).parent().find('.imgShow-div').find('img[data-src]').lazyLoadXT();
-                        var lazyVideos = $(thisItem).parent().find('.imgShow-div').find('video').lazyLoadXT();
+                var images, lazies, loader;
+                var deferreds = [];
 
-                        lazyImages.last().on('lazyload', function() {
-                            $(thisItem).parent().find('.imgShow-div').find('.lazy-loading').fadeOut(1000);
-                            $(window).resize();
+                if($.inArray(link, sliderPages) != -1) {
+                    images = $(thisItem).parent().find('.imgShow-div .image-wrap').hide();
+                    lazies = $(thisItem).parent().find('.imgShow-div .image-wrap').find('.lazy');
+                    loader = $(thisItem).parent().find('.imgShow-div .imageVideo').find('.lazy-loading');
+
+                    // loop over each img
+                    lazies.each(
+                        function () {
+                            var self = $(this);
+                            var datasrc, d;
+
+                            datasrc = self.attr('data-src');
+                            if (datasrc) {
+                                d = $.Deferred();
+
+                                self.one('load', d.resolve)
+                                    .attr("src", datasrc)
+                                    .attr('data-src', '');
+
+                                deferreds.push(d.promise());
+                            }
+                        }
+                    );
+
+                    $.when.apply($, deferreds).done(
+                        function () {
+                            loader.fadeOut(1000);
+                            images.fadeIn(1000);
 
                             var isSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo').length > 0;
                             if(isSlider) {
+                                $(thisItem).parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
+
                                 currentSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
                                 currentSlider.play();
                             }
-                        });
+                        }
+                    );
+                }
 
-                        loadedPages.push(link);
-                    } else {
-                        currentSlider = $(thisItem).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
-                        currentSlider.play();
-                    }
+                if($.inArray(link, tilePages) != -1) {
+                    images = $(thisItem).parent().find('.tile-container').hide();
+                    lazies = $(thisItem).parent().find('.tile-container').find('.lazy');
+                    loader = $(thisItem).parent().find('.lazy-loading');
+
+                    // loop over each img
+                    lazies.each(
+                        function () {
+                            var self = $(this);
+                            var datasrc, d;
+
+                            datasrc = self.attr('data-src');
+                            if (datasrc) {
+                                d = $.Deferred();
+
+                                self.one('load', d.resolve)
+                                    .attr("src", datasrc)
+                                    .attr('data-src', '');
+
+                                deferreds.push(d.promise());
+                            }
+                        }
+                    );
+
+                    $.when.apply($, deferreds).done(
+                        function () {
+                            loader.fadeOut(1000);
+                            images.fadeIn(1000);
+                        }
+                    );
                 }
 
                 var i = 0;
@@ -210,6 +265,8 @@
                         thisItem.next().find('a'), 0.5, {
                             onComplete: function () {
                                 thisItem.next().addClass('is-active');
+
+
                             }
                         }
                     )
@@ -225,6 +282,7 @@
                 ));
 
                 isFirstClick = false;
+
 
             } else if (link !== "" && isUtilityPage) {
                 // If the page is utility page with the orange menu down
@@ -344,6 +402,10 @@
                         return false;
                     }
 
+                    if(currentSlider) {
+                        currentSlider.pause(0);
+                    }
+
                     var elem = $(this).parent()[0];
                     var _this = this;
                     var colorGrey = "#555555";
@@ -356,42 +418,79 @@
                     $.cookie("previousUrl", window.location.href, {path: "/"});
                     window.history.pushState(null, null, "/" + $(this).attr("href"));
 
-                    // Lazy load If the menu sub content has lazy load images
-                    if(link != 'whoswho') {
-                        if($.inArray($(_this).attr('id'), loadedPages) === -1) {
-                            $(_this).parent().find('.imgShow-div').find('img[data-src],video,iframe[data-src]').lazyLoadXT();
+                    var images, lazies, loader;
+                    var deferreds = [];
 
-                            $(_this).parent().find('.imgShow-div').find('.image-container:last-child').find('img[data-src]')
-                                .on('lazyload', function() {
-                                    $(_this).parent().find('.imgShow-div').find('.lazy-loading').fadeOut(1000);
+                    if($.inArray(link, sliderPages) != -1) {
+                        images = $(_this).parent().find('.imgShow-div .image-wrap').hide();
+                        lazies = $(_this).parent().find('.imgShow-div .image-wrap').find('.lazy');
+                        loader = $(_this).parent().find('.imgShow-div .imageVideo').find('.lazy-loading');
 
-                                    $(window).resize();
+                        // loop over each img
+                        lazies.each(
+                            function () {
+                                var self = $(this);
+                                var datasrc, d;
 
-                                    if($.inArray($(_this).attr('id'), ['surprising', 'spending', 'serving'])>=0) {
-                                        if(isFirstClick === false && currentSlider != undefined) {
-                                            currentSlider.pause(0);
-                                        }
-                                        currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0 ? $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider : null;
-                                        if(currentSlider) {
-                                            currentSlider.play();
-                                        }
-                                    }
-                                });
+                                datasrc = self.attr('data-src');
+                                if (datasrc) {
+                                    d = $.Deferred();
 
-                            loadedPages.push(link);
-                        } else {
-                            if(isFirstClick === false && currentSlider != undefined) {
-                                currentSlider.pause(0);
+                                    self.one('load', d.resolve)
+                                        .attr("src", datasrc)
+                                        .attr('data-src', '');
+
+                                    deferreds.push(d.promise());
+                                }
                             }
-                            currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0 ? $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider : null;
-                            if(currentSlider) {
-                                currentSlider.play();
+                        );
+
+                        $.when.apply($, deferreds).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                images.fadeIn(1000);
+
+                                var isSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0;
+                                if(isSlider) {
+                                    $(_this).parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
+
+                                    currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                                    currentSlider.play();
+                                }
                             }
-                        }
-                    } else {
-                        if(currentSlider != undefined) {
-                            currentSlider.pause(0);
-                        }
+                        );
+                    }
+
+                    if($.inArray(link, tilePages) != -1) {
+                        images = $(_this).parent().find('.tile-container').hide();
+                        lazies = $(_this).parent().find('.tile-container').find('.lazy');
+                        loader = $(_this).parent().find('.lazy-loading');
+
+                        // loop over each img
+                        lazies.each(
+                            function () {
+                                var self = $(this);
+                                var datasrc, d;
+
+                                datasrc = self.attr('data-src');
+                                if (datasrc) {
+                                    d = $.Deferred();
+
+                                    self.one('load', d.resolve)
+                                        .attr("src", datasrc)
+                                        .attr('data-src', '');
+
+                                    deferreds.push(d.promise());
+                                }
+                            }
+                        );
+
+                        $.when.apply($, deferreds).done(
+                            function () {
+                                loader.fadeOut(1000);
+                                images.fadeIn(1000);
+                            }
+                        );
                     }
 
                     if (isFirstClick == true) {
