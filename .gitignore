@@ -13,6 +13,4 @@ vendor
 !templates/dist/js/vendor
 !templates/src/js/vendor
 templates/**/node_modules/
-node_modules
-
-
+templates/node_modules
