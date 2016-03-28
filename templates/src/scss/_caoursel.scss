@@ -120,7 +120,7 @@
 .videoWrapper {
     position       : relative;
     padding-bottom : 56.25%;
-    padding-top    : 35px;
+    //padding-top    : 35px;
     height         : 0;
     overflow       : hidden;
 
@@ -253,6 +253,7 @@
                     height : 100%;
                     img {
                         margin : 0 auto 30px;
+
                     }
 
                     .videoWrapper {
