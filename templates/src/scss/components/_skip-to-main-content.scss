@@ -19,6 +19,6 @@ a.skip-main:focus, a.skip-main:active {
     margin           : 10px 35%;
     padding          : 5px;
     text-align       : center;
-    @include font-size();
+    @include font-size(1.2);
     z-index          : 9999;
 }
