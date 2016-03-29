@@ -1,138 +1,146 @@
-$yellow : #f7a800;
-$grey-background : rgba(85, 85, 85, 0.5);
-$yellow-background : rgba(247, 168, 0, 0.5);
+$yellow: #f7a800;
+$grey-background: rgba(85, 85, 85, 0.5);
+$yellow-background: rgba(247, 168, 0, 0.5);
 
 .imageVideo {
-    position : relative;
-    overflow : hidden;
-    height   : auto;
+  position: relative;
+  overflow: hidden;
+  height: auto;
 
-    .progressBar {
-        position         : absolute;
-        top              : 0;
-        left             : 0;
-        z-index          : 100;
-        width            : 100%;
-        height           : 5px;
-        background       : $yellow-background;
+  .progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 5px;
+    background: $yellow-background;
 
-        transform-origin : 0px 0px 0px;
-        transform        : matrix(0, 0, 0, 1, 0, 0);
+    transform-origin: 0px 0px 0px;
+    transform: matrix(0, 0, 0, 1, 0, 0);
+  }
+
+  .image-wrap {
+    .image-container {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      opacity: 0;
+      overflow: hidden;
+
+      /* Set our transitions up. */
+      @include transition-all(0.1s);
+
+      .image-item, iframe {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .image-item.right {
+        right: 0;
+      }
+
+      .image-item.bottom {
+        bottom: 0;
+      }
+
+      iframe {
+        max-width: none;
+        width: auto;
+        max-height: 100%;
+      }
+
+      //.video-container {
+      //    position       : relative;
+      //    padding-bottom : 56.25%;
+      //    padding-top    : 35px;
+      //    height         : 0;
+      //    overflow       : hidden;
+      //
+      //    iframe, video {
+      //        position : absolute;
+      //        top      : 0;
+      //        left     : 0;
+      //        width    : 100%;
+      //        height   : 100%;
+      //    }
+      //}
     }
 
-    .image-wrap {
-        .image-container {
-            width    : 100%;
-            height   : auto;
-            position : absolute;
-            opacity  : 0;
-            overflow : hidden;
+  }
 
-            /* Set our transitions up. */
-            //@include transition-all(0.25s);
+  .pause-button {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+    z-index: 999;
+    text-indent: -999999px;
+    width: 29px;
+    height: 29px;
+    border: none;
+    background: url("/templates/dist/img/slider-video-play.svg") no-repeat;
+    cursor: pointer;
+    background-color: $grey-background;
+    border-radius: 3px;
+    padding: 0;
+    background-size: 31px 31px;
+    background-position: -1px -1px;
 
-            .image-item, iframe {
-                display  : block;
-                position : absolute;
-                top      : 0;
-                left     : 0;
-                z-index: 1;
-            }
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    -ms-transition: background-color 0.5s ease;
+    -o-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
 
-            iframe {
-                max-width  : none;
-                width      : auto;
-                max-height : 100%;
-            }
+    &.playing {
+      background: url("/templates/dist/img/slider-video-pause.svg") no-repeat;
+      background-color: $grey-background;
+      padding: 0;
+      background-size: 31px 31px;
+      background-position: -1px -1px;
+      border-radius: 3px;
+      bottom: 20px;
 
-            //.video-container {
-            //    position       : relative;
-            //    padding-bottom : 56.25%;
-            //    padding-top    : 35px;
-            //    height         : 0;
-            //    overflow       : hidden;
-            //
-            //    iframe, video {
-            //        position : absolute;
-            //        top      : 0;
-            //        left     : 0;
-            //        width    : 100%;
-            //        height   : 100%;
-            //    }
-            //}
-        }
-
+      &:hover {
+        background-color: $yellow-background;
+      }
     }
 
-    .pause-button {
-        position            : absolute;
-        left                : 10px;
-        bottom              : 20px;
-        z-index             : 999;
-        text-indent         : -999999px;
-        width               : 29px;
-        height              : 29px;
-        border              : none;
-        background          : url("/templates/dist/img/slider-video-play.svg") no-repeat;
-        cursor              : pointer;
-        background-color    : $grey-background;
-        border-radius       : 3px;
-        padding             : 0;
-        background-size     : 31px 31px;
-        background-position : -1px -1px;
-
-        -webkit-transition  : background-color 0.5s ease;
-        -moz-transition     : background-color 0.5s ease;
-        -ms-transition      : background-color 0.5s ease;
-        -o-transition       : background-color 0.5s ease;
-        transition          : background-color 0.5s ease;
-
-        &.playing {
-            background          : url("/templates/dist/img/slider-video-pause.svg") no-repeat;
-            background-color    : $grey-background;
-            padding             : 0;
-            background-size     : 31px 31px;
-            background-position : -1px -1px;
-            border-radius       : 3px;
-            bottom              : 20px;
-
-            &:hover {
-                background-color : $yellow-background;
-            }
-        }
-
-        &:hover {
-            background-color : $yellow-background;
-        }
+    &:hover {
+      background-color: $yellow-background;
     }
+  }
 }
 
 ////////////////~640px////////////////////////
-@media screen and (max-width : 639px) {
-    .imageVideo {
-        position   : relative;
-        overflow   : hidden;
-        height     : 100%;
-        margin-top : 5px;
+@media screen and (max-width: 639px) {
+  .imageVideo {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    margin-top: 5px;
 
-        .image-wrap {
-            overflow : hidden;
-            .image-container {
-                width    : 100%;
-                position : absolute;
-                opacity  : 0;
-                overflow : hidden;
+    .image-wrap {
+      overflow: hidden;
+      .image-container {
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        overflow: hidden;
 
-                .image-item {
-                    max-width  : none;
-                    max-height : 100%;
-                    height     : 100%;
-                    width      : auto;
-                }
-
-            }
+        .image-item {
+          max-width: none;
+          max-height: 100%;
+          height: 100%;
+          width: auto;
         }
 
+      }
     }
+
+  }
 
 }

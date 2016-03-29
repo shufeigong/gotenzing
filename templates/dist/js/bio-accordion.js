@@ -1,1 +1,1 @@
-!function(o){o(document).ready(function(){function n(n){o(n.target).prev(".panel-heading").find(".accordion-sign").toggleClass("accordion-close accordion-open")}o("#accordion").on("hide.bs.collapse",n),o("#accordion").on("show.bs.collapse",n)})}(jQuery);
+!function(o){o(document).ready(function(){function n(n){o(n.target).prev(".panel-heading").find(".accordion-sign").toggleClass("accordion-close accordion-open")}var c=o("#accordion");c.on("hide.bs.collapse",n),c.on("show.bs.collapse",n)})}(jQuery);
