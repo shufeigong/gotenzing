@@ -36,7 +36,7 @@ $.fn.imageWrapHeights = function () {
       });
     }
 
-    $('.image-item').imageScale();
+    images.imageScale();
   };
 
   normalizeHeights();

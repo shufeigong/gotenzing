@@ -1,7 +1,7 @@
 /**
  * Created by insu on 16-02-02.
  */
-(function ($) {
+var BioAccount = (function ($) {
   $(document).ready(function() {
     var $accordion = $('#accordion');
 

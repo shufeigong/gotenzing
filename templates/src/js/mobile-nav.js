@@ -57,7 +57,7 @@ var MobileNav = (function (viewport) {
     } else {
       if (target == 'gallery-legacy') {
         if (!window.isGalleryOpen) {
-          showGallery();
+          Gallery.showGallery();
         }
       }
 
@@ -97,7 +97,6 @@ var MobileNav = (function (viewport) {
         );
       }
     );
-
     $mobileMainMenu.scrollTop(1);
   }
 
