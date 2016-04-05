@@ -33,7 +33,7 @@ var UtilityNav = (function () {
 
     if (target == 'gallery-legacy') {
       if (!window.isGalleryOpen) {
-        Gallery.showGallery();
+        showGallery();
       }
     }
   }

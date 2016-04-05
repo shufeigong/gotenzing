@@ -238,7 +238,7 @@ var MainMenu = (function ($, viewport) {
         //$('body').addClass('full-screen-modal-open');
 
         if (link == 'gallery-legacy') {
-          Gallery.showGallery();
+          showGallery();
         }
       }
 
@@ -737,7 +737,9 @@ var MainMenu = (function ($, viewport) {
 
           isFirstClick = true;
 
-          currentSlider.clear();
+          if(currentSlider) {
+            currentSlider.clear();
+          }
         }
       );
     });
