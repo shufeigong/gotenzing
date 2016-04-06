@@ -42,7 +42,7 @@ var MainMenu = (function ($, viewport) {
 
   $carousel.on('keyup', enableCarouselKeyArrow);
 
-  function enableCarouselKeyArrow() {
+  function enableCarouselKeyArrow(e) {
     $(this).parent().find('.pressed').removeClass('pressed');
 
     // Right
