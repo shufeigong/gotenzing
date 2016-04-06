@@ -33,7 +33,7 @@ var MobileNav = (function (viewport) {
     $('.main-menu').find('#' + target).click();
   }
 
-  function clickMobileSideMenu() {
+  function clickMobileSideMenu(e) {
     e.preventDefault();
 
     var target = $(this).find('a').attr('href').replace('utility/', '');
@@ -97,7 +97,6 @@ var MobileNav = (function (viewport) {
         );
       }
     );
-
     $mobileMainMenu.scrollTop(1);
   }
 

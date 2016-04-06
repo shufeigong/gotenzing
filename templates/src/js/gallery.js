@@ -1,6 +1,6 @@
-var showGallery = function () {
+function showGallery() {
   $.getJSON(
-    '/templates/json/gallery.json', function (data) {
+    '/templates/json/gallery.json', function(data) {
       $('.loading-icon').hide();
       var galleryImages = data;
       var $linksContainer = $('.gallery-container.gallerypage');
@@ -42,7 +42,7 @@ var showGallery = function () {
         // Set images
         if (i == 0) {
           $('.carousel-indicators.gallerypage')
-            .append($('<li/>').attr({ 'data-target': '#lightbox', 'data-slide-to': i }).addClass('active'));
+            .append($('<li/>').attr({'data-target': '#lightbox', 'data-slide-to': i}).addClass('active'));
 
           $('.carousel-inner.gallerypage')
             .append(
@@ -59,7 +59,7 @@ var showGallery = function () {
             );
         } else {
           $('.carousel-indicators.gallerypage')
-            .append($('<li/>').attr({ 'data-target': '#lightbox', 'data-slide-to': i }));
+            .append($('<li/>').attr({'data-target': '#lightbox', 'data-slide-to': i}));
 
           if (galleryImages[i].isVideo) {
             $('.carousel-inner.gallerypage')
@@ -104,13 +104,13 @@ var showGallery = function () {
        */
 
       $('.gallery-item').hover(
-        function () {
+        function() {
           TweenLite.to(
             $(this), 0.1, {
               scale: 1.1
             }
           );
-        }, function () {
+        }, function() {
 
           TweenLite.to(
             $(this), 0.1, {
@@ -124,8 +124,9 @@ var showGallery = function () {
     }
     )
     .fail(
-      function () {
+      function() {
         console.log('Gallery error');
       }
     );
 };
+

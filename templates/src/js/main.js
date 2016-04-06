@@ -42,7 +42,7 @@ var MainMenu = (function ($, viewport) {
 
   $carousel.on('keyup', enableCarouselKeyArrow);
 
-  function enableCarouselKeyArrow() {
+  function enableCarouselKeyArrow(e) {
     $(this).parent().find('.pressed').removeClass('pressed');
 
     // Right
@@ -123,6 +123,7 @@ var MainMenu = (function ($, viewport) {
                 $thisItem.next().addClass('is-active');
 
                 if ($.inArray(link, sliderPages) != -1) {
+                  var isSurprising = link === 'surprising';
                   var textDivHeight = $thisItem.parent().find('.text-div').outerHeight() + 20;
                   textDivHeight = textDivHeight < 250 ? 250 : textDivHeight;
                   $thisItem.parent().find('.imgShow-div .imageVideo').height(textDivHeight);
@@ -153,15 +154,24 @@ var MainMenu = (function ($, viewport) {
 
                   $.when.apply($, deferreds).done(
                     function () {
-                      loader.fadeOut(1000);
-                      images.fadeIn(1000);
-
                       var isSlider = $thisItem.parent().find('.imgShow-div').find('.imageVideo').length > 0;
-                      if (isSlider) {
+                      if (isSlider && isSurprising) {
+                        setTimeout(function() {
+                          $thisItem.parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
+
+                          currentSlider = $thisItem.parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                          currentSlider.play();
+
+                          images.fadeIn(1000);
+                          loader.fadeOut(1000);
+                        }, 200);
+                      } else {
+                        images.fadeIn(1000);
                         $thisItem.parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
 
                         currentSlider = $thisItem.parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
                         currentSlider.play();
+                        loader.fadeOut(1000);
                       }
                     }
                   );
@@ -346,7 +356,9 @@ var MainMenu = (function ($, viewport) {
           var deferreds = [];
 
           if ($.inArray(link, sliderPages) != -1) {
+            var isSurprising = link === 'surprising';
             var textDivHeight = $(_this).parent().find('.text-div').outerHeight() + 20;
+
             textDivHeight = textDivHeight < 250 ? 250 : textDivHeight;
             $(_this).parent().find('.imgShow-div .imageVideo').height(textDivHeight);
 
@@ -376,15 +388,27 @@ var MainMenu = (function ($, viewport) {
 
             $.when.apply($, deferreds).done(
               function () {
-                loader.fadeOut(1000);
-                images.fadeIn(1000);
 
                 var isSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo').length > 0;
-                if (isSlider) {
+                if (isSlider && isSurprising) {
+                  setTimeout(function() {
+                    $(_this).parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
+
+                    currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
+                    currentSlider.play();
+
+                    images.fadeIn(1000);
+                    loader.fadeOut(1000);
+                  }, 200);
+                } else {
+                  images.fadeIn(1000);
+
                   $(_this).parent().find('.imgShow-div').find('.imageVideo').imageWrapHeights();
 
                   currentSlider = $(_this).parent().find('.imgShow-div').find('.imageVideo')[0].timeLineSlider;
                   currentSlider.play();
+
+                  loader.fadeOut(1000);
                 }
               }
             );
@@ -713,7 +737,9 @@ var MainMenu = (function ($, viewport) {
 
           isFirstClick = true;
 
-          currentSlider.clear();
+          if(currentSlider) {
+            currentSlider.clear();
+          }
         }
       );
     });
