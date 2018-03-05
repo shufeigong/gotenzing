@@ -1,5 +1,5 @@
 /**
- * Created by insu on 16-01-21.
+ * Created by shufei on 16-01-21.
  */
 const webpack = require('webpack');
 const path = require('path');
